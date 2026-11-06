@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "segpaciente",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./app-plataforma"
+  },
+  "routes": [
+    { "pattern": "segpaciente.hosusana.com", "custom_domain": true }
+  ]
+}
