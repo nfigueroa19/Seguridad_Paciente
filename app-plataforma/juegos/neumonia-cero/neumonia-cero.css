@@ -1,0 +1,225 @@
+/* =====================================================================
+   NEUMONÍA CERO — estilos del minijuego (sección Simula)
+   Todo acotado con el prefijo .nz-. Los colores de las diapositivas salen del
+   PPTX (franja #74B972, franja #FFC000, botones #ED7D31, acierto #00B050,
+   error #FF0000); el marco del juego reutiliza los tokens de ../../styles.css.
+   Las medidas en cqw son proporcionales al ancho de la diapositiva (.nz-pantalla).
+   ===================================================================== */
+
+.nz{
+  --nz-franja:#74B972;
+  --nz-franja-acento:#FFC000;
+  --nz-boton:#ED7D31;
+  --nz-acierto:#00B050;
+  --nz-error:#FF0000;
+  --nz-bandeja:#223962;
+  --nz-fuente-juego:'Lilita One',var(--fuente-titulos); /* sustituye a "Summer Blaster", que no es web */
+
+  scroll-margin-top:96px;
+  overflow:clip; /* recorta las esquinas sin crear contenedor de scroll (mantiene el sticky de la bandeja) */
+  background:var(--blanco);
+  border:1px solid var(--borde); border-radius:var(--radio); box-shadow:var(--sombra);
+}
+
+.nz-sr{
+  position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
+}
+
+/* ---------- Barra del juego (marco de la plataforma) ---------- */
+.nz-barra{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:12px 20px; background:var(--verde-osc); color:var(--blanco);
+}
+.nz-marca{font-family:var(--fuente-titulos); font-weight:600; letter-spacing:.2px;}
+.nz-barra-acciones{display:flex; gap:8px;}
+.nz-control{
+  display:inline-flex; align-items:center; gap:6px; padding:6px 12px;
+  border:1px solid rgba(255,255,255,.25); border-radius:var(--radio-sm);
+  background:rgba(255,255,255,.08); color:var(--blanco); font-size:.82rem; font-weight:500;
+}
+.nz-control:hover{background:rgba(255,255,255,.16);}
+.nz-control[aria-pressed="false"]{opacity:.75;}
+
+.nz-pantalla{container-type:inline-size; animation:nz-entrar .3s ease;}
+.nz-pantalla h2:focus{outline:none;}
+@keyframes nz-entrar{from{opacity:0;} to{opacity:1;}}
+
+/* ---------- Botones de las diapositivas ---------- */
+/* Cuadro "Rectángulo: esquinas redondeadas" del PPTX: relleno accent2, texto blanco en negrita,
+   contorno blanco, bisel y sombra. */
+.nz-boton-ppt{
+  display:inline-grid; place-items:center; padding:.35em 1.2em;
+  border:2px solid var(--blanco); border-radius:.6em;
+  background:linear-gradient(#F39657,var(--nz-boton) 45%,#D86A20);
+  color:var(--blanco); font-size:max(13px,1.875cqw); font-weight:700; line-height:1.1; letter-spacing:.02em; white-space:nowrap;
+  box-shadow:inset 0 2px 1px rgba(255,255,255,.45), inset 0 -3px 2px rgba(0,0,0,.18), 0 2px 8px rgba(0,0,0,.45);
+  transition:transform .1s, filter .15s;
+}
+.nz-boton-ppt:hover:not(:disabled){filter:brightness(1.07);}
+.nz-boton-ppt:active:not(:disabled){transform:translateY(1px) scale(.98);}
+.nz-boton-ppt:disabled{cursor:not-allowed; filter:grayscale(.75); opacity:.55;}
+
+/* Icono de audio del PPTX: activa o pausa la música */
+.nz-altavoz{display:block; width:44px; height:44px; padding:0; border:0; background:none; position:relative;}
+.nz-altavoz img{display:block; width:100%; height:100%; object-fit:contain;}
+.nz-altavoz[aria-pressed="false"] img{opacity:.4;}
+.nz-altavoz[aria-pressed="false"]::after{
+  content:""; position:absolute; top:50%; left:8%; width:84%; height:3px; border-radius:2px;
+  background:var(--nz-error); transform:rotate(-40deg);
+}
+
+/* ---------- Diapositivas con imagen a sangre (1, 2, tiempo agotado y final) ---------- */
+.nz-escena{position:relative; aspect-ratio:16/9; overflow:hidden; background:var(--blanco);}
+.nz-escena-img{position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover;}
+.nz-en-escena{position:absolute;}
+
+.nz-boton-jugar{
+  padding:0; border:0; background:none; overflow:hidden;
+  border-radius:4.3% / 16.7%; /* roundRect del PPTX: 1/6 del lado corto */
+  transition:transform .12s, filter .15s;
+}
+.nz-boton-jugar img{display:block; width:100%; height:100%;}
+.nz-boton-jugar:hover{transform:scale(1.04); filter:brightness(1.05);}
+.nz-boton-jugar:active{transform:scale(.98);}
+.nz-escena .nz-altavoz{width:auto; height:auto;}
+/* Sobre la imagen el botón tiene el tamaño exacto del cuadro del PPTX: relleno mínimo y letra a 18 pt
+   de un lienzo de 960 pt; ajustarBotones() (JS) la reduce si el texto no cabe. */
+.nz-escena .nz-en-escena.nz-boton-ppt{padding:0 .35em; font-size:1.875cqw; letter-spacing:0; overflow:hidden;}
+
+/* ---------- Retos (diapositivas 3 a 19) ---------- */
+/* Fondo del patrón de diapositivas: la habitación (cama a 30°) al 70 % de opacidad sobre blanco */
+.nz-diapo{
+  min-height:56.25cqw;
+  background:linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3)), url("assets/img/fondo-reto.webp") center / cover;
+}
+.nz-diapo-cab{
+  display:flex; align-items:center; gap:14px; padding:6px 2.5cqw;
+  background:var(--nz-franja); border-bottom:9px solid var(--nz-franja-acento);
+  box-shadow:0 3px 0 var(--blanco), 0 5px 10px rgba(0,0,0,.25);
+}
+.nz-diapo-cab .nz-altavoz{flex-shrink:0;}
+.nz-diapo-titulo{
+  flex:1; min-width:0; font-family:var(--nz-fuente-juego); font-size:clamp(1.35rem,4.2cqw,2.6rem);
+  color:var(--blanco); text-shadow:1px 2px 2px rgba(0,0,0,.4); white-space:nowrap;
+}
+.nz-diapo-reto{
+  padding:3px 10px; border-radius:20px; background:rgba(0,0,0,.18);
+  color:var(--blanco); font-size:.8rem; font-weight:600; white-space:nowrap;
+}
+.nz-cuenta{
+  min-width:2ch; font-family:var(--nz-fuente-juego); font-size:clamp(2rem,5.6cqw,3.4rem); line-height:1.1; text-align:right;
+  color:var(--blanco); text-shadow:1px 2px 2px rgba(0,0,0,.4); transition:color .3s;
+}
+.nz-cuenta.is-alerta{color:var(--nz-franja-acento);}
+.nz-cuenta.is-critico{color:var(--nz-error); animation:nz-latir 1s ease-in-out infinite;}
+@keyframes nz-latir{50%{transform:scale(1.12);}}
+
+.nz-diapo-cuerpo{padding:2.5cqw 8cqw 2.5cqw 10cqw;}
+
+/* Cuadro de título del PPTX: blanco al 50 %, texto negro con sombra suave */
+.nz-enunciado{
+  padding:1.2cqw 1.8cqw; background:rgba(255,255,255,.5);
+  color:#000; font-size:clamp(1rem,2.6cqw,1.7rem); line-height:1.3; text-shadow:1px 1px 1px rgba(0,0,0,.25);
+}
+.nz-enunciado-etiqueta{display:block; font-size:1.35em; font-weight:300;}
+.nz-enunciado p{margin:0; line-height:1.3;}
+.nz .nz-pregunta{margin:0; font-family:inherit; font-size:1em; font-weight:400; line-height:1.3; color:inherit;}
+
+/* Opciones: "Rectángulo: esquinas redondeadas" al 50 % */
+.nz-opciones{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2cqw 4cqw; margin-top:3cqw;}
+.nz-opcion{
+  position:relative; min-height:6.75cqw; padding:.4em 1em;
+  border:0; border-radius:1.1cqw; background:rgba(255,255,255,.5);
+  color:#000; font-size:clamp(1rem,2.5cqw,1.6rem); text-align:left; line-height:1.25;
+  text-shadow:1px 1px 1px rgba(0,0,0,.3); transition:background-color .2s, transform .1s;
+}
+.nz-opcion:hover:not(:disabled){background:rgba(255,255,255,.78);}
+.nz-opcion:active:not(:disabled){transform:scale(.98);}
+.nz-opcion:disabled{cursor:default;}
+.nz-opcion.is-correcta{background:var(--nz-acierto); animation:nz-acierto .4s ease;}
+.nz-opcion.is-incorrecta{background:var(--nz-error); animation:nz-temblar .45s ease;}
+
+/* Reto de la cabecera: las camas rellenan el cuadro; multiply funde su fondo blanco con el color del estado */
+.nz-opciones--img{grid-template-columns:repeat(4,minmax(0,1fr)); gap:2.5cqw;}
+.nz-opcion--img{
+  padding:0; aspect-ratio:2233/1800; overflow:hidden;
+  border:2px solid #000; border-radius:1.6cqw; background:var(--blanco);
+}
+.nz-opcion--img img{display:block; width:100%; height:100%; object-fit:cover; mix-blend-mode:multiply;}
+.nz-opcion--img:hover:not(:disabled){background:var(--verde-claro);}
+
+/* Señal que no depende solo del color */
+.nz-opcion.is-correcta::after,.nz-opcion.is-incorrecta::after,.nz-item.is-incorrecta::after{
+  position:absolute; top:-10px; right:-10px; display:grid; place-items:center; width:28px; height:28px;
+  border:2px solid var(--blanco); border-radius:50%; color:var(--blanco); font-size:.9rem; font-weight:700; text-shadow:none;
+  box-shadow:0 2px 6px rgba(0,0,0,.3);
+}
+.nz-opcion.is-correcta::after{content:"✓"; background:var(--nz-acierto);}
+.nz-opcion.is-incorrecta::after,.nz-item.is-incorrecta::after{content:"✕"; background:var(--nz-error);}
+.nz-opcion--img.is-correcta::after,.nz-opcion--img.is-incorrecta::after{top:6px; right:6px;}
+
+@keyframes nz-temblar{20%,60%{transform:translateX(-6px) rotate(-2deg);} 40%,80%{transform:translateX(6px) rotate(2deg);}}
+@keyframes nz-acierto{50%{transform:scale(1.04);}}
+
+.nz-diapo-pie{display:flex; justify-content:flex-end; margin-top:2.5cqw;}
+
+/* ---------- Reto del kit (diapositiva 5) ---------- */
+.nz-kit{display:grid; gap:2.5cqw; margin-top:2.5cqw;}
+.nz-bandeja{
+  position:sticky; top:92px; z-index:2; justify-self:end; width:min(100%,60cqw); padding:1.2cqw;
+  border:3px solid var(--nz-bandeja); border-radius:2cqw; background:var(--blanco);
+  box-shadow:0 4px 14px rgba(0,0,0,.18); transition:border-color .2s;
+}
+.nz-bandeja.is-completa{border-color:var(--nz-acierto);}
+.nz-bandeja-items{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.2cqw; margin:0; padding:0; list-style:none;}
+.nz-hueco,.nz-en-bandeja{display:grid; place-items:center; height:clamp(56px,10cqw,120px); border-radius:1.2cqw;}
+.nz-hueco{border:2px dashed rgba(34,57,98,.25);}
+.nz-en-bandeja{animation:nz-caer .35s ease;}
+.nz-en-bandeja{padding:4px;}
+.nz-en-bandeja img{width:100%; height:100%; min-height:0; object-fit:contain;}
+@keyframes nz-caer{from{opacity:0; transform:translateY(-24px) scale(.8);} to{opacity:1; transform:none;}}
+
+.nz-kit-items{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); align-items:end; gap:2cqw;}
+.nz-item{
+  position:relative; display:grid; place-items:center; height:clamp(80px,13cqw,150px); padding:4px;
+  border:0; border-radius:var(--radio-md); background:none; transition:transform .15s, opacity .25s, filter .2s;
+}
+.nz-item img{width:100%; height:100%; min-height:0; object-fit:contain; filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));}
+.nz-item:hover:not(:disabled){transform:translateY(-4px) scale(1.05);}
+.nz-item:disabled{cursor:default;}
+.nz-item.is-elegido{opacity:.18;}
+.nz-item.is-incorrecta{opacity:.6; animation:nz-temblar .5s ease;}
+.nz-item.is-incorrecta img{filter:drop-shadow(0 0 6px var(--nz-error)) grayscale(.4);}
+
+/* ---------- Resultado (bajo la diapositiva final) ---------- */
+.nz-resultado{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px 28px; padding:20px;}
+.nz-puntaje{
+  display:inline-flex; flex-direction:column; align-items:center; padding:12px 32px;
+  border-radius:var(--radio); background:var(--verde-osc); color:var(--blanco);
+}
+.nz-puntaje b{font-family:var(--fuente-titulos); font-size:2rem; line-height:1.1; color:var(--naranja);}
+.nz-puntaje span{font-size:.82rem; color:var(--sidebar-texto);}
+
+/* ---------- Pantallas angostas ---------- */
+@container (max-width:600px){
+  /* Los botones de texto bajan debajo de la imagen para que se puedan tocar */
+  .nz-escena--pie{aspect-ratio:auto; display:flex; flex-direction:column; align-items:center; gap:14px; padding-bottom:16px;}
+  .nz-escena--pie .nz-escena-img{position:relative; height:auto; aspect-ratio:16/9;}
+  .nz-escena--pie .nz-en-escena.nz-boton-ppt{position:static; width:auto !important; height:auto !important; padding:12px 28px; font-size:15px;}
+
+  .nz-diapo-cab{gap:10px; padding:6px 12px;}
+  .nz-diapo-cab .nz-altavoz{width:36px; height:36px;}
+  .nz-diapo-reto{display:none;}
+  .nz-diapo-cuerpo{padding:16px;}
+  .nz-enunciado{padding:12px 14px;}
+  .nz-opciones{grid-template-columns:1fr; gap:10px; margin-top:16px;}
+  .nz-opcion{min-height:52px; border-radius:10px;}
+  .nz-opciones--img{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .nz-opcion--img{border-radius:12px;}
+  .nz-diapo-pie{margin-top:16px;}
+  .nz-diapo-pie .nz-boton-ppt{width:100%; padding:12px; font-size:15px;}
+  .nz-kit{gap:14px; margin-top:16px;}
+  .nz-bandeja{top:70px; width:100%; padding:8px; border-radius:12px;}
+  .nz-bandeja-items{gap:6px;}
+  .nz-kit-items{grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px;}
+}
