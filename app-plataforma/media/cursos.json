@@ -1,0 +1,34 @@
+[
+  {
+    "id": "curso-1",
+    "titulo": "Curso 1",
+    "resumen": "Contenido por definir.",
+    "texto": ["Aquí irá la información en texto del curso."],
+    "documentos": [],
+    "video": "decalogo-cartilla-de-seguridad-del-paciente-dirigida-al-paciente"
+  },
+  {
+    "id": "curso-2",
+    "titulo": "Curso 2",
+    "resumen": "Contenido por definir.",
+    "texto": ["Aquí irá la información en texto del curso."],
+    "documentos": [],
+    "video": "identificacion-del-paciente"
+  },
+  {
+    "id": "curso-3",
+    "titulo": "Curso 3",
+    "resumen": "Contenido por definir.",
+    "texto": ["Aquí irá la información en texto del curso."],
+    "documentos": [],
+    "video": "nociciero-sp"
+  },
+  {
+    "id": "curso-4",
+    "titulo": "Curso 4",
+    "resumen": "Contenido por definir.",
+    "texto": ["Aquí irá la información en texto del curso."],
+    "documentos": [],
+    "video": "video-epicce"
+  }
+]

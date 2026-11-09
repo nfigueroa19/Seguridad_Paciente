@@ -9,9 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./vendor/plyr/plyr.css">
 <link rel="stylesheet" href="./styles.css">
 <link rel="stylesheet" href="./juegos/neumonia-cero/neumonia-cero.css">
 <script src="./script.js" defer></script>
+<script src="./curso.js" defer></script>
 <script src="./juegos/neumonia-cero/neumonia-cero.js" defer></script>
 </head>
 <body>
@@ -141,10 +143,31 @@
           <h1>📖 Curso de Seguridad del Paciente</h1>
           <p class="sub">Contenidos introductorios obligatorios antes de practicar en la plataforma.</p>
         </div></div>
-        <div class="panel empty-state">
-          <div class="empty-state-icon" aria-hidden="true">🚧</div>
-          <h2>Sección en maquetación</h2>
-          <p>El contenido de esta sección se integrará en una fase posterior.</p>
+        <div class="cv" id="curso-cursos">
+          <!-- Lista de cursos -->
+          <div id="curso-lista-vista">
+            <h2 class="section-title">Cursos</h2>
+            <p class="cv-aviso" id="curso-aviso" role="status">Cargando cursos…</p>
+            <div class="cv-grid" id="curso-lista"></div>
+          </div>
+
+          <!-- Detalle de un curso -->
+          <article id="curso-detalle" hidden>
+            <button class="btn btn-outline btn-sm cv-volver" type="button" data-curso="volver">← Volver a los cursos</button>
+            <h2 class="cv-detalle-titulo" id="curso-detalle-titulo" tabindex="-1"></h2>
+            <div class="panel cv-texto" id="curso-texto"></div>
+            <div class="cv-docs" id="curso-docs" hidden>
+              <h3 class="section-title">Documentos</h3>
+              <ul id="curso-docs-lista"></ul>
+            </div>
+            <h3 class="section-title">Video</h3>
+            <div class="cv-player">
+              <div class="cv-video-marco">
+                <video id="curso-video" playsinline preload="none"></video>
+              </div>
+              <p class="cv-estado" id="curso-estado" role="status" aria-live="polite"></p>
+            </div>
+          </article>
         </div>
       </section>
 
