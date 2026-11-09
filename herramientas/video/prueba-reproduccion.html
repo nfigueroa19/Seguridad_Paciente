@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba de reproducción HLS</title>
+<!-- Solo para pruebas locales del pipeline; no forma parte de la plataforma. -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15/dist/hls.min.js"></script>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 16px; background: #f4f6f5; color: #1d2b24; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  figure { margin: 0; background: #fff; border-radius: 10px; padding: 10px; box-shadow: 0 1px 3px #0002; }
+  video { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; }
+  figcaption { font-size: .85rem; margin-top: 6px; }
+  .estado { color: #2e7d5b; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<h1>Prueba de reproducción HLS</h1>
+<p>Catálogo: <code id="origen"></code>. Servir desde la raíz del proyecto (configuración <code>sitio-estatico</code>).</p>
+<div class="grid" id="grid"></div>
+<script>
+(function () {
+  'use strict';
+  var BASE = '../../app-plataforma/';
+  var CATALOGO = BASE + 'media/videos/catalogo.json';
+  document.getElementById('origen').textContent = CATALOGO;
+
+  fetch(CATALOGO).then(function (r) { return r.json(); }).then(function (videos) {
+    var grid = document.getElementById('grid');
+    videos.forEach(function (v) {
+      var fig = document.createElement('figure');
+      var video = document.createElement('video');
+      video.controls = true;
+      video.preload = 'none';                 // nada se descarga hasta pulsar play
+      video.poster = BASE + v.poster;
+      video.dataset.id = v.id;
+      var cap = document.createElement('figcaption');
+      cap.innerHTML = '<b></b><br><span class="estado">sin cargar</span>';
+      cap.querySelector('b').textContent = v.titulo + ' · ' + Math.round(v.duracion_s) + ' s';
+      fig.append(video, cap);
+      grid.append(fig);
+
+      var estado = cap.querySelector('.estado');
+      var url = BASE + v.master;
+      if (window.Hls && Hls.isSupported()) {
+        var hls = new Hls({ autoStartLoad: false });
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        video.addEventListener('play', function () { hls.startLoad(); }, { once: true });
+        hls.on(Hls.Events.LEVEL_SWITCHED, function (_, d) {
+          var l = hls.levels[d.level];
+          estado.textContent = 'hls.js · ' + l.width + 'x' + l.height + ' · ' + Math.round(l.bitrate / 1000) + ' kbps';
+        });
+        hls.on(Hls.Events.ERROR, function (_, d) { if (d.fatal) estado.textContent = 'error: ' + d.details; });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;                        // Safari / iOS: HLS nativo
+        estado.textContent = 'HLS nativo';
+      } else {
+        estado.textContent = 'este navegador no reproduce HLS';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

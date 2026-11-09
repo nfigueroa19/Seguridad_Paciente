@@ -1,0 +1,9 @@
+# Imagen de prueba del servidor de intranet. Se construye desde la raíz del proyecto:
+#   docker build -f herramientas/load-testing/intranet/Dockerfile.servidor -t susana-segura/servidor-prueba .
+# Los archivos se copian dentro de la imagen: servirlos desde un montaje de Windows
+# (Docker Desktop) mediría la lentitud del montaje y no la de nginx.
+FROM nginx:1.29-alpine
+
+COPY herramientas/load-testing/intranet/nginx-prueba.conf /etc/nginx/conf.d/default.conf
+COPY herramientas/video/docker/nginx-videos.conf /etc/nginx/snippets/nginx-videos.conf
+COPY app-plataforma/ /usr/share/nginx/html/

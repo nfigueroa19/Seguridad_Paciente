@@ -1,0 +1,5 @@
+# Contexto mínimo: sin esto Docker enviaría videos-fuente/ y el resto del proyecto.
+*
+!app-plataforma/
+!herramientas/load-testing/intranet/nginx-prueba.conf
+!herramientas/video/docker/nginx-videos.conf
