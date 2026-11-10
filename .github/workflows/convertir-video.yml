@@ -1,0 +1,96 @@
+# Conversión de videos subidos desde la aplicación (producción).
+#
+# Lo inicia el Worker (workflow_dispatch) cuando el editor guarda un curso con un video nuevo.
+#   1. Baja el MP4 original del bucket privado (segpaciente-media, entrada/<id>.mp4).
+#   2. Lo convierte a HLS con herramientas/video/procesar-videos.sh (360p, 720p, 1080p según la fuente, más portada).
+#   3. Sube el resultado al bucket público de videos (segpaciente-videos, <id>/…), que se sirve desde su propio dominio.
+#   4. Avisa a la aplicación (listo o error) con un secreto compartido.
+#
+# Secretos del repositorio necesarios:
+#   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY (token con Object Read & Write sobre AMBOS buckets),
+#   VIDEO_CALLBACK_SECRET (el mismo valor que el secreto del Worker).
+# El repositorio es público: nunca poner claves en este archivo.
+name: Convertir video
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Identificador del video (entrada/<id>.mp4 en R2)
+        required: true
+        type: string
+
+# Un video a la vez: respeta los minutos gratuitos y evita pisarse.
+concurrency:
+  group: convertir-video
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  convertir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # El identificador entra por variable de entorno (nunca interpolado dentro de un script).
+      VIDEO_ID: ${{ inputs.video_id }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      # R2 no acepta las sumas de verificación adicionales de las versiones nuevas del cliente de AWS.
+      AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+      AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+      R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      BUCKET_ENTRADA: segpaciente-media
+      BUCKET_VIDEOS: segpaciente-videos
+      APP_URL: https://segpaciente.hosusana.com
+    steps:
+      - name: Validar el identificador
+        run: |
+          [[ "$VIDEO_ID" =~ ^[a-z0-9-]{1,120}$ ]] || { echo "Identificador de video no válido"; exit 1; }
+
+      - uses: actions/checkout@v4
+
+      - name: Instalar ffmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+
+      - name: Descargar el original
+        run: |
+          mkdir -p trabajo/entrada
+          aws s3 cp "s3://$BUCKET_ENTRADA/entrada/$VIDEO_ID.mp4" "trabajo/entrada/$VIDEO_ID.mp4" \
+            --endpoint-url "$R2_ENDPOINT" --no-progress
+
+      - name: Convertir a HLS
+        run: FORZAR=1 bash herramientas/video/procesar-videos.sh trabajo/entrada trabajo/salida
+
+      - name: Subir al bucket de videos
+        run: |
+          origen="trabajo/salida/$VIDEO_ID"
+          test -f "$origen/master.m3u8" || { echo "No se generó master.m3u8"; exit 1; }
+          destino="s3://$BUCKET_VIDEOS/$VIDEO_ID"
+          subir() {  # subir <patrón> <content-type> <cache-control>
+            aws s3 sync "$origen" "$destino" --endpoint-url "$R2_ENDPOINT" --no-progress \
+              --exclude "*" --include "$1" --content-type "$2" --cache-control "$3"
+          }
+          subir "*.ts"   "video/mp2t"                       "public, max-age=31536000, immutable"
+          subir "*.webp" "image/webp"                       "public, max-age=31536000, immutable"
+          subir "*.json" "application/json"                 "public, max-age=300"
+          # Las listas al final: el video no se anuncia hasta que estén todos los segmentos.
+          subir "*.m3u8" "application/vnd.apple.mpegurl"    "public, max-age=300"
+
+      - name: Avisar a la aplicación
+        if: always()
+        env:
+          RESULTADO: ${{ job.status }}
+          SECRETO: ${{ secrets.VIDEO_CALLBACK_SECRET }}
+        run: |
+          estado=error
+          [ "$RESULTADO" = "success" ] && estado=listo
+          curl -sS --fail-with-body --retry 4 --retry-delay 5 --retry-all-errors \
+            -X POST "$APP_URL/api/interno/video" \
+            -H "authorization: Bearer $SECRETO" \
+            -H "content-type: application/json" \
+            -d "{\"id\":\"$VIDEO_ID\",\"estado\":\"$estado\"}"

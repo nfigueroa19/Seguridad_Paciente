@@ -1,3 +1,6 @@
 # Estado local de Wrangler (D1 local, caché)
 .wrangler/
 node_modules/
+
+# Variables locales de wrangler dev
+.dev.vars
