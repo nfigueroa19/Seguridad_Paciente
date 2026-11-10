@@ -1,10 +1,26 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "segpaciente",
+  "main": "contenido-api/src/index.js",
   "compatibility_date": "2026-11-01",
   "assets": {
-    "directory": "./app-plataforma"
+    "directory": "./app-plataforma",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/", "/index.html", "/login", "/login.html", "/admin", "/admin/*"]
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "segpaciente-contenido",
+      "database_id": "1422e06e-e2f7-4905-94d8-6816525943f4"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "segpaciente-media"
+    }
+  ],
   "routes": [
     { "pattern": "segpaciente.hosusana.com", "custom_domain": true }
   ]
