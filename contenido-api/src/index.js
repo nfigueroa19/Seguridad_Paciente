@@ -5,9 +5,10 @@
    solo la capa de datos. Marcado con "SQLITE:" lo que habría que adaptar.
 
    Sin sesión: POST /api/login   /api/logout. Páginas: "/" exige sesión, "/login" no.
+   Con secreto compartido (no con sesión): POST /api/interno/video (aviso de GitHub Actions al terminar de convertir).
    Cualquier usuario con sesión: GET /api/yo /api/contenido /api/cursos /api/videos /api/textos,
                                  POST /api/clave (cambio de clave propio)
-   Editores y admin:  /api/admin/cursos, /textos, /tarjetas, /zonas, /videos
+   Editores y admin:  /api/admin/cursos, /textos, /tarjetas, /zonas, /videos, /archivos (subida a R2)
    Solo admin:        /api/admin/usuarios (incluye /lote)
    ===================================================================== */
 
@@ -145,10 +146,11 @@ async function logout(request, env) {
 
 /* ---------- Lectura pública ---------- */
 async function listarCursos(env, soloPublicados) {
-  const [cursos, parrafos, docs] = await env.DB.batch([
+  const [cursos, parrafos, docs, vids] = await env.DB.batch([
     env.DB.prepare(`SELECT id, titulo, resumen, orden, publicado, video_id FROM cursos ${soloPublicados ? 'WHERE publicado = 1' : ''} ORDER BY orden, id`),
     env.DB.prepare('SELECT curso_id, texto FROM curso_parrafos ORDER BY curso_id, orden, id'),
     env.DB.prepare('SELECT curso_id, titulo, url FROM curso_documentos ORDER BY curso_id, orden, id'),
+    env.DB.prepare('SELECT curso_id, video_id, titulo, descripcion, documentos FROM curso_videos ORDER BY curso_id, orden, id'),
   ]);
   return cursos.results.map((c) => ({
     id: c.id,
@@ -159,18 +161,32 @@ async function listarCursos(env, soloPublicados) {
     video: c.video_id,
     texto: parrafos.results.filter((p) => p.curso_id === c.id).map((p) => p.texto),
     documentos: docs.results.filter((x) => x.curso_id === c.id).map((x) => ({ titulo: x.titulo, archivo: x.url })),
+    videos: vids.results.filter((x) => x.curso_id === c.id).map((x) => ({
+      video: x.video_id, titulo: x.titulo, descripcion: x.descripcion, documentos: documentosDeVideo(x.documentos),
+    })),
   }));
 }
 
+function documentosDeVideo(texto) {
+  try { const a = JSON.parse(texto); return Array.isArray(a) ? a : []; } catch (e) { return []; }
+}
+
+// Los videos convertidos en la nube (en_nube = 1) viven en un bucket público de R2 con dominio propio (VIDEOS_URL):
+// reproducirlos no gasta peticiones del Worker. Los demás son archivos estáticos de la aplicación.
+const formaVideo = (v, env) => {
+  const base = v.en_nube && env.VIDEOS_URL ? `${env.VIDEOS_URL.replace(/\/$/, '')}/${v.id}` : `media/videos/${v.id}`;
+  return { id: v.id, titulo: v.titulo, estado: v.estado, master: `${base}/master.m3u8`, poster: `${base}/poster.webp` };
+};
+
 async function listarVideos(env) {
-  const { results } = await env.DB.prepare(`SELECT id, titulo, estado FROM videos ORDER BY creado, id`).all();
-  return results.map((v) => ({
-    id: v.id,
-    titulo: v.titulo,
-    estado: v.estado,
-    master: `media/videos/${v.id}/master.m3u8`,
-    poster: `media/videos/${v.id}/poster.webp`,
-  }));
+  const { results } = await env.DB.prepare(`SELECT id, titulo, estado, en_nube FROM videos ORDER BY creado, id`).all();
+  return results.map((v) => formaVideo(v, env));
+}
+
+// Un video con la misma huella (mismo contenido) ya subido y sin error: se reutiliza, no se convierte otra vez.
+async function videoPorHuella(env, huella) {
+  const v = await env.DB.prepare(`SELECT id, titulo, estado, en_nube FROM videos WHERE huella = ? AND estado != 'error' ORDER BY creado LIMIT 1`).bind(huella).first();
+  return v ? formaVideo(v, env) : null;
 }
 
 async function listarTextos(env) {
@@ -193,6 +209,20 @@ function validarCurso(d) {
     if (!x || !cadena(x.titulo, 200, 1) || !cadena(x.archivo, 500, 1)) return 'Cada documento necesita título y archivo.';
     if (!URL_HTTP.test(x.archivo) && !RUTA_RELATIVA.test(x.archivo)) return 'Ruta de documento inválida.';
   }
+  if (d.videos !== undefined) {
+    if (!Array.isArray(d.videos) || d.videos.length > 20) return 'Videos inválidos (máx. 20).';
+    for (const v of d.videos) {
+      if (!v || !cadena(v.video, 200, 1)) return 'Cada video necesita su identificador.';
+      if (!cadena(v.titulo ?? '', 200)) return 'El título del video es demasiado largo (máx. 200).';
+      if (!cadena(v.descripcion ?? '', 2000)) return 'La descripción del video es demasiado larga (máx. 2000).';
+      const dv = v.documentos ?? [];
+      if (!Array.isArray(dv) || dv.length > 20) return 'Documentos de video inválidos.';
+      for (const x of dv) {
+        if (!x || !cadena(x.titulo, 200, 1) || !cadena(x.archivo, 500, 1)) return 'Cada documento de video necesita título y archivo.';
+        if (!URL_HTTP.test(x.archivo) && !RUTA_RELATIVA.test(x.archivo)) return 'Ruta de documento de video inválida.';
+      }
+    }
+  }
   return null;
 }
 
@@ -203,20 +233,41 @@ function slug(texto) {
 async function guardarCurso(env, usuario, id, d, nuevo) {
   const error_ = validarCurso(d);
   if (error_) return error(400, error_);
-  if (d.video) {
-    const v = await env.DB.prepare('SELECT id FROM videos WHERE id = ?').bind(d.video).first();
-    if (!v) return error(400, 'El video indicado no existe.');
-  }
   const existe = await env.DB.prepare('SELECT id FROM cursos WHERE id = ?').bind(id).first();
   if (nuevo && existe) return error(409, 'Ya existe un curso con ese identificador.');
   if (!nuevo && !existe) return error(404, 'Curso no encontrado.');
 
+  // Videos del curso. Con `videos` se reemplaza la lista completa; con el campo antiguo `video` (formularios en ventana)
+  // la lista no se toca si ese video ya era del curso.
+  let lista = null;
+  if (d.videos !== undefined) {
+    const visto = new Set();
+    lista = d.videos.filter((v) => !visto.has(v.video) && visto.add(v.video));
+  } else if (d.video) {
+    const previos = nuevo ? [] : (await env.DB.prepare('SELECT video_id FROM curso_videos WHERE curso_id = ?').bind(id).all()).results.map((x) => x.video_id);
+    if (!previos.includes(d.video)) lista = [{ video: d.video }];
+  } else {
+    lista = [];
+  }
+  const ids = lista ? lista.map((v) => v.video) : (d.video ? [d.video] : []);
+  const aProcesar = [];
+  const enNube = [];
+  for (const vid of ids) {
+    const v = await env.DB.prepare('SELECT id, estado, en_nube FROM videos WHERE id = ?').bind(vid).first();
+    if (!v) return error(400, 'Uno de los videos indicados no existe.');
+    if (v.estado === 'subido' || v.estado === 'error') {
+      aProcesar.push(vid);
+      if (v.en_nube) enNube.push(vid);
+    }
+  }
+  const principal = lista ? (lista[0]?.video ?? null) : (d.video ?? null);
+
   const sentencias = [
     nuevo
       ? env.DB.prepare('INSERT INTO cursos (id, titulo, resumen, orden, publicado, video_id) VALUES (?, ?, ?, ?, ?, ?)')
-          .bind(id, d.titulo.trim(), d.resumen ?? '', d.orden ?? 0, d.publicado === false ? 0 : 1, d.video ?? null)
+          .bind(id, d.titulo.trim(), d.resumen ?? '', d.orden ?? 0, d.publicado === false ? 0 : 1, principal)
       : env.DB.prepare(`UPDATE cursos SET titulo = ?, resumen = ?, orden = ?, publicado = ?, video_id = ?, actualizado = datetime('now') WHERE id = ?`) // SQLITE: datetime
-          .bind(d.titulo.trim(), d.resumen ?? '', d.orden ?? 0, d.publicado === false ? 0 : 1, d.video ?? null, id),
+          .bind(d.titulo.trim(), d.resumen ?? '', d.orden ?? 0, d.publicado === false ? 0 : 1, principal, id),
     env.DB.prepare('DELETE FROM curso_parrafos WHERE curso_id = ?').bind(id),
     env.DB.prepare('DELETE FROM curso_documentos WHERE curso_id = ?').bind(id),
   ];
@@ -224,10 +275,65 @@ async function guardarCurso(env, usuario, id, d, nuevo) {
     env.DB.prepare('INSERT INTO curso_parrafos (curso_id, orden, texto) VALUES (?, ?, ?)').bind(id, i + 1, t)));
   (d.documentos ?? []).forEach((x, i) => sentencias.push(
     env.DB.prepare('INSERT INTO curso_documentos (curso_id, orden, titulo, url) VALUES (?, ?, ?, ?)').bind(id, i + 1, x.titulo.trim(), x.archivo)));
+  if (lista) {
+    sentencias.push(env.DB.prepare('DELETE FROM curso_videos WHERE curso_id = ?').bind(id));
+    lista.forEach((v, i) => sentencias.push(
+      env.DB.prepare('INSERT INTO curso_videos (curso_id, video_id, orden, titulo, descripcion, documentos) VALUES (?, ?, ?, ?, ?, ?)')
+        .bind(id, v.video, i + 1, (v.titulo ?? '').trim(), (v.descripcion ?? '').trim(),
+          JSON.stringify((v.documentos ?? []).map((x) => ({ titulo: x.titulo.trim(), archivo: x.archivo }))))));
+  }
+  // La conversión empieza al guardar (no al subir), por si se sube un video equivocado.
+  aProcesar.forEach((vid) => sentencias.push(env.DB.prepare(`UPDATE videos SET estado = 'procesando' WHERE id = ?`).bind(vid)));
   sentencias.push(stmtAuditoria(env, usuario.id, nuevo ? 'crear' : 'editar', 'curso', id, d.titulo.trim()));
 
   await env.DB.batch(sentencias);
+
+  // Producción: la conversión la hace GitHub Actions. En local la hace convertidor-local.mjs (en_nube = 0).
+  const sinIniciar = [];
+  for (const vid of enNube) if (!(await dispararConversion(env, vid))) sinIniciar.push(vid);
+  if (sinIniciar.length) {
+    await env.DB.batch(sinIniciar.map((vid) => env.DB.prepare(`UPDATE videos SET estado = 'error' WHERE id = ?`).bind(vid)));
+    return json({ ok: true, id, aviso: 'El curso se guardó, pero no se pudo iniciar la conversión de un video. Guarda de nuevo para reintentar.' }, nuevo ? 201 : 200);
+  }
   return json({ ok: true, id }, nuevo ? 201 : 200);
+}
+
+// Pide a GitHub Actions que convierta el video (workflow_dispatch). Devuelve false si no pudo.
+async function dispararConversion(env, id) {
+  if (!env.GITHUB_TOKEN || !env.GITHUB_REPO) return false;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/convertir-video.yml/dispatches`, {
+      method: 'POST',
+      headers: {
+        authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        accept: 'application/vnd.github+json',
+        'x-github-api-version': '2022-11-28',
+        'user-agent': 'segpaciente-worker',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ ref: 'main', inputs: { video_id: id } }),
+    });
+    if (r.status !== 204) console.error('GitHub respondió', r.status, 'al iniciar la conversión de', id);
+    return r.status === 204;
+  } catch (e) {
+    console.error(e);
+    return false;
+  }
+}
+
+// Aviso de GitHub Actions al terminar. No usa sesión: exige el secreto compartido VIDEO_CALLBACK_SECRET.
+async function avisoConversion(request, env) {
+  const esperado = env.VIDEO_CALLBACK_SECRET;
+  const recibido = (request.headers.get('authorization') || '').replace(/^Bearer /, '');
+  if (!esperado || !recibido || !iguales(await sha256Hex(recibido), await sha256Hex(esperado))) return error(401, 'No autorizado.');
+  const d = await leerJson(request);
+  if (!d || typeof d.id !== 'string' || !/^[a-z0-9-]{1,120}$/.test(d.id) || !['listo', 'error'].includes(d.estado)) return error(400, 'Datos inválidos.');
+  const v = await env.DB.prepare('SELECT id, estado, en_nube FROM videos WHERE id = ?').bind(d.id).first();
+  if (!v || !v.en_nube) return error(404, 'Video no encontrado.');
+  if (v.estado !== 'procesando') return json({ ok: true, ignorado: true });
+  await env.DB.prepare('UPDATE videos SET estado = ? WHERE id = ?').bind(d.estado, d.id).run();
+  if (d.estado === 'listo') await env.MEDIA.delete(`entrada/${d.id}.mp4`); // el original ya no hace falta: libera cupo
+  return json({ ok: true });
 }
 
 async function rutasCursos(request, env, usuario, partes) {
@@ -456,6 +562,103 @@ async function cambiarClavePropia(request, env, usuario) {
   return json({ ok: true });
 }
 
+/* ---------- Archivos subidos (R2) ---------- */
+// Documentos de curso y videos originales. Los documentos se sirven desde /media/documentos/… (con sesión);
+// los videos van a entrada/ y se convierten a HLS al guardar el curso (GitHub Actions en producción, convertidor local en desarrollo).
+const TIPOS_DOC = {
+  pdf: 'application/pdf', doc: 'application/msword',
+  docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  xls: 'application/vnd.ms-excel', xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  ppt: 'application/vnd.ms-powerpoint', pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+  txt: 'text/plain; charset=utf-8', csv: 'text/csv; charset=utf-8', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg',
+};
+const MAX_DOC = 25 * 1024 * 1024;
+const MAX_VIDEO = 100 * 1024 * 1024; // tope de una solicitud en el plan gratuito de Workers
+// Tope propio de almacenamiento para no pasar de los 10 GB gratuitos de R2: originales + convertidos (≈ el doble).
+// Al llegar al tope las subidas se rechazan con un mensaje claro; nunca se genera un cobro.
+const CUPO_VIDEOS_BYTES = 4 * 1024 * 1024 * 1024;
+
+async function subirArchivo(request, env, usuario, url) {
+  const huella = (url.searchParams.get('huella') || '').toLowerCase();
+  if (huella && !/^[0-9a-f]{64}$/.test(huella)) return error(400, 'Huella inválida.');
+  // GET ?huella=… → ¿ya existe este video? (se consulta antes de subirlo)
+  if (request.method === 'GET') return json(huella ? await videoPorHuella(env, huella) : null);
+  if (request.method !== 'POST') return error(405, 'Método no permitido.');
+  const tipo = url.searchParams.get('tipo');
+  const nombre = (url.searchParams.get('nombre') || '').slice(0, 200);
+  const largo = Number(request.headers.get('content-length'));
+  if (!largo || !request.body) return error(411, 'Archivo vacío o sin tamaño.');
+  const m = nombre.match(/\.([A-Za-z0-9]{1,5})$/);
+  const ext = m ? m[1].toLowerCase() : '';
+  const base = nombre.replace(/\.[^.]*$/, '').trim();
+  const sufijo = crypto.randomUUID().slice(0, 8);
+
+  if (tipo === 'documento') {
+    if (!TIPOS_DOC[ext]) return error(400, 'Tipo de archivo no permitido. Usa PDF, Word, Excel, PowerPoint, TXT, CSV, PNG o JPG.');
+    if (largo > MAX_DOC) return error(413, 'El archivo supera los 25 MB.');
+    const clave = `documentos/${sufijo}-${slug(base)}.${ext}`;
+    await env.MEDIA.put(clave, request.body, { httpMetadata: { contentType: TIPOS_DOC[ext] } });
+    await env.DB.batch([stmtAuditoria(env, usuario.id, 'crear', 'documento', clave, nombre)]);
+    return json({ archivo: `media/${clave}`, titulo: base || 'Documento' }, 201);
+  }
+  if (tipo === 'video') {
+    if (ext !== 'mp4') return error(400, 'El video debe ser un archivo MP4.');
+    if (largo > MAX_VIDEO) return error(413, 'El video supera los 100 MB que admite esta versión de prueba.');
+    if (huella) {
+      const repetido = await videoPorHuella(env, huella);
+      if (repetido) return json({ ...repetido, repetido: true });
+    }
+    const nube = env.VIDEOS_URL ? 1 : 0;
+    if (nube) {
+      const { usado } = await env.DB.prepare(`SELECT COALESCE(SUM(bytes), 0) AS usado FROM videos WHERE en_nube = 1`).first();
+      if (usado + largo > CUPO_VIDEOS_BYTES) {
+        return error(507, 'Se alcanzó el cupo de almacenamiento gratuito para videos. Para subir otro hay que liberar espacio o ampliar el plan.');
+      }
+    }
+    const id = `${slug(base)}-${sufijo}`;
+    const titulo = (base || 'Video nuevo').slice(0, 200);
+    await env.MEDIA.put(`entrada/${id}.mp4`, request.body, { httpMetadata: { contentType: 'video/mp4' } });
+    await env.DB.batch([
+      env.DB.prepare(`INSERT INTO videos (id, titulo, estado, huella, en_nube, bytes) VALUES (?, ?, 'subido', ?, ?, ?)`).bind(id, titulo, huella || null, nube, largo),
+      stmtAuditoria(env, usuario.id, 'crear', 'video', id, titulo),
+    ]);
+    return json({ id, titulo, estado: 'subido' }, 201);
+  }
+  return error(400, 'Tipo de archivo desconocido.');
+}
+
+// Sirve un documento de R2 (solo con sesión). Si no está en R2, cae a los archivos estáticos.
+async function servirDocumento(request, env, ruta) {
+  let clave;
+  try { clave = decodeURIComponent(ruta.slice('/media/'.length)); } catch (e) { return error(400, 'Ruta inválida.'); }
+  if (clave.includes('..')) return error(400, 'Ruta inválida.');
+  const objeto = await env.MEDIA.get(clave);
+  if (!objeto) return env.ASSETS.fetch(request);
+  const cabeceras = new Headers({
+    'content-type': objeto.httpMetadata?.contentType || 'application/octet-stream',
+    'content-length': String(objeto.size),
+    'content-disposition': 'inline',
+    'x-content-type-options': 'nosniff',
+    'cache-control': 'private, max-age=300',
+  });
+  return new Response(request.method === 'HEAD' ? null : objeto.body, { headers: cabeceras });
+}
+
+// Descarta un video recién subido que no se guardó en ningún curso (el editor lo quitó o descartó los cambios).
+async function descartarVideoSubido(env, usuario, id) {
+  const v = await env.DB.prepare('SELECT id, titulo, estado FROM videos WHERE id = ?').bind(id).first();
+  if (!v) return error(404, 'Video no encontrado.');
+  if (v.estado !== 'subido') return error(409, 'Solo se pueden descartar videos que aún no se mandaron a convertir.');
+  const enUso = await env.DB.prepare('SELECT curso_id FROM curso_videos WHERE video_id = ? UNION SELECT id FROM cursos WHERE video_id = ?').bind(id, id).first();
+  if (enUso) return error(409, 'El video está asociado a un curso.');
+  await env.MEDIA.delete(`entrada/${id}.mp4`);
+  await env.DB.batch([
+    env.DB.prepare('DELETE FROM videos WHERE id = ?').bind(id),
+    stmtAuditoria(env, usuario.id, 'borrar', 'video', id, v.titulo),
+  ]);
+  return json({ ok: true });
+}
+
 /* ---------- Enrutador ---------- */
 const redirigir = (destino) => new Response(null, { status: 302, headers: { location: destino, 'cache-control': 'no-store' } });
 
@@ -478,11 +681,17 @@ export default {
         if (usuario && esLogin) return redirigir('/');
         return env.ASSETS.fetch(request);
       }
+      if (ruta.startsWith('/media/documentos/')) {
+        if (escritura) return error(405, 'Método no permitido.');
+        if (!(await usuarioActual(request, env))) return error(401, 'Inicia sesión.');
+        return await servirDocumento(request, env, ruta);
+      }
       if (!ruta.startsWith('/api/')) return env.ASSETS.fetch(request);
 
       const partes = ruta.replace(/^\/api\/?/, '').split('/').filter(Boolean);
       const recurso = partes.shift();
 
+      if (recurso === 'interno' && partes[0] === 'video' && request.method === 'POST') return await avisoConversion(request, env);
       if (escritura && !origenValido(request)) return error(403, 'Origen no permitido.');
       if (recurso === 'login' && request.method === 'POST') return await login(request, env);
       if (recurso === 'logout' && request.method === 'POST') return await logout(request, env);
@@ -509,7 +718,9 @@ export default {
       if (seccion === 'tarjetas') return await rutasTarjetas(request, env, usuario, partes);
       if (seccion === 'zonas' && request.method === 'GET') return json(Object.entries(ZONAS).map(([zona, nombre]) => ({ zona, nombre })));
       if (seccion === 'usuarios') return await rutasUsuarios(request, env, usuario, partes);
+      if (seccion === 'archivos') return await subirArchivo(request, env, usuario, url);
       if (seccion === 'videos' && request.method === 'GET') return json(await listarVideos(env));
+      if (seccion === 'videos' && request.method === 'DELETE' && partes[0]) return await descartarVideoSubido(env, usuario, partes[0]);
       return error(404, 'No encontrado.');
     } catch (e) {
       console.error(e);

@@ -27,6 +27,8 @@
   var docsLista = document.getElementById('curso-docs-lista');
   var video = document.getElementById('curso-video');
   var estado = document.getElementById('curso-estado');
+  var infoVideo = document.getElementById('curso-video-info');
+  var listaVideo = document.getElementById('curso-video-lista');
   if (!lista || !video) return;
 
   var cursos = {};
@@ -38,7 +40,9 @@
   var player = null;      // instancia única de Plyr (interfaz del reproductor)
   var cargado = false;    // ya se pidió el video del curso abierto
   var hls = null;
-  var videoActual = null; // video del curso abierto
+  var videoActual = null; // video del curso abierto que está en el reproductor
+  var videosCurso = [];   // videos del curso abierto (ya convertidos), con su título, descripción y documentos
+  var indiceVideo = 0;
   var sesion = 0;         // cambia con cada curso abierto o cerrado: descarta cargas viejas
 
   function pedirJson(url) {
@@ -141,18 +145,74 @@
     });
   }
 
-  function prepararVideo(curso) {
-    videoActual = videos[curso.video] || null;
-    var seccion = video.closest('.cv-player');
-    var rotulo = seccion.previousElementSibling; // "Video"
-    seccion.hidden = rotulo.hidden = !videoActual;
-    if (!videoActual) return;
+  // Videos del curso que ya están listos. Compatible con cursos que solo traen `video`.
+  function videosDe(curso) {
+    var items = (curso.videos && curso.videos.length) ? curso.videos : (curso.video ? [{ video: curso.video }] : []);
+    return items.filter(function (it) { return videos[it.video]; });
+  }
+
+  function pintarInfoVideo() {
+    infoVideo.textContent = '';
+    listaVideo.textContent = '';
+    var it = videosCurso[indiceVideo];
+    var docsVideo = (it && it.documentos) || [];
+    var conInfo = !!(it && (it.titulo || it.descripcion || docsVideo.length));
+    infoVideo.hidden = !conInfo;
+    if (conInfo) {
+      if (it.titulo) { var t = document.createElement('h4'); t.textContent = it.titulo; infoVideo.appendChild(t); }
+      if (it.descripcion) { var p = document.createElement('p'); p.textContent = it.descripcion; infoVideo.appendChild(p); }
+      if (docsVideo.length) {
+        var ul = document.createElement('ul');
+        ul.className = 'cv-video-docs';
+        docsVideo.forEach(function (doc) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = doc.archivo; a.target = '_blank'; a.rel = 'noopener';
+          a.textContent = '📄 ' + doc.titulo;
+          li.appendChild(a); ul.appendChild(li);
+        });
+        infoVideo.appendChild(ul);
+      }
+    }
+    listaVideo.hidden = videosCurso.length < 2;
+    if (videosCurso.length < 2) return;
+    videosCurso.forEach(function (item, i) {
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cv-video-item';
+      b.setAttribute('aria-current', i === indiceVideo ? 'true' : 'false');
+      var img = document.createElement('img');
+      img.src = videos[item.video].poster; img.alt = ''; img.loading = 'lazy';
+      var nombre = document.createElement('span');
+      nombre.textContent = item.titulo || ('Video ' + (i + 1));
+      b.append(img, nombre);
+      b.addEventListener('click', function () { if (i !== indiceVideo) elegirVideo(i, true); });
+      li.appendChild(b); listaVideo.appendChild(li);
+    });
+  }
+
+  function elegirVideo(i, reproducir) {
+    indiceVideo = i;
+    videoActual = videos[videosCurso[i].video];
+    if (reproducir) { sesion++; liberar(); }
     cargado = false;
     video.poster = videoActual.poster;
     if (player) {
       player.poster = videoActual.poster;
-      player.quality = 0; // cada curso arranca en Automática
+      player.quality = 0; // cada video arranca en Automática
     }
+    pintarInfoVideo();
+    if (reproducir) iniciarCarga();
+  }
+
+  function prepararVideo(curso) {
+    videosCurso = videosDe(curso);
+    var seccion = video.closest('.cv-player');
+    var rotulo = seccion.previousElementSibling; // "Video"
+    seccion.hidden = rotulo.hidden = videosCurso.length === 0;
+    if (!videosCurso.length) { videoActual = null; return; }
+    elegirVideo(0, false);
   }
 
   function abrirCurso(curso) {
@@ -327,6 +387,27 @@
       cargado = false;
     });
   }
+
+  /* ---------- Repintado desde el modo de edición ---------- */
+  // edicion.js (editores y admins) la llama tras guardar un curso, para verlo sin recargar la página.
+  function refrescar(curso, videosListos) {
+    (videosListos || []).forEach(function (v) { videos[v.id] = v; });
+    cursos[curso.id] = curso;
+    var tarjeta = [].filter.call(lista.querySelectorAll('.cv-curso'), function (t) { return t.dataset.id === curso.id; })[0];
+    if (tarjeta) {
+      tarjeta.querySelector('.cv-curso-titulo').textContent = curso.titulo;
+      tarjeta.querySelector('.cv-curso-resumen').textContent = curso.resumen || '';
+    }
+    if (!detalle.hidden && detalle.dataset.id === curso.id) {
+      sesion++;
+      liberar();
+      tituloDetalle.textContent = curso.titulo;
+      pintarTexto(curso);
+      pintarDocumentos(curso);
+      prepararVideo(curso);
+    }
+  }
+  window.SusanaCurso = { refrescar: refrescar };
 
   /* ---------- Eventos ---------- */
   lista.addEventListener('click', function (evento) {

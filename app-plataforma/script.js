@@ -36,7 +36,7 @@
       else enlace.removeAttribute('aria-current');
     });
 
-    crumb.textContent = titulo;
+    if (crumb) crumb.textContent = titulo;
     document.title = titulo + ' · Susana Segura';
     cerrarMenu();
 

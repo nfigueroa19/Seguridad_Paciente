@@ -20,8 +20,8 @@
   var ETIQUETA_ROL = { admin: 'Administrador/a', editor: 'Editor/a', usuario: 'Personal' };
 
   /* ---------- Estado ---------- */
-  var editando = true;
-  try { editando = localStorage.getItem('ss-edicion') !== '0'; } catch (e) { /* sin almacenamiento */ }
+  // Siempre se inicia con la edición desactivada: hay que activarla a propósito en cada visita.
+  var editando = false;
   var textosInfo = null; // clave → { valor, descripcion }
   var zonas = [];
   var objetivo = null;
@@ -45,8 +45,8 @@
   }
 
   document.addEventListener('pointerover', function (ev) {
-    if (!editando || !ev.target.closest) return;
-    if (ev.target.closest('.ss-modal') || ev.target.closest('#ss-barra')) return;
+    if (!editando || abierta || !ev.target.closest) return;
+    if (ev.target.closest('.ss-modal') || ev.target.closest('#ss-barra') || ev.target.closest('.ss-minibarra')) return;
     if (ev.target === lapiz) { clearTimeout(ocultar); return; }
     var el = ev.target.closest('[data-texto]');
     if (el) mostrarLapiz(el);
@@ -58,9 +58,22 @@
   });
   window.addEventListener('scroll', function () { lapiz.hidden = true; }, { passive: true });
   lapiz.addEventListener('click', function () {
-    if (objetivo) editarTexto(objetivo.getAttribute('data-texto'));
+    var el = objetivo;
     lapiz.hidden = true;
+    if (el) editarTexto(el.getAttribute('data-texto'), el);
   });
+
+  // Un clic directo sobre un texto que no es enlace ni botón también lo edita en su lugar.
+  // Mientras se edita, los clics dentro de ese texto no activan enlaces ni botones.
+  document.addEventListener('click', function (ev) {
+    if (!editando || !ev.target.closest) return;
+    if (ev.target.closest('.ss-en-edicion')) { ev.preventDefault(); ev.stopPropagation(); return; }
+    if (abierta || ev.target.closest('.ss-modal, #ss-barra, .ss-minibarra, .ss-armando, #ss-lapiz')) return;
+    var el = ev.target.closest('[data-texto]');
+    if (!el || el.closest('a, button')) return;
+    ev.preventDefault(); ev.stopPropagation();
+    editarTexto(el.getAttribute('data-texto'), el);
+  }, true);
 
   function cargarTextos() {
     if (textosInfo) return Promise.resolve(textosInfo);
@@ -71,30 +84,97 @@
     });
   }
 
-  function editarTexto(clave) {
+  /* =================== Edición en el mismo lugar =================== */
+  var abierta = null; // { foco() } — solo se edita una cosa a la vez
+
+  function hayAbierta() {
+    if (!abierta) return false;
+    avisar('Termina primero la edición que tienes abierta (Guardar o Cancelar).', false);
+    abierta.foco();
+    return true;
+  }
+
+  // Convierte un elemento en un campo de texto simple, sin formato, editable donde está.
+  function soloTexto(el) {
+    try { el.contentEditable = 'plaintext-only'; } catch (e) { /* se usa el respaldo */ }
+    if (el.contentEditable !== 'plaintext-only') el.contentEditable = 'true';
+    el.spellcheck = true;
+    el.addEventListener('paste', function (ev) {
+      ev.preventDefault();
+      var pegado = (ev.clipboardData || window.clipboardData).getData('text').replace(/\s*\n\s*/g, ' ');
+      document.execCommand('insertText', false, pegado);
+    });
+  }
+
+  function enfocar(el, seleccionarTodo) {
+    el.focus();
+    var sel = window.getSelection();
+    var rango = document.createRange();
+    rango.selectNodeContents(el);
+    if (!seleccionarTodo) rango.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(rango);
+  }
+
+  function editarTexto(clave, el) {
+    if (hayAbierta()) return;
     cargarTextos().then(function (info) {
       var t = info[clave];
       if (!t) return avisar('Este texto aún no se puede editar (no existe en la base de datos).', false);
-      var m = modal('Editar texto', 'ss-chico');
-      var campo = h('textarea', { maxlength: 5000, rows: t.valor.length > 90 ? 5 : 2 }); campo.value = t.valor;
-      var guardar = h('button', { class: 'btn', type: 'submit' }, 'Guardar');
-      var form = h('form', {},
-        h('label', {}, t.descripcion || clave, campo),
-        h('div', { class: 'ss-fila' }, guardar, h('button', { class: 'btn btn-outline', type: 'button', onclick: m.cerrar }, 'Cancelar')));
-      form.addEventListener('submit', function (ev) {
-        ev.preventDefault();
+      if (abierta) return;
+
+      var guardar = h('button', { type: 'button', class: 'ss-mb-guardar' }, 'Guardar');
+      var cancelar = h('button', { type: 'button' }, 'Cancelar');
+      var barra = h('div', { class: 'ss-minibarra', role: 'group', 'aria-label': 'Guardar el texto' },
+        guardar, cancelar, h('span', { class: 'ss-mb-ayuda' }, 'Enter guarda · Esc cancela'));
+      document.body.append(barra);
+      el.classList.add('ss-en-edicion');
+      soloTexto(el);
+
+      function ubicar() {
+        var r = el.getBoundingClientRect();
+        var alto = barra.offsetHeight;
+        var abajo = r.bottom + 8;
+        barra.style.left = Math.max(8, Math.min(r.left, window.innerWidth - barra.offsetWidth - 8)) + 'px';
+        barra.style.top = (abajo + alto > window.innerHeight - 8 ? Math.max(8, r.top - alto - 8) : abajo) + 'px';
+      }
+      function cerrar(restaurar) {
+        window.removeEventListener('scroll', ubicar, true);
+        window.removeEventListener('resize', ubicar);
+        el.removeEventListener('keydown', alTeclear);
+        el.removeAttribute('contenteditable');
+        el.classList.remove('ss-en-edicion');
+        barra.remove();
+        abierta = null;
+        if (restaurar) el.textContent = t.valor;
+      }
+      function alTeclear(ev) {
+        if (ev.key === 'Enter') { ev.preventDefault(); guardar.click(); }
+        else if (ev.key === 'Escape') { ev.preventDefault(); cancelar.click(); }
+      }
+
+      cancelar.addEventListener('click', function () { cerrar(true); });
+      guardar.addEventListener('click', function () {
+        var valor = el.textContent.replace(/\s*\n\s*/g, ' ').trim();
+        if (valor === t.valor) return cerrar(true);
+        if (!valor) return avisar('El texto no puede quedar vacío.', false);
         accion(guardar, function () {
-          return api('PUT', 'admin/textos/' + encodeURIComponent(clave), { valor: campo.value, descripcion: t.descripcion }).then(function () {
-            t.valor = campo.value;
-            var cambio = {}; cambio[clave] = campo.value;
+          return api('PUT', 'admin/textos/' + encodeURIComponent(clave), { valor: valor, descripcion: t.descripcion }).then(function () {
+            t.valor = valor;
+            var cambio = {}; cambio[clave] = valor;
+            cerrar(false);
             C.aplicarTextos(cambio);
             avisar('Texto guardado.');
-            m.cerrar();
           });
         });
       });
-      m.cuerpo.append(form);
-      campo.focus();
+
+      el.addEventListener('keydown', alTeclear);
+      window.addEventListener('scroll', ubicar, true);
+      window.addEventListener('resize', ubicar);
+      abierta = { foco: function () { el.focus(); } };
+      ubicar();
+      enfocar(el, true);
     }).catch(function (e) { avisar(e.message, false); });
   }
 
@@ -117,10 +197,16 @@
             art.classList.add('ss-oculta');
             art.prepend(h('span', { class: 'ss-insignia' }, 'Oculta'));
           }
-          art.append(lapizFijo('Editar tarjeta', function () { editarTarjeta(t, zona); }));
+          art.append(lapizFijo('Editar tarjeta', function () { if (!hayAbierta()) armarTarjeta(art, t, zona); }));
           return art;
         });
-        hijos.push(h('button', { type: 'button', class: 'ss-agregar', onclick: function () { editarTarjeta(null, zona); } }, '+ Agregar tarjeta'));
+        hijos.push(h('button', { type: 'button', class: 'ss-agregar', onclick: function (ev) {
+          if (hayAbierta()) return;
+          var boceto = h('article', { class: 'module-card ss-editable' });
+          ev.currentTarget.before(boceto);
+          ev.currentTarget.hidden = true;
+          armarTarjeta(boceto, null, zona);
+        } }, '+ Agregar tarjeta'));
         cont.replaceChildren.apply(cont, hijos);
         var visibles = propias.filter(function (t) { return t.publicado; }).length;
         document.querySelectorAll('[data-vacio="' + zona + '"]').forEach(function (a) { a.style.display = visibles ? 'none' : ''; });
@@ -132,60 +218,64 @@
     return (editando ? pintarTarjetasEdicion() : C.cargar()).catch(function (e) { avisar(e.message, false); });
   }
 
-  function editarTarjeta(tarjeta, zonaInicial) {
+  // Edita la tarjeta en su propio lugar: título, texto y botón se escriben sobre la tarjeta;
+  // lo demás (enlace, orden, visibilidad, zona) va en una tira justo debajo.
+  function armarTarjeta(art, tarjeta, zonaInicial) {
     var nueva = !tarjeta;
     var t = tarjeta || { zona: zonaInicial, orden: 0, icono: '', titulo: '', texto: '', boton: '', enlace: '', publicado: true };
-    if (nueva) {
-      // La tarjeta nueva va al final de su zona.
-      var otras = document.querySelectorAll('[data-zona="' + zonaInicial + '"] .module-card').length;
-      t.orden = otras + 1;
-    }
-    var m = modal(nueva ? 'Nueva tarjeta' : 'Editar tarjeta');
-    var zona = h('select', {}, zonas.map(function (z) { return h('option', { value: z.zona }, z.nombre); })); zona.value = t.zona;
-    var icono = h('input', { value: t.icono, maxlength: 16, placeholder: '🔎' });
-    var titulo = h('input', { value: t.titulo, maxlength: 200, required: true });
-    var texto = h('textarea', { maxlength: 1000 }); texto.value = t.texto;
-    var boton = h('input', { value: t.boton, maxlength: 60, placeholder: 'Entrar (vacío si no lleva botón)' });
+    // La tarjeta nueva va al final de su zona (el borrador ya cuenta como una .module-card).
+    if (nueva) t.orden = document.querySelectorAll('[data-zona="' + zonaInicial + '"] .module-card').length;
+
+    var icono = h('input', { class: 'ss-icono-in', value: t.icono, maxlength: 16, placeholder: '🔎', 'aria-label': 'Icono (un emoji)' });
+    var titulo = h('h3', { class: 'ss-campo', 'data-ph': 'Título de la tarjeta' }); titulo.textContent = t.titulo;
+    var texto = h('p', { class: 'ss-campo', 'data-ph': 'Texto (opcional)' }); texto.textContent = t.texto;
+    var boton = h('span', { class: 'btn btn-outline btn-sm ss-campo', 'data-ph': 'Texto del botón' }); boton.textContent = t.boton;
     var enlace = h('input', { value: t.enlace, maxlength: 500, list: 'ss-secciones', placeholder: '#conoce o https://…' });
     var orden = h('input', { type: 'number', value: String(t.orden) });
+    var zona = h('select', {}, zonas.map(function (z) { return h('option', { value: z.zona }, z.nombre); })); zona.value = t.zona;
     var publicado = h('input', { type: 'checkbox' }); publicado.checked = t.publicado;
-    var guardar = h('button', { class: 'btn', type: 'submit' }, 'Guardar');
+    var guardar = h('button', { class: 'btn btn-sm', type: 'button' }, 'Guardar');
+    var cancelar = h('button', { class: 'btn btn-outline btn-sm', type: 'button' }, 'Cancelar');
 
-    var form = h('form', {},
+    [titulo, texto, boton].forEach(function (campo) {
+      soloTexto(campo);
+      campo.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') ev.preventDefault(); });
+    });
+
+    var tira = h('div', { class: 'ss-tira' },
       h('datalist', { id: 'ss-secciones' }, SECCIONES.map(function (s) { return h('option', { value: s }); })),
-      h('label', {}, 'Dónde aparece', zona),
-      h('div', { class: 'ss-cols' }, h('label', {}, 'Icono (un emoji)', icono), h('label', {}, h('span', {}, 'Orden ', h('small', {}, '(1 va primero)')), orden)),
-      h('label', {}, 'Título', titulo),
-      h('label', {}, 'Texto', texto),
+      h('label', {}, 'El botón lleva a ', enlace),
       h('div', { class: 'ss-cols' },
-        h('label', {}, 'Texto del botón', boton),
-        h('label', {}, h('span', {}, 'A dónde lleva ', h('small', {}, '(#seccion o https://…)')), enlace)),
+        h('label', {}, 'Dónde aparece', zona),
+        h('label', {}, h('span', {}, 'Orden ', h('small', {}, '(1 va primero)')), orden)),
       h('label', { class: 'ss-check' }, publicado, 'Visible para todo el personal'),
-      h('div', { class: 'ss-fila' }, guardar,
-        h('button', { class: 'btn btn-outline', type: 'button', onclick: m.cerrar }, 'Cancelar'),
-        nueva ? null : h('button', {
-          class: 'btn btn-peligro ss-derecha', type: 'button',
-          onclick: function (e) {
-            if (!confirm('¿Borrar la tarjeta «' + t.titulo + '»? No se puede deshacer.\n(Si solo quieres quitarla de la vista, desmarca «Visible».)')) return;
-            accion(e.target, function () {
-              return api('DELETE', 'admin/tarjetas/' + t.id).then(function () { avisar('Tarjeta borrada.'); m.cerrar(); return refrescarTarjetas(); });
-            });
-          }
-        }, 'Borrar')));
+      h('div', { class: 'ss-fila' }, guardar, cancelar,
+        nueva ? null : h('button', { class: 'btn btn-peligro btn-sm ss-derecha', type: 'button', onclick: function (e) {
+          if (!confirm('¿Borrar la tarjeta «' + t.titulo + '»? No se puede deshacer.\n(Si solo quieres quitarla de la vista, desmarca «Visible».)')) return;
+          accion(e.target, function () {
+            return api('DELETE', 'admin/tarjetas/' + t.id).then(function () { abierta = null; avisar('Tarjeta borrada.'); return refrescarTarjetas(); });
+          });
+        } }, 'Borrar')));
 
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
+    art.classList.add('ss-armando');
+    art.replaceChildren(icono, titulo, texto, boton, tira);
+
+    cancelar.addEventListener('click', function () { abierta = null; refrescarTarjetas(); });
+    guardar.addEventListener('click', function () {
       var cuerpo = {
-        zona: zona.value, icono: icono.value.trim(), titulo: titulo.value.trim(), texto: texto.value.trim(),
-        boton: boton.value.trim(), enlace: enlace.value.trim(), orden: parseInt(orden.value, 10) || 0, publicado: publicado.checked
+        zona: zona.value, icono: icono.value.trim(), titulo: titulo.textContent.trim(), texto: texto.textContent.trim(),
+        boton: boton.textContent.trim(), enlace: enlace.value.trim(), orden: parseInt(orden.value, 10) || 0, publicado: publicado.checked
       };
+      if (!cuerpo.titulo) { avisar('La tarjeta necesita un título.', false); return titulo.focus(); }
       accion(guardar, function () {
         var p = nueva ? api('POST', 'admin/tarjetas', cuerpo) : api('PUT', 'admin/tarjetas/' + t.id, cuerpo);
-        return p.then(function () { avisar('Tarjeta guardada.'); m.cerrar(); return refrescarTarjetas(); });
+        return p.then(function () { abierta = null; avisar('Tarjeta guardada.'); return refrescarTarjetas(); });
       });
     });
-    m.cuerpo.append(form);
-    titulo.focus();
+
+    abierta = { foco: function () { titulo.focus(); } };
+    art.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    enfocar(titulo, false);
   }
 
   /* =================== Cursos =================== */
@@ -202,7 +292,7 @@
       var id = b.dataset.id;
       var env = h('div', { class: 'ss-envuelto' });
       b.replaceWith(env);
-      env.append(b, lapizFijo('Editar curso', function () { editarCurso(id); }));
+      env.append(b, lapizFijo('Editar curso', function () { editarCurso(id, true); }));
     });
   }
 
@@ -220,9 +310,9 @@
           h('span', { class: 'cv-curso-icono', 'aria-hidden': 'true' }, '📖'),
           h('span', { class: 'cv-curso-titulo' }, c.titulo),
           h('span', { class: 'cv-curso-resumen' }, c.resumen || ''));
-        return h('div', { class: 'ss-envuelto' }, tarjeta, lapizFijo('Editar curso', function () { editarCurso(c.id); }));
+        return h('div', { class: 'ss-envuelto' }, tarjeta, lapizFijo('Editar curso', function () { editarCurso(c.id, false); }));
       }));
-      grid.append(h('button', { type: 'button', class: 'ss-agregar', onclick: function () { editarCurso(null); } }, '+ Nuevo curso'));
+      grid.append(h('button', { type: 'button', class: 'ss-agregar', onclick: function () { editarCurso(null, true); } }, '+ Nuevo curso'));
       extraCursos.append(ocultos.length ? h('h3', { class: 'section-title ss-sep' }, 'Cursos ocultos y nuevos') : null, grid);
     }).catch(function (e) { avisar(e.message, false); });
   }
@@ -230,24 +320,26 @@
   function pintarBotonDetalle() {
     if (!detalle) return;
     if (!botonDetalle) {
-      botonDetalle = h('button', { type: 'button', class: 'btn btn-outline btn-sm ss-solo-edicion', onclick: function () { editarCurso(detalle.dataset.id); } }, '✏️ Editar este curso');
+      botonDetalle = h('button', { type: 'button', class: 'btn btn-outline btn-sm ss-solo-edicion', onclick: editarCursoEnLugar }, '✏️ Editar este curso');
       var titulo = document.getElementById('curso-detalle-titulo');
       if (titulo) titulo.after(botonDetalle);
     }
   }
 
-  function editarCurso(id) {
+  // breve = true: solo título, resumen y orden (desde la lista de cursos).
+  // breve = false: el curso completo (desde dentro del curso, o los cursos ocultos, que no se pueden abrir).
+  function editarCurso(id, breve) {
     Promise.all([api('GET', 'admin/cursos'), api('GET', 'admin/videos')]).then(function (r) {
       var curso = id ? r[0].filter(function (c) { return c.id === id; })[0] : null;
       if (id && !curso) return avisar('No se encontró el curso.', false);
-      formularioCurso(curso, r[1]);
+      formularioCurso(curso, r[1], !!breve);
     }).catch(function (e) { avisar(e.message, false); });
   }
 
-  function formularioCurso(curso, videos) {
+  function formularioCurso(curso, videos, breve) {
     var nuevo = !curso;
     var c = curso || { titulo: '', resumen: '', orden: 0, publicado: true, video: null, texto: [], documentos: [] };
-    var m = modal(nuevo ? 'Nuevo curso' : 'Editar curso', 'ss-ancho');
+    var m = modal(nuevo ? 'Nuevo curso' : 'Editar curso', breve ? 'ss-chico' : 'ss-ancho');
 
     var titulo = h('input', { value: c.titulo, maxlength: 200, required: true });
     var resumen = h('textarea', { maxlength: 500 }); resumen.value = c.resumen;
@@ -274,30 +366,41 @@
     c.documentos.forEach(agregarDoc);
 
     var guardar = h('button', { class: 'btn', type: 'submit' }, 'Guardar');
-    var form = h('form', {},
-      h('label', {}, 'Título', titulo),
-      h('label', {}, h('span', {}, 'Resumen ', h('small', {}, '(se ve en la tarjeta del curso)')), resumen),
-      h('div', { class: 'ss-cols' }, h('label', {}, 'Orden', orden), h('label', {}, 'Video', video)),
-      h('label', { class: 'ss-check' }, publicado, 'Publicado (visible para todo el personal)'),
-      h('h3', {}, 'Texto del curso'), listaTexto,
-      h('button', { class: 'btn btn-outline btn-sm', type: 'button', onclick: function () { agregarParrafo(); } }, '+ Párrafo'),
-      h('h3', { class: 'ss-sep' }, 'Documentos'), listaDocs,
-      h('button', { class: 'btn btn-outline btn-sm', type: 'button', onclick: function () { agregarDoc(); } }, '+ Documento'),
-      h('div', { class: 'ss-fila' }, guardar,
-        h('button', { class: 'btn btn-outline', type: 'button', onclick: m.cerrar }, 'Cancelar'),
-        nuevo ? null : h('button', {
-          class: 'btn btn-peligro ss-derecha', type: 'button',
-          onclick: function (e) {
-            if (!confirm('¿Borrar el curso «' + c.titulo + '»? No se puede deshacer.\n(Si solo quieres quitarlo de la vista, desmarca «Publicado».)')) return;
-            accion(e.target, function () {
-              return api('DELETE', 'admin/cursos/' + encodeURIComponent(c.id)).then(function () { avisar('Curso borrado.'); recargarConservandoVista(); });
-            });
-          }
-        }, 'Borrar curso')));
+    var botones = h('div', { class: 'ss-fila' }, guardar,
+      h('button', { class: 'btn btn-outline', type: 'button', onclick: m.cerrar }, 'Cancelar'),
+      (nuevo || breve) ? null : h('button', {
+        class: 'btn btn-peligro ss-derecha', type: 'button',
+        onclick: function (e) {
+          if (!confirm('¿Borrar el curso «' + c.titulo + '»? No se puede deshacer.\n(Si solo quieres quitarlo de la vista, desmarca «Publicado».)')) return;
+          accion(e.target, function () {
+            return api('DELETE', 'admin/cursos/' + encodeURIComponent(c.id)).then(function () { avisar('Curso borrado.'); recargarConservandoVista(); });
+          });
+        }
+      }, 'Borrar curso'));
+
+    var form = breve
+      ? h('form', {},
+          h('label', {}, 'Título', titulo),
+          h('label', {}, h('span', {}, 'Resumen ', h('small', {}, '(se ve en la tarjeta del curso)')), resumen),
+          h('label', {}, h('span', {}, 'Orden ', h('small', {}, '(1 va primero)')), orden),
+          botones)
+      : h('form', {},
+          h('label', {}, 'Título', titulo),
+          h('label', {}, h('span', {}, 'Resumen ', h('small', {}, '(se ve en la tarjeta del curso)')), resumen),
+          h('div', { class: 'ss-cols' }, h('label', {}, 'Orden', orden), h('label', {}, 'Video', video)),
+          h('label', { class: 'ss-check' }, publicado, 'Publicado (visible para todo el personal)'),
+          h('h3', {}, 'Texto del curso'), listaTexto,
+          h('button', { class: 'btn btn-outline btn-sm', type: 'button', onclick: function () { agregarParrafo(); } }, '+ Párrafo'),
+          h('h3', { class: 'ss-sep' }, 'Documentos'), listaDocs,
+          h('button', { class: 'btn btn-outline btn-sm', type: 'button', onclick: function () { agregarDoc(); } }, '+ Documento'),
+          botones);
 
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      var cuerpo = {
+      var cuerpo = breve ? {
+        titulo: titulo.value.trim(), resumen: resumen.value, orden: parseInt(orden.value, 10) || 0,
+        publicado: c.publicado, video: c.video || null, texto: c.texto, documentos: c.documentos
+      } : {
         titulo: titulo.value.trim(), resumen: resumen.value, orden: parseInt(orden.value, 10) || 0, publicado: publicado.checked,
         video: video.value || null,
         texto: [].map.call(listaTexto.querySelectorAll('textarea'), function (t) { return t.value.trim(); }).filter(Boolean),
@@ -312,6 +415,326 @@
     });
     m.cuerpo.append(form);
     titulo.focus();
+  }
+
+  /* =================== Curso: edición dentro del propio curso =================== */
+  var ETIQUETA_ESTADO = { subido: 'pendiente de convertir', procesando: 'procesando', listo: 'listo', error: 'con error' };
+
+  function nombreCorto(ruta) {
+    var ultimo = String(ruta || '').split('/').pop();
+    try { return decodeURIComponent(ultimo); } catch (e) { return ultimo; }
+  }
+
+  // Sube un archivo con barra de avance. tipo: 'documento' | 'video'.
+  function subirArchivo(tipo, archivo, alProgreso, huella) {
+    return new Promise(function (ok, fallo) {
+      var x = new XMLHttpRequest();
+      x.open('POST', '/api/admin/archivos?tipo=' + tipo + '&nombre=' + encodeURIComponent(archivo.name) + (huella ? '&huella=' + huella : ''));
+      x.setRequestHeader('content-type', 'application/octet-stream');
+      x.upload.onprogress = function (e) { if (e.lengthComputable) alProgreso(Math.round(e.loaded * 100 / e.total)); };
+      x.onload = function () {
+        var d = null;
+        try { d = JSON.parse(x.responseText); } catch (e) { /* sin cuerpo */ }
+        if (x.status === 401) return fallo(new Error('Tu sesión terminó. Inicia sesión de nuevo.'));
+        if (x.status >= 200 && x.status < 300) ok(d); else fallo(new Error((d && d.error) || 'Error ' + x.status));
+      };
+      x.onerror = function () { fallo(new Error('No se pudo subir el archivo. Revisa tu conexión.')); };
+      x.send(archivo);
+    });
+  }
+
+  // Panel típico de subida: arrastrar y soltar, o clic para elegir. opc: { icono, titulo, ayuda, aceptar, multiple, subir, alTerminar }
+  function zonaSubida(opc) {
+    var entrada = h('input', { type: 'file', accept: opc.aceptar, class: 'ss-drop-entrada', tabindex: '-1' });
+    entrada.hidden = true;
+    if (opc.multiple) entrada.multiple = true;
+    var estado = h('div', { class: 'ss-drop-estado', 'aria-live': 'polite' });
+    var zona = h('div', { class: 'ss-drop' + (opc.compacto ? ' ss-drop-compacto' : ''), tabindex: '0', role: 'button', 'aria-label': opc.titulo },
+      h('span', { class: 'ss-drop-ico', 'aria-hidden': 'true' }, opc.icono), h('strong', {}, opc.titulo), h('small', {}, opc.ayuda), entrada);
+
+    function procesar(archivos) {
+      var lista = [].slice.call(archivos);
+      if (!opc.multiple) lista = lista.slice(0, 1);
+      lista.forEach(function (f) {
+        var fila = h('div', { class: 'ss-drop-fila' }, f.name + ' · 0 %');
+        estado.append(fila);
+        opc.subir(f, function (p) { fila.textContent = f.name + ' · ' + p + ' %'; }).then(function (res) {
+          fila.remove();
+          opc.alTerminar(res, f);
+        }).catch(function (e) {
+          fila.textContent = f.name + ' — ' + e.message;
+          fila.classList.add('ss-error');
+          setTimeout(function () { fila.remove(); }, 7000);
+          avisar(e.message, false);
+        });
+      });
+    }
+
+    entrada.addEventListener('click', function (ev) { ev.stopPropagation(); });
+    entrada.addEventListener('change', function () { procesar(entrada.files); entrada.value = ''; });
+    zona.addEventListener('click', function () { entrada.click(); });
+    zona.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); entrada.click(); } });
+    ['dragenter', 'dragover'].forEach(function (n) {
+      zona.addEventListener(n, function (ev) { ev.preventDefault(); zona.classList.add('ss-drop-sobre'); });
+    });
+    zona.addEventListener('dragleave', function () { zona.classList.remove('ss-drop-sobre'); });
+    zona.addEventListener('drop', function (ev) {
+      ev.preventDefault();
+      zona.classList.remove('ss-drop-sobre');
+      if (ev.dataTransfer && ev.dataTransfer.files.length) procesar(ev.dataTransfer.files);
+    });
+    return h('div', { class: 'ss-drop-caja' }, zona, estado);
+  }
+
+  // Edita el curso abierto en su propio lugar: título, párrafos, documentos y video.
+  function editarCursoEnLugar() {
+    if (hayAbierta()) return;
+    var id = detalle.dataset.id;
+    Promise.all([api('GET', 'admin/cursos'), api('GET', 'admin/videos')]).then(function (r) {
+      var original = r[0].filter(function (c) { return c.id === id; })[0];
+      if (!original) return avisar('No se encontró el curso.', false);
+      if (abierta) return;
+      armarCurso(original, r[1]);
+    }).catch(function (e) { avisar(e.message, false); });
+  }
+
+  function armarCurso(original, listaVideos) {
+    listaVideos = listaVideos.slice();
+    var c = JSON.parse(JSON.stringify(original)); // copia de trabajo
+    var tituloEl = document.getElementById('curso-detalle-titulo');
+    var textoEl = document.getElementById('curso-texto');
+    var docsCaja = document.getElementById('curso-docs');
+    var docsUl = document.getElementById('curso-docs-lista');
+    var reproductor = detalle.querySelector('.cv-player');
+    var rotuloVideo = reproductor.previousElementSibling;
+    var extras = [];
+    var vigilantes = [];
+
+    /* --- Título --- */
+    tituloEl.classList.add('ss-campo');
+    tituloEl.setAttribute('data-ph', 'Título del curso');
+    soloTexto(tituloEl);
+    function sinEnter(ev) { if (ev.key === 'Enter') ev.preventDefault(); }
+    tituloEl.addEventListener('keydown', sinEnter);
+
+    /* --- Párrafos --- */
+    var listaParr = h('div', { class: 'ss-parrafos' });
+    function filaParrafo(t) {
+      var p = h('p', { class: 'ss-campo', 'data-ph': 'Escribe un párrafo…' });
+      p.textContent = t || '';
+      soloTexto(p);
+      var fila = h('div', { class: 'ss-par' }, p,
+        h('button', { type: 'button', class: 'ss-quitar', 'aria-label': 'Quitar este párrafo', title: 'Quitar este párrafo', onclick: function () { fila.remove(); } }, '✕'));
+      p.addEventListener('keydown', function (ev) {
+        if (ev.key !== 'Enter') return;
+        ev.preventDefault();
+        var nueva = filaParrafo('');
+        fila.after(nueva);
+        enfocar(nueva.querySelector('p'), false);
+      });
+      return fila;
+    }
+    c.texto.forEach(function (t) { listaParr.append(filaParrafo(t)); });
+    var agregarParr = h('button', { type: 'button', class: 'btn btn-outline btn-sm ss-mas', onclick: function () {
+      var nueva = filaParrafo(''); listaParr.append(nueva); enfocar(nueva.querySelector('p'), false);
+    } }, '+ Párrafo');
+    textoEl.replaceChildren(listaParr, agregarParr);
+
+    /* --- Documentos --- */
+    function filaDoc(d) {
+      var titulo = h('span', { class: 'ss-campo ss-doc-titulo', 'data-ph': 'Título del documento' });
+      titulo.textContent = d.titulo;
+      soloTexto(titulo);
+      titulo.addEventListener('keydown', sinEnter);
+      var li = h('li', { class: 'ss-doc' }, h('span', { 'aria-hidden': 'true' }, '📄'), titulo,
+        h('small', { class: 'ss-doc-archivo' }, nombreCorto(d.archivo)),
+        h('button', { type: 'button', class: 'ss-quitar', 'aria-label': 'Quitar este documento', title: 'Quitar este documento', onclick: function () { li.remove(); } }, '✕'));
+      li._doc = d; li._titulo = titulo;
+      return li;
+    }
+    docsCaja.hidden = false;
+    docsUl.replaceChildren.apply(docsUl, c.documentos.map(filaDoc));
+    var dropDocs = zonaSubida({
+      icono: '📎', titulo: 'Arrastra documentos aquí o haz clic para elegirlos',
+      ayuda: 'PDF, Word, Excel, PowerPoint, TXT, CSV, PNG o JPG · hasta 25 MB cada uno',
+      aceptar: '.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.png,.jpg,.jpeg', multiple: true,
+      subir: function (f, p) { return subirArchivo('documento', f, p); },
+      alTerminar: function (res) { docsUl.append(filaDoc({ titulo: res.titulo, archivo: res.archivo })); }
+    });
+    docsCaja.append(dropDocs);
+    extras.push(dropDocs);
+
+    /* --- Videos (puede haber varios; cada uno con título, descripción y documentos propios) --- */
+    var subidosAqui = {};            // videos subidos en esta edición: si no se guarda el curso, se descartan
+    var limpieza = Promise.resolve(); // borrados pendientes (para no cruzarlos con una subida nueva)
+    var NOTA_VIDEO = {
+      listo: 'Video listo.',
+      subido: 'Video subido. Se convertirá cuando guardes el curso.',
+      procesando: 'Convirtiendo el video… se verá en el curso cuando termine.',
+      error: 'Falló la conversión. Guarda el curso para reintentarla, o quita el video y sube otro.'
+    };
+    var EXT_DOCS = '.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.png,.jpg,.jpeg';
+    var fichas = [];
+    var cajaVideos = h('div', { class: 'ss-videos' });
+    function videoDe(id) { return listaVideos.filter(function (x) { return x.id === id; })[0]; }
+    function limpio(el) { return el.textContent.replace(/\s+/g, ' ').trim(); }
+    function descartarSubido(id) {
+      if (!subidosAqui[id]) return;
+      delete subidosAqui[id];
+      listaVideos = listaVideos.filter(function (x) { return x.id !== id; });
+      limpieza = limpieza.then(function () { return api('DELETE', 'admin/videos/' + encodeURIComponent(id)); }).catch(function () { /* queda sin usar */ });
+    }
+    function pintarEstadoFicha(f) {
+      var v = videoDe(f.it.video) || { id: f.it.video, estado: 'subido' };
+      var imagen = v.estado === 'listo' && v.poster
+        ? h('img', { class: 'ss-video-mini', src: v.poster, alt: 'Portada del video' })
+        : h('div', { class: 'ss-video-mini ss-video-espera', 'aria-hidden': 'true' }, '🎬');
+      f.cabeza.replaceChildren(imagen, h('span', { class: 'ss-video-nota', role: 'status' }, NOTA_VIDEO[v.estado] || ''), f.quitar);
+    }
+    function filaVideo(it) {
+      var tit = h('p', { class: 'ss-campo ss-video-tit', 'data-ph': 'Título del video (opcional)' }); tit.textContent = it.titulo || '';
+      var desc = h('p', { class: 'ss-campo', 'data-ph': 'Descripción del video (opcional)' }); desc.textContent = it.descripcion || '';
+      [tit, desc].forEach(function (campo) { soloTexto(campo); campo.addEventListener('keydown', sinEnter); });
+      var ul = h('ul', { class: 'ss-video-docs' });
+      (it.documentos || []).forEach(function (d) { ul.append(filaDoc(d)); });
+      var cabeza = h('div', { class: 'ss-video-cabeza' });
+      var f = { it: it, cabeza: cabeza, tit: tit, desc: desc, ul: ul };
+      f.quitar = h('button', { type: 'button', class: 'ss-quitar', 'aria-label': 'Quitar este video del curso', title: 'Quitar este video del curso', onclick: function () {
+        descartarSubido(it.video);
+        f.el.remove();
+        fichas.splice(fichas.indexOf(f), 1);
+      } }, '✕');
+      var dropDocsVideo = zonaSubida({
+        icono: '📎', titulo: 'Documentos de este video: arrastra o haz clic',
+        ayuda: 'PDF, Word, Excel, PowerPoint, TXT, CSV, PNG o JPG · hasta 25 MB cada uno',
+        aceptar: EXT_DOCS, multiple: true, compacto: true,
+        subir: function (a, p) { return subirArchivo('documento', a, p); },
+        alTerminar: function (res) { ul.append(filaDoc({ titulo: res.titulo, archivo: res.archivo })); }
+      });
+      f.el = h('div', { class: 'ss-video-ficha' }, cabeza, tit, desc, ul, dropDocsVideo);
+      pintarEstadoFicha(f);
+      return f;
+    }
+    function agregarFicha(it) { var f = filaVideo(it); fichas.push(f); cajaVideos.append(f.el); }
+    var inicial = (c.videos && c.videos.length) ? c.videos : (c.video ? [{ video: c.video, titulo: '', descripcion: '', documentos: [] }] : []);
+    inicial.forEach(agregarFicha);
+
+    // Huella del archivo: si ese mismo video ya se subió, se reutiliza y no se convierte otra vez.
+    function huellaDe(archivo) {
+      if (!window.crypto || !window.crypto.subtle) return Promise.resolve(null);
+      return archivo.arrayBuffer().then(function (b) { return window.crypto.subtle.digest('SHA-256', b); }).then(function (buf) {
+        return [].map.call(new Uint8Array(buf), function (n) { return ('0' + n.toString(16)).slice(-2); }).join('');
+      }).catch(function () { return null; });
+    }
+    var dropVideo = zonaSubida({
+      icono: '🎬', titulo: 'Arrastra un video MP4 aquí o haz clic para elegirlo',
+      ayuda: 'Solo MP4 · hasta 100 MB en esta versión de prueba · puedes agregar varios', aceptar: 'video/mp4,.mp4', multiple: true,
+      subir: function (f, p) {
+        return limpieza.then(function () { return huellaDe(f); }).then(function (huella) {
+          if (!huella) return subirArchivo('video', f, p);
+          return api('GET', 'admin/archivos?huella=' + huella).then(function (ya) {
+            if (ya) { ya.repetido = true; return ya; }
+            return subirArchivo('video', f, p, huella);
+          });
+        });
+      },
+      alTerminar: function (res) {
+        if (!videoDe(res.id)) listaVideos.push(res);
+        if (fichas.some(function (x) { return x.it.video === res.id; })) return avisar('Ese video ya está en este curso.', false);
+        if (res.repetido) avisar('Ese video ya estaba subido: se reutilizó sin convertirlo otra vez.');
+        else { subidosAqui[res.id] = true; avisar('Video subido. Se convertirá cuando guardes el curso.'); }
+        agregarFicha({ video: res.id, titulo: '', descripcion: '', documentos: [] });
+      }
+    });
+    var panelVideo = h('div', { class: 'ss-video-panel' }, cajaVideos, dropVideo);
+    rotuloVideo.after(panelVideo);
+    extras.push(panelVideo);
+    rotuloVideo.hidden = false;
+    reproductor.hidden = true;
+    // Mientras algún video del curso se convierte, se consulta su estado para mostrar cuándo queda listo.
+    var sondeo = setInterval(function () {
+      var hay = fichas.some(function (f) { var v = videoDe(f.it.video); return v && v.estado === 'procesando'; });
+      if (!hay) return;
+      api('GET', 'admin/videos').then(function (lista) { listaVideos = lista; fichas.forEach(pintarEstadoFicha); }).catch(function () { /* se reintenta */ });
+    }, 5000);
+
+    /* --- Barra de acciones --- */
+    var guardar = h('button', { type: 'button', class: 'ss-mb-guardar' }, 'Guardar curso');
+    var descartar = h('button', { type: 'button' }, 'Descartar cambios');
+    var visible = h('input', { type: 'checkbox' }); visible.checked = c.publicado;
+    var borrar = h('button', { type: 'button', class: 'ss-mb-peligro' }, 'Borrar curso');
+    var barra = h('div', { class: 'ss-minibarra ss-barra-curso', role: 'group', 'aria-label': 'Guardar el curso' },
+      guardar, descartar, h('label', { class: 'ss-mb-check' }, visible, 'Visible'), borrar);
+    document.body.append(barra);
+    document.body.classList.add('ss-curso-editando');
+    if (botonDetalle) botonDetalle.hidden = true;
+
+    function videosListos() { return listaVideos.filter(function (v) { return v.estado === 'listo'; }); }
+
+    function cerrar() {
+      tituloEl.classList.remove('ss-campo');
+      tituloEl.removeAttribute('data-ph');
+      tituloEl.removeAttribute('contenteditable');
+      tituloEl.removeEventListener('keydown', sinEnter);
+      extras.forEach(function (e) { e.remove(); });
+      vigilantes.forEach(function (v) { v.disconnect(); });
+      clearInterval(sondeo);
+      barra.remove();
+      document.body.classList.remove('ss-curso-editando');
+      if (botonDetalle) botonDetalle.hidden = false;
+      abierta = null;
+    }
+
+    descartar.addEventListener('click', function () {
+      Object.keys(subidosAqui).forEach(descartarSubido);
+      cerrar();
+      if (window.SusanaCurso) window.SusanaCurso.refrescar(original, videosListos());
+    });
+
+    guardar.addEventListener('click', function () {
+      var titulo = tituloEl.textContent.replace(/\s+/g, ' ').trim();
+      if (!titulo) { avisar('El curso necesita un título.', false); return tituloEl.focus(); }
+      var cuerpo = {
+        titulo: titulo, resumen: original.resumen, orden: original.orden, publicado: visible.checked,
+        videos: fichas.map(function (f) {
+          return { video: f.it.video, titulo: limpio(f.tit), descripcion: limpio(f.desc),
+            documentos: [].map.call(f.ul.querySelectorAll('li.ss-doc'), function (li) {
+              return { titulo: limpio(li._titulo) || nombreCorto(li._doc.archivo), archivo: li._doc.archivo };
+            }) };
+        }),
+        texto: [].map.call(listaParr.querySelectorAll('p'), function (p) { return p.textContent.trim(); }).filter(Boolean),
+        documentos: [].map.call(docsUl.querySelectorAll('li.ss-doc'), function (li) {
+          return { titulo: li._titulo.textContent.replace(/\s+/g, ' ').trim() || nombreCorto(li._doc.archivo), archivo: li._doc.archivo };
+        })
+      };
+      var aConvertir = fichas.some(function (f) { var v = videoDe(f.it.video); return !v || v.estado === 'subido' || v.estado === 'error'; });
+      accion(guardar, function () {
+        return api('PUT', 'admin/cursos/' + encodeURIComponent(original.id), cuerpo).then(function () {
+          subidosAqui = {}; // ya forman parte del curso
+          cerrar();
+          avisar(aConvertir ? 'Curso guardado. El video se está convirtiendo; aparecerá en el curso en unos minutos.' : 'Curso guardado.');
+          if (cuerpo.publicado !== original.publicado) return recargarConservandoVista(); // cambia la lista de cursos
+          var nuevo = { id: original.id, titulo: cuerpo.titulo, resumen: original.resumen, orden: original.orden, publicado: cuerpo.publicado,
+            video: cuerpo.videos.length ? cuerpo.videos[0].video : null, videos: cuerpo.videos, texto: cuerpo.texto, documentos: cuerpo.documentos };
+          if (window.SusanaCurso) window.SusanaCurso.refrescar(nuevo, videosListos());
+        });
+      });
+    });
+
+    borrar.addEventListener('click', function () {
+      if (!confirm('¿Borrar el curso «' + original.titulo + '»? No se puede deshacer.\n(Si solo quieres quitarlo de la vista, desmarca «Visible».)')) return;
+      accion(borrar, function () {
+        return api('DELETE', 'admin/cursos/' + encodeURIComponent(original.id)).then(function () { avisar('Curso borrado.'); recargarConservandoVista(); });
+      });
+    });
+
+    // Si se sale del curso (Volver, otra sección) con la edición abierta, se descartan los cambios.
+    var vigia = new MutationObserver(function () { if (detalle.hidden) descartar.click(); });
+    vigia.observe(detalle, { attributes: true, attributeFilter: ['hidden'] });
+    vigilantes.push(vigia);
+
+    abierta = { foco: function () { tituloEl.focus(); } };
+    enfocar(tituloEl, false);
   }
 
   // Los cursos los carga curso.js una sola vez: tras guardar se recarga la página (queda en la misma sección).
@@ -505,8 +928,9 @@
   }
   var barra = h('div', { id: 'ss-barra', role: 'toolbar', 'aria-label': 'Herramientas de edición' }, interruptor,
     esAdmin ? h('button', { type: 'button', class: 'ss-boton-barra', onclick: modalUsuarios }, '👥 Usuarios') : null);
-  document.body.append(barra);
-  document.body.classList.add('ss-con-barra');
+  var destino = document.querySelector('.topbar-right');
+  if (destino) destino.insertBefore(barra, destino.firstChild);
+  else { document.body.append(barra); document.body.classList.add('ss-con-barra'); }
 
   function aplicarModo() {
     document.body.classList.toggle('ss-editando', editando);
@@ -517,8 +941,8 @@
   }
 
   interruptor.addEventListener('click', function () {
+    if (hayAbierta()) return;
     editando = !editando;
-    try { localStorage.setItem('ss-edicion', editando ? '1' : '0'); } catch (e) { /* sin almacenamiento */ }
     aplicarModo();
   });
 

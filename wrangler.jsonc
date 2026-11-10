@@ -6,7 +6,7 @@
   "assets": {
     "directory": "./app-plataforma",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/", "/index.html", "/login", "/login.html", "/admin", "/admin/*"]
+    "run_worker_first": ["/api/*", "/", "/index.html", "/login", "/login.html", "/admin", "/admin/*", "/media/documentos/*"]
   },
   "d1_databases": [
     {
@@ -21,6 +21,10 @@
       "bucket_name": "segpaciente-media"
     }
   ],
+  "vars": {
+    "VIDEOS_URL": "https://videos-segpaciente.hosusana.com",
+    "GITHUB_REPO": "nfigueroa19/Seguridad_Paciente"
+  },
   "routes": [
     { "pattern": "segpaciente.hosusana.com", "custom_domain": true }
   ]
