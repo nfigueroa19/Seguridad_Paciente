@@ -1,0 +1,111 @@
+/* =====================================================================
+   SUSANA SEGURA — pantalla de ingreso
+   Mismos tokens de color, tipografía y formas que styles.css, para que
+   el login se sienta parte del aplicativo.
+   ===================================================================== */
+:root{
+  --verde:#2E7D5B; --verde-osc:#1F5C41; --verde-suave:#3F9E77; --verde-claro:#E8F5EE; --fondo:#F3FAF6;
+  --naranja:#F2994A; --naranja-osc:#D9782E; --naranja-claro:#FCEADA; --naranja-texto:#B84E07;
+  --rojo:#D64545; --rojo-claro:#FBE7E7;
+  --texto:#1F2A24; --texto-suave:#52605A; --borde:#DCEAE2;
+  --radio:16px; --radio-md:12px; --radio-sm:9px;
+  --sombra-md:0 8px 28px rgba(31,92,65,.14);
+  --fuente-texto:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fuente-titulos:'Poppins','Inter',system-ui,sans-serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--fuente-texto);font-size:16px;line-height:1.5;color:var(--texto);background:var(--fondo)}
+[hidden]{display:none !important}
+:focus-visible{outline:3px solid var(--naranja);outline-offset:3px}
+
+.login{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:100vh;min-height:100dvh}
+
+/* ---------- Panel de marca ---------- */
+.login-marca{
+  position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;
+  padding:48px clamp(28px,5vw,72px);color:#fff;
+  background:
+    radial-gradient(520px 420px at 108% -8%, rgba(242,153,74,.16), transparent 62%),
+    radial-gradient(480px 480px at -12% 108%, rgba(63,158,119,.55), transparent 60%),
+    linear-gradient(160deg,var(--verde-osc) 0%,#18503A 55%,#134230 100%);
+}
+.login-escudo{position:absolute;right:-90px;bottom:-60px;width:min(520px,90%);opacity:.09;pointer-events:none}
+.login-escudo path:first-child{fill:#fff}
+.login-escudo path:last-child{stroke:var(--verde-osc)}
+.login-marca-cont{position:relative;margin:auto 0}
+.login-logo{
+  display:grid;place-items:center;width:64px;height:64px;margin-bottom:22px;border-radius:18px;
+  background:var(--verde);color:var(--naranja);font-size:2rem;font-weight:700;
+  box-shadow:0 10px 30px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.14);
+}
+.login-marca h1{margin:0;font-family:var(--fuente-titulos);font-size:clamp(1.9rem,3.2vw,2.6rem);letter-spacing:.02em;line-height:1.1;color:#fff}
+.login-lema{margin:10px 0 34px;font-size:1.05rem;color:#A9CDB9}
+.login-lista{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.login-lista li{
+  display:flex;align-items:center;gap:14px;max-width:420px;padding:12px 16px;border-radius:var(--radio-md);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#E4F2EA;font-size:.95rem;
+  backdrop-filter:blur(2px);
+}
+.login-lista li span{display:grid;place-items:center;flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.12);font-size:1.15rem}
+.login-institucion{position:relative;margin:36px 0 0;font-size:.82rem;color:#A9CDB9}
+
+/* ---------- Panel del formulario ---------- */
+.login-panel{display:grid;place-items:center;padding:40px clamp(20px,5vw,64px);background:var(--fondo)}
+.login-tarjeta{
+  width:100%;max-width:420px;padding:36px 34px 30px;background:#fff;border:1px solid var(--borde);
+  border-radius:20px;box-shadow:var(--sombra-md);animation:subir .35s ease both;
+}
+@keyframes subir{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.login-cabecera{margin-bottom:24px}
+.login-etiqueta{
+  display:inline-flex;align-items:center;gap:6px;margin-bottom:14px;padding:5px 11px;border-radius:7px;
+  background:var(--verde-claro);color:var(--verde-osc);font-size:.76rem;font-weight:600;
+}
+.login-cabecera h2{margin:0 0 6px;font-family:var(--fuente-titulos);font-size:1.7rem;letter-spacing:-.02em;color:var(--verde-osc);line-height:1.15}
+.login-cabecera p{margin:0;color:var(--texto-suave);font-size:.95rem}
+
+.campo{margin-bottom:18px}
+.campo label{display:block;margin-bottom:7px;font-size:.84rem;font-weight:600;color:var(--texto)}
+.entrada{position:relative}
+.entrada-icono{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1rem;opacity:.75;pointer-events:none}
+.entrada input{
+  width:100%;height:50px;padding:0 64px 0 44px;border:1.5px solid var(--borde);border-radius:var(--radio-md);
+  background:#FBFDFC;color:var(--texto);font:inherit;font-size:1rem;transition:border-color .15s, box-shadow .15s, background-color .15s;
+}
+.entrada input:hover{border-color:#BFD8CB}
+.entrada input:focus{outline:none;border-color:var(--verde);background:#fff;box-shadow:0 0 0 4px rgba(46,125,91,.16)}
+.entrada.invalida input{border-color:var(--rojo)}
+.ver-clave{
+  position:absolute;right:8px;top:50%;transform:translateY(-50%);padding:7px 11px;border:0;border-radius:8px;
+  background:transparent;color:var(--verde);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;
+}
+.ver-clave:hover{background:var(--verde-claro)}
+
+.login-error{
+  margin:0 0 16px;padding:11px 14px;border-radius:var(--radio-sm);border:1px solid #F1C4C4;
+  background:var(--rojo-claro);color:#9B2C2C;font-size:.88rem;font-weight:500;
+}
+.login-boton{
+  width:100%;height:52px;border:0;border-radius:var(--radio-md);background:var(--naranja);color:var(--texto);
+  font:inherit;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 6px 16px rgba(217,120,46,.28);
+  transition:background-color .15s, transform .1s, box-shadow .15s;
+}
+.login-boton:hover{background:var(--naranja-osc)}
+.login-boton:active{transform:scale(.985)}
+.login-boton:disabled{opacity:.65;cursor:wait}
+.login-ayuda{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--borde);font-size:.8rem;color:var(--texto-suave);text-align:center}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width:860px){
+  .login{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .login-marca{padding:26px 24px 30px;flex-direction:row;align-items:center;gap:16px}
+  .login-marca-cont{display:flex;align-items:center;gap:16px;margin:0}
+  .login-logo{width:48px;height:48px;margin:0;border-radius:14px;font-size:1.5rem}
+  .login-marca h1{font-size:1.25rem}
+  .login-lema{margin:2px 0 0;font-size:.85rem}
+  .login-lista,.login-institucion,.login-escudo{display:none}
+  .login-panel{align-items:start;padding:28px 18px 40px}
+  .login-tarjeta{padding:28px 22px 24px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important}}

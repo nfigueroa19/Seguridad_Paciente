@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Ingresar · Susana Segura</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232E7D5B'/%3E%3Cpath d='M50 18 L78 30 V50 C78 68 66 82 50 88 C34 82 22 68 22 50 V30 Z' fill='%23F2994A'/%3E%3Cpath d='M38 52 L46 60 L64 40' stroke='white' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./login.css">
+<script src="./login.js" defer></script>
+</head>
+<body>
+<main class="login">
+
+  <!-- Marca -->
+  <section class="login-marca" aria-label="Susana Segura">
+    <svg class="login-escudo" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <path d="M50 8 L88 24 V50 C88 74 72 90 50 98 C28 90 12 74 12 50 V24 Z"/>
+      <path d="M33 52 L45 64 L68 38" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="login-marca-cont">
+      <div class="login-logo" aria-hidden="true">✚</div>
+      <h1>SUSANA SEGURA</h1>
+      <p class="login-lema">Seguridad del Paciente · HSLV</p>
+      <ul class="login-lista">
+        <li><span aria-hidden="true">📖</span> Aprende los fundamentos con el curso</li>
+        <li><span aria-hidden="true">🎮</span> Practica con juegos y simulaciones</li>
+        <li><span aria-hidden="true">🧭</span> Detecta riesgos y decide con criterio</li>
+      </ul>
+    </div>
+    <p class="login-institucion">Hospital Susana López de Valencia E.S.E.</p>
+  </section>
+
+  <!-- Formulario -->
+  <section class="login-panel">
+    <div class="login-tarjeta">
+      <div class="login-cabecera">
+        <span class="login-etiqueta">🔒 Acceso privado</span>
+        <h2>Bienvenido/a</h2>
+        <p>Ingresa con tu usuario y clave para continuar.</p>
+      </div>
+
+      <form id="f-login" novalidate>
+        <div class="campo">
+          <label for="usuario">Usuario</label>
+          <div class="entrada">
+            <span class="entrada-icono" aria-hidden="true">👤</span>
+            <input id="usuario" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required autofocus>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="clave">Clave</label>
+          <div class="entrada">
+            <span class="entrada-icono" aria-hidden="true">🔑</span>
+            <input id="clave" name="clave" type="password" autocomplete="current-password" required>
+            <button class="ver-clave" type="button" id="ver-clave" aria-label="Mostrar la clave" aria-pressed="false">Ver</button>
+          </div>
+        </div>
+
+        <p class="login-error" id="error" role="alert" hidden></p>
+
+        <button class="login-boton" type="submit" id="entrar">Entrar</button>
+      </form>
+
+      <p class="login-ayuda">¿Olvidaste tu clave o no tienes usuario? Solicítalo al equipo administrador de la plataforma.</p>
+    </div>
+  </section>
+
+</main>
+<noscript><p style="padding:16px">Activa JavaScript para iniciar sesión.</p></noscript>
+</body>
+</html>
