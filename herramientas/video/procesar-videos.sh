@@ -48,6 +48,9 @@ done
 [ -f "$HLSC" ] || { echo "Error: no se encuentra $HLSC" >&2; exit 1; }
 [ -d "$ENTRADA" ] || { echo "Error: no existe la carpeta de entrada $ENTRADA" >&2; exit 1; }
 mkdir -p "$SALIDA"
+# Rutas absolutas: el transcodificado cambia de carpeta (cd "$tmp") y una ruta relativa dejaría de apuntar a su destino.
+ENTRADA="$(cd "$ENTRADA" && pwd)"
+SALIDA="$(cd "$SALIDA" && pwd)"
 
 # ---------- utilidades ----------
 slug() {
