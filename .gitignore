@@ -1,0 +1,3 @@
+# Estado local de Wrangler (D1 local, caché)
+.wrangler/
+node_modules/
