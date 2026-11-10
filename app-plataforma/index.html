@@ -11,8 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./vendor/plyr/plyr.css">
 <link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="./sesion.css">
 <link rel="stylesheet" href="./juegos/neumonia-cero/neumonia-cero.css">
 <script src="./script.js" defer></script>
+<script src="./contenido.js" defer></script>
+<script src="./sesion.js" defer></script>
 <script src="./curso.js" defer></script>
 <script src="./juegos/neumonia-cero/neumonia-cero.js" defer></script>
 </head>
@@ -25,40 +28,40 @@
   <aside class="sidebar" id="sidebar" aria-label="Barra lateral">
     <a class="sidebar-brand" href="#inicio">
       <span class="sidebar-brand-logo" aria-hidden="true">✚</span>
-      <span class="sidebar-brand-txt"><b>SUSANA SEGURA</b><small>Seguridad del Paciente · HSLV</small></span>
+      <span class="sidebar-brand-txt"><b data-texto="barra.marca">SUSANA SEGURA</b><small data-texto="barra.submarca">Seguridad del Paciente · HSLV</small></span>
     </a>
 
     <nav aria-label="Navegación principal">
-      <p class="sidebar-label">Mi aprendizaje</p>
+      <p data-texto="barra.grupo1" class="sidebar-label">Mi aprendizaje</p>
       <div class="sidebar-nav">
-        <a href="#inicio" class="active" aria-current="page"><span class="nav-icon" aria-hidden="true">🏠</span>Inicio</a>
-        <a href="#curso"><span class="nav-icon" aria-hidden="true">📖</span>Curso</a>
-        <a href="#conoce"><span class="nav-icon" aria-hidden="true">🔎</span>Conoce</a>
-        <a href="#simula"><span class="nav-icon" aria-hidden="true">🎮</span>Simula</a>
-        <a href="#detecta"><span class="nav-icon" aria-hidden="true">🧭</span>Detecta</a>
-        <a href="#aprende"><span class="nav-icon" aria-hidden="true">🎓</span>Aprende</a>
+        <a href="#inicio" class="active" aria-current="page"><span data-texto="barra.inicio.icono" class="nav-icon" aria-hidden="true">🏠</span><span data-texto="barra.inicio.nombre" data-vista="inicio">Inicio</span></a>
+        <a href="#curso"><span data-texto="barra.curso.icono" class="nav-icon" aria-hidden="true">📖</span><span data-texto="barra.curso.nombre" data-vista="curso">Curso</span></a>
+        <a href="#conoce"><span data-texto="barra.conoce.icono" class="nav-icon" aria-hidden="true">🔎</span><span data-texto="barra.conoce.nombre" data-vista="conoce">Conoce</span></a>
+        <a href="#simula"><span data-texto="barra.simula.icono" class="nav-icon" aria-hidden="true">🎮</span><span data-texto="barra.simula.nombre" data-vista="simula">Simula</span></a>
+        <a href="#detecta"><span data-texto="barra.detecta.icono" class="nav-icon" aria-hidden="true">🧭</span><span data-texto="barra.detecta.nombre" data-vista="detecta">Detecta</span></a>
+        <a href="#aprende"><span data-texto="barra.aprende.icono" class="nav-icon" aria-hidden="true">🎓</span><span data-texto="barra.aprende.nombre" data-vista="aprende">Aprende</span></a>
       </div>
 
-      <p class="sidebar-label">Mi cuenta</p>
+      <p data-texto="barra.grupo2" class="sidebar-label">Mi cuenta</p>
       <div class="sidebar-nav">
-        <a href="#perfil"><span class="nav-icon" aria-hidden="true">👤</span>Perfil</a>
+        <a href="#perfil"><span data-texto="barra.perfil.icono" class="nav-icon" aria-hidden="true">👤</span><span data-texto="barra.perfil.nombre" data-vista="perfil">Perfil</span></a>
       </div>
 
-      <p class="sidebar-label">Administración</p>
+      <p data-texto="barra.grupo3" class="sidebar-label">Administración</p>
       <div class="sidebar-nav">
-        <a href="#admin"><span class="nav-icon" aria-hidden="true">🛠️</span>Panel Admin</a>
+        <a href="#admin"><span data-texto="barra.admin.icono" class="nav-icon" aria-hidden="true">🛠️</span><span data-texto="barra.admin.nombre" data-vista="admin">Panel Admin</span></a>
       </div>
     </nav>
 
     <div class="sidebar-progress">
-      <div class="sidebar-progress-head"><b>Tu progreso</b><b>0%</b></div>
+      <div class="sidebar-progress-head"><b data-texto="barra.progreso.titulo">Tu progreso</b><b>0%</b></div>
       <div class="progress" role="progressbar" aria-label="Progreso del curso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span style="width:0%"></span></div>
-      <p>Tu avance en el curso aparecerá aquí.</p>
+      <p data-texto="barra.progreso.texto">Tu avance en el curso aparecerá aquí.</p>
     </div>
 
     <div class="sidebar-bottom">
-      <span>🔒 Acceso privado</span>
-      <p>Hospital Susana López de Valencia E.S.E.</p>
+      <span data-texto="barra.acceso">🔒 Acceso privado</span>
+      <p data-texto="barra.institucion">Hospital Susana López de Valencia E.S.E.</p>
     </div>
   </aside>
   <div class="sidebar-backdrop" data-action="close-menu" aria-hidden="true"></div>
@@ -71,11 +74,11 @@
         <span class="crumb">Susana Segura <span aria-hidden="true">/</span> <b id="crumb-actual">Inicio</b></span>
       </div>
       <div class="topbar-right">
-        <span class="private-label">🔒 Prototipo privado</span>
+        <span data-texto="superior.prototipo" class="private-label">🔒 Prototipo privado</span>
         <div class="user-chip">
           <span class="user-chip-avatar" aria-hidden="true">US</span>
-          <span class="user-chip-txt"><b>Nombre del usuario</b><small>Cargo</small></span>
-          <button class="btn-link" type="button">Salir</button>
+          <span class="user-chip-txt"><b>Usuario</b><small>Personal</small></span>
+          <button data-texto="superior.salir" class="btn-link" type="button">Salir</button>
         </div>
       </div>
     </header>
@@ -86,29 +89,29 @@
       <section class="view" id="view-inicio" data-title="Inicio">
         <div class="heading">
           <div>
-            <div class="eyebrow">Inicio</div>
-            <h1>Hola</h1>
-            <p class="sub">Este es tu avance en la ruta de Seguridad del Paciente.</p>
+            <div data-texto="inicio.etiqueta" class="eyebrow">Inicio</div>
+            <h1 data-texto="inicio.titulo">Hola</h1>
+            <p data-texto="inicio.subtitulo" class="sub">Este es tu avance en la ruta de Seguridad del Paciente.</p>
           </div>
         </div>
 
         <div class="stats">
-          <div class="stat"><span class="stat-icon" aria-hidden="true">📖</span><div><span>Curso</span><b>—</b></div></div>
-          <div class="stat"><span class="stat-icon" aria-hidden="true">🎮</span><div><span>Juegos jugados</span><b>—</b></div></div>
-          <div class="stat"><span class="stat-icon" aria-hidden="true">🎯</span><div><span>Necesidades de refuerzo</span><b>—</b></div></div>
+          <div class="stat"><span class="stat-icon" aria-hidden="true">📖</span><div><span data-texto="inicio.indicador1">Curso</span><b>—</b></div></div>
+          <div class="stat"><span class="stat-icon" aria-hidden="true">🎮</span><div><span data-texto="inicio.indicador2">Juegos jugados</span><b>—</b></div></div>
+          <div class="stat"><span class="stat-icon" aria-hidden="true">🎯</span><div><span data-texto="inicio.indicador3">Necesidades de refuerzo</span><b>—</b></div></div>
         </div>
 
         <div class="resume">
           <span class="resume-icon" aria-hidden="true">📖</span>
           <div>
-            <h2>Comienza por el Curso de Seguridad del Paciente</h2>
-            <p>Antes de jugar y practicar, completa el curso introductorio.</p>
+            <h2 data-texto="inicio.banner.titulo">Comienza por el Curso de Seguridad del Paciente</h2>
+            <p data-texto="inicio.banner.texto">Antes de jugar y practicar, completa el curso introductorio.</p>
           </div>
-          <a class="btn btn-acento" href="#curso">Ir al curso</a>
+          <a data-texto="inicio.banner.boton" class="btn btn-acento" href="#curso">Ir al curso</a>
         </div>
 
-        <h2 class="section-title">Explora la plataforma</h2>
-        <div class="cards">
+        <h2 data-texto="inicio.explora" class="section-title">Explora la plataforma</h2>
+        <div class="cards" data-zona="inicio-modulos">
           <article class="module-card">
             <span class="module-card-icon" aria-hidden="true">🔎</span>
             <h3>Conoce</h3>
@@ -139,28 +142,28 @@
       <!-- ---------- Curso ---------- -->
       <section class="view" id="view-curso" data-title="Curso" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Curso</div>
-          <h1>📖 Curso de Seguridad del Paciente</h1>
-          <p class="sub">Contenidos introductorios obligatorios antes de practicar en la plataforma.</p>
+          <div data-texto="curso.etiqueta" class="eyebrow">Curso</div>
+          <h1 data-texto="curso.titulo">📖 Curso de Seguridad del Paciente</h1>
+          <p data-texto="curso.subtitulo" class="sub">Contenidos introductorios obligatorios antes de practicar en la plataforma.</p>
         </div></div>
         <div class="cv" id="curso-cursos">
           <!-- Lista de cursos -->
           <div id="curso-lista-vista">
-            <h2 class="section-title">Cursos</h2>
+            <h2 data-texto="curso.lista" class="section-title">Cursos</h2>
             <p class="cv-aviso" id="curso-aviso" role="status">Cargando cursos…</p>
             <div class="cv-grid" id="curso-lista"></div>
           </div>
 
           <!-- Detalle de un curso -->
           <article id="curso-detalle" hidden>
-            <button class="btn btn-outline btn-sm cv-volver" type="button" data-curso="volver">← Volver a los cursos</button>
+            <button data-texto="curso.volver" class="btn btn-outline btn-sm cv-volver" type="button" data-curso="volver">← Volver a los cursos</button>
             <h2 class="cv-detalle-titulo" id="curso-detalle-titulo" tabindex="-1"></h2>
             <div class="panel cv-texto" id="curso-texto"></div>
             <div class="cv-docs" id="curso-docs" hidden>
-              <h3 class="section-title">Documentos</h3>
+              <h3 data-texto="curso.documentos" class="section-title">Documentos</h3>
               <ul id="curso-docs-lista"></ul>
             </div>
-            <h3 class="section-title">Video</h3>
+            <h3 data-texto="curso.video" class="section-title">Video</h3>
             <div class="cv-player">
               <div class="cv-video-marco">
                 <video id="curso-video" playsinline preload="none"></video>
@@ -174,40 +177,41 @@
       <!-- ---------- Conoce ---------- -->
       <section class="view" id="view-conoce" data-title="Conoce" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Conoce</div>
-          <h1>🔎 Conoce</h1>
-          <p class="sub">Consulta rápida de los conceptos esenciales de Seguridad del Paciente.</p>
+          <div data-texto="conoce.etiqueta" class="eyebrow">Conoce</div>
+          <h1 data-texto="conoce.titulo">🔎 Conoce</h1>
+          <p data-texto="conoce.subtitulo" class="sub">Consulta rápida de los conceptos esenciales de Seguridad del Paciente.</p>
         </div></div>
-        <div class="panel empty-state">
+        <div class="cards" data-zona="conoce"></div>
+        <div class="panel empty-state" data-vacio="conoce">
           <div class="empty-state-icon" aria-hidden="true">🚧</div>
-          <h2>Sección en maquetación</h2>
-          <p>El contenido de esta sección se integrará en una fase posterior.</p>
+          <h2 data-texto="conoce.aviso.titulo">Sección en maquetación</h2>
+          <p data-texto="conoce.aviso.texto">El contenido de esta sección se integrará en una fase posterior.</p>
         </div>
       </section>
 
       <!-- ---------- Simula ---------- -->
       <section class="view" id="view-simula" data-title="Simula" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Simula</div>
-          <h1>🎮 Simula</h1>
-          <p class="sub">Juegos interactivos que representan los lineamientos de Seguridad del Paciente.</p>
+          <div data-texto="simula.etiqueta" class="eyebrow">Simula</div>
+          <h1 data-texto="simula.titulo">🎮 Simula</h1>
+          <p data-texto="simula.subtitulo" class="sub">Juegos interactivos que representan los lineamientos de Seguridad del Paciente.</p>
         </div></div>
 
         <div id="simula-catalogo">
-          <h2 class="section-title">Juegos disponibles</h2>
+          <h2 data-texto="simula.juegos" class="section-title">Juegos disponibles</h2>
           <div class="game-grid">
             <article class="game-card">
               <img class="game-card-cover" src="./juegos/neumonia-cero/assets/img/portada.webp" alt="Habitación hospitalaria con cama, ventilador y monitor: Misión Neumonía Cero" width="1100" height="733" loading="lazy">
               <div class="game-card-body">
-                <span class="game-card-tag">Prevención de NACS</span>
-                <h3>Neumonía Cero</h3>
-                <p>Resuelve casos clínicos contra el reloj y aplica el Bundle institucional para prevenir la neumonía asociada al cuidado de la salud.</p>
+                <span data-texto="juego.neumonia.etiqueta" class="game-card-tag">Prevención de NACS</span>
+                <h3 data-texto="juego.neumonia.titulo">Neumonía Cero</h3>
+                <p data-texto="juego.neumonia.descripcion">Resuelve casos clínicos contra el reloj y aplica el Bundle institucional para prevenir la neumonía asociada al cuidado de la salud.</p>
                 <ul class="game-card-meta">
-                  <li>🧩 9 retos</li>
-                  <li>⏱️ 30 s por reto</li>
-                  <li>🔊 Con sonido</li>
+                  <li data-texto="juego.neumonia.dato1">🧩 9 retos</li>
+                  <li data-texto="juego.neumonia.dato2">⏱️ 30 s por reto</li>
+                  <li data-texto="juego.neumonia.dato3">🔊 Con sonido</li>
                 </ul>
-                <button class="btn btn-acento" type="button" data-action="abrir-neumonia-cero">▶ Jugar</button>
+                <button data-texto="juego.neumonia.boton" class="btn btn-acento" type="button" data-action="abrir-neumonia-cero">▶ Jugar</button>
               </div>
             </article>
           </div>
@@ -219,55 +223,59 @@
       <!-- ---------- Detecta ---------- -->
       <section class="view" id="view-detecta" data-title="Detecta" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Detecta</div>
-          <h1>🧭 Detecta</h1>
-          <p class="sub">Observa la situación, identifica el riesgo y decide la conducta segura.</p>
+          <div data-texto="detecta.etiqueta" class="eyebrow">Detecta</div>
+          <h1 data-texto="detecta.titulo">🧭 Detecta</h1>
+          <p data-texto="detecta.subtitulo" class="sub">Observa la situación, identifica el riesgo y decide la conducta segura.</p>
         </div></div>
-        <div class="panel empty-state">
+        <div class="cards" data-zona="detecta"></div>
+        <div class="panel empty-state" data-vacio="detecta">
           <div class="empty-state-icon" aria-hidden="true">🚧</div>
-          <h2>Sección en maquetación</h2>
-          <p>El contenido de esta sección se integrará en una fase posterior.</p>
+          <h2 data-texto="detecta.aviso.titulo">Sección en maquetación</h2>
+          <p data-texto="detecta.aviso.texto">El contenido de esta sección se integrará en una fase posterior.</p>
         </div>
       </section>
 
       <!-- ---------- Aprende ---------- -->
       <section class="view" id="view-aprende" data-title="Aprende" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Aprende</div>
-          <h1>🎓 Aprende</h1>
-          <p class="sub">Mis cursos y paquetes educativos asignados según tus resultados en los juegos.</p>
+          <div data-texto="aprende.etiqueta" class="eyebrow">Aprende</div>
+          <h1 data-texto="aprende.titulo">🎓 Aprende</h1>
+          <p data-texto="aprende.subtitulo" class="sub">Mis cursos y paquetes educativos asignados según tus resultados en los juegos.</p>
         </div></div>
-        <div class="panel empty-state">
+        <div class="cards" data-zona="aprende"></div>
+        <div class="panel empty-state" data-vacio="aprende">
           <div class="empty-state-icon" aria-hidden="true">🚧</div>
-          <h2>Sección en maquetación</h2>
-          <p>El contenido de esta sección se integrará en una fase posterior.</p>
+          <h2 data-texto="aprende.aviso.titulo">Sección en maquetación</h2>
+          <p data-texto="aprende.aviso.texto">El contenido de esta sección se integrará en una fase posterior.</p>
         </div>
       </section>
 
       <!-- ---------- Perfil ---------- -->
       <section class="view" id="view-perfil" data-title="Perfil" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Mi cuenta</div>
-          <h1>👤 Mi perfil</h1>
+          <div data-texto="perfil.etiqueta" class="eyebrow">Mi cuenta</div>
+          <h1 data-texto="perfil.titulo">👤 Mi perfil</h1>
         </div></div>
-        <div class="panel empty-state">
+        <div class="cards" data-zona="perfil"></div>
+        <div class="panel empty-state" data-vacio="perfil">
           <div class="empty-state-icon" aria-hidden="true">🚧</div>
-          <h2>Sección en maquetación</h2>
-          <p>El contenido de esta sección se integrará en una fase posterior.</p>
+          <h2 data-texto="perfil.aviso.titulo">Sección en maquetación</h2>
+          <p data-texto="perfil.aviso.texto">El contenido de esta sección se integrará en una fase posterior.</p>
         </div>
       </section>
 
       <!-- ---------- Panel Admin ---------- -->
       <section class="view" id="view-admin" data-title="Panel Admin" hidden>
         <div class="heading"><div>
-          <div class="eyebrow">Administración</div>
-          <h1>🛠️ Panel administrativo</h1>
-          <p class="sub">Gestión de participantes, brechas, capacitación, reevaluación y evidencia.</p>
+          <div data-texto="admin.etiqueta" class="eyebrow">Administración</div>
+          <h1 data-texto="admin.titulo">🛠️ Panel administrativo</h1>
+          <p data-texto="admin.subtitulo" class="sub">Gestión de participantes, brechas, capacitación, reevaluación y evidencia.</p>
         </div></div>
-        <div class="panel empty-state">
+        <div class="cards" data-zona="panel-admin"></div>
+        <div class="panel empty-state" data-vacio="panel-admin">
           <div class="empty-state-icon" aria-hidden="true">🚧</div>
-          <h2>Sección en maquetación</h2>
-          <p>El contenido de esta sección se integrará en una fase posterior.</p>
+          <h2 data-texto="admin.aviso.titulo">Sección en maquetación</h2>
+          <p data-texto="admin.aviso.texto">El contenido de esta sección se integrará en una fase posterior.</p>
         </div>
       </section>
 

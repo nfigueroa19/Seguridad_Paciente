@@ -1,0 +1,78 @@
+/* Modo de edición (solo editores y administradores). Usa los tokens de styles.css. */
+
+/* ---------- Lápiz flotante sobre textos ---------- */
+.ss-lapiz{
+  position:fixed; z-index:60; width:28px; height:28px; padding:0; border:2px solid var(--blanco); border-radius:50%;
+  background:var(--naranja); font-size:.8rem; line-height:1; box-shadow:0 3px 10px rgba(20,40,30,.3);
+  transition:transform .12s, background-color .12s;
+}
+.ss-lapiz:hover{background:var(--naranja-osc); transform:scale(1.1);}
+.ss-lapiz[hidden]{display:none;}
+body.ss-editando [data-texto]{cursor:text;}
+body.ss-editando [data-texto]:hover{outline:2px dashed var(--naranja); outline-offset:3px; border-radius:4px;}
+.sidebar [data-texto]:hover{outline-color:#FFD2A6;}
+
+/* ---------- Lápiz fijo (tarjetas y cursos) ---------- */
+.ss-editable,.ss-envuelto{position:relative;}
+.ss-envuelto{display:flex;}
+.ss-envuelto > .cv-curso{flex:1; min-width:0;}
+.ss-lapiz-fijo{
+  position:absolute; top:10px; right:10px; z-index:2; width:30px; height:30px; padding:0; border:2px solid var(--blanco);
+  border-radius:50%; background:var(--naranja); font-size:.82rem; line-height:1; box-shadow:0 3px 10px rgba(20,40,30,.28);
+  transition:transform .12s, background-color .12s;
+}
+.ss-lapiz-fijo:hover{background:var(--naranja-osc); transform:scale(1.1);}
+body:not(.ss-editando) .ss-lapiz-fijo,body:not(.ss-editando) .ss-solo-edicion,body:not(.ss-editando) .ss-extra-cursos{display:none;}
+.ss-solo-edicion{display:none;}
+body.ss-editando .ss-solo-edicion{display:inline-flex; margin:0 0 14px;}
+
+/* ---------- Tarjetas ocultas y botón de agregar ---------- */
+.ss-oculta{opacity:.6; border-style:dashed !important;}
+.ss-insignia{
+  align-self:flex-start; padding:2px 9px; border-radius:20px; background:var(--naranja-claro); color:var(--naranja-texto);
+  font-size:.7rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+}
+.ss-agregar{
+  display:grid; place-items:center; min-height:120px; padding:18px; border:2px dashed #BFD8CB; border-radius:14px;
+  background:transparent; color:var(--verde); font:inherit; font-weight:600; transition:background-color .15s, border-color .15s;
+}
+.ss-agregar:hover{background:var(--verde-claro); border-color:var(--verde);}
+.ss-extra-cursos{margin-top:18px;}
+.ss-sep{margin-top:22px;}
+
+/* ---------- Barra inferior ---------- */
+body.ss-con-barra{padding-bottom:76px;}
+#ss-barra{
+  position:fixed; left:50%; bottom:16px; z-index:90; transform:translateX(-50%); display:flex; gap:8px; padding:8px;
+  border-radius:999px; background:var(--verde-osc); box-shadow:0 10px 30px rgba(20,40,30,.35);
+}
+#ss-barra button{
+  padding:9px 16px; border:0; border-radius:999px; background:rgba(255,255,255,.12); color:var(--blanco);
+  font:inherit; font-size:.85rem; font-weight:600; white-space:nowrap;
+}
+#ss-barra button:hover{background:rgba(255,255,255,.22);}
+#ss-barra .ss-interruptor[aria-pressed="true"]{background:var(--naranja); color:var(--texto);}
+#ss-barra .ss-interruptor[aria-pressed="true"]:hover{background:var(--naranja-osc);}
+@media (max-width:720px){#ss-barra{bottom:10px; max-width:96vw;} #ss-barra button{padding:9px 12px; font-size:.8rem;}}
+
+/* ---------- Formularios de curso ---------- */
+.ss-modal h3{margin:20px 0 8px; font-size:1rem;}
+.ss-bloque{display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start; margin:8px 0; padding:10px; border:1px solid var(--borde); border-radius:var(--radio-md); background:#FAFDFB;}
+.ss-bloque textarea{flex:1; min-width:200px; margin-top:0;}
+.ss-bloque .ss-cols{flex:1; min-width:260px;}
+.ss-bloque label{margin-bottom:0;}
+
+/* ---------- Usuarios ---------- */
+.ss-nota{margin:6px 0 12px; font-size:.82rem; color:var(--texto-suave);}
+.ss-ok{margin:10px 0 6px; font-weight:700; color:var(--verde-osc);}
+.ss-usuarios{display:grid; gap:8px; margin-bottom:16px;}
+.ss-usuario{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; padding:10px 14px; border:1px solid var(--borde); border-radius:var(--radio-md);}
+.ss-usuario-nombre{font-weight:600;}
+.ss-usuario-acc{display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+.ss-usuario-acc select{width:auto; margin:0; padding:6px 10px;}
+.ss-inactivo{opacity:.65; background:#FAFAFA;}
+.ss-insignia-i{margin-left:8px; padding:2px 9px; border-radius:20px; background:var(--rojo-claro); color:var(--rojo); font-size:.7rem; font-weight:700;}
+.ss-detalles{margin-top:12px; padding:4px 14px; border:1px solid var(--borde); border-radius:var(--radio-md);}
+.ss-detalles summary{padding:10px 0; font-weight:600; cursor:pointer;}
+.ss-detalles form{padding-bottom:14px;}
+.ss-omitidos{margin:8px 0 0; padding-left:18px; font-size:.84rem; color:var(--rojo);}

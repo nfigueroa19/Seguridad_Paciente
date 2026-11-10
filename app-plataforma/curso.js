@@ -48,6 +48,17 @@
     });
   }
 
+  // Primero la API de contenido (lo que editan en /admin); si no responde o no es JSON válido,
+  // el archivo estático de respaldo.
+  function pedirConRespaldo(api, respaldo) {
+    return fetch(api, { cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .catch(function () { return pedirJson(respaldo); });
+  }
+
   /* ---------- Lista de cursos ---------- */
   function crearTarjeta(curso) {
     var boton = document.createElement('button');
@@ -83,7 +94,7 @@
     aviso.hidden = false;
     aviso.textContent = 'Cargando cursos…';
 
-    Promise.all([pedirJson(CURSOS), pedirJson(CATALOGO)])
+    Promise.all([pedirConRespaldo('/api/cursos', CURSOS), pedirConRespaldo('/api/videos', CATALOGO)])
       .then(function (r) {
         var items = r[0];
         r[1].forEach(function (v) { videos[v.id] = v; });
@@ -148,6 +159,7 @@
     sesion++;
     liberar();
     tituloDetalle.textContent = curso.titulo;
+    detalle.dataset.id = curso.id; // lo usa el modo de edición (edicion.js) para saber qué curso editar
     pintarTexto(curso);
     pintarDocumentos(curso);
     prepararVideo(curso);
