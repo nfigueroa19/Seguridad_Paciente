@@ -552,7 +552,7 @@
       titulo.textContent = d.titulo;
       soloTexto(titulo);
       titulo.addEventListener('keydown', sinEnter);
-      var li = h('li', { class: 'ss-doc' }, h('span', { 'aria-hidden': 'true' }, '📄'), titulo,
+      var li = h('li', { class: 'ss-doc' }, (window.SusanaRico ? window.SusanaRico.iconoArchivo(d.archivo) : h('span', { 'aria-hidden': 'true' }, '📄')), titulo,
         h('small', { class: 'ss-doc-archivo' }, nombreCorto(d.archivo)),
         h('button', { type: 'button', class: 'ss-quitar', 'aria-label': 'Quitar este documento', title: 'Quitar este documento', onclick: function () { li.remove(); } }, '✕'));
       li._doc = d; li._titulo = titulo;

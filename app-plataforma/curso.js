@@ -140,7 +140,8 @@
       a.href = doc.archivo;
       a.target = '_blank';
       a.rel = 'noopener';
-      a.textContent = '📄 ' + doc.titulo;
+      if (window.SusanaRico) a.append(window.SusanaRico.iconoArchivo(doc.archivo));
+      a.append(document.createTextNode(doc.titulo));
       li.appendChild(a);
       docsLista.appendChild(li);
     });
@@ -173,7 +174,8 @@
           var li = document.createElement('li');
           var a = document.createElement('a');
           a.href = doc.archivo; a.target = '_blank'; a.rel = 'noopener';
-          a.textContent = '📄 ' + doc.titulo;
+          if (window.SusanaRico) a.append(window.SusanaRico.iconoArchivo(doc.archivo));
+          a.append(document.createTextNode(doc.titulo));
           li.appendChild(a); ul.appendChild(li);
         });
         infoVideo.appendChild(ul);

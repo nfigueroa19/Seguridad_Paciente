@@ -45,7 +45,7 @@ dialog.visor::backdrop { background: rgba(20, 30, 25, .6); }
 .visor-docx, .visor-pptx { margin: 0 auto; }
 .visor-docx .docx-wrapper { background: transparent !important; padding: 0 !important; }
 .visor-docx .docx-wrapper > section.docx { margin: 0 auto 12px !important; box-shadow: 0 1px 6px rgba(0, 0, 0, .2); max-width: 100%; overflow-x: auto; }
-.visor-pptx .pptx-preview-wrapper { max-width: 100%; margin: 0 auto; background: transparent !important; }
+.visor-pptx .pptx-preview-wrapper { width: 100% !important; overflow-x: hidden !important; max-width: 100%; margin: 0 auto; background: transparent !important; }
 
 /* Hojas de cálculo */
 .visor-pestanas { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
@@ -64,3 +64,11 @@ dialog.visor::backdrop { background: rgba(20, 30, 25, .6); }
   dialog.visor { width: 100vw; height: 100dvh; border-radius: 0; border: 0; }
   .visor-cuerpo { padding: 6px; }
 }
+
+/* Icono del tipo de archivo en la barra */
+.visor-icono{flex:none; display:inline-flex;}
+.visor-icono .ss-tipo{margin-right:0;}
+
+/* Hueco de página de PDF mientras se dibuja */
+.visor-pagina-vacia { display: flex; align-items: center; justify-content: center; }
+.visor-pagina-num { color: var(--texto-suave); font-size: .9rem; }

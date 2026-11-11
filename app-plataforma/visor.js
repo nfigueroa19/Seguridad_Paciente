@@ -56,17 +56,18 @@
   }
 
   /* ---------- Ventana ---------- */
-  var dlg, cuerpo, titulo, enlaceDescarga, estado, previoFoco, sesion = 0, urlsTemporales = [];
+  var dlg, cuerpo, titulo, iconoBarra, enlaceDescarga, estado, previoFoco, sesion = 0, urlsTemporales = [];
 
   function armar() {
     if (dlg) return;
     titulo = h('h2', { id: 'visor-titulo', class: 'visor-titulo' });
+    iconoBarra = h('span', { class: 'visor-icono' });
     enlaceDescarga = h('a', { class: 'btn btn-outline btn-sm visor-descarga', download: '' }, '⬇ Descargar');
     var cerrar = h('button', { type: 'button', class: 'btn btn-outline btn-sm visor-cerrar', 'aria-label': 'Cerrar visor' }, '✕ Cerrar');
     estado = h('p', { class: 'visor-estado', role: 'status', 'aria-live': 'polite' });
     cuerpo = h('div', { class: 'visor-cuerpo', tabindex: '0' });
     dlg = h('dialog', { class: 'visor', 'aria-labelledby': 'visor-titulo' }, [
-      h('div', { class: 'visor-barra' }, [titulo, enlaceDescarga, cerrar]),
+      h('div', { class: 'visor-barra' }, [iconoBarra, titulo, enlaceDescarga, cerrar]),
       estado, cuerpo
     ]);
     document.body.appendChild(dlg);
@@ -107,6 +108,8 @@
     var mia = ++sesion;
     limpiar();
     titulo.textContent = nombre || decodeURIComponent(url.split(/[?#]/)[0].split('/').pop());
+    iconoBarra.textContent = '';
+    if (window.SusanaRico) iconoBarra.append(window.SusanaRico.iconoArchivo(url));
     enlaceDescarga.href = url;
     enlaceDescarga.setAttribute('download', titulo.textContent);
     previoFoco = document.activeElement;
@@ -150,16 +153,15 @@
     }).then(function (pdf) {
       if (mia !== sesion) return pdf.destroy();
       var ancho = Math.max(280, Math.min(cuerpo.clientWidth - 24, 1000));
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       var marcos = [];
-      var cola = Promise.resolve();
       var vistas = new IntersectionObserver(function (items) {
         items.forEach(function (it) {
           if (!it.isIntersecting) return;
           vistas.unobserve(it.target);
-          cola = cola.then(function () { return pintarPagina(it.target); });
+          pintarPagina(it.target);
         });
-      }, { root: cuerpo, rootMargin: '600px 0px' });
+      }, { root: cuerpo, rootMargin: '1500px 0px' });
 
       function pintarPagina(marco) {
         if (mia !== sesion || marco._hecho) return;
@@ -169,22 +171,28 @@
           var lienzo = h('canvas', {});
           lienzo.width = Math.floor(vp.width * dpr); lienzo.height = Math.floor(vp.height * dpr);
           lienzo.style.width = vp.width + 'px'; lienzo.style.height = vp.height + 'px';
-          marco.style.height = ''; marco.textContent = '';
+          marco.style.height = ''; marco.textContent = ''; marco.classList.remove('visor-pagina-vacia');
           marco.append(lienzo);
           return pg.render({ canvasContext: lienzo.getContext('2d'), viewport: vp, transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : null }).promise;
         }).catch(function (e) { console.error('[visor] página', marco._n, e); });
       }
 
-      var p1 = pdf.getPage(1).then(function (pg) {
-        var v = pg.getViewport({ scale: 1 });
-        var alto = Math.round(ancho * v.height / v.width);
-        for (var i = 1; i <= pdf.numPages; i++) {
-          var m = h('div', { class: 'visor-pagina', 'aria-label': 'Página ' + i + ' de ' + pdf.numPages });
-          m._n = i; m.style.width = ancho + 'px'; m.style.height = alto + 'px';
+      // Se reserva el hueco de CADA página con su tamaño real (hay PDFs con páginas apaisadas)
+      // y un rótulo, para que se vea que el documento tiene todas sus páginas.
+      var n = pdf.numPages;
+      var tam = [];
+      for (var k = 1; k <= n; k++) tam.push(pdf.getPage(k).then(function (pg) { var v = pg.getViewport({ scale: 1 }); return v.height / v.width; }, function () { return 1.414; }));
+      return Promise.all(tam).then(function (rel) {
+        if (mia !== sesion) return;
+        estado.textContent = 'Documento de ' + n + (n === 1 ? ' página' : ' páginas') + '. Desplázate para verlas todas.';
+        for (var i = 1; i <= n; i++) {
+          var m = h('div', { class: 'visor-pagina visor-pagina-vacia', 'aria-label': 'Página ' + i + ' de ' + n }, h('span', { class: 'visor-pagina-num' }, 'Página ' + i + ' de ' + n));
+          m._n = i; m.style.width = ancho + 'px'; m.style.height = Math.round(ancho * rel[i - 1]) + 'px';
           marcos.push(m); cuerpo.append(m); vistas.observe(m);
         }
+        var nota = h('p', { class: 'visor-nota' }, 'Fin del documento · ' + n + (n === 1 ? ' página' : ' páginas'));
+        cuerpo.append(nota);
       });
-      return p1;
     });
   }
 
@@ -250,8 +258,9 @@
       if (mia !== sesion) return;
       var lib = window.pptxPreview;
       if (!lib) throw new Error('El visor de presentaciones no se cargó.');
-      var ancho = Math.max(280, Math.min(cuerpo.clientWidth - 24, 960));
+      var ancho = Math.max(260, Math.min(cuerpo.clientWidth - 48, 960));
       var caja = h('div', { class: 'visor-pptx' });
+      caja.style.width = (ancho + 20) + 'px'; // sitio para la barra de desplazamiento interna
       cuerpo.append(caja);
       var alto = Math.max(240, cuerpo.clientHeight - 24);
       var visor = lib.init(caja, { width: ancho, height: alto, mode: 'list' });
@@ -277,7 +286,9 @@
     var a = e.target.closest && e.target.closest('a[href]');
     if (!a || a.hasAttribute('download') || !esDocumentoPrivado(a)) return;
     e.preventDefault();
-    abrir(a.href, (a.textContent || '').replace(/^[^\p{L}\p{N}]+/u, '').trim());
+    var copia = a.cloneNode(true);
+    [].forEach.call(copia.querySelectorAll('.ss-tipo'), function (n) { n.remove(); });
+    abrir(a.href, (copia.textContent || '').replace(/^[^\p{L}\p{N}]+/u, '').trim());
   });
 
   window.SusanaVisor = { abrir: abrir, cerrar: cerrarVisor };

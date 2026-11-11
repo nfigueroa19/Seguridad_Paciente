@@ -94,5 +94,67 @@
     return el;
   }
 
-  window.SusanaRico = { limpiar: limpiar, aTexto: aTexto, vacio: vacio, poner: poner, ENLACE: ENLACE };
+
+  /* Icono de tipo de archivo + extensión (PDF, DOCX, PPTX…). Se usa en las listas de documentos. */
+  var TIPOS_ICONO = {
+    pdf: ['#D93025', 'PDF'], doc: ['#2B579A', 'W'], docx: ['#2B579A', 'W'],
+    xls: ['#217346', 'X'], xlsx: ['#217346', 'X'], csv: ['#217346', 'CSV'],
+    ppt: ['#C43E1C', 'P'], pptx: ['#C43E1C', 'P'],
+    txt: ['#5F6368', 'TXT'], png: ['#7B4FBF', 'IMG'], jpg: ['#7B4FBF', 'IMG'], jpeg: ['#7B4FBF', 'IMG']
+  };
+  function extensionDe(ruta) {
+    var m = String(ruta || '').split(/[?#]/)[0].match(/\.([A-Za-z0-9]{1,5})$/);
+    return m ? m[1].toLowerCase() : '';
+  }
+  /** Devuelve un <span> con el icono del tipo de archivo y su extensión en mayúsculas. */
+  function iconoArchivo(ruta) {
+    var ext = extensionDe(ruta);
+    var t = TIPOS_ICONO[ext] || ['#5F6368', ''];
+    var caja = document.createElement('span');
+    caja.className = 'ss-tipo';
+    caja.setAttribute('aria-hidden', 'true');
+    var letra = t[1];
+    var tam = letra.length > 1 ? 7.5 : 12;
+    caja.innerHTML = '<svg viewBox="0 0 24 28" width="22" height="26" focusable="false">' +
+      '<path d="M3 1.5h12l6 6V25a1.5 1.5 0 0 1-1.5 1.5h-16.5A1.5 1.5 0 0 1 1.5 25V3A1.5 1.5 0 0 1 3 1.5z" fill="' + t[0] + '"/>' +
+      '<path d="M15 1.5v6h6z" fill="#fff" fill-opacity=".45"/>' +
+      '<text x="11.5" y="20.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="' + tam + '" fill="#fff">' + letra + '</text></svg>' +
+      '<span class="ss-tipo-ext"></span>';
+    caja.lastChild.textContent = ext ? ext.toUpperCase() : '';
+    caja.lastChild.style.color = t[0];
+    return caja;
+  }
+
+
+  /* Icono de tipo de archivo + extensión (PDF, DOCX, PPTX…). Se usa en las listas de documentos. */
+  var TIPOS_ICONO = {
+    pdf: ['#D93025', 'PDF'], doc: ['#2B579A', 'W'], docx: ['#2B579A', 'W'],
+    xls: ['#217346', 'X'], xlsx: ['#217346', 'X'], csv: ['#217346', 'CSV'],
+    ppt: ['#C43E1C', 'P'], pptx: ['#C43E1C', 'P'],
+    txt: ['#5F6368', 'TXT'], png: ['#7B4FBF', 'IMG'], jpg: ['#7B4FBF', 'IMG'], jpeg: ['#7B4FBF', 'IMG']
+  };
+  function extensionDe(ruta) {
+    var m = String(ruta || '').split(/[?#]/)[0].match(/\.([A-Za-z0-9]{1,5})$/);
+    return m ? m[1].toLowerCase() : '';
+  }
+  /** Devuelve un <span> con el icono del tipo de archivo y su extensión en mayúsculas. */
+  function iconoArchivo(ruta) {
+    var ext = extensionDe(ruta);
+    var t = TIPOS_ICONO[ext] || ['#5F6368', ''];
+    var caja = document.createElement('span');
+    caja.className = 'ss-tipo';
+    caja.setAttribute('aria-hidden', 'true');
+    var letra = t[1];
+    var tam = letra.length > 1 ? 7.5 : 12;
+    caja.innerHTML = '<svg viewBox="0 0 24 28" width="22" height="26" focusable="false">' +
+      '<path d="M3 1.5h12l6 6V25a1.5 1.5 0 0 1-1.5 1.5h-16.5A1.5 1.5 0 0 1 1.5 25V3A1.5 1.5 0 0 1 3 1.5z" fill="' + t[0] + '"/>' +
+      '<path d="M15 1.5v6h6z" fill="#fff" fill-opacity=".45"/>' +
+      '<text x="11.5" y="20.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="' + tam + '" fill="#fff">' + letra + '</text></svg>' +
+      '<span class="ss-tipo-ext"></span>';
+    caja.lastChild.textContent = ext ? ext.toUpperCase() : '';
+    caja.lastChild.style.color = t[0];
+    return caja;
+  }
+
+  window.SusanaRico = { limpiar: limpiar, aTexto: aTexto, vacio: vacio, poner: poner, ENLACE: ENLACE, iconoArchivo: iconoArchivo, extensionDe: extensionDe };
 })();
