@@ -1,0 +1,66 @@
+/* Visor general de documentos. Todo lleva el prefijo .visor para no pisar otros estilos. */
+html.visor-abierto { overflow: hidden; }
+
+dialog.visor {
+  width: min(1040px, 96vw);
+  height: min(92vh, 900px);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: var(--fondo);
+  color: var(--texto);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+  overflow: hidden;
+}
+dialog.visor[open] { display: flex; flex-direction: column; }
+dialog.visor::backdrop { background: rgba(20, 30, 25, .6); }
+
+.visor-barra {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px;
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+  flex: none;
+}
+.visor-titulo { flex: 1; min-width: 0; margin: 0; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.visor-barra .btn { flex: none; text-decoration: none; }
+.visor-estado { margin: 0; padding: 0 14px; color: var(--texto-suave); font-size: .9rem; flex: none; }
+.visor-estado:empty { display: none; padding: 0; }
+.visor-estado:not(:empty) { padding-top: 10px; }
+
+.visor-cuerpo { flex: 1; overflow: auto; padding: 12px; background: #E9EFEC; outline: none; }
+
+.visor-aviso { max-width: 520px; margin: 40px auto; padding: 20px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 12px; text-align: center; }
+.visor-aviso p { margin: 0 0 14px; }
+.visor-aviso .btn { text-decoration: none; }
+.visor-nota { text-align: center; color: var(--texto-suave); font-size: .9rem; }
+
+/* PDF */
+.visor-pagina { margin: 0 auto 12px; background: var(--blanco); box-shadow: 0 1px 6px rgba(0, 0, 0, .2); max-width: 100%; }
+.visor-pagina canvas { display: block; max-width: 100%; height: auto !important; }
+
+/* Word y PowerPoint */
+.visor-docx, .visor-pptx { margin: 0 auto; }
+.visor-docx .docx-wrapper { background: transparent !important; padding: 0 !important; }
+.visor-docx .docx-wrapper > section.docx { margin: 0 auto 12px !important; box-shadow: 0 1px 6px rgba(0, 0, 0, .2); max-width: 100%; overflow-x: auto; }
+.visor-pptx .pptx-preview-wrapper { max-width: 100%; margin: 0 auto; background: transparent !important; }
+
+/* Hojas de cálculo */
+.visor-pestanas { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.visor-pestanas button { padding: 6px 12px; border: 1px solid var(--borde); border-radius: 8px 8px 0 0; background: var(--blanco); color: var(--texto); font: inherit; cursor: pointer; }
+.visor-pestanas button[aria-selected="true"] { background: var(--verde); border-color: var(--verde); color: #fff; }
+.visor-hoja { overflow: auto; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; max-height: 100%; }
+.visor-tabla { border-collapse: collapse; font-size: .85rem; }
+.visor-tabla td { border: 1px solid var(--borde); padding: 4px 8px; white-space: pre-wrap; max-width: 360px; vertical-align: top; }
+.visor-tabla tr:first-child td { background: var(--verde-claro); font-weight: 600; position: sticky; top: 0; }
+
+/* Texto e imágenes */
+.visor-texto { margin: 0 auto; max-width: 900px; padding: 16px; background: var(--blanco); border: 1px solid var(--borde); border-radius: 8px; white-space: pre-wrap; word-break: break-word; font: .9rem/1.5 ui-monospace, Consolas, monospace; }
+.visor-imagen { display: block; max-width: 100%; height: auto; margin: 0 auto; background: var(--blanco); }
+
+@media (max-width: 640px) {
+  dialog.visor { width: 100vw; height: 100dvh; border-radius: 0; border: 0; }
+  .visor-cuerpo { padding: 6px; }
+}
