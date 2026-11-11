@@ -194,6 +194,80 @@ async function listarTextos(env) {
   return results;
 }
 
+/* ---------- Texto con formato: limpieza del HTML ---------- */
+// Los textos editables se guardan como HTML mínimo. Aquí se filtran con una lista de permitidos (HTMLRewriter,
+// un analizador HTML real). La MISMA lista vive en el navegador (app-plataforma/rico.js, limpiar): si se cambia una, se cambia la otra.
+// El navegador vuelve a limpiar antes de pintar, así que esto es una segunda barrera, no la única.
+const HTML_PERMITIDAS = new Set(['b', 'strong', 'i', 'em', 'u', 's', 'strike', 'br', 'p', 'div', 'span', 'ul', 'ol', 'li', 'a']);
+const HTML_ELIMINAR = new Set(['script', 'style', 'iframe', 'object', 'embed', 'noscript', 'template', 'svg', 'math', 'textarea', 'title', 'head', 'select', 'button', 'form', 'input', 'audio', 'video', 'canvas']);
+const CSS_COLOR = /^(#[0-9a-f]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(,\s*(0|1|0?\.\d+)\s*)?\))$/i;
+const CSS_TAMANO = /^(\d{1,3}(\.\d{1,2})?)(px|pt|em|rem)$/i;
+const CSS_ALINEACION = /^(left|right|center|justify)$/i;
+const ENLACE_PERMITIDO = /^(https?:\/\/[^\s"'<>]+|mailto:[^\s"'<>]+|tel:[+0-9 ()-]+|#[a-z0-9-]{1,40}|media\/documentos\/[A-Za-z0-9_\-./%]+)$/i;
+
+function tamanoCssValido(v) {
+  const m = CSS_TAMANO.exec(v);
+  if (!m) return false;
+  const n = parseFloat(m[1]);
+  const u = m[3].toLowerCase();
+  const px = u === 'px' ? n : u === 'pt' ? (n * 4) / 3 : n * 16;
+  return px >= 6 && px <= 200;
+}
+
+function estiloSeguro(texto) {
+  const salida = [];
+  for (const decl of String(texto || '').split(';')) {
+    const i = decl.indexOf(':');
+    if (i < 0) continue;
+    const prop = decl.slice(0, i).trim().toLowerCase();
+    const val = decl.slice(i + 1).trim();
+    if (prop === 'color' && CSS_COLOR.test(val)) salida.push(`color:${val}`);
+    else if (prop === 'background-color' && (CSS_COLOR.test(val) || /^transparent$/i.test(val))) salida.push(`background-color:${val}`);
+    else if (prop === 'font-size' && tamanoCssValido(val)) salida.push(`font-size:${val}`);
+    else if (prop === 'text-align' && CSS_ALINEACION.test(val)) salida.push(`text-align:${val.toLowerCase()}`);
+  }
+  return salida.join(';');
+}
+
+async function limpiarHtml(texto) {
+  if (typeof texto !== 'string' || !texto.includes('<')) return texto; // sin etiquetas: nada que limpiar
+  const lluvia = new HTMLRewriter()
+    .on('*', {
+      element(el) {
+        const tag = el.tagName.toLowerCase();
+        if (HTML_ELIMINAR.has(tag)) return el.remove();
+        if (!HTML_PERMITIDAS.has(tag)) return el.removeAndKeepContent(); // se quita la etiqueta, se conserva el texto
+        for (const [nombre, valor] of [...el.attributes]) {
+          if (nombre === 'style') {
+            const estilo = estiloSeguro(valor);
+            if (estilo) el.setAttribute('style', estilo); else el.removeAttribute('style');
+          } else if (!(tag === 'a' && nombre === 'href')) {
+            el.removeAttribute(nombre);
+          }
+        }
+        if (tag === 'a') {
+          const href = (el.getAttribute('href') || '').trim();
+          if (!ENLACE_PERMITIDO.test(href)) return el.removeAndKeepContent();
+          el.setAttribute('href', href);
+          if (/^https?:/i.test(href)) { el.setAttribute('target', '_blank'); el.setAttribute('rel', 'noopener noreferrer'); }
+        }
+      },
+      comments(c) { c.remove(); },
+    })
+    .onDocument({ comments(c) { c.remove(); } });
+  return (await lluvia.transform(new Response(texto, { headers: { 'content-type': 'text/html; charset=utf-8' } })).text()).trim();
+}
+
+// Limpia los campos con formato de un curso (párrafos y descripciones de video) antes de validarlo.
+async function limpiarCamposCurso(d) {
+  if (!d || typeof d !== 'object') return d;
+  if (Array.isArray(d.texto)) d.texto = await Promise.all(d.texto.map(limpiarHtml));
+  if (Array.isArray(d.videos)) {
+    for (const v of d.videos) if (v && typeof v.descripcion === 'string') v.descripcion = await limpiarHtml(v.descripcion);
+  }
+  return d;
+}
+
 /* ---------- Cursos (editores) ---------- */
 function validarCurso(d) {
   if (!d) return 'Cuerpo inválido.';
@@ -214,7 +288,7 @@ function validarCurso(d) {
     for (const v of d.videos) {
       if (!v || !cadena(v.video, 200, 1)) return 'Cada video necesita su identificador.';
       if (!cadena(v.titulo ?? '', 200)) return 'El título del video es demasiado largo (máx. 200).';
-      if (!cadena(v.descripcion ?? '', 2000)) return 'La descripción del video es demasiado larga (máx. 2000).';
+      if (!cadena(v.descripcion ?? '', 10000)) return 'La descripción del video es demasiado larga.';
       const dv = v.documentos ?? [];
       if (!Array.isArray(dv) || dv.length > 20) return 'Documentos de video inválidos.';
       for (const x of dv) {
@@ -231,6 +305,7 @@ function slug(texto) {
 }
 
 async function guardarCurso(env, usuario, id, d, nuevo) {
+  d = await limpiarCamposCurso(d);
   const error_ = validarCurso(d);
   if (error_) return error(400, error_);
   const existe = await env.DB.prepare('SELECT id FROM cursos WHERE id = ?').bind(id).first();
@@ -380,11 +455,19 @@ async function listarTarjetas(env, soloPublicadas) {
   return results.map((t) => ({ ...t, publicado: t.publicado === 1 }));
 }
 
+async function limpiarTarjeta(d) {
+  if (d && typeof d === 'object') {
+    if (typeof d.titulo === 'string') d.titulo = await limpiarHtml(d.titulo);
+    if (typeof d.texto === 'string') d.texto = await limpiarHtml(d.texto);
+  }
+  return d;
+}
+
 function validarTarjeta(d) {
   if (!d) return 'Cuerpo inválido.';
   if (!Object.hasOwn(ZONAS, d.zona)) return 'Zona inválida.';
-  if (!cadena(d.titulo, 200, 1)) return 'El título es obligatorio (máx. 200).';
-  if (!cadena(d.texto ?? '', 1000)) return 'Texto demasiado largo (máx. 1000).';
+  if (!cadena(d.titulo, 1000, 1)) return 'El título es obligatorio (muy largo).';
+  if (!cadena(d.texto ?? '', 5000)) return 'Texto demasiado largo.';
   if (!cadena(d.icono ?? '', 16)) return 'Icono demasiado largo (máx. 16 caracteres).';
   if (!cadena(d.boton ?? '', 60)) return 'Texto del botón demasiado largo (máx. 60).';
   if (!Number.isInteger(d.orden ?? 0)) return 'El orden debe ser un número entero.';
@@ -401,7 +484,7 @@ async function rutasTarjetas(request, env, usuario, partes) {
   const metodo = request.method;
   if (partes.length === 0 && metodo === 'GET') return json(await listarTarjetas(env, false));
   if (partes.length === 0 && metodo === 'POST') {
-    const d = await leerJson(request);
+    const d = await limpiarTarjeta(await leerJson(request));
     const e = validarTarjeta(d);
     if (e) return error(400, e);
     const r = await env.DB.prepare('INSERT INTO tarjetas (zona, orden, icono, titulo, texto, boton, enlace, publicado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
@@ -412,7 +495,7 @@ async function rutasTarjetas(request, env, usuario, partes) {
   const id = Number(partes[0]);
   if (partes.length === 1 && Number.isInteger(id)) {
     if (metodo === 'PUT') {
-      const d = await leerJson(request);
+      const d = await limpiarTarjeta(await leerJson(request));
       const e = validarTarjeta(d);
       if (e) return error(400, e);
       const r = await env.DB.prepare(`UPDATE tarjetas SET zona = ?, orden = ?, icono = ?, titulo = ?, texto = ?, boton = ?, enlace = ?, publicado = ?, actualizado = datetime('now') WHERE id = ?`) // SQLITE: datetime
@@ -446,7 +529,8 @@ async function rutasTextos(request, env, usuario, partes) {
     const clave = decodeURIComponent(partes[0]);
     const d = await leerJson(request);
     if (!/^[a-z0-9_.-]{1,80}$/.test(clave)) return error(400, 'Clave inválida.');
-    if (!d || !cadena(d.valor, 5000)) return error(400, 'Valor inválido (máx. 5000).');
+    if (d && typeof d.valor === 'string') d.valor = await limpiarHtml(d.valor);
+    if (!d || !cadena(d.valor, 20000)) return error(400, 'Valor inválido (máx. 20000).');
     if (!(await env.DB.prepare('SELECT clave FROM textos_sitio WHERE clave = ?').bind(clave).first())) return error(404, 'Ese texto no existe en el sitio.');
     await env.DB.batch([
       env.DB.prepare(`INSERT INTO textos_sitio (clave, valor, descripcion) VALUES (?, ?, ?)

@@ -131,8 +131,11 @@
 
   function cargarEdicion() {
     var css = h('link', { rel: 'stylesheet', href: './edicion.css' });
-    var js = h('script', { src: './edicion.js', defer: true });
+    // async = false: los scripts insertados así se ejecutan en el orden en que se añaden (formato.js antes que edicion.js).
+    var formato = h('script', { src: './formato.js' }); formato.async = false;
+    var js = h('script', { src: './edicion.js' }); js.async = false;
     document.head.append(css);
+    document.head.append(formato);
     document.head.append(js);
   }
 

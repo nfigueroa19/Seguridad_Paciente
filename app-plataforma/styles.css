@@ -189,7 +189,7 @@ button{font:inherit; cursor:pointer;}
 .module-card:hover{transform:translateY(-2px); border-color:var(--verde-suave);}
 .module-card-icon{font-size:1.6rem;}
 .module-card h3{margin:0; font-size:1rem;}
-.module-card p{flex-grow:1; margin:0; font-size:.86rem; color:var(--texto-suave);}
+.module-card p,.module-card .module-card-texto{flex-grow:1; margin:0; font-size:.86rem; color:var(--texto-suave);}
 .module-card .btn{align-self:flex-start; margin-top:6px;}
 
 /* Panel genérico */
@@ -253,8 +253,8 @@ button{font:inherit; cursor:pointer;}
 .cv-detalle-titulo{margin:0 0 16px; font-size:1.4rem;}
 .cv-detalle-titulo:focus{outline:none;}
 .cv-texto{margin-bottom:26px;}
-.cv-texto p{margin:0 0 12px;}
-.cv-texto p:last-child{margin-bottom:0;}
+.cv-texto p,.cv-texto .cv-parrafo{margin:0 0 12px;}
+.cv-texto p:last-child,.cv-texto .cv-parrafo:last-child{margin-bottom:0;}
 .cv-docs{margin-bottom:26px;}
 .cv-docs ul{margin:0; padding:0; list-style:none; display:grid; gap:8px;}
 .cv-docs a{display:inline-block; padding:10px 14px; border:1px solid var(--borde); border-radius:var(--radio-sm); background:var(--blanco); color:var(--verde-osc); font-weight:600; text-decoration:none;}
@@ -267,7 +267,7 @@ button{font:inherit; cursor:pointer;}
 
 .cv-video-info{margin-top:14px;}
 .cv-video-info h4{margin:0 0 6px; font-size:1.1rem; color:var(--verde-osc);}
-.cv-video-info p{margin:0 0 10px;}
+.cv-video-info p,.cv-video-info .cv-video-desc{margin:0 0 10px;}
 .cv-video-docs{margin:0; padding:0; list-style:none; display:grid; gap:8px;}
 .cv-video-docs a{display:inline-block; padding:8px 12px; border:1px solid var(--borde); border-radius:var(--radio-sm); background:var(--blanco); color:var(--verde-osc); font-weight:600; text-decoration:none;}
 .cv-video-docs a:hover{border-color:var(--verde-suave); background:var(--verde-claro);}
@@ -311,3 +311,10 @@ button{font:inherit; cursor:pointer;}
   .shell{display:block;}
   .content{padding:0;}
 }
+
+/* Texto con formato (rico.js): listas, enlaces y alineación dentro de textos editables */
+.rico ul,.rico ol{margin:.35em 0 .35em 1.3em; padding:0;}
+.rico li{margin:.15em 0;}
+.rico a{color:var(--verde); text-decoration:underline;}
+.rico p{margin:0 0 .5em;}
+.rico > :last-child{margin-bottom:0;}

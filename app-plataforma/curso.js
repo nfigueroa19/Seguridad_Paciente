@@ -123,8 +123,9 @@
   function pintarTexto(curso) {
     texto.textContent = '';
     (curso.texto || []).forEach(function (parrafo) {
-      var p = document.createElement('p');
-      p.textContent = parrafo;
+      var p = document.createElement('div');
+      p.className = 'cv-parrafo';
+      if (window.SusanaRico) window.SusanaRico.poner(p, parrafo); else p.textContent = parrafo;
       texto.appendChild(p);
     });
   }
@@ -160,7 +161,11 @@
     infoVideo.hidden = !conInfo;
     if (conInfo) {
       if (it.titulo) { var t = document.createElement('h4'); t.textContent = it.titulo; infoVideo.appendChild(t); }
-      if (it.descripcion) { var p = document.createElement('p'); p.textContent = it.descripcion; infoVideo.appendChild(p); }
+      if (it.descripcion) {
+        var p = document.createElement('div'); p.className = 'cv-video-desc';
+        if (window.SusanaRico) window.SusanaRico.poner(p, it.descripcion); else p.textContent = it.descripcion;
+        infoVideo.appendChild(p);
+      }
       if (docsVideo.length) {
         var ul = document.createElement('ul');
         ul.className = 'cv-video-docs';

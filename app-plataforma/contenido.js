@@ -5,15 +5,22 @@
    - Los contenedores data-zona="zona" se rellenan con sus tarjetas.
    El HTML ya trae los valores por defecto: si la API no responde (sin red, o
    sitio servido sin API), la página se queda tal cual, sin errores visibles.
-   Todo se inserta con textContent, nunca con innerHTML.
+   Los textos con formato se insertan solo después de SusanaRico.limpiar (rico.js);
+   los demás, con textContent.
    ===================================================================== */
 (function () {
   'use strict';
 
+  // rico.js se carga antes; si faltara, se cae a texto plano.
+  function Rico() { return window.SusanaRico || { poner: function (el, v) { el.textContent = v; }, aTexto: function (v) { return v; } }; }
+
   function aplicarTextos(textos) {
     document.querySelectorAll('[data-texto]').forEach(function (el) {
       var clave = el.getAttribute('data-texto');
-      if (Object.prototype.hasOwnProperty.call(textos, clave)) el.textContent = textos[clave];
+      if (!Object.prototype.hasOwnProperty.call(textos, clave)) return;
+      // Los nombres de las secciones (barra lateral) se usan como título de página: siempre texto plano.
+      if (el.hasAttribute('data-vista') || el.closest('[data-vista]')) el.textContent = Rico().aTexto(textos[clave]);
+      else Rico().poner(el, textos[clave]);
     });
 
     // El nombre de una sección en la barra lateral también es el título de su página y el de la miga de pan.
@@ -42,12 +49,13 @@
     }
 
     var h3 = document.createElement('h3');
-    h3.textContent = t.titulo;
+    Rico().poner(h3, t.titulo);
     art.appendChild(h3);
 
     if (t.texto) {
-      var p = document.createElement('p');
-      p.textContent = t.texto;
+      var p = document.createElement('div');
+      p.className = 'module-card-texto';
+      Rico().poner(p, t.texto);
       art.appendChild(p);
     }
 

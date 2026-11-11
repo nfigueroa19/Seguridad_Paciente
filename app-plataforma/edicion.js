@@ -15,6 +15,8 @@
   if (!S || !S.yo || !C) return;
   var h = S.h, api = S.api, avisar = S.avisar, accion = S.accion, modal = S.modal;
   var esAdmin = S.yo.rol === 'admin';
+  var F = window.SusanaFormato;
+  var Rico = window.SusanaRico || { poner: function (e, v) { e.textContent = v; }, aTexto: function (v) { return v; }, limpiar: function (v) { return v; } };
 
   var SECCIONES = ['#inicio', '#curso', '#conoce', '#simula', '#detecta', '#aprende', '#perfil', '#admin'];
   var ETIQUETA_ROL = { admin: 'Administrador/a', editor: 'Editor/a', usuario: 'Personal' };
@@ -129,7 +131,9 @@
         guardar, cancelar, h('span', { class: 'ss-mb-ayuda' }, 'Enter guarda · Esc cancela'));
       document.body.append(barra);
       el.classList.add('ss-en-edicion');
-      soloTexto(el);
+      // Los nombres de las secciones (barra lateral) quedan en texto plano; el resto admite formato.
+      var plano = el.hasAttribute('data-vista') || !!el.closest('[data-vista]') || !F;
+      if (plano) soloTexto(el); else { Rico.poner(el, t.valor); F.activar(el, {}); }
 
       function ubicar() {
         var r = el.getBoundingClientRect();
@@ -142,21 +146,22 @@
         window.removeEventListener('scroll', ubicar, true);
         window.removeEventListener('resize', ubicar);
         el.removeEventListener('keydown', alTeclear);
+        if (!plano) F.desactivar(el);
         el.removeAttribute('contenteditable');
         el.classList.remove('ss-en-edicion');
         barra.remove();
         abierta = null;
-        if (restaurar) el.textContent = t.valor;
+        if (restaurar) Rico.poner(el, t.valor);
       }
       function alTeclear(ev) {
-        if (ev.key === 'Enter') { ev.preventDefault(); guardar.click(); }
-        else if (ev.key === 'Escape') { ev.preventDefault(); cancelar.click(); }
+        if (ev.key === 'Enter' && !(ev.shiftKey || (!plano && F.enLista(el)))) { ev.preventDefault(); guardar.click(); }
+        else if (ev.key === 'Escape' && !document.querySelector('.ss-fb-url:focus')) { ev.preventDefault(); cancelar.click(); }
       }
 
       cancelar.addEventListener('click', function () { cerrar(true); });
       guardar.addEventListener('click', function () {
-        var valor = el.textContent.replace(/\s*\n\s*/g, ' ').trim();
-        if (valor === t.valor) return cerrar(true);
+        var valor = plano ? el.textContent.replace(/\s*\n\s*/g, ' ').trim() : F.valor(el);
+        if (valor === t.valor || (!plano && valor === Rico.limpiar(t.valor))) return cerrar(true);
         if (!valor) return avisar('El texto no puede quedar vacío.', false);
         accion(guardar, function () {
           return api('PUT', 'admin/textos/' + encodeURIComponent(clave), { valor: valor, descripcion: t.descripcion }).then(function () {
@@ -227,8 +232,8 @@
     if (nueva) t.orden = document.querySelectorAll('[data-zona="' + zonaInicial + '"] .module-card').length;
 
     var icono = h('input', { class: 'ss-icono-in', value: t.icono, maxlength: 16, placeholder: '🔎', 'aria-label': 'Icono (un emoji)' });
-    var titulo = h('h3', { class: 'ss-campo', 'data-ph': 'Título de la tarjeta' }); titulo.textContent = t.titulo;
-    var texto = h('p', { class: 'ss-campo', 'data-ph': 'Texto (opcional)' }); texto.textContent = t.texto;
+    var titulo = h('h3', { class: 'ss-campo', 'data-ph': 'Título de la tarjeta' }); Rico.poner(titulo, t.titulo);
+    var texto = h('div', { class: 'ss-campo module-card-texto', 'data-ph': 'Texto (opcional)' }); Rico.poner(texto, t.texto);
     var boton = h('span', { class: 'btn btn-outline btn-sm ss-campo', 'data-ph': 'Texto del botón' }); boton.textContent = t.boton;
     var enlace = h('input', { value: t.enlace, maxlength: 500, list: 'ss-secciones', placeholder: '#conoce o https://…' });
     var orden = h('input', { type: 'number', value: String(t.orden) });
@@ -237,10 +242,11 @@
     var guardar = h('button', { class: 'btn btn-sm', type: 'button' }, 'Guardar');
     var cancelar = h('button', { class: 'btn btn-outline btn-sm', type: 'button' }, 'Cancelar');
 
-    [titulo, texto, boton].forEach(function (campo) {
-      soloTexto(campo);
-      campo.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') ev.preventDefault(); });
-    });
+    soloTexto(boton);
+    boton.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') ev.preventDefault(); });
+    F.activar(titulo, { linea: true });
+    titulo.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') ev.preventDefault(); });
+    F.activar(texto, {}); // el texto admite varias líneas y listas
 
     var tira = h('div', { class: 'ss-tira' },
       h('datalist', { id: 'ss-secciones' }, SECCIONES.map(function (s) { return h('option', { value: s }); })),
@@ -251,7 +257,7 @@
       h('label', { class: 'ss-check' }, publicado, 'Visible para todo el personal'),
       h('div', { class: 'ss-fila' }, guardar, cancelar,
         nueva ? null : h('button', { class: 'btn btn-peligro btn-sm ss-derecha', type: 'button', onclick: function (e) {
-          if (!confirm('¿Borrar la tarjeta «' + t.titulo + '»? No se puede deshacer.\n(Si solo quieres quitarla de la vista, desmarca «Visible».)')) return;
+          if (!confirm('¿Borrar la tarjeta «' + Rico.aTexto(t.titulo) + '»? No se puede deshacer.\n(Si solo quieres quitarla de la vista, desmarca «Visible».)')) return;
           accion(e.target, function () {
             return api('DELETE', 'admin/tarjetas/' + t.id).then(function () { abierta = null; avisar('Tarjeta borrada.'); return refrescarTarjetas(); });
           });
@@ -263,7 +269,7 @@
     cancelar.addEventListener('click', function () { abierta = null; refrescarTarjetas(); });
     guardar.addEventListener('click', function () {
       var cuerpo = {
-        zona: zona.value, icono: icono.value.trim(), titulo: titulo.textContent.trim(), texto: texto.textContent.trim(),
+        zona: zona.value, icono: icono.value.trim(), titulo: F.valor(titulo), texto: F.valor(texto),
         boton: boton.textContent.trim(), enlace: enlace.value.trim(), orden: parseInt(orden.value, 10) || 0, publicado: publicado.checked
       };
       if (!cuerpo.titulo) { avisar('La tarjeta necesita un título.', false); return titulo.focus(); }
@@ -520,23 +526,23 @@
     /* --- Párrafos --- */
     var listaParr = h('div', { class: 'ss-parrafos' });
     function filaParrafo(t) {
-      var p = h('p', { class: 'ss-campo', 'data-ph': 'Escribe un párrafo…' });
-      p.textContent = t || '';
-      soloTexto(p);
+      var p = h('div', { class: 'ss-campo cv-parrafo', 'data-ph': 'Escribe un párrafo…' });
+      Rico.poner(p, t || '');
+      F.activar(p, {});
       var fila = h('div', { class: 'ss-par' }, p,
         h('button', { type: 'button', class: 'ss-quitar', 'aria-label': 'Quitar este párrafo', title: 'Quitar este párrafo', onclick: function () { fila.remove(); } }, '✕'));
       p.addEventListener('keydown', function (ev) {
-        if (ev.key !== 'Enter') return;
+        if (ev.key !== 'Enter' || ev.shiftKey || F.enLista(p)) return; // dentro de una lista, Enter agrega otro punto
         ev.preventDefault();
         var nueva = filaParrafo('');
         fila.after(nueva);
-        enfocar(nueva.querySelector('p'), false);
+        enfocar(nueva.querySelector('.ss-campo'), false);
       });
       return fila;
     }
     c.texto.forEach(function (t) { listaParr.append(filaParrafo(t)); });
     var agregarParr = h('button', { type: 'button', class: 'btn btn-outline btn-sm ss-mas', onclick: function () {
-      var nueva = filaParrafo(''); listaParr.append(nueva); enfocar(nueva.querySelector('p'), false);
+      var nueva = filaParrafo(''); listaParr.append(nueva); enfocar(nueva.querySelector('.ss-campo'), false);
     } }, '+ Párrafo');
     textoEl.replaceChildren(listaParr, agregarParr);
 
@@ -593,8 +599,10 @@
     }
     function filaVideo(it) {
       var tit = h('p', { class: 'ss-campo ss-video-tit', 'data-ph': 'Título del video (opcional)' }); tit.textContent = it.titulo || '';
-      var desc = h('p', { class: 'ss-campo', 'data-ph': 'Descripción del video (opcional)' }); desc.textContent = it.descripcion || '';
-      [tit, desc].forEach(function (campo) { soloTexto(campo); campo.addEventListener('keydown', sinEnter); });
+      var desc = h('div', { class: 'ss-campo cv-video-desc', 'data-ph': 'Descripción del video (opcional)' }); Rico.poner(desc, it.descripcion || '');
+      soloTexto(tit); tit.addEventListener('keydown', sinEnter);
+      F.activar(desc, {});
+      desc.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' && !ev.shiftKey && !F.enLista(desc)) ev.preventDefault(); });
       var ul = h('ul', { class: 'ss-video-docs' });
       (it.documentos || []).forEach(function (d) { ul.append(filaDoc(d)); });
       var cabeza = h('div', { class: 'ss-video-cabeza' });
@@ -697,12 +705,12 @@
       var cuerpo = {
         titulo: titulo, resumen: original.resumen, orden: original.orden, publicado: visible.checked,
         videos: fichas.map(function (f) {
-          return { video: f.it.video, titulo: limpio(f.tit), descripcion: limpio(f.desc),
+          return { video: f.it.video, titulo: limpio(f.tit), descripcion: F.valor(f.desc),
             documentos: [].map.call(f.ul.querySelectorAll('li.ss-doc'), function (li) {
               return { titulo: limpio(li._titulo) || nombreCorto(li._doc.archivo), archivo: li._doc.archivo };
             }) };
         }),
-        texto: [].map.call(listaParr.querySelectorAll('p'), function (p) { return p.textContent.trim(); }).filter(Boolean),
+        texto: [].map.call(listaParr.querySelectorAll('.ss-par > .ss-campo'), function (p) { return F.valor(p); }).filter(Boolean),
         documentos: [].map.call(docsUl.querySelectorAll('li.ss-doc'), function (li) {
           return { titulo: li._titulo.textContent.replace(/\s+/g, ' ').trim() || nombreCorto(li._doc.archivo), archivo: li._doc.archivo };
         })
