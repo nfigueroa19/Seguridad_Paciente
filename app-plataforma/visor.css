@@ -72,3 +72,33 @@ dialog.visor::backdrop { background: rgba(20, 30, 25, .6); }
 /* Hueco de página de PDF mientras se dibuja */
 .visor-pagina-vacia { display: flex; align-items: center; justify-content: center; }
 .visor-pagina-num { color: var(--texto-suave); font-size: .9rem; }
+
+/* Herramientas del documento (búsqueda, ir a página, pantalla completa) */
+.visor-herr { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 8px 14px; background: var(--blanco); border-bottom: 1px solid var(--borde); flex: none; font-size: .9rem; }
+.visor-herr[hidden] { display: none; }
+.visor-grupo { display: flex; align-items: center; gap: 6px; }
+.visor-buscar { width: 210px; max-width: 100%; height: 32px; padding: 0 10px; border: 1px solid var(--borde); border-radius: 8px; background: var(--blanco); color: var(--texto); font: inherit; }
+.visor-pag { width: 62px; height: 32px; padding: 0 6px; border: 1px solid var(--borde); border-radius: 8px; background: var(--blanco); color: var(--texto); font: inherit; text-align: center; }
+.visor-hbtn { min-width: 32px; height: 32px; padding: 0 10px; border: 1px solid var(--borde); border-radius: 8px; background: var(--blanco); color: var(--texto); font: inherit; cursor: pointer; }
+.visor-hbtn:hover { background: var(--verde-claro); }
+.visor-pantalla { margin-left: auto; }
+.visor-cuenta, .visor-total { color: var(--texto-suave); white-space: nowrap; }
+.visor-herr label { display: flex; align-items: center; gap: 6px; }
+
+/* Capa de texto del PDF (transparente, sobre el dibujo) */
+.visor-cuerpo { position: relative; }
+.visor-pagina { position: relative; }
+.textLayer { position: absolute; inset: 0; overflow: clip; line-height: 1; text-align: initial; text-size-adjust: none; forced-color-adjust: none; transform-origin: 0 0; z-index: 1; }
+.textLayer :is(span, br) { color: transparent; position: absolute; white-space: pre; cursor: text; transform-origin: 0% 0%; }
+.textLayer span.markedContent { top: 0; height: 0; }
+.textLayer ::selection { background: rgba(0, 90, 200, .3); }
+.textLayer .visor-hit { background: rgba(255, 213, 0, .55); border-radius: 2px; }
+.textLayer .visor-hit-actual { background: rgba(255, 128, 0, .75); outline: 2px solid rgba(255, 128, 0, .9); }
+
+/* Pantalla completa */
+dialog.visor.visor-max { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; border-radius: 0; border: 0; }
+dialog.visor.visor-max { position: fixed; inset: 0; margin: 0; }
+@media (max-width: 640px) {
+  .visor-buscar { width: 150px; }
+  .visor-pantalla { margin-left: 0; }
+}

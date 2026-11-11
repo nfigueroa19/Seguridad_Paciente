@@ -7,7 +7,8 @@
  *
  * Uso: cualquier <a href="media/documentos/…"> se abre en el visor al hacer clic (clic con
  * Ctrl/Cmd o botón central conservan el comportamiento normal). También: SusanaVisor.abrir(url, titulo).
- * Formatos antiguos (.doc, .ppt) no tienen visor fiable en el navegador: se ofrece la descarga.
+ * Word y PowerPoint (.docx, .doc, .pptx, .ppt) se muestran como PDF convertido en la nube al subirlos; hasta que
+ * exista ese PDF se avisa y se espera (no hay visor alterno: dibujaba mal fuentes, formas y efectos).
  */
 (function () {
   'use strict';
@@ -59,6 +60,7 @@
   }
 
   /* ---------- Ventana ---------- */
+  var herr, hBuscar, hPrev, hNext, hCuenta, hPag, hTotal, hPantalla, ctl = null;
   var dlg, cuerpo, titulo, iconoBarra, enlaceDescarga, estado, previoFoco, sesion = 0, urlsTemporales = [];
 
   function armar() {
@@ -69,17 +71,67 @@
     var cerrar = h('button', { type: 'button', class: 'btn btn-outline btn-sm visor-cerrar', 'aria-label': 'Cerrar visor' }, '✕ Cerrar');
     estado = h('p', { class: 'visor-estado', role: 'status', 'aria-live': 'polite' });
     cuerpo = h('div', { class: 'visor-cuerpo', tabindex: '0' });
+    hBuscar = h('input', { type: 'search', class: 'visor-buscar', placeholder: 'Buscar en el documento', 'aria-label': 'Buscar en el documento', autocomplete: 'off' });
+    hPrev = h('button', { type: 'button', class: 'visor-hbtn', 'aria-label': 'Resultado anterior', title: 'Anterior (Mayús+Intro)' }, '‹');
+    hNext = h('button', { type: 'button', class: 'visor-hbtn', 'aria-label': 'Resultado siguiente', title: 'Siguiente (Intro)' }, '›');
+    hCuenta = h('span', { class: 'visor-cuenta', 'aria-live': 'polite' });
+    hPag = h('input', { type: 'number', class: 'visor-pag', min: '1', value: '1', 'aria-label': 'Ir a la página' });
+    hTotal = h('span', { class: 'visor-total' });
+    hPantalla = h('button', { type: 'button', class: 'visor-hbtn visor-pantalla', 'aria-pressed': 'false', title: 'Pantalla completa' }, '⛶ Pantalla completa');
+    herr = h('div', { class: 'visor-herr', role: 'toolbar', 'aria-label': 'Herramientas del documento', hidden: '' }, [
+      h('div', { class: 'visor-grupo' }, [hBuscar, hPrev, hNext, hCuenta]),
+      h('div', { class: 'visor-grupo' }, [h('label', {}, ['Página ', hPag, ' de ', hTotal])]),
+      hPantalla
+    ]);
     dlg = h('dialog', { class: 'visor', 'aria-labelledby': 'visor-titulo' }, [
       h('div', { class: 'visor-barra' }, [iconoBarra, titulo, enlaceDescarga, cerrar]),
-      estado, cuerpo
+      herr, estado, cuerpo
     ]);
     document.body.appendChild(dlg);
+    hBuscar.addEventListener('input', function () { if (ctl) ctl.buscar(hBuscar.value); });
+    hBuscar.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); if (ctl) ctl.siguiente(e.shiftKey ? -1 : 1); }
+    });
+    hPrev.addEventListener('click', function () { if (ctl) ctl.siguiente(-1); });
+    hNext.addEventListener('click', function () { if (ctl) ctl.siguiente(1); });
+    hPag.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (ctl) ctl.irA(parseInt(hPag.value, 10)); } });
+    hPag.addEventListener('change', function () { if (ctl) ctl.irA(parseInt(hPag.value, 10)); });
+    hPantalla.addEventListener('click', alternarPantalla);
+    cuerpo.addEventListener('scroll', function () { if (ctl) ctl.alDesplazar(); });
+    dlg.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && !e.altKey && e.key.toLowerCase() === 'f' && ctl) { e.preventDefault(); hBuscar.focus(); hBuscar.select(); }
+    });
+    document.addEventListener('fullscreenchange', function () {
+      // Si quien mira sale de la pantalla completa del navegador (Esc), la ventana vuelve a su tamaño normal.
+      if (!document.fullscreenElement && dlg._max) ponerPantalla(false);
+      else if (ctl) setTimeout(ctl.reajustar, 200);
+    });
+    window.addEventListener('resize', function () { if (ctl) ctl.reajustarPronto(); });
     cerrar.addEventListener('click', cerrarVisor);
     dlg.addEventListener('cancel', function (e) { e.preventDefault(); cerrarVisor(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) cerrarVisor(); });
   }
 
+  // Pantalla completa: la ventana ocupa toda la pantalla y, si el navegador lo permite, el navegador también entra
+  // en pantalla completa (un <dialog> no se puede poner en pantalla completa por sí mismo, por eso se usa la página).
+  function ponerPantalla(si) {
+    dlg._max = si;
+    dlg.classList.toggle('visor-max', si);
+    hPantalla.setAttribute('aria-pressed', si ? 'true' : 'false');
+    hPantalla.textContent = si ? '⤢ Salir de pantalla completa' : '⛶ Pantalla completa';
+    if (si) {
+      if (document.documentElement.requestFullscreen && !document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(function () { /* se queda en ventana grande */ });
+      }
+    } else if (document.fullscreenElement) {
+      try { document.exitFullscreen(); } catch (e) { /* nada */ }
+    }
+    if (ctl) setTimeout(ctl.reajustar, 200);
+  }
+  function alternarPantalla() { ponerPantalla(!dlg._max); }
+
   function cerrarVisor() {
+    if (dlg && dlg._max) ponerPantalla(false);
     sesion++;
     if (dlg && dlg.open) dlg.close();
     limpiar();
@@ -87,6 +139,8 @@
     if (previoFoco && previoFoco.focus) { try { previoFoco.focus(); } catch (e) { /* sin foco */ } }
   }
   function limpiar() {
+    ctl = null;
+    if (herr) { herr.hidden = true; hBuscar.value = ''; hCuenta.textContent = ''; }
     if (cuerpo) cuerpo.textContent = '';
     urlsTemporales.forEach(function (u) { URL.revokeObjectURL(u); });
     urlsTemporales = [];
@@ -119,21 +173,39 @@
     if (!dlg.open) dlg.showModal();
     document.documentElement.classList.add('visor-abierto');
 
-    // Word y PowerPoint: si la nube ya convirtió el original a PDF (<archivo>.pdf), se muestra ese PDF,
-    // que respeta fuentes, formas y efectos mucho mejor que el dibujo en el navegador.
-    if (CON_PDF[ext]) {
-      estado.textContent = 'Cargando documento…';
-      return fetch(url + '.pdf', { credentials: 'same-origin' }).then(function (r) {
-        if (!r.ok || !/pdf/i.test(r.headers.get('content-type') || '')) throw new Error('sin-pdf');
-        return r.arrayBuffer();
-      }).then(function (buf) {
-        if (mia !== sesion) return;
-        return verPdf(buf, 'pdf', mia).then(function () { if (mia === sesion) estado.textContent = ''; });
-      }).catch(function () {
-        if (mia === sesion) { cuerpo.textContent = ''; return abrirDirecto(url, ext, tipo, mia); }
-      });
-    }
+    // Word y PowerPoint: se muestran SOLO como PDF (la nube convierte el original al subirlo, <archivo>.pdf).
+    // El dibujo en el navegador no respeta fuentes, formas ni efectos, así que no se ofrece como alternativa:
+    // mientras el PDF no existe se avisa y se vuelve a intentar solo.
+    if (CON_PDF[ext]) return mostrarPdfConvertido(url, mia, 0);
     return abrirDirecto(url, ext, tipo, mia);
+  }
+
+  var ESPERA_MS = 6000, MAX_INTENTOS = 30; // hasta unos 3 minutos
+  function mostrarPdfConvertido(url, mia, intento) {
+    if (mia !== sesion) return;
+    return fetch(url + '.pdf', { credentials: 'same-origin' }).then(function (r) {
+      if (r.status === 401) throw new Error('Tu sesión terminó. Vuelve a iniciar sesión.');
+      if (!r.ok || !/pdf/i.test(r.headers.get('content-type') || '')) return null;
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      if (mia !== sesion) return;
+      if (!buf) {
+        if (intento >= MAX_INTENTOS) {
+          return mensaje('No se pudo preparar este documento para verlo. Puedes descargarlo para abrirlo. ' +
+            'Si acabas de subirlo, ciérralo y ábrelo de nuevo en un momento; si sigue igual, vuelve a subirlo.', true);
+        }
+        if (intento === 0) mensaje('Subiendo y preparando el documento…', true);
+        setTimeout(function () { mostrarPdfConvertido(url, mia, intento + 1); }, ESPERA_MS);
+        return;
+      }
+      cuerpo.textContent = '';
+      estado.textContent = 'Cargando documento…';
+      return verPdf(buf, 'pdf', mia).then(function () { if (mia === sesion) estado.textContent = ''; });
+    }).catch(function (e) {
+      if (mia !== sesion) return;
+      console.error('[visor]', e);
+      mensaje((e && e.message ? e.message + ' ' : '') + 'No se pudo mostrar el documento. Puedes descargarlo para abrirlo.', true);
+    });
   }
 
   function abrirDirecto(url, ext, tipo, mia) {
@@ -164,55 +236,181 @@
 
   /* ---------- PDF (PDF.js) ---------- */
   var pdfjs;
+  function normalizar(t) { return String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+
   function verPdf(buf, ext, mia) {
     pdfjs = pdfjs || import('./' + VENDOR + 'pdfjs/pdf.min.mjs').then(function (m) {
       m.GlobalWorkerOptions.workerSrc = new URL(VENDOR + 'pdfjs/pdf.worker.min.mjs', document.baseURI).href;
       return m;
     });
-    return pdfjs.then(function (lib) {
+    var lib;
+    return pdfjs.then(function (m) {
+      lib = m;
       return lib.getDocument({ data: new Uint8Array(buf), isEvalSupported: false }).promise;
     }).then(function (pdf) {
       if (mia !== sesion) return pdf.destroy();
-      var ancho = Math.max(280, Math.min(cuerpo.clientWidth - 24, 1000));
+      var n = pdf.numPages;
       var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      var marcos = [];
-      var vistas = new IntersectionObserver(function (items) {
-        items.forEach(function (it) {
-          if (!it.isIntersecting) return;
-          vistas.unobserve(it.target);
-          pintarPagina(it.target);
-        });
-      }, { root: cuerpo, rootMargin: '1500px 0px' });
+      var ancho = 0, rel = [], marcos = [], vistas = null, paginaActual = 1;
+      var textos = null, aciertos = [], idx = -1, consulta = '', temporizador = null;
 
+      function anchoDisponible() {
+        var tope = dlg._max ? 2200 : 1000;
+        return Math.max(280, Math.min(cuerpo.clientWidth - 24, tope));
+      }
+
+      /* ----- Páginas: hueco con su tamaño real y dibujo perezoso (lienzo + capa de texto) ----- */
       function pintarPagina(marco) {
         if (mia !== sesion || marco._hecho) return;
         marco._hecho = true;
+        var miAncho = ancho;
         return pdf.getPage(marco._n).then(function (pg) {
+          if (miAncho !== ancho) return;
           var vp = pg.getViewport({ scale: ancho / pg.getViewport({ scale: 1 }).width });
           var lienzo = h('canvas', {});
           lienzo.width = Math.floor(vp.width * dpr); lienzo.height = Math.floor(vp.height * dpr);
           lienzo.style.width = vp.width + 'px'; lienzo.style.height = vp.height + 'px';
           marco.style.height = ''; marco.textContent = ''; marco.classList.remove('visor-pagina-vacia');
           marco.append(lienzo);
-          return pg.render({ canvasContext: lienzo.getContext('2d'), viewport: vp, transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : null }).promise;
+          var dibujo = pg.render({ canvasContext: lienzo.getContext('2d'), viewport: vp, transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : null }).promise;
+          // Capa de texto (transparente): permite seleccionar, copiar y resaltar los resultados de la búsqueda.
+          var capa = h('div', { class: 'textLayer' });
+          capa.style.setProperty('--scale-factor', String(vp.scale));
+          marco.append(capa);
+          var texto = new lib.TextLayer({ textContentSource: pg.streamTextContent(), container: capa, viewport: vp }).render()
+            .then(function () {
+              marco._capa = capa; resaltar(marco);
+              if (idx >= 0 && aciertos[idx] && aciertos[idx].p === marco._n) marcarEn(aciertos[idx], marco);
+            }).catch(function () { /* sin texto seleccionable */ });
+          return Promise.all([dibujo, texto]);
         }).catch(function (e) { console.error('[visor] página', marco._n, e); });
       }
 
-      // Se reserva el hueco de CADA página con su tamaño real (hay PDFs con páginas apaisadas)
-      // y un rótulo, para que se vea que el documento tiene todas sus páginas.
-      var n = pdf.numPages;
-      var tam = [];
-      for (var k = 1; k <= n; k++) tam.push(pdf.getPage(k).then(function (pg) { var v = pg.getViewport({ scale: 1 }); return v.height / v.width; }, function () { return 1.414; }));
-      return Promise.all(tam).then(function (rel) {
-        if (mia !== sesion) return;
-        estado.textContent = 'Documento de ' + n + (n === 1 ? ' página' : ' páginas') + '. Desplázate para verlas todas.';
+      function construir() {
+        if (vistas) vistas.disconnect();
+        cuerpo.textContent = '';
+        marcos = [];
+        ancho = anchoDisponible();
+        vistas = new IntersectionObserver(function (items) {
+          items.forEach(function (it) {
+            if (!it.isIntersecting) return;
+            vistas.unobserve(it.target);
+            pintarPagina(it.target);
+          });
+        }, { root: cuerpo, rootMargin: '1500px 0px' });
         for (var i = 1; i <= n; i++) {
           var m = h('div', { class: 'visor-pagina visor-pagina-vacia', 'aria-label': 'Página ' + i + ' de ' + n }, h('span', { class: 'visor-pagina-num' }, 'Página ' + i + ' de ' + n));
           m._n = i; m.style.width = ancho + 'px'; m.style.height = Math.round(ancho * rel[i - 1]) + 'px';
           marcos.push(m); cuerpo.append(m); vistas.observe(m);
         }
-        var nota = h('p', { class: 'visor-nota' }, 'Fin del documento · ' + n + (n === 1 ? ' página' : ' páginas'));
-        cuerpo.append(nota);
+        cuerpo.append(h('p', { class: 'visor-nota' }, 'Fin del documento · ' + n + (n === 1 ? ' página' : ' páginas')));
+      }
+
+      /* ----- Ir a una página y saber en cuál estoy ----- */
+      function irA(p) {
+        if (!(p >= 1)) { hPag.value = paginaActual; return; }
+        p = Math.min(p, n);
+        var m = marcos[p - 1];
+        if (m) cuerpo.scrollTo({ top: m.offsetTop - 8 });
+        paginaActual = p; hPag.value = p;
+      }
+      function alDesplazar() {
+        var ref = cuerpo.scrollTop + cuerpo.clientHeight / 3, p = 1;
+        for (var i = 0; i < marcos.length; i++) { if (marcos[i].offsetTop <= ref) p = i + 1; else break; }
+        if (p !== paginaActual) { paginaActual = p; if (document.activeElement !== hPag) hPag.value = p; }
+      }
+
+      /* ----- Búsqueda ----- */
+      function cargarTextos() {
+        if (textos) return Promise.resolve(textos);
+        var tareas = [];
+        for (var i = 1; i <= n; i++) {
+          tareas.push(pdf.getPage(i).then(function (pg) { return pg.getTextContent(); })
+            .then(function (c) { return normalizar(c.items.map(function (it) { return it.str; }).join(' ')); },
+              function () { return ''; }));
+        }
+        return Promise.all(tareas).then(function (t) { textos = t; return t; });
+      }
+      function resaltar(marco) {
+        if (!marco._capa) return;
+        var spans = marco._capa.querySelectorAll('span');
+        for (var i = 0; i < spans.length; i++) {
+          var s = spans[i];
+          var acierto = consulta && normalizar(s.textContent).indexOf(consulta) >= 0;
+          s.classList.toggle('visor-hit', !!acierto);
+          s.classList.remove('visor-hit-actual');
+        }
+      }
+      function marcarActual() {
+        marcos.forEach(function (m) { if (m._capa) [].forEach.call(m._capa.querySelectorAll('.visor-hit-actual'), function (x) { x.classList.remove('visor-hit-actual'); }); });
+        if (idx < 0 || !aciertos[idx]) return;
+        var a = aciertos[idx];
+        var m = marcos[a.p - 1];
+        irA(a.p);
+        // Si la página aún no está dibujada, se marca al terminar de dibujarla (ver pintarPagina).
+        if (m._capa) marcarEn(a, m);
+      }
+      function marcarEn(a, m) {
+        var hits = m._capa.querySelectorAll('.visor-hit');
+        var el = hits[Math.min(a.k, hits.length - 1)];
+        if (el) { el.classList.add('visor-hit-actual'); el.scrollIntoView({ block: 'center', inline: 'nearest' }); }
+      }
+      function actualizarCuenta() {
+        if (!consulta) hCuenta.textContent = '';
+        else if (!aciertos.length) hCuenta.textContent = textos && textos.every(function (t) { return !t; }) ? 'Sin texto que buscar' : 'Sin resultados';
+        else hCuenta.textContent = (idx + 1) + ' de ' + aciertos.length;
+      }
+      function buscar(texto) {
+        clearTimeout(temporizador);
+        temporizador = setTimeout(function () {
+          consulta = normalizar(texto.trim());
+          aciertos = []; idx = -1;
+          marcos.forEach(resaltar);
+          if (!consulta) { actualizarCuenta(); return; }
+          hCuenta.textContent = 'Buscando…';
+          cargarTextos().then(function (t) {
+            if (mia !== sesion || consulta !== normalizar(hBuscar.value.trim())) return;
+            t.forEach(function (tx, i) {
+              var k = 0, pos = tx.indexOf(consulta);
+              while (pos >= 0) { aciertos.push({ p: i + 1, k: k++ }); pos = tx.indexOf(consulta, pos + consulta.length); }
+            });
+            marcos.forEach(resaltar);
+            idx = aciertos.length ? 0 : -1;
+            actualizarCuenta();
+            marcarActual();
+          });
+        }, 250);
+      }
+      function siguiente(dir) {
+        if (!aciertos.length) return;
+        idx = (idx + dir + aciertos.length) % aciertos.length;
+        actualizarCuenta(); marcarActual();
+      }
+
+      /* ----- Cambios de tamaño (pantalla completa, giro del móvil) ----- */
+      function reajustar() {
+        if (mia !== sesion) return;
+        if (Math.abs(anchoDisponible() - ancho) < 40) return;
+        var p = paginaActual;
+        construir();
+        irA(p);
+        if (consulta) { /* los resultados se vuelven a resaltar al dibujar cada página */ }
+      }
+      var tRes = null;
+      function reajustarPronto() { clearTimeout(tRes); tRes = setTimeout(reajustar, 250); }
+
+      // Tamaño real de cada página (hay PDFs con páginas apaisadas), y arranque.
+      var tam = [];
+      for (var k = 1; k <= n; k++) tam.push(pdf.getPage(k).then(function (pg) { var v = pg.getViewport({ scale: 1 }); return v.height / v.width; }, function () { return 1.414; }));
+      return Promise.all(tam).then(function (r) {
+        if (mia !== sesion) return;
+        rel = r;
+        estado.textContent = '';
+        construir();
+        hTotal.textContent = String(n); hPag.max = String(n); hPag.value = '1';
+        hBuscar.value = ''; hCuenta.textContent = '';
+        herr.hidden = false;
+        ctl = { buscar: buscar, siguiente: siguiente, irA: irA, alDesplazar: alDesplazar, reajustar: reajustar, reajustarPronto: reajustarPronto };
       });
     });
   }
