@@ -373,11 +373,11 @@ async function guardarCurso(env, usuario, id, d, nuevo) {
   return json({ ok: true, id }, nuevo ? 201 : 200);
 }
 
-// Pide a GitHub Actions que convierta el video (workflow_dispatch). Devuelve false si no pudo.
-async function dispararConversion(env, id) {
+// Pide a GitHub Actions que ejecute un flujo (workflow_dispatch). Devuelve false si no pudo.
+async function dispararFlujo(env, flujo, inputs) {
   if (!env.GITHUB_TOKEN || !env.GITHUB_REPO) return false;
   try {
-    const r = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/convertir-video.yml/dispatches`, {
+    const r = await fetch(`https://api.github.com/repos/${env.GITHUB_REPO}/actions/workflows/${flujo}/dispatches`, {
       method: 'POST',
       headers: {
         authorization: `Bearer ${env.GITHUB_TOKEN}`,
@@ -386,15 +386,17 @@ async function dispararConversion(env, id) {
         'user-agent': 'segpaciente-worker',
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ ref: 'main', inputs: { video_id: id } }),
+      body: JSON.stringify({ ref: 'main', inputs }),
     });
-    if (r.status !== 204) console.error('GitHub respondió', r.status, 'al iniciar la conversión de', id);
+    if (r.status !== 204) console.error('GitHub respondió', r.status, 'al iniciar', flujo);
     return r.status === 204;
   } catch (e) {
     console.error(e);
     return false;
   }
 }
+// Convierte el video (HLS).
+const dispararConversion = (env, id) => dispararFlujo(env, 'convertir-video.yml', { video_id: id });
 
 // Aviso de GitHub Actions al terminar. No usa sesión: exige el secreto compartido VIDEO_CALLBACK_SECRET.
 async function avisoConversion(request, env) {
@@ -656,6 +658,7 @@ const TIPOS_DOC = {
   ppt: 'application/vnd.ms-powerpoint', pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
   txt: 'text/plain; charset=utf-8', csv: 'text/csv; charset=utf-8', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg',
 };
+const CONVERTIBLES_PDF = new Set(['docx', 'doc', 'pptx', 'ppt']);
 const MAX_DOC = 25 * 1024 * 1024;
 const MAX_VIDEO = 100 * 1024 * 1024; // tope de una solicitud en el plan gratuito de Workers
 // Tope propio de almacenamiento para no pasar de los 10 GB gratuitos de R2: originales + convertidos (≈ el doble).
@@ -683,6 +686,9 @@ async function subirArchivo(request, env, usuario, url) {
     const clave = `documentos/${sufijo}-${slug(base)}.${ext}`;
     await env.MEDIA.put(clave, request.body, { httpMetadata: { contentType: TIPOS_DOC[ext] } });
     await env.DB.batch([stmtAuditoria(env, usuario.id, 'crear', 'documento', clave, nombre)]);
+    // Los documentos de Office también se convierten a PDF en la nube (documentos/<archivo>.pdf) para verlos fielmente.
+    // Si no se puede iniciar, el visor usa el del navegador: no es un error de la subida.
+    if (CONVERTIBLES_PDF.has(ext)) await dispararFlujo(env, 'convertir-documento.yml', { clave });
     return json({ archivo: `media/${clave}`, titulo: base || 'Documento' }, 201);
   }
   if (tipo === 'video') {

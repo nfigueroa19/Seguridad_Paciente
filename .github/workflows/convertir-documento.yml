@@ -1,0 +1,68 @@
+# Conversión de documentos de Office subidos desde la aplicación a PDF (para verlos tal cual en el visor).
+#
+# Lo inicia el Worker (workflow_dispatch) cuando el editor sube un .docx/.pptx (o .doc/.ppt).
+#   1. Baja el original del bucket privado (segpaciente-media, documentos/<archivo>).
+#   2. Lo convierte a PDF con LibreOffice (herramientas/documentos/convertir-documento.sh) y fuentes libres instaladas.
+#   3. Sube el PDF junto al original como documentos/<archivo>.pdf (mismo bucket privado, se sirve con sesión).
+# El visor pide primero ese PDF; si todavía no existe (o falló), usa el visor del navegador.
+#
+# Secretos del repositorio necesarios (los mismos que convertir-video.yml):
+#   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY.
+# El repositorio es público: nunca poner claves en este archivo.
+name: Convertir documento
+
+on:
+  workflow_dispatch:
+    inputs:
+      clave:
+        description: Clave del original en R2 (documentos/<archivo>)
+        required: true
+        type: string
+
+concurrency:
+  group: convertir-documento
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  convertir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CLAVE: ${{ inputs.clave }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+      AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+      R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      BUCKET: segpaciente-media
+    steps:
+      - name: Validar la clave
+        run: |
+          [[ "$CLAVE" =~ ^documentos/[A-Za-z0-9_.-]{1,200}\.(docx|doc|pptx|ppt)$ ]] || { echo "Clave no válida"; exit 1; }
+
+      - uses: actions/checkout@v4
+
+      - name: Instalar LibreOffice y fuentes
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends \
+            libreoffice-impress libreoffice-writer libreoffice-calc \
+            fonts-liberation fonts-crosextra-carlito fonts-crosextra-caladea fonts-dejavu-core fonts-noto-core
+          bash herramientas/documentos/instalar-fuentes.sh "$HOME/.fonts"
+
+      - name: Descargar el original
+        run: |
+          mkdir -p trabajo
+          aws s3 cp "s3://$BUCKET/$CLAVE" "trabajo/original.${CLAVE##*.}" --endpoint-url "$R2_ENDPOINT" --no-progress
+
+      - name: Convertir a PDF
+        run: bash herramientas/documentos/convertir-documento.sh "trabajo/original.${CLAVE##*.}" trabajo/salida.pdf
+
+      - name: Subir el PDF
+        run: |
+          aws s3 cp trabajo/salida.pdf "s3://$BUCKET/$CLAVE.pdf" --endpoint-url "$R2_ENDPOINT" --no-progress \
+            --content-type application/pdf

@@ -23,6 +23,9 @@
     doc: 'antiguo', ppt: 'antiguo'
   };
 
+  // Formatos que la nube convierte a PDF al subirlos (herramientas/documentos, flujo convertir-documento.yml).
+  var CON_PDF = { docx: 1, doc: 1, pptx: 1, ppt: 1 };
+
   var cargados = {};
   function cargarScript(src) {
     if (!cargados[src]) {
@@ -116,6 +119,24 @@
     if (!dlg.open) dlg.showModal();
     document.documentElement.classList.add('visor-abierto');
 
+    // Word y PowerPoint: si la nube ya convirtió el original a PDF (<archivo>.pdf), se muestra ese PDF,
+    // que respeta fuentes, formas y efectos mucho mejor que el dibujo en el navegador.
+    if (CON_PDF[ext]) {
+      estado.textContent = 'Cargando documento…';
+      return fetch(url + '.pdf', { credentials: 'same-origin' }).then(function (r) {
+        if (!r.ok || !/pdf/i.test(r.headers.get('content-type') || '')) throw new Error('sin-pdf');
+        return r.arrayBuffer();
+      }).then(function (buf) {
+        if (mia !== sesion) return;
+        return verPdf(buf, 'pdf', mia).then(function () { if (mia === sesion) estado.textContent = ''; });
+      }).catch(function () {
+        if (mia === sesion) { cuerpo.textContent = ''; return abrirDirecto(url, ext, tipo, mia); }
+      });
+    }
+    return abrirDirecto(url, ext, tipo, mia);
+  }
+
+  function abrirDirecto(url, ext, tipo, mia) {
     if (!tipo) return mensaje('Este tipo de archivo no se puede mostrar aquí.', true);
     if (tipo === 'antiguo') {
       return mensaje('Los formatos antiguos de Word y PowerPoint (.' + ext + ') no se pueden mostrar en el navegador. ' +
