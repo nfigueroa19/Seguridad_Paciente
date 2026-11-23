@@ -1,0 +1,499 @@
+{
+ "id": "modulo-0",
+ "titulo": "Fundamentos de Seguridad del Paciente y Cultura Justa",
+ "proporcion": 1.7778,
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "Atención centrada Paciente, familia y cuidador como eje de la atención. Trabajo articulado Colaboradores, líderes de las diez líneas de acción y programas de vigilancia. Gestión institucional Gobierno Clínico, Enfermería, Complementación Terapéutica, Subdirecciones y Gerencia. Propósito Responsabilidad compartida, prácticas seguras y mejoramiento continuo. MODELO DE SEGURIDAD DEL PACIENTE",
+   "elementos": []
+  },
+  {
+   "img": "d02.webp",
+   "texto": "CULTURA DE SEGURIDAD Y CULTURA JUSTA Cultura de seguridad Valores, actitudes y comportamientos compartidos que priorizan la prevención del daño y el aprendizaje. Cultura justa Reconoce el error humano, analiza las causas y promueve respuestas proporcionales, sin castigos injustos. Se refleja en: reporte oportuno · análisis de incidentes · acciones de mejora · trabajo en equipo.",
+   "elementos": []
+  },
+  {
+   "img": "d03.webp",
+   "texto": "Elemento 1 20% Elemento 3 20% Elemento 4 20% Elemento 1 20% Elemento 3 20% Elemento 4 20% de INFECCIONES asociadas a la atención en salud. HEMO Vigilancia FARMACO Vigilancia TECNO REACTIVO PREVENCIÓN Vigilancia Vigilancia Trabajamos en conjunto con los programas de vigilancia institucional",
+   "elementos": []
+  },
+  {
+   "img": "d04.webp",
+   "texto": "Elemento 1 20% Elemento 4 20% Elemento 1 20% Elemento 4 20% de INFECCIONES asociadas a la atención en salud. PREVENCIÓN Trabajamos en conjunto con los programas de vigilancia institucional Actividades para detectar, prevenir, controlar y reducir las infecciones asociadas a la atención en salud .",
+   "elementos": []
+  },
+  {
+   "img": "d05.webp",
+   "texto": "Elemento 1 20% Elemento 4 20% Elemento 1 20% Elemento 4 20% Vigilancia TECNO Trabajamos en conjunto con los programas de vigilancia institucional Identificar, evaluar y prevenir eventos e incidentes adversos relacionados con dispositivos médicos.",
+   "elementos": []
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Elemento 1 20% Elemento 4 20% Elemento 1 20% Elemento 4 20% REACTIVO Vigilancia Trabajamos en conjunto con los programas de vigilancia institucional Identificar y evaluar efectos indeseados asociados al uso de reactivos de diagnóstico in vitro y sus factores de riesgo.",
+   "elementos": []
+  },
+  {
+   "img": "d07.webp",
+   "texto": "Elemento 1 20% Elemento 4 20% Elemento 1 20% Elemento 4 20% FARMACO Vigilancia Trabajamos en conjunto con los programas de vigilancia institucional Detección, evaluación, comprensión y prevención de eventos adversos y otros problemas relacionados con medicamentos.",
+   "elementos": []
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Elemento 1 20% Elemento 4 20% Elemento 1 20% Elemento 4 20% HEMO Vigilancia Trabajamos en conjunto con los programas de vigilancia institucional Vigilancia epidemiológica para detectar, registrar y analizar eventos relacionados con la donación y transfusión de sangre .",
+   "elementos": []
+  },
+  {
+   "img": "d09.webp",
+   "texto": "¡PON A PRUEBA TUS CONOCIMIENTOS! Prevención y control de infecciones asociadas a la atención. Seguridad de los dispositivos médicos. Seguimiento de eventos relacionados con transfusiones. Detección y prevención de problemas asociados a medicamentos. Vigilancia de riesgos de reactivos de diagnóstico in vitro. Reconoce el error humano, analiza las causas y promueve respuestas proporcionales, sin castigos injustos. Lee cada definición y piensa a qué concepto corresponde. Luego, haz clic sobre el concepto que consideres correcto para comprobar tu respuesta.",
+   "elementos": [
+    {
+     "tipo": "mover",
+     "x": 15.86,
+     "y": 25.52,
+     "w": 19.34,
+     "h": 5.61,
+     "etiqueta": "Cultura justa",
+     "img": "e09-23.webp",
+     "dx": 23.67,
+     "dy": 13.26,
+     "destino": 0
+    },
+    {
+     "tipo": "mover",
+     "x": 36.5,
+     "y": 25.24,
+     "w": 17.5,
+     "h": 5.61,
+     "etiqueta": "Reactivovigilancia",
+     "img": "e09-16.webp",
+     "dx": 31.19,
+     "dy": 36.92,
+     "destino": 1
+    },
+    {
+     "tipo": "mover",
+     "x": 29.91,
+     "y": 34.22,
+     "w": 17.5,
+     "h": 5.61,
+     "etiqueta": "Tecnovigilancia",
+     "img": "e09-7.webp",
+     "dx": 12.07,
+     "dy": 29.91,
+     "destino": 2
+    },
+    {
+     "tipo": "mover",
+     "x": 74.11,
+     "y": 25.16,
+     "w": 17.5,
+     "h": 5.61,
+     "etiqueta": "IAAS",
+     "img": "e09-4.webp",
+     "dx": -62.57,
+     "dy": 38.96,
+     "destino": 3
+    },
+    {
+     "tipo": "mover",
+     "x": 51.84,
+     "y": 33.66,
+     "w": 17.5,
+     "h": 5.61,
+     "etiqueta": "Hemovigilancia",
+     "img": "e09-10.webp",
+     "dx": -38.67,
+     "dy": 5.9,
+     "destino": 4
+    },
+    {
+     "tipo": "mover",
+     "x": 55.3,
+     "y": 25.37,
+     "w": 17.5,
+     "h": 5.61,
+     "etiqueta": "Farmacovigilancia",
+     "img": "e09-13.webp",
+     "dx": 14.62,
+     "dy": 13.66,
+     "destino": 5
+    }
+   ],
+   "destinos": [
+    {
+     "x": 37.27,
+     "y": 43.83,
+     "w": 24.51,
+     "h": 15.75,
+     "etiqueta": "Reconoce el error humano, analiza las causas y promueve respuestas proporcionales, sin castigos injustos."
+    },
+    {
+     "x": 68.16,
+     "y": 69.18,
+     "w": 17.5,
+     "h": 15.75,
+     "etiqueta": "Vigilancia de riesgos de reactivos de diagnóstico in vitro."
+    },
+    {
+     "x": 41.25,
+     "y": 69.49,
+     "w": 17.5,
+     "h": 15.75,
+     "etiqueta": "Seguridad de los dispositivos médicos."
+    },
+    {
+     "x": 11.51,
+     "y": 69.74,
+     "w": 17.5,
+     "h": 15.75,
+     "etiqueta": "Prevención y control de infecciones asociadas a la atención."
+    },
+    {
+     "x": 11.35,
+     "y": 44.61,
+     "w": 17.5,
+     "h": 15.75,
+     "etiqueta": "Seguimiento de eventos relacionados con transfusiones."
+    },
+    {
+     "x": 68.16,
+     "y": 43.77,
+     "w": 19.3,
+     "h": 15.75,
+     "etiqueta": "Detección y prevención de problemas asociados a medicamentos."
+    }
+   ]
+  },
+  {
+   "img": "d10.webp",
+   "texto": "INCIDENTE FALLA Es involuntario, Ocurre durante el proceso de atención en salud y no causa daño RIESGO RIESGO Daño de mínima gravedad que NO amerita tratamiento médico o quirúrgico Es involuntario , ocurre durante el proceso de atención en salud y Causa daño CENTINELA Daño severo de carácter permanente o muerte . Ej. Caída que genera Trauma Cráneo Encefálico severo con secuelas neurológicas permanentes. Daño severo que amerita tratamiento médico o quirúrgico para salvar la vida . EVENTO ADVERSO Prevenible- No prevenible LEVE MODERADO GRAVE Daño moderado que amerita tratamiento médico o quirúrgico Acciones u omisiones involuntarias que generan riesgo de la ocurrencia de un evento adverso durante la atención en salud Probabilidad de que se produzca un evento adverso durante la atención en salud Ej. Caída que genera pequeña laceración Ej. Caída que genera fractura proximal de humero la cual requiere un procedimiento quirúrgico con posterior recuperación. Ej. Caída que genera Trauma Cráneo encefálico que requiere intervención quirúrgica para salvar su vida y presenta una posterior recuperación. CONCEPTOS DE SEGURIDAD",
+   "elementos": []
+  },
+  {
+   "img": "d11.webp",
+   "texto": "PON A PRUEBA TUS CONOCIMIENTOS! ‘ ‘ Condición insegura Peligro Falla en la atención Barrera de seguridad V V",
+   "elementos": [
+    {
+     "tipo": "mover",
+     "x": 29.87,
+     "y": 74.11,
+     "w": 9.89,
+     "h": 15.75,
+     "etiqueta": "Imagen 1",
+     "img": "e11-74.webp",
+     "dx": 28.95,
+     "dy": -47.25,
+     "destino": 0
+    },
+    {
+     "tipo": "mover",
+     "x": 12.36,
+     "y": 51.05,
+     "w": 10.15,
+     "h": 15.75,
+     "etiqueta": "Imagen 2",
+     "img": "e11-76.webp",
+     "dx": 60.36,
+     "dy": -24.01,
+     "destino": 1
+    },
+    {
+     "tipo": "mover",
+     "x": 11.72,
+     "y": 73.57,
+     "w": 9.65,
+     "h": 15.75,
+     "etiqueta": "Imagen 3",
+     "img": "e11-72.webp",
+     "dx": 33.46,
+     "dy": -46.53,
+     "destino": 2
+    },
+    {
+     "tipo": "mover",
+     "x": 28.7,
+     "y": 48.59,
+     "w": 10.31,
+     "h": 15.75,
+     "etiqueta": "Imagen 4",
+     "img": "e11-92.webp",
+     "dx": 57.88,
+     "dy": -21.94,
+     "destino": 3
+    },
+    {
+     "tipo": "sacudir",
+     "x": 12.01,
+     "y": 28.54,
+     "w": 10.28,
+     "h": 15.75,
+     "etiqueta": "Imagen 5",
+     "img": "e11-86.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 26.8,
+     "y": 27.79,
+     "w": 10.02,
+     "h": 15.75,
+     "etiqueta": "Imagen 6",
+     "img": "e11-90.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 53.32,
+     "y": 75.33,
+     "w": 9.3,
+     "h": 15.75,
+     "etiqueta": "Imagen 7",
+     "img": "e11-80.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 71.13,
+     "y": 74.24,
+     "w": 11.14,
+     "h": 15.75,
+     "etiqueta": "Imagen 8",
+     "img": "e11-88.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 81.01,
+     "y": 54.16,
+     "w": 9.71,
+     "h": 15.75,
+     "etiqueta": "Imagen 9",
+     "img": "e11-96.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 64.85,
+     "y": 54.28,
+     "w": 10.67,
+     "h": 15.75,
+     "etiqueta": "Imagen 10",
+     "img": "e11-84.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 49.34,
+     "y": 52.65,
+     "w": 9.79,
+     "h": 15.75,
+     "etiqueta": "Imagen 11",
+     "img": "e11-94.webp"
+    }
+   ],
+   "destinos": [
+    {
+     "x": 57.97,
+     "y": 26.14,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Peligro"
+    },
+    {
+     "x": 71.79,
+     "y": 26.32,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Falla en la atención"
+    },
+    {
+     "x": 43.44,
+     "y": 26.92,
+     "w": 12.88,
+     "h": 15.75,
+     "etiqueta": "Condición insegura"
+    },
+    {
+     "x": 85.51,
+     "y": 25.76,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Barrera de seguridad"
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 91.04,
+    "y": 0.0,
+    "w": 9.78,
+    "h": 14.58
+   },
+   "audio": [
+    {
+     "src": "../../juegos/neumonia-cero/assets/audio/responde-pregunta.mp3",
+     "volumen": 0.62
+    },
+    {
+     "src": "../../juegos/neumonia-cero/assets/audio/musica-retos.mp3",
+     "volumen": 0.8
+    }
+   ]
+  },
+  {
+   "img": "d12.webp",
+   "texto": "‘ ‘ Evento adverso leve Barrera de seguridad Incidente sin daño Evento adverso V V PON A PRUEBA TUS CONOCIMIENTOS!",
+   "elementos": [
+    {
+     "tipo": "mover",
+     "x": 12.46,
+     "y": 25.71,
+     "w": 10.28,
+     "h": 15.75,
+     "etiqueta": "Imagen 1",
+     "img": "e12-38.webp",
+     "dx": 60.77,
+     "dy": 1.83,
+     "destino": 0
+    },
+    {
+     "tipo": "mover",
+     "x": 61.87,
+     "y": 75.12,
+     "w": 11.14,
+     "h": 15.75,
+     "etiqueta": "Imagen 2",
+     "img": "e12-4.webp",
+     "dx": 24.11,
+     "dy": -48.61,
+     "destino": 1
+    },
+    {
+     "tipo": "mover",
+     "x": 45.2,
+     "y": 74.39,
+     "w": 9.3,
+     "h": 15.75,
+     "etiqueta": "Imagen 3",
+     "img": "e12-3.webp",
+     "dx": 0.43,
+     "dy": -46.85,
+     "destino": 2
+    },
+    {
+     "tipo": "mover",
+     "x": 29.12,
+     "y": 51.18,
+     "w": 10.31,
+     "h": 15.75,
+     "etiqueta": "Imagen 4",
+     "img": "e12-65.webp",
+     "dx": 29.78,
+     "dy": -24.05,
+     "destino": 3
+    },
+    {
+     "tipo": "sacudir",
+     "x": 11.38,
+     "y": 50.0,
+     "w": 10.15,
+     "h": 15.75,
+     "etiqueta": "Imagen 5",
+     "img": "e12-25.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 12.12,
+     "y": 73.02,
+     "w": 9.65,
+     "h": 15.75,
+     "etiqueta": "Imagen 6",
+     "img": "e12-19.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 69.81,
+     "y": 52.45,
+     "w": 10.67,
+     "h": 15.75,
+     "etiqueta": "Imagen 7",
+     "img": "e12-28.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 50.22,
+     "y": 52.25,
+     "w": 9.79,
+     "h": 15.75,
+     "etiqueta": "Imagen 8",
+     "img": "e12-67.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 29.99,
+     "y": 72.19,
+     "w": 9.89,
+     "h": 15.75,
+     "etiqueta": "Imagen 9",
+     "img": "e12-23.webp"
+    }
+   ],
+   "destinos": [
+    {
+     "x": 71.79,
+     "y": 26.32,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Incidente sin daño"
+    },
+    {
+     "x": 85.23,
+     "y": 25.76,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Evento adverso"
+    },
+    {
+     "x": 44.25,
+     "y": 26.69,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Evento adverso leve"
+    },
+    {
+     "x": 57.97,
+     "y": 26.14,
+     "w": 12.88,
+     "h": 17.22,
+     "etiqueta": "Barrera de seguridad"
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 91.04,
+    "y": 0.0,
+    "w": 9.78,
+    "h": 14.58
+   },
+   "audio": [
+    {
+     "src": "../../juegos/neumonia-cero/assets/audio/responde-pregunta.mp3",
+     "volumen": 0.62
+    },
+    {
+     "src": "../../juegos/neumonia-cero/assets/audio/musica-retos.mp3",
+     "volumen": 0.8
+    }
+   ]
+  },
+  {
+   "img": "d13.webp",
+   "texto": "3. Identifique 1. Valore 2. Revalore ¿Quién? Medico General ¿Quién? Enfermera Profesional ¿Quién? Auxiliar De Enfermería IDENTIFICACIÓN Y VALORACIÓN DEL RIESGO Valoración inicial del riesgo clínico. Revaloración según evolución. Alerta visual del riesgo y medidas indicadas.",
+   "elementos": []
+  },
+  {
+   "img": "d14.webp",
+   "texto": "ALERTA VISUAL DE IDENTIFICACIÓN DEL RIESGO CLÍNICO INCLUSIÓN EN LOS PLANES DE TRATAMIENTO RIESGOS CLÍNICOS ANEXOS DE APOYO EN LA IDENTIFICACIÓN DEL RIESGO Y BAERRERAS Y DEFENSAS EN SEGURIDAD",
+   "elementos": []
+  },
+  {
+   "img": "d15.webp",
+   "texto": "ABRAZO DE SEGURIDAD ¿Qué es? Encuentro breve del equipo para identificar riesgos clínicos y acordar barreras de seguridad del turno. ¿Cuándo y quiénes? Diariamente, después de recibir turno. Participa el equipo de salud y lidera el personal médico. ¿Cómo? Preguntas estandarizadas sobre riesgos potenciales; duración máxima de 10 minutos. Objetivo: mejorar la comunicación entre el equipo de salud, frente a los riesgos clínicos potenciales en la atención y las barreras de seguridad a implementar, para prevenir eventos adversos en el paciente",
+   "elementos": []
+  }
+ ]
+}

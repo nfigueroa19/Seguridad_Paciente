@@ -1,0 +1,29 @@
+[
+ {
+  "id": "modulo-0",
+  "curso": "curso-1",
+  "titulo": "Fundamentos de Seguridad del Paciente y Cultura Justa",
+  "descripcion": "Recorre la política institucional, la cultura justa y los programas de vigilancia, y pon a prueba tus conocimientos.",
+  "portada": "modulo-0/d01.webp",
+  "diapositivas": 15,
+  "actividades": 3
+ },
+ {
+  "id": "modulo-1",
+  "curso": "curso-2",
+  "titulo": "Identificación correcta del paciente",
+  "descripcion": "Repasa los identificadores, la verificación activa y los casos especiales, y resuelve los retos.",
+  "portada": "modulo-1/d03.webp",
+  "diapositivas": 15,
+  "actividades": 5
+ },
+ {
+  "id": "modulo-2",
+  "curso": "curso-3",
+  "titulo": "Comunicación efectiva y segura",
+  "descripcion": "Practica las 4C, SBAR, la comunicación redundante y el Teach-Back con retos de selección.",
+  "portada": "modulo-2/d03.webp",
+  "diapositivas": 13,
+  "actividades": 5
+ }
+]

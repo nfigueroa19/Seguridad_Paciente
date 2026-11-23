@@ -4,3 +4,6 @@ node_modules/
 
 # Variables locales de wrangler dev
 .dev.vars
+
+# PowerPoint de los módulos descargados de R2 (insumo de herramientas/presentaciones/generar.py)
+insumos-modulos/

@@ -1,0 +1,237 @@
+{
+ "id": "modulo-1",
+ "titulo": "Identificación correcta del paciente",
+ "proporcion": 1.7778,
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "",
+   "elementos": []
+  },
+  {
+   "img": "d02.webp",
+   "texto": "¿ Qué es la identificación correcta ? CONCEPTO CLAVE Es la verificación activa de que cada atención, medicamento, examen, procedimiento o tratamiento corresponde al paciente indicado. Previene confusiones de pacientes, errores de medicación, procedimientos equivocados y fallas en la trazabilidad.",
+   "elementos": []
+  },
+  {
+   "img": "d03.webp",
+   "texto": "Los tres identificadores institucionales 1. Nombre completo 2. Número de documento de identidad 3. Fecha de nacimiento La cama, habitación, diagnóstico y apariencia física NO son identificadores válidos.",
+   "elementos": []
+  },
+  {
+   "img": "d04.webp",
+   "texto": "IDENTIFICACIÓN CORRECTA DEL PACIENTE | SUSANA SEGURA Verificación activa: preguntar y comparar CONCEPTO CLAVE Pregunte de forma abierta: «¿Me puede decir su nombre completo?». Compare la respuesta con la manilla, la historia clínica y la orden correspondiente. Evite preguntas que sugieran la respuesta. Si el paciente no puede responder, aplique las fuentes alternativas institucionales.",
+   "elementos": []
+  },
+  {
+   "img": "d05.webp",
+   "texto": "4 6 8 5 Antes y después de TRASLADAR / recibo y entrega de turno Antes de la administración de MEDICAMENTOS Antes de TOMAR MUESTRAS Antes de TRASFUNDIR 7 1 INGRESO del paciente al consultorio o recién nacido Comparación de DOS mecanismos Durante todo el ciclo de atención 2 3 Antes de cada PROCEDIMIENTO Antes de la CIRUGÍA EGRESO del paciente Verificación cruzada de identificación MOMENTOS CLAVE 1. IDENTIFICAR correctamente al paciente",
+   "elementos": []
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Manilla y tablero : funciones diferentes CONCEPTO CLAVE MANILLA: debe permanecer colocada, completa, legible y visible; es una barrera de seguridad. TABLERO: apoya la comunicación del equipo y debe estar actualizado, pero NO sustituye la manilla ni la identificación activa. Si la manilla falta o contiene errores, gestione su corrección antes de intervenciones no urgentes .",
+   "elementos": []
+  },
+  {
+   "img": "d07.webp",
+   "texto": "IDENTIFICACIÓN CORRECTA DEL PACIENTE | SUSANA SEGURA Identificación en casos especiales Paciente inconsciente, sedado o desorientado: manilla, historia clínica y fuentes confiables. Identidad desconocida: identificador provisional único conforme al procedimiento. Recién nacidos: identificación segura del binomio madre-hijo y diferenciación de nacimientos múltiples. Pediatría: apoyo de padres o cuidadores.",
+   "elementos": []
+  },
+  {
+   "img": "d08.webp",
+   "texto": "IDENTIFICACIÓN CORRECTA DEL PACIENTE | SUSANA SEGURA Identificación en casos especiales CONCEPTO CLAVE Barreras de comunicación: mecanismos alternativos de verificación. Nombres similares: comprobación reforzada. Imposibilidad de colocar manilla en sitio habitual: alternativa institucional autorizada. Urgencia vital: mecanismos disponibles sin retrasar injustificadamente la atención indispensable.",
+   "elementos": []
+  },
+  {
+   "img": "d09.webp",
+   "texto": "Responsabilidad compartida CONCEPTO CLAVE Cada colaborador verifica la identidad antes de su propia intervención, sin depender de comprobaciones previas. El paciente y la familia pueden confirmar datos y advertir inconsistencias. La identificación segura debe mantenerse desde el ingreso hasta el egreso.",
+   "elementos": []
+  },
+  {
+   "img": "d10.webp",
+   "texto": "IDENTIFICACIÓN CORRECTA DEL PACIENTE | SUSANA SEGURA Reto 1: Identificadores SELECCIONA UNA RESPUESTA ¿Cuáles son los tres identificadores institucionales? A. Nombre , cama y diagnóstico B. Nombre completo , documento y fecha de nacimiento C. Nombre , habitación y edad",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 12.22,
+     "y": 46.84,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "A. Nombre , cama y diagnóstico",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 67.73,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "C. Nombre , habitación y edad",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 10.5,
+     "y": 57.23,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "B. Nombre completo , documento y fecha de nacimiento",
+     "color": "#92D050",
+     "correcta": true
+    }
+   ]
+  },
+  {
+   "img": "d11.webp",
+   "texto": "IDENTIFICACIÓN CORRECTA DEL PACIENTE | SUSANA SEGURA Reto 2: Pregunta abierta SELECCIONA UNA RESPUESTA ¿Cuál pregunta permite identificar activamente al paciente? A. ¿Usted es Ana Pérez? B. ¿ Está en la cama 12? C. ¿Me dice su nombre completo ?",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 47.2,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "A. ¿Usted es Ana Pérez?",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 57.47,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "B. ¿ Está en la cama 12?",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 67.73,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "C. ¿Me dice su nombre completo ?",
+     "color": "#92D050",
+     "correcta": true
+    }
+   ]
+  },
+  {
+   "img": "d12.webp",
+   "texto": "IDENTIFICACIÓN CORRECTA DEL PACIENTE | SUSANA SEGURA Reto 3 : Datos discordantes SELECCIONA UNA RESPUESTA La orden y la manilla tienen documentos diferentes. ¿Qué hace? A. Suspender cuando sea seguro y aclarar la discrepancia B. Continuar porque el nombre coincide C. Pedir a otro compañero que lo haga",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 47.2,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "A. Suspender cuando sea seguro y aclarar la discrepancia",
+     "color": "#92D050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 57.47,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "B. Continuar porque el nombre coincide",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 67.73,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "C. Pedir a otro compañero que lo haga",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Reto 4 : Paciente sedado SELECCIONA UNA RESPUESTA Un paciente sedado no puede decir su nombre. ¿Qué procede? A. Omitir identificación B. Verificar manilla , historia y fuentes confiables C. Identificar solo por ubicación",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 47.2,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "A. Omitir identificación",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 57.47,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "B. Verificar manilla , historia y fuentes confiables",
+     "color": "#92D050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 67.73,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "C. Identificar solo por ubicación",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d14.webp",
+   "texto": "Reto 5 : Responsabilidad SELECCIONA UNA RESPUESTA ¿Quién es responsable de verificar la identidad? A. Solo admisiones B. Cada colaborador antes de su intervención C. Solo el profesional de enfermería",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 46.27,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "A. Solo admisiones",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 57.47,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "B. Cada colaborador antes de su intervención",
+     "color": "#92D050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 13.12,
+     "y": 67.73,
+     "w": 72.0,
+     "h": 6.0,
+     "etiqueta": "C. Solo el profesional de enfermería",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d15.webp",
+   "texto": "Cierre : identificación segura CONCEPTO CLAVE ANTES DE ACTUAR: pregunte, compare y confirme. Si encuentra una discrepancia, aclárela antes de continuar cuando sea clínicamente seguro. Una manilla correcta y visible, junto con la verificación activa, protege al paciente durante toda la atención.",
+   "elementos": []
+  }
+ ]
+}

@@ -1,0 +1,227 @@
+{
+ "id": "modulo-2",
+ "titulo": "Comunicación efectiva y segura",
+ "proporcion": 1.7778,
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "",
+   "elementos": []
+  },
+  {
+   "img": "d02.webp",
+   "texto": "Comunicación efectiva y segura Es transmitir información clínica de manera clara, completa y oportuna, y confirmar que quien la recibe la comprendió. En seguridad del paciente, ayuda a prevenir errores en la administración de medicamentos, los procedimientos y la entrega de turno. Transmitir → Recibir → Comprender → Confirmar",
+   "elementos": []
+  },
+  {
+   "img": "d03.webp",
+   "texto": "COMUNICACIÓN EFECTIVA Comunicar de manera segura significa transmitir información clara, completa y oportuna, y verificar que fue comprendida. 1 CORDIAL Trato amable y respetuoso que facilita la comunicación. 2 CLARA Información precisa, comprensible y sin ambigüedades. 3 COMPLETA Incluye la información necesaria para actuar correctamente. 4 CONFIRMADA Se verifica que el mensaje fue recibido y comprendido . “ Comunicar bien no es solo transmitir información : es asegurarnos de que el otro puede actuar correctamente .” 1",
+   "elementos": []
+  },
+  {
+   "img": "d04.webp",
+   "texto": "COMUNICACIÓN REDUNDANTE Confirmar la información crítica reduce el riesgo de interpretación y errores Repetir y confirmar información crítica, especialmente cuando una interpretación incorrecta puede generar daño al paciente. ÓRDENES VERBALES Repetir la indicación recibida y confirmar dosis, vía, paciente y momento cuando corresponda. PROCEDIMIENTOS Verificar instrucciones críticas antes de ejecutar un procedimiento. RESULTADOS CRÍTICOS Confirmar recepción del resultado y la conducta requerida. EDUCACIÓN Comprobar comprensión del paciente o familiar mediante Teach -Back. Ejemplo: “¿Me confirma la indicación recibida?” → “Confirmo: administrar… por… a las…” → “Correcto.” 2",
+   "elementos": []
+  },
+  {
+   "img": "d05.webp",
+   "texto": "Teach -Back Explica la indicación con palabras sencillas. Pide al paciente o familiar que la explique con sus propias palabras. Aclara y verifica de nuevo si encuentras alguna dificultad. Ejemplo para el egreso «Para confirmar que me expliqué bien, ¿me puede contar cómo va a tomar el medicamento en casa?».",
+   "elementos": []
+  },
+  {
+   "img": "d06.webp",
+   "texto": "2. COMUNICACIÓN efectiva. Las siglas SBAR significan: S – Situación: ¿Qué está pasando ahora con el paciente? B – Antecedentes: ¿Cuál es el contexto o historial relevante? A – Evaluación: ¿Qué se observa o cuál es el análisis clínico actual? R – Recomendación: ¿Qué se necesita o qué se propone hacer? SBAR = Comunicar lo esencial, de forma clara, ordenada y segura. Órdenes verbales : En caso de emergencias o dolor severo. Órdenes verbales : En caso de emergencias o dolor severo. Resultados de imágenes o laboratorios críticos: Laboratorio o imágenes, deben realizar una llamada y notificar al jefe o médico encargado del paciente.",
+   "elementos": []
+  },
+  {
+   "img": "d07.webp",
+   "texto": "2. COMUNICACIÓN efectiva. GRUPO CEA Comunicación de Eventos Adversos graves o centinela Ante un evento adverso grave, la comunicación con el paciente y su familia debe ser oportuna, empática, transparente y segura . E Escuchar Escuchar y validar emociones. P Proteger Garantizar privacidad y comunicación segura. I Informar Explicar con claridad y decir la verdad. C Cuidar Brindar apoyo y mostrar empatía. E Explicar Explicar las causas y acciones realizadas. E Empoderar Involucrar al paciente y resolver dudas. PROTOCOLO EPICEE",
+   "elementos": []
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Durante la entrega de turno, la enfermera receptora resume los pendientes y la enfermera saliente verifica que los entendió correctamente. ¿Qué C se está reforzando? B. Confirmada A. Cordial. C. Completa. Reto 1: Las 4C SELECCIONA UNA RESPUESTA",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 56.12,
+     "y": 44.97,
+     "w": 36.84,
+     "h": 13.46,
+     "etiqueta": "B. Confirmada",
+     "color": "#00B050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 56.12,
+     "y": 25.49,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "A. Cordial.",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 56.12,
+     "y": 62.21,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "C. Completa.",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d09.webp",
+   "texto": "Durante un traslado, el profesional explica el motivo del ingreso, los procedimientos ya realizados y una alergia relevante. ¿A qué componente corresponde esa información? C . Antecedentes A. Evaluación . B . Recomendación . Reto 2 : SBAR/SAER SELECCIONA UNA RESPUESTA",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 53.7,
+     "y": 31.85,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "A. Evaluación .",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 53.7,
+     "y": 46.81,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "B . Recomendación .",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 53.7,
+     "y": 62.06,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "C . Antecedentes",
+     "color": "#92D050",
+     "correcta": true
+    }
+   ]
+  },
+  {
+   "img": "d10.webp",
+   "texto": "El laboratorio llama al servicio para informar un resultado crítico . ¿Qué acción aplica la comunicación redundante? B . El profesional repite en voz alta la identificación del paciente y el resultado crítico. El laboratorio confirma o corrige lo que escuchó, y el receptor confirma la conducta requerida según el procedimiento institucional . A. El profesional que recibe la llamada agradece el aviso y anota el resultado tal como lo escuchó. C. El profesional repite el resultado a un compañero del servicio y da por confirmada la información. Reto 3 : Comunicación redundante SELECCIONA UNA RESPUESTA",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 42.27,
+     "y": 40.17,
+     "w": 55.34,
+     "h": 17.97,
+     "etiqueta": "B . El profesional repite en voz alta la identificación del paciente y el resultado crítico. El laboratorio confirma o corrige lo que escuchó, y el receptor confirma la conducta requerida según el procedimiento institucional .",
+     "color": "#00B050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 42.27,
+     "y": 24.05,
+     "w": 55.34,
+     "h": 13.46,
+     "etiqueta": "A. El profesional que recibe la llamada agradece el aviso y anota el resultado tal como lo escuchó.",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 42.27,
+     "y": 62.36,
+     "w": 55.34,
+     "h": 13.46,
+     "etiqueta": "C. El profesional repite el resultado a un compañero del servicio y da por confirmada la información.",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d11.webp",
+   "texto": "Al preparar el egreso, ¿qué pregunta permite verificar la comprensión con Teach -Back? C. «Para confirmar que me expliqué bien, ¿me cuenta cómo va a tomar el medicamento en casa?». B. «¿Tiene alguna pregunta antes de irse?». A. «¿Le quedó clara la explicación?». Reto 4 : Teach -Back SELECCIONA UNA RESPUESTA",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 46.88,
+     "y": 63.22,
+     "w": 46.77,
+     "h": 13.46,
+     "etiqueta": "C. «Para confirmar que me expliqué bien, ¿me cuenta cómo va a tomar el medicamento en casa?».",
+     "color": "#00B050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 47.09,
+     "y": 46.36,
+     "w": 46.77,
+     "h": 13.46,
+     "etiqueta": "B. «¿Tiene alguna pregunta antes de irse?».",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 46.88,
+     "y": 30.74,
+     "w": 46.77,
+     "h": 13.46,
+     "etiqueta": "A. «¿Le quedó clara la explicación?».",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d12.webp",
+   "texto": "Al recibir el turno te informan que hay un examen pendiente, pero falta precisar su prioridad y quién hará seguimiento. ¿Qué haces antes de cerrar la entrega? B. Aclaro la prioridad, la hora prevista si está disponible y quién hará seguimiento. Luego confirmo el acuerdo. C. Espero que el servicio que realiza el examen se comunique. A. Registro «examen pendiente» y continúo con la entrega. Reto 5 : Entrega de turno SELECCIONA UNA RESPUESTA",
+   "elementos": [
+    {
+     "tipo": "opcion",
+     "x": 52.68,
+     "y": 44.16,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "B. Aclaro la prioridad, la hora prevista si está disponible y quién hará seguimiento. Luego confirmo el acuerdo.",
+     "color": "#00B050",
+     "correcta": true
+    },
+    {
+     "tipo": "opcion",
+     "x": 52.68,
+     "y": 62.64,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "C. Espero que el servicio que realiza el examen se comunique.",
+     "color": "#FF0000",
+     "correcta": false
+    },
+    {
+     "tipo": "opcion",
+     "x": 52.68,
+     "y": 26.29,
+     "w": 37.6,
+     "h": 13.46,
+     "etiqueta": "A. Registro «examen pendiente» y continúo con la entrega.",
+     "color": "#FF0000",
+     "correcta": false
+    }
+   ]
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Comunicación efectiva para una atención segura Aplica las 4C en cada interacción: cordial, clara, completa y confirmada. Organiza con SBAR/SAER la información en entregas de turno, traslados y cambios en la condición del paciente. Repite y confirma la información crítica en órdenes verbales autorizadas, procedimientos y notificación de resultados críticos. Verifica con Teach -Back que el paciente o su familiar pueda explicar con sus propias palabras qué debe hacer. Comunicación efectiva = información transmitida, recibida, comprendida y confirmada.",
+   "elementos": []
+  }
+ ]
+}

@@ -25,6 +25,7 @@
   var texto = document.getElementById('curso-texto');
   var docs = document.getElementById('curso-docs');
   var docsLista = document.getElementById('curso-docs-lista');
+  var presentaciones = document.getElementById('curso-presentaciones'); // tarjetas de presentaciones interactivas
   var video = document.getElementById('curso-video');
   var estado = document.getElementById('curso-estado');
   var infoVideo = document.getElementById('curso-video-info');
@@ -145,6 +146,16 @@
       li.appendChild(a);
       docsLista.appendChild(li);
     });
+    pintarPresentaciones(curso);
+  }
+
+  // Presentación interactiva del módulo (presentaciones/presentaciones.js), en la misma zona Documentos.
+  function pintarPresentaciones(curso) {
+    if (!presentaciones || !window.SusanaPresentaciones) return;
+    window.SusanaPresentaciones.pintar(curso.id, presentaciones).then(function (hay) {
+      // Las respuestas llegan en orden: la del último curso abierto es la que queda.
+      if (hay && detalle.dataset.id === curso.id) docs.hidden = false;
+    }).catch(function () { /* sin presentaciones: solo la lista de documentos */ });
   }
 
   // Videos del curso que ya están listos. Compatible con cursos que solo traen `video`.

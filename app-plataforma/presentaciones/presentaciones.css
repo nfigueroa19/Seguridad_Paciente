@@ -1,0 +1,130 @@
+/* =====================================================================
+   SUSANA SEGURA — presentaciones interactivas (zona Documentos del curso)
+   Todas las clases con prefijo .pi- (sin reglas globales). Reutiliza los tokens
+   y .game-card / .btn de styles.css.
+   ===================================================================== */
+
+/* Tarjetas dentro de Documentos */
+.pi-tarjetas{margin:0 0 18px;}
+.pi-tarjetas[hidden]{display:none;}
+
+/* Ventana */
+dialog.pi{
+  width:min(1180px, 96vw); max-width:none; max-height:96vh; max-height:96dvh; padding:0;
+  border:0; border-radius:var(--radio); background:#14201a; color:var(--blanco); overflow:hidden;
+}
+dialog.pi[open]{display:flex; flex-direction:column;}
+dialog.pi::backdrop{background:rgba(20,30,25,.7);}
+dialog.pi.pi-max{position:fixed; inset:0; width:100vw; height:100vh; height:100dvh; max-height:none; margin:0; border-radius:0;}
+
+.pi-barra{display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--verde-osc);}
+.pi-titulo{flex:1; min-width:0; margin:0; overflow:hidden; color:var(--blanco); font-size:1rem; text-overflow:ellipsis; white-space:nowrap;}
+.pi-hbtn{
+  flex-shrink:0; padding:6px 12px; border:1px solid rgba(255,255,255,.35); border-radius:var(--radio-sm);
+  background:transparent; color:var(--blanco); font:inherit; font-size:.85rem; cursor:pointer;
+}
+.pi-hbtn:hover{background:rgba(255,255,255,.12);}
+.pi-hbtn[aria-pressed="false"]{opacity:.75;}
+
+.pi-cuerpo{display:grid; flex:1; place-items:center; min-height:0; padding:10px; overflow:auto;}
+/* Escenario 16:9 que cabe entero en la ventana (ancho y alto) */
+.pi-escenario{
+  position:relative; width:min(100%, calc((96dvh - 130px) * var(--pi-prop, 1.7778)));
+  aspect-ratio:var(--pi-prop, 1.7778); overflow:hidden; background:#fff; border-radius:6px;
+  container-type:inline-size;
+}
+dialog.pi.pi-max .pi-escenario{width:min(100%, calc((100dvh - 120px) * var(--pi-prop, 1.7778)));}
+.pi-fondo{position:absolute; inset:0; width:100%; height:100%; display:block; user-select:none; -webkit-user-drag:none;}
+.pi-capa{position:absolute; inset:0;}
+.pi-escenario.pi-entra .pi-capa, .pi-escenario.pi-entra .pi-fondo{animation:pi-aparece .35s ease-out;}
+@keyframes pi-aparece{from{opacity:0;} to{opacity:1;}}
+
+/* Opción de reto: botón transparente sobre el texto de la diapositiva */
+.pi-opcion{
+  position:absolute; padding:0; border:2px dashed transparent; border-radius:8px; background:transparent;
+  cursor:pointer; transition:background-color .3s, border-color .2s;
+}
+.pi-opcion:hover:not(:disabled){border-color:var(--naranja); background:rgba(242,153,74,.10);}
+.pi-opcion:disabled{cursor:default;}
+.pi-opcion.pi-ok, .pi-opcion.pi-mal{border-style:solid; border-color:var(--pi-color);}
+.pi-opcion.pi-ok{background:color-mix(in srgb, var(--pi-color) 38%, transparent);}
+.pi-opcion.pi-mal{background:color-mix(in srgb, var(--pi-color) 30%, transparent);}
+
+/* Marca ✓ / ✕ */
+.pi-marca{
+  position:absolute; top:50%; right:-1.2cqw; display:grid; place-items:center; width:3.2cqw; height:3.2cqw; min-width:22px; min-height:22px;
+  border:2px solid #fff; border-radius:50%; color:#fff; font-size:clamp(12px, 1.8cqw, 22px); font-weight:700; line-height:1;
+  transform:translateY(-50%); box-shadow:0 2px 6px rgba(0,0,0,.25); pointer-events:none;
+}
+.pi-ok > .pi-marca{background:#00B050;}
+.pi-mal > .pi-marca{background:#E02020;}
+
+/* Piezas que se mueven o se sacuden (imagen recortada de la diapositiva) */
+.pi-pieza{
+  position:absolute; padding:0; border:0; border-radius:6px; background:transparent; cursor:pointer;
+  transition:left .9s ease-in-out, top .9s ease-in-out, box-shadow .2s;
+}
+.pi-pieza img{display:block; width:100%; height:100%; pointer-events:none; user-select:none;}
+.pi-pieza:hover:not(:disabled){box-shadow:0 0 0 3px var(--naranja);}
+.pi-pieza:disabled{cursor:default;}
+.pi-pieza.pi-elegido{z-index:3; box-shadow:0 0 0 4px var(--naranja), 0 6px 16px rgba(0,0,0,.25); transform:translateY(-3px);}
+.pi-pieza.pi-ok{z-index:2;}
+.pi-pieza.pi-ok > .pi-marca{top:0; right:0; transform:translate(35%, -35%);}
+.pi-pieza.pi-mal > .pi-marca{top:0; right:0; transform:translate(35%, -35%);}
+.pi-pieza.pi-sacude{animation:pi-balanceo .6s ease-in-out;}
+@keyframes pi-balanceo{
+  0%,100%{transform:rotate(0);} 20%{transform:rotate(-9deg);} 40%{transform:rotate(8deg);}
+  60%{transform:rotate(-6deg);} 80%{transform:rotate(4deg);}
+}
+
+/* Recuadros de llegada (definiciones o casillas): se unen con la pieza en cualquier orden */
+.pi-destino{
+  position:absolute; padding:0; border:3px dashed transparent; border-radius:8px; background:transparent;
+  cursor:pointer; transition:background-color .2s, border-color .2s;
+}
+.pi-destino:hover:not(:disabled){border-color:var(--naranja); background:rgba(242,153,74,.10);}
+.pi-destino.pi-elegido{border-style:solid; border-color:var(--naranja); background:rgba(242,153,74,.20); box-shadow:0 0 0 3px rgba(242,153,74,.35);}
+.pi-destino.pi-error{animation:pi-destello .6s ease-out;}
+.pi-destino.pi-hecho{border-style:solid; border-color:#00B050; background:rgba(0,176,80,.08); cursor:default;}
+@keyframes pi-destello{0%,60%{border-color:#E02020; background:rgba(224,32,32,.18);} 100%{border-color:var(--naranja); background:rgba(242,153,74,.20);}}
+
+/* Cronómetro (en la franja verde de la diapositiva) */
+.pi-reloj{
+  position:absolute; display:grid; place-items:center; color:#fff; font-family:'Lilita One', var(--fuente-titulos, sans-serif);
+  font-size:5.2cqw; line-height:1; text-shadow:0 2px 4px rgba(0,0,0,.25); pointer-events:none;
+}
+.pi-reloj.pi-urgente{color:#FFE14D;}
+
+/* Aviso al final de una actividad (tiempo agotado / completada) */
+.pi-aviso{
+  position:absolute; left:50%; bottom:4%; z-index:5; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px;
+  max-width:90%; padding:10px 16px; border-radius:var(--radio-md); background:rgba(31,92,65,.95); color:#fff;
+  font-size:clamp(13px, 1.6cqw, 18px); font-weight:600; transform:translateX(-50%); box-shadow:var(--sombra-md);
+}
+.pi-aviso .btn{padding:6px 14px; font-size:.85em;}
+
+/* Navegación */
+.pi-pie{display:flex; align-items:center; justify-content:center; gap:14px; padding:8px 14px 12px;}
+.pi-contador{min-width:9em; color:rgba(255,255,255,.85); font-size:.9rem; text-align:center;}
+.pi-nav{
+  padding:8px 16px; border:0; border-radius:var(--radio-sm); background:var(--naranja); color:var(--texto);
+  font:inherit; font-weight:600; cursor:pointer;
+}
+.pi-nav:hover:not(:disabled){background:var(--naranja-osc);}
+.pi-nav:disabled{opacity:.4; cursor:default;}
+
+/* Solo para lectores de pantalla */
+.pi-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+@media (max-width:640px){
+  dialog.pi{width:100vw; max-height:100dvh; height:100dvh; border-radius:0;}
+  .pi-escenario{width:100%;}
+  .pi-hbtn{padding:5px 8px; font-size:.78rem;}
+  .pi-pie{gap:8px;}
+  .pi-nav{padding:8px 12px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .pi-pieza{transition:none;}
+  .pi-pieza.pi-sacude, .pi-escenario.pi-entra .pi-capa, .pi-escenario.pi-entra .pi-fondo{animation:none;}
+}
