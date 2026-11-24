@@ -279,6 +279,18 @@ def generar(mod, trabajo):
         elementos, crono, audios = interacciones(arbol, fs)
         volumenes = {a.xpath('.//p:spTgt/@spid', namespaces=NS)[0]: int(a.get('vol', 100000)) / 100000
                      for a in arbol.xpath('.//p:cMediaNode', namespaces=NS)}
+        # Íconos sin ningún desencadenador en el pptx (nadie les asignó animación): son del mismo juego, del mismo
+        # tamaño que los demás, y no corresponden a ninguna casilla, así que cuentan como respuesta incorrecta.
+        animados = [fs[e['spid']]['caja'] for e in elementos if e['tipo'] in ('mover', 'sacudir')]
+        if any(e['tipo'] == 'mover' for e in elementos) and animados:
+            alto = sorted(c[3] for c in animados)[len(animados) // 2]
+            tocados = {e['spid'] for e in elementos} | set(audios) | (set(crono['spids']) if crono else set())
+            for spid, f in fs.items():
+                if spid in tocados or not f['caja'] or local(f['el']) != 'pic' or abs(f['caja'][3] - alto) > 0.01:
+                    continue
+                if f['caja'][1] < 0.15:  # cabecera (iconos de audio)
+                    continue
+                elementos.append({'spid': spid, 'disparador': spid, 'tipo': 'sacudir'})
         # Repetidos: dos elementos iguales casi en el mismo sitio (en el pptx quedaron copias superpuestas).
         unicos = []
         for e in elementos:

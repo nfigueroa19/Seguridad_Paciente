@@ -430,6 +430,24 @@
      "h": 15.75,
      "etiqueta": "Imagen 9",
      "img": "e12-23.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 29.12,
+     "y": 26.14,
+     "w": 10.02,
+     "h": 15.75,
+     "etiqueta": "Imagen 10",
+     "img": "e12-63.webp"
+    },
+    {
+     "tipo": "sacudir",
+     "x": 84.54,
+     "y": 61.81,
+     "w": 9.71,
+     "h": 15.75,
+     "etiqueta": "Imagen 11",
+     "img": "e12-69.webp"
     }
    ],
    "destinos": [

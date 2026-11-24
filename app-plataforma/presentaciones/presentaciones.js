@@ -17,9 +17,10 @@
   var catalogo = null;   // promesa del catálogo
   var datos = {};        // id -> promesa de presentacion.json
 
-  var dlg, escenario, fondo, capa, sr, vivo, hTitulo, hContador, bAnt, bSig, bSonido, bPantalla;
+  var dlg, escenario, fondo, capa, sr, vivo, hTitulo, hContador, hNota, bAnt, bSig, bSonido, bPantalla;
   var pres = null;       // presentación abierta
   var indice = 0;
+  var resueltas = {};    // diapositivas con actividad ya resuelta en esta apertura (índice -> true)
   var sonido = true;
   var reloj = null;      // intervalo del cronómetro
   var audios = [];       // audios en reproducción
@@ -103,10 +104,12 @@
     bAnt = h('button', { type: 'button', class: 'pi-nav', text: '← Anterior' });
     bSig = h('button', { type: 'button', class: 'pi-nav', text: 'Siguiente →' });
     hContador = h('span', { class: 'pi-contador', 'aria-live': 'polite' });
+    hNota = h('p', { class: 'pi-nota', hidden: '' });
     dlg = h('dialog', { class: 'pi', 'aria-labelledby': 'pi-titulo' }, [
       h('div', { class: 'pi-barra' }, [hTitulo, bSonido, bPantalla, bCerrar]),
       h('div', { class: 'pi-cuerpo' }, [escenario]),
       h('div', { class: 'pi-pie' }, [bAnt, hContador, bSig]),
+      hNota,
       vivo
     ]);
     document.body.append(dlg);
@@ -160,6 +163,7 @@
     origenFoco = desde || document.activeElement;
     datos[id].then(function (p) {
       pres = p;
+      resueltas = {};
       hTitulo.textContent = p.titulo;
       escenario.style.setProperty('--pi-prop', p.proporcion || 16 / 9);
       if (!dlg.open) dlg.showModal();
@@ -190,6 +194,13 @@
     if (!pres) return;
     var total = pres.diapositivas.length;
     if (n < 0 || n >= total || (n === indice && !forzar)) return;
+    // No se avanza más allá de una actividad sin resolver (ni con teclado ni con Fin).
+    if (n > indice) {
+      for (var k = indice; k < n; k++) {
+        if (pendiente(k)) { n = k; break; }
+      }
+      if (n === indice && !forzar) { anunciar('Resuelve la actividad para continuar.'); return; }
+    }
     indice = n;
     limpiarDiapositiva();
     var d = pres.diapositivas[n];
@@ -197,7 +208,7 @@
     sr.textContent = 'Diapositiva ' + (n + 1) + '. ' + (d.texto || '');
     hContador.textContent = 'Diapositiva ' + (n + 1) + ' de ' + total;
     bAnt.disabled = n === 0;
-    bSig.disabled = n === total - 1;
+    actualizarNav();
     escenario.classList.remove('pi-entra');
     void escenario.offsetWidth; // reinicia la animación de entrada
     escenario.classList.add('pi-entra');
@@ -206,6 +217,20 @@
     // Precarga de la siguiente
     if (n + 1 < total) { var sig = new Image(); sig.src = url(pres.diapositivas[n + 1].img); }
   }
+
+  function esActividad(d) {
+    return (d.elementos || []).some(function (e) { return e.tipo === 'opcion' || e.tipo === 'mover'; });
+  }
+  function pendiente(n) { return esActividad(pres.diapositivas[n]) && !resueltas[n]; }
+
+  function actualizarNav() {
+    var bloqueada = pendiente(indice);
+    bSig.disabled = indice === pres.diapositivas.length - 1 || bloqueada;
+    hNota.hidden = !bloqueada;
+    hNota.textContent = bloqueada ? 'Resuelve la actividad para continuar.' : '';
+  }
+
+  function resolver() { resueltas[indice] = true; actualizarNav(); }
 
   function posicionar(el, e, x, y) {
     el.style.left = (x == null ? e.x : x) + '%';
@@ -264,6 +289,7 @@
       if (colocadas === piezas) {
         terminado = true;
         pararReloj();
+        resolver();
         setTimeout(function () { aviso('¡Muy bien! Completaste la actividad.', d); }, 950);
       }
     }
@@ -312,8 +338,9 @@
         b.addEventListener('click', function () {
           if (e.correcta) {
             b.classList.add('pi-ok'); marca(b, true);
+            resolver();
             capa.querySelectorAll('.pi-opcion').forEach(function (o) { o.disabled = true; });
-            anunciar('¡Correcto! ' + e.etiqueta);
+            anunciar('¡Correcto! ' + e.etiqueta + ' Ya puedes continuar.');
           } else {
             b.classList.add('pi-mal'); marca(b, false); b.disabled = true;
             anunciar('Incorrecto. Intenta de nuevo.');
@@ -363,7 +390,7 @@
       bR.addEventListener('click', function () { ir(indice, true); });
       botones.push(bR);
     }
-    if (indice < pres.diapositivas.length - 1) {
+    if (indice < pres.diapositivas.length - 1 && resueltas[indice]) {
       var bS = h('button', { type: 'button', class: 'btn btn-acento btn-sm', text: 'Continuar →' });
       bS.addEventListener('click', function () { ir(indice + 1); });
       botones.push(bS);
