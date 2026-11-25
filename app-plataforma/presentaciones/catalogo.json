@@ -25,5 +25,23 @@
   "portada": "modulo-2/d03.webp",
   "diapositivas": 13,
   "actividades": 5
+ },
+ {
+  "id": "modulo-7",
+  "curso": "8-programa-de-piel-sana-prevencion-de-lesiones-por-presion",
+  "titulo": "Programa de Piel Sana: prevención de lesiones por presión",
+  "descripcion": "Escala de Braden, clasificación de las lesiones, cambios de posición y barreras de seguridad, con tres juegos y cinco retos con puntaje.",
+  "portada": "modulo-7/d01.webp",
+  "diapositivas": 19,
+  "actividades": 8
+ },
+ {
+  "id": "modulo-9",
+  "curso": "modulo-10-10-hemovigilancia-y-seguridad-transfusional",
+  "titulo": "Hemovigilancia y seguridad transfusional",
+  "descripcion": "Verificación pretransfusional, administración segura y actuación ante una reacción, con tres juegos y cinco retos con puntaje.",
+  "portada": "modulo-9/d01.webp",
+  "diapositivas": 18,
+  "actividades": 8
  }
 ]

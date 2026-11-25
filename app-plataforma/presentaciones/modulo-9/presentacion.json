@@ -1,0 +1,3644 @@
+{
+ "id": "modulo-9",
+ "titulo": "Hemovigilancia y seguridad transfusional",
+ "proporcion": 1.7778,
+ "puntaje": [
+  {
+   "id": "detective",
+   "nombre": "Detective",
+   "max": 4
+  },
+  {
+   "id": "monitor",
+   "nombre": "Monitor",
+   "max": 3
+  },
+  {
+   "id": "candado",
+   "nombre": "Candado",
+   "max": 4
+  },
+  {
+   "id": "retos",
+   "nombre": "Retos",
+   "max": 5
+  }
+ ],
+ "datos": {
+  "monitor": {
+   "pacientes": [
+    {
+     "normal": [
+      "36,8 °C",
+      "82 lpm",
+      "118/76",
+      "18 rpm",
+      "Paciente tranquilo, sin molestias"
+     ],
+     "alarma": [
+      "38,7 °C",
+      "112 lpm",
+      "116/74",
+      "20 rpm",
+      "Escalofríos y sensación de frío"
+     ],
+     "reaccion": "una reacción febril"
+    },
+    {
+     "normal": [
+      "36,7 °C",
+      "80 lpm",
+      "120/80",
+      "18 rpm",
+      "Paciente tranquila, sin molestias"
+     ],
+     "alarma": [
+      "36,9 °C",
+      "104 lpm",
+      "112/70",
+      "24 rpm",
+      "Urticaria y prurito en el tórax"
+     ],
+     "reaccion": "una reacción alérgica"
+    },
+    {
+     "normal": [
+      "37,0 °C",
+      "85 lpm",
+      "124/78",
+      "18 rpm",
+      "Paciente tranquilo, sin molestias"
+     ],
+     "alarma": [
+      "38,4 °C",
+      "124 lpm",
+      "86/50",
+      "26 rpm",
+      "Dolor lumbar e hipotensión"
+     ],
+     "reaccion": "una posible reacción hemolítica"
+    }
+   ]
+  },
+  "candado": {
+   "codigo": "3715",
+   "pistas": [
+    {
+     "q": "Pista 1: para confirmar la identidad del paciente se usan:",
+     "A": "A.  Nombre completo, documento y fecha de nacimiento",
+     "B": "B.  Nombre y número de cama",
+     "ok": "A",
+     "digito": "3"
+    },
+    {
+     "q": "Pista 2: si encuentra una discrepancia en la verificación pretransfusional:",
+     "A": "A.  Inicia la transfusión y aclara después",
+     "B": "B.  No inicia la transfusión hasta aclararla",
+     "ok": "B",
+     "digito": "7"
+    },
+    {
+     "q": "Pista 3: la vigilancia del paciente debe ser más estrecha:",
+     "A": "A.  Al inicio de la transfusión, a los 15 minutos y al finalizar transfusión",
+     "B": "B.  Solo al finalizar la transfusión",
+     "ok": "A",
+     "digito": "1"
+    },
+    {
+     "q": "Pista 4: ¿quién puede administrar hemocomponentes?",
+     "A": "A.  Cualquier persona disponible en el servicio",
+     "B": "B.  Personal autorizado",
+     "ok": "B",
+     "digito": "5"
+    }
+   ]
+  }
+ },
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "Garantizar la seguridad en la administración de Hemo componentes"
+  },
+  {
+   "img": "d02.webp",
+   "texto": "¿Qué es la hemovigilancia? CONCEPTO CLAVE Actividades para vigilar, identificar, notificar, analizar y prevenir incidentes y reacciones adversas relacionados con la sangre y los hemocomponentes. Propósito: seguridad transfusional, prevención de complicaciones y trazabilidad. Abarca todo el proceso: Donación Preparación Transfusión"
+  },
+  {
+   "img": "d03.webp",
+   "texto": "¿Qué es una transfusión segura? EL PACIENTE RECIBE EL HEMOCOMPONENTE Indicado Compatible En condiciones adecuadas Requiere verificar: Prescripción médica Identificación del paciente Pruebas pretransfusionales Compatibilidad Estado del producto Procedimiento institucional Paciente correcto, hemocomponente correcto y vigilancia permanente."
+  },
+  {
+   "img": "d04.webp",
+   "texto": "Identificación y verificación pretransfusional ANTES DE INICIAR LA TRANSFUSIÓN Identificadores Nombre completo Número de documento Fecha de nacimiento Deben coincidir Manilla Historia clínica Orden médica Control del proceso transfusional Sello de calidad, numero de unidad De la unidad Grupo sanguíneo y Rh Compatibilidad Fecha de vencimiento Integridad de la unidad Ante cualquier discrepancia, NO inicie la transfusión hasta aclararla."
+  },
+  {
+   "img": "d05.webp",
+   "texto": "Administración segura de hemocomponentes POR PERSONAL AUTORIZADO, CON LOS EQUIPOS ESTABLECIDOS Antes Valore y registre signos vitales Verifique la condición clínica del paciente Durante Registro de signos vitales y temperatura a los 15 minutos y al terminar transfusión Velocidad según la prescripción y el hemocomponente Registro completo de Control del proceso transfusional"
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Reacciones adversas transfusionales DURANTE O DESPUÉS DE LA TRANSFUSIÓN Tipos: Febriles Alérgicas Hemolíticas Sobrecarga circulatoria (TACO) Lesión pulmonar aguda (TRALI) Signos de alarma: Fiebre Escalofríos Dificultad respiratoria Dolor lumbar Hipotensión Urticaria"
+  },
+  {
+   "img": "d07.webp",
+   "texto": "¿Qué hacer ante una sospecha de reacción? ACTÚE DE INMEDIATO 1 REGLA DE ORO: Suspenda inmediatamente la transfusión 2 Valore al paciente , Mantenga el acceso venoso permeable 3 Informar al laboratorio, ficha de notificación y envió de exámenes correspondientes 4 Enviar en bolsa rojo al laboratorio con la papelería correspondiente NO reinicie la transfusión sin autorización clínica expresa y sin cumplir el procedimiento."
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Riesgos frecuentes y barreras de seguridad LO QUE DEBEMOS PREVENIR · CÓMO LO PREVENIMOS Riesgos Errores de identificación Incompatibilidad Hemocomponente equivocado Fallas en conservación o manipulación Vigilancia insuficiente Reconocer tarde una reacción Barreras Identificación activa Verificación pretransfusional Comprobación de compatibilidad Vigilancia clínica Trazabilidad documental Notificación oportuna"
+  },
+  {
+   "img": "d09.webp",
+   "texto": "Responsabilidad del equipo y educación TODOS LOS QUE INTERVIENEN EN EL PROCESO Equipo de salud Cumple los protocolos institucionales Verifica identidad y compatibilidad Vigila al paciente Reconoce a tiempo las reacciones Registra y reporta Paciente y familia Conocen los signos de alarma Informan cualquier síntoma durante la transfusión"
+  },
+  {
+   "img": "d10.webp",
+   "texto": "Juego 1: Detective de discrepancias COMPARA Y HAZ CLIC EN LOS DATOS DE LA UNIDAD QUE NO COINCIDEN (HAY 4) ORDEN MÉDICA Y PACIENTE ETIQUETA DE LA UNIDAD (haz clic aquí) Nombre: Carlos Andrés Pérez Gómez Documento: CC 10.523.874 Fecha de nacimiento: 14/03/1968 Grupo y Rh: A positivo Hemocomponente: Glóbulos rojos Compatibilidad: Prueba cruzada: compatible Vencimiento: Fecha de transfusión: 19/11/2026 Integridad: Unidad sin alteraciones",
+   "juego": "detective",
+   "formas": [
+    {
+     "n": "Det_B1_1",
+     "x": 56.25,
+     "y": 31.47,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Nombre:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  Carlos Andrés Pérez Gómez",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_E1_2",
+     "x": 56.25,
+     "y": 36.4,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Documento:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  CC 10.532.874",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_B2_3",
+     "x": 56.25,
+     "y": 41.33,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Fecha de nacimiento:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  14/03/1968",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_E2_4",
+     "x": 56.25,
+     "y": 46.27,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Grupo y Rh:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  B positivo",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_E3_5",
+     "x": 56.25,
+     "y": 51.2,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Hemocomponente:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  Plasma fresco congelado",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_B3_6",
+     "x": 56.25,
+     "y": 56.13,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Compatibilidad:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  Prueba cruzada: compatible",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_E4_7",
+     "x": 56.25,
+     "y": 61.07,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Vencimiento:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  Vence: 10/11/2026",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_B4_8",
+     "x": 56.25,
+     "y": 66.0,
+     "w": 38.25,
+     "h": 4.27,
+     "g": "rect",
+     "f": "#F6DDDF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Integridad:",
+         "sz": 1.354,
+         "b": true,
+         "c": "#A31D2B"
+        },
+        {
+         "t": "  Bolsa íntegra, sin fugas",
+         "sz": 1.354,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.9,
+      0.45,
+      0.9,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Det_Marcador",
+     "x": 17.25,
+     "y": 71.73,
+     "w": 49.5,
+     "h": 5.6,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Discrepancias: 0 de 4  ·  Errores: 0",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Boton_Reiniciar",
+     "x": 68.25,
+     "y": 71.73,
+     "w": 14.25,
+     "h": 5.6,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "↺ Reiniciar",
+         "sz": 1.354,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    }
+   ]
+  },
+  {
+   "img": "d11.webp",
+   "texto": "Juego 2: Monitor de la transfusión INICIA LA TRANSFUSIÓN Y PRESIONA «SUSPENDER» EN CUANTO VEAS SIGNOS DE REACCIÓN TEMPERATURA FREC. CARDÍACA PRESIÓN ARTERIAL FREC. RESPIRATORIA",
+   "juego": "monitor",
+   "formas": [
+    {
+     "n": "Mon_Ronda",
+     "x": 5.25,
+     "y": 25.6,
+     "w": 30.0,
+     "h": 3.95,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Paciente 1 de 3",
+         "sz": 1.458,
+         "b": true,
+         "c": "#5E6E63"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_Temp",
+     "x": 6.75,
+     "y": 36.27,
+     "w": 23.25,
+     "h": 6.64,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "36,8 °C",
+         "sz": 2.708,
+         "b": true,
+         "c": "#7EF09E"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_FC",
+     "x": 31.87,
+     "y": 36.27,
+     "w": 23.25,
+     "h": 6.64,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "82 lpm",
+         "sz": 2.708,
+         "b": true,
+         "c": "#7EF09E"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_PA",
+     "x": 6.75,
+     "y": 48.93,
+     "w": 23.25,
+     "h": 6.64,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "118/76",
+         "sz": 2.708,
+         "b": true,
+         "c": "#7EF09E"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_FR",
+     "x": 31.87,
+     "y": 48.93,
+     "w": 23.25,
+     "h": 6.64,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "18 rpm",
+         "sz": 2.708,
+         "b": true,
+         "c": "#7EF09E"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_Obs",
+     "x": 6.75,
+     "y": 58.4,
+     "w": 34.5,
+     "h": 3.95,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Paciente tranquilo, sin molestias",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_Tiempo",
+     "x": 42.0,
+     "y": 58.4,
+     "w": 13.88,
+     "h": 3.95,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "right",
+       "sa": 0,
+       "r": [
+        {
+         "t": "00:00",
+         "sz": 1.458,
+         "b": true,
+         "c": "#7EF09E"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Mon_Iniciar",
+     "x": 58.88,
+     "y": 30.67,
+     "w": 22.88,
+     "h": 10.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "►  Iniciar transfusión",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Mon_Suspender",
+     "x": 58.88,
+     "y": 42.67,
+     "w": 22.88,
+     "h": 12.67,
+     "g": "roundRect",
+     "f": "#A31D2B",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "■  SUSPENDER",
+         "sz": 2.083,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Mon_Siguiente",
+     "x": 58.88,
+     "y": 57.33,
+     "w": 22.88,
+     "h": 8.0,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Siguiente paciente ➜",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Mon_Retro",
+     "x": 11.25,
+     "y": 66.93,
+     "w": 70.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Bien! Suspendiste a los 1,4 s ante una reacción febril. Ahora: valora, mantén el acceso venoso, informa al médico y al banco de sangre, conserva la unidad y reporta.",
+         "sz": 1.354,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d12.webp",
+   "texto": "Juego 3: Abre el candado de seguridad RESPONDE LAS 4 PISTAS, OBTÉN LOS DÍGITOS Y DIGITA EL CÓDIGO",
+   "juego": "candado",
+   "formas": [
+    {
+     "n": "Can_P_1",
+     "x": 17.25,
+     "y": 26.0,
+     "w": 18.38,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#A31D2B",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": true,
+         "t": "🔒  Pista 1",
+         "sz": 1.667
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": false,
+         "t": "Haz clic para abrir",
+         "sz": 1.146
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2
+    },
+    {
+     "n": "Can_P_2",
+     "x": 36.9,
+     "y": 26.0,
+     "w": 18.38,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#A31D2B",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": true,
+         "t": "🔒  Pista 2",
+         "sz": 1.667
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": false,
+         "t": "Haz clic para abrir",
+         "sz": 1.146
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2
+    },
+    {
+     "n": "Can_P_3",
+     "x": 55.88,
+     "y": 25.98,
+     "w": 18.38,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#A31D2B",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": true,
+         "t": "🔒  Pista 3",
+         "sz": 1.667
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": false,
+         "t": "Haz clic para abrir",
+         "sz": 1.146
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2
+    },
+    {
+     "n": "Can_P_4",
+     "x": 76.2,
+     "y": 26.0,
+     "w": 18.38,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#A31D2B",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": true,
+         "t": "🔒  Pista 4",
+         "sz": 1.667
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "c": "#FFFFFF",
+         "b": false,
+         "t": "Haz clic para abrir",
+         "sz": 1.146
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2
+    },
+    {
+     "n": "Can_Pregunta",
+     "x": 17.25,
+     "y": 39.73,
+     "w": 47.25,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Elige una pista para ver su pregunta",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Can_O_A",
+     "x": 17.25,
+     "y": 50.53,
+     "w": 47.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "A.",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_O_B",
+     "x": 17.25,
+     "y": 58.93,
+     "w": 47.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "B.",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_Retro",
+     "x": 17.25,
+     "y": 67.33,
+     "w": 47.25,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto! Tu dígito es 1.",
+         "sz": 1.354,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Can_Codigo",
+     "x": 66.75,
+     "y": 39.73,
+     "w": 27.75,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#142B20",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "_  _  _  _",
+         "sz": 2.917,
+         "b": true,
+         "c": "#7EF09E"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.15
+    },
+    {
+     "n": "Can_K_0",
+     "x": 66.75,
+     "y": 50.93,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "0",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_1",
+     "x": 72.45,
+     "y": 50.93,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "1",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_2",
+     "x": 78.15,
+     "y": 50.93,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "2",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_3",
+     "x": 83.85,
+     "y": 50.93,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "3",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_4",
+     "x": 89.55,
+     "y": 50.93,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "4",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_5",
+     "x": 66.75,
+     "y": 58.67,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "5",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_6",
+     "x": 72.45,
+     "y": 58.67,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "6",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_7",
+     "x": 78.15,
+     "y": 58.67,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "7",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_8",
+     "x": 83.85,
+     "y": 58.67,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "8",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_K_9",
+     "x": 89.55,
+     "y": 58.67,
+     "w": 4.95,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "9",
+         "sz": 1.875,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#A31D2B",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_Borrar",
+     "x": 66.75,
+     "y": 66.67,
+     "w": 12.75,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "⌫ Borrar",
+         "sz": 1.354,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#AF5A19",
+     "lw": 0.13
+    },
+    {
+     "n": "Can_Estado",
+     "x": 80.25,
+     "y": 66.67,
+     "w": 14.25,
+     "h": 6.0,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "🔒 Cerrado",
+         "sz": 1.458,
+         "b": true,
+         "c": "#A31D2B"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "center"
+    }
+   ]
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Reto 1: Hemovigilancia HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué es la hemovigilancia?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Abarca la donación, la preparación y la transfusión de sangre y hemocomponentes.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 18.71,
+     "y": 38.81,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Vigilar, notificar, analizar y prevenir incidentes y reacciones, desde la donación hasta la transfusión",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 19.46,
+     "y": 39.88,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 18.71,
+     "y": 49.21,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo el registro de las unidades de sangre",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 19.46,
+     "y": 50.28,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 18.71,
+     "y": 59.61,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo el proceso de donación",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 19.46,
+     "y": 60.68,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 83.59,
+     "y": 23.48,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 88.46,
+    "y": 12.41,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d14.webp",
+   "texto": "Reto 2: Verificación de la unidad HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué se verifica de la unidad antes de transfundir?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Se verifican grupo, Rh, compatibilidad, vencimiento, integridad y requisitos institucionales.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 20.38,
+     "y": 39.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo su color",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 40.79,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 20.38,
+     "y": 50.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Grupo, Rh, compatibilidad, fecha de vencimiento e integridad",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 51.19,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 20.38,
+     "y": 60.53,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo su volumen",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 61.59,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 24.39,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 13.33,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d15.webp",
+   "texto": "Reto 3: Signos de alarma HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Cuál es un signo de alarma de reacción transfusional?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Fiebre, escalofríos, dificultad respiratoria, dolor lumbar, hipotensión o urticaria son signos de alarma.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 20.38,
+     "y": 39.07,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Apetito normal",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 40.14,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 20.38,
+     "y": 49.47,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Sueño tranquilo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 50.54,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_ok",
+     "x": 20.38,
+     "y": 59.87,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Fiebre o escalofríos",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 60.94,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 23.74,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 12.67,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d16.webp",
+   "texto": "Reto 4: Sospecha de reacción HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Ante una sospecha de reacción transfusional, ¿qué se hace primero?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Lo primero es suspender la transfusión y valorar al paciente.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 20.38,
+     "y": 40.25,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Suspender inmediatamente la transfusión",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 41.32,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 20.38,
+     "y": 50.65,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Aumentar la velocidad para terminar pronto",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 51.72,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 20.38,
+     "y": 61.05,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Esperar a que termine la unidad",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 62.12,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 24.92,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 13.85,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d17.webp",
+   "texto": "Reto 5: La unidad y el equipo HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Después de suspender por una reacción, la unidad y el equipo de transfusión:",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Se conservan según el protocolo para el estudio y el reporte de hemovigilancia.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 20.38,
+     "y": 38.81,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Se desechan de inmediato",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 39.88,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 20.38,
+     "y": 49.21,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Se conservan según el protocolo institucional",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 50.28,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 20.38,
+     "y": 59.61,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Se reutilizan con otro paciente",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 60.68,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 23.48,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 12.41,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d18.webp",
+   "texto": "Cierre: cada verificación protege la vida RECUERDA PACIENTE CORRECTO, HEMOCOMPONENTE CORRECTO Y VIGILANCIA PERMANENTE. Cada verificación protege la vida. Antes Identifique, verifique la unidad y no inicie si hay discrepancias. Durante y después Vigile, suspenda ante signos de reacción, informe, conserve y reporte.",
+   "juego": "cierre",
+   "formas": [
+    {
+     "n": "Boton_Puntaje",
+     "x": 17.25,
+     "y": 65.33,
+     "w": 19.5,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ver mi puntaje",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Puntaje_Final",
+     "x": 38.25,
+     "y": 65.33,
+     "w": 44.25,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Haz clic en «Ver mi puntaje»",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    }
+   ]
+  }
+ ]
+}

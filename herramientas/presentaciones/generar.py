@@ -20,9 +20,17 @@ Las diapositivas se dibujan con LibreOffice (imagen de Docker `segpaciente-docum
 conversión a PDF, con las fuentes del hospital). Los elementos que se mueven y el cronómetro se quitan
 del fondo y se recortan del dibujo completo para ponerlos encima como botones reales.
 
+Los módulos con macros (.pptm, p. ej. el 7 y el 9) no usan animaciones: sus juegos y retos los hacen macros VBA que
+actúan sobre formas con nombre (Zona_R1_Codo, Une_I_1, Sopa_0_0, Op_B_ok…). Esas macros NO se ejecutan nunca: solo se
+lee el XML de las diapositivas. Cada forma interactiva se exporta con su caja, forma, colores y texto (en
+"formas") y se quita del dibujo de fondo; el reproductor las reconstruye en HTML y repite la lógica de las macros
+(que está transcrita en presentaciones.js). El estado inicial de cada forma se fija aquí (INICIAL), porque los
+archivos se guardaron con el juego a medias.
+
 Uso (desde la raíz del proyecto, con Docker en marcha):
   docker build -t segpaciente-documentos herramientas/documentos      (una sola vez)
-  python -I herramientas/presentaciones/generar.py
+  python -I herramientas/presentaciones/generar.py                    (todos los módulos)
+  python -I herramientas/presentaciones/generar.py modulo-7 modulo-9  (solo esos; el catálogo se fusiona)
 Requiere Python con lxml, PyMuPDF (fitz) y Pillow.
 """
 import copy
@@ -68,6 +76,44 @@ MODULOS = [
         'id': 'modulo-2', 'curso': 'curso-3', 'pptx': '7317d6ee-comunicacion.pptx', 'portada': 3,
         'titulo': 'Comunicación efectiva y segura',
         'descripcion': 'Practica las 4C, SBAR, la comunicación redundante y el Teach-Back con retos de selección.',
+    },
+    {
+        'id': 'modulo-7', 'curso': '8-programa-de-piel-sana-prevencion-de-lesiones-por-presion', 'pptx': 'modulo-7-piel-sana.pptm',
+        'portada': 1, 'macros': True,
+        'titulo': 'Programa de Piel Sana: prevención de lesiones por presión',
+        'descripcion': 'Escala de Braden, clasificación de las lesiones, cambios de posición y barreras de seguridad, con tres juegos y cinco retos con puntaje.',
+        'puntaje': [{'id': 'mapa', 'nombre': 'Mapa', 'max': 7}, {'id': 'une', 'nombre': 'Une', 'max': 6},
+                    {'id': 'sopa', 'nombre': 'Sopa', 'max': 6}, {'id': 'retos', 'nombre': 'Retos', 'max': 5}],
+        'datos': {'sopa': {'palabras': ['BRADEN', 'SACRO', 'TALONES', 'HUMEDAD', 'ESCARA', 'MARSI']}},
+    },
+    {
+        'id': 'modulo-9', 'curso': 'modulo-10-10-hemovigilancia-y-seguridad-transfusional', 'pptx': 'modulo-9-hemovigilancia.pptm',
+        'portada': 1, 'macros': True,
+        'titulo': 'Hemovigilancia y seguridad transfusional',
+        'descripcion': 'Verificación pretransfusional, administración segura y actuación ante una reacción, con tres juegos y cinco retos con puntaje.',
+        'puntaje': [{'id': 'detective', 'nombre': 'Detective', 'max': 4}, {'id': 'monitor', 'nombre': 'Monitor', 'max': 3},
+                    {'id': 'candado', 'nombre': 'Candado', 'max': 4}, {'id': 'retos', 'nombre': 'Retos', 'max': 5}],
+        # Transcrito de las macros (MonDato, CanDato y CODIGO del módulo Interactividad del .pptm).
+        'datos': {
+            'monitor': {'pacientes': [
+                {'normal': ['36,8 °C', '82 lpm', '118/76', '18 rpm', 'Paciente tranquilo, sin molestias'],
+                 'alarma': ['38,7 °C', '112 lpm', '116/74', '20 rpm', 'Escalofríos y sensación de frío'], 'reaccion': 'una reacción febril'},
+                {'normal': ['36,7 °C', '80 lpm', '120/80', '18 rpm', 'Paciente tranquila, sin molestias'],
+                 'alarma': ['36,9 °C', '104 lpm', '112/70', '24 rpm', 'Urticaria y prurito en el tórax'], 'reaccion': 'una reacción alérgica'},
+                {'normal': ['37,0 °C', '85 lpm', '124/78', '18 rpm', 'Paciente tranquilo, sin molestias'],
+                 'alarma': ['38,4 °C', '124 lpm', '86/50', '26 rpm', 'Dolor lumbar e hipotensión'], 'reaccion': 'una posible reacción hemolítica'},
+            ]},
+            'candado': {'codigo': '3715', 'pistas': [
+                {'q': 'Pista 1: para confirmar la identidad del paciente se usan:', 'A': 'A.  Nombre completo, documento y fecha de nacimiento',
+                 'B': 'B.  Nombre y número de cama', 'ok': 'A', 'digito': '3'},
+                {'q': 'Pista 2: si encuentra una discrepancia en la verificación pretransfusional:', 'A': 'A.  Inicia la transfusión y aclara después',
+                 'B': 'B.  No inicia la transfusión hasta aclararla', 'ok': 'B', 'digito': '7'},
+                {'q': 'Pista 3: la vigilancia del paciente debe ser más estrecha:', 'A': 'A.  Al inicio de la transfusión, a los 15 minutos y al finalizar transfusión',  # texto del archivo (la macro trae uno más corto)
+                 'B': 'B.  Solo al finalizar la transfusión', 'ok': 'A', 'digito': '1'},
+                {'q': 'Pista 4: ¿quién puede administrar hemocomponentes?', 'A': 'A.  Cualquier persona disponible en el servicio',
+                 'B': 'B.  Personal autorizado', 'ok': 'B', 'digito': '5'},
+            ]},
+        },
     },
 ]
 
@@ -396,13 +442,253 @@ def generar(mod, trabajo):
             'portada': f"{mod['id']}/d{mod['portada']:02d}.webp", 'diapositivas': len(salida), 'actividades': retos}
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# Módulos con macros (.pptm): juegos y retos hechos con macros VBA sobre formas con nombre
+# ---------------------------------------------------------------------------------------------------------------
+JUEGOS = [  # (juego, patrón del nombre que lo identifica, patrón de las formas que se reconstruyen en HTML)
+    ('mapa', r'Zona_', r'(Zona_|Mapa_Marcador$|Mapa_Retro$|Puntaje_Mapa$|Boton_Reiniciar$)'),
+    ('une', r'Une_I_', r'(Une_[ID]_|Puntaje_Une$|Boton_Reiniciar$)'),
+    ('sopa', r'Sopa_\d_\d', r'(Sopa_|Puntaje_Sopa$|Boton_Reiniciar$)'),
+    ('detective', r'Det_[BE]', r'(Det_|Boton_Reiniciar$)'),
+    ('monitor', r'Mon_Iniciar', r'Mon_'),
+    ('candado', r'Can_P_', r'Can_'),
+    ('reto', r'Op_[A-Z]_', r'(Op_|Ic_|RetroSi$|RetroNo$|Fin del tiempo$)'),
+    ('cierre', r'Boton_Puntaje', r'(Boton_Puntaje$|Puntaje_Final$)'),
+]
+VERDE, VERDE_CLARO, NARANJA, ROJO_VINO = '#196C33', '#EAF5EC', '#AF5A19', '#A31D2B'
+PT_CQW = 12700 / 12192000 * 100  # un punto tipográfico en % del ancho de la diapositiva (unidad cqw del escenario)
+
+
+def _color(el, por_defecto):
+    c = el.find('.//a:solidFill/a:srgbClr', NS) if el is not None else None
+    return '#' + c.get('val').upper() if c is not None else por_defecto
+
+
+def estilo_forma(f, W, H):
+    """Caja, geometría, relleno, borde y texto de una forma (para reconstruirla en HTML)."""
+    el, caja = f['el'], f['caja']
+    sp_pr = el.find('./p:spPr', NS)
+    geom = sp_pr.find('./a:prstGeom', NS) if sp_pr is not None else None
+    gd = geom.find('./a:avLst/a:gd', NS) if geom is not None else None
+    adj = int(re.search(r'val (\d+)', gd.get('fmla')).group(1)) / 100000 if gd is not None else None
+    relleno = sp_pr.find('./a:solidFill/a:srgbClr', NS) if sp_pr is not None else None
+    alfa = relleno.find('a:alpha', NS) if relleno is not None else None
+    ln = sp_pr.find('./a:ln', NS) if sp_pr is not None else None
+    borde = ln is not None and ln.find('a:noFill', NS) is None and ln.find('a:solidFill', NS) is not None
+    cuerpo = el.find('./p:txBody', NS)
+    pr = cuerpo.find('a:bodyPr', NS) if cuerpo is not None else None
+    ins = [int((pr.get(k) if pr is not None and pr.get(k) else d)) / W * 100
+           for k, d in (('lIns', 91440), ('tIns', 45720), ('rIns', 91440), ('bIns', 45720))]
+    blanco = el.find('./p:style', NS) is not None  # las autoformas llevan texto blanco por defecto
+    parrafos = []
+    for p in (cuerpo.findall('a:p', NS) if cuerpo is not None else []):
+        ppr = p.find('a:pPr', NS)
+        al = {'ctr': 'center', 'r': 'right', 'just': 'justify'}.get(ppr.get('algn') if ppr is not None else None, 'left')
+        sa = ppr.find('a:spcAft/a:spcPts', NS) if ppr is not None else None
+        runs = []
+        for r in p.findall('a:r', NS):
+            rp = r.find('a:rPr', NS)
+            sz = int(rp.get('sz')) / 100 if rp is not None and rp.get('sz') else 18
+            runs.append({'t': r.find('a:t', NS).text or '', 'sz': round(sz * PT_CQW, 3), 'b': bool(rp is not None and rp.get('b') == '1'),
+                         'c': _color(rp, '#FFFFFF' if blanco else '#000000')})
+        parrafos.append({'al': al, 'sa': round(int(sa.get('val')) / 100 * PT_CQW, 3) if sa is not None else 0, 'r': runs})
+    x, y, w, h = caja
+    d = {'n': f['nombre'], 'x': round(x * 100, 2), 'y': round(y * 100, 2), 'w': round(w * 100, 2), 'h': round(h * 100, 2),
+         'g': geom.get('prst') if geom is not None else 'rect', 'f': '#' + relleno.get('val').upper() if relleno is not None else None,
+         'p': parrafos, 'i': [round(v, 3) for v in ins],
+         'an': {'ctr': 'center', 'b': 'flex-end'}.get(pr.get('anchor') if pr is not None else None, 'flex-start')}
+    if adj is not None:
+        d['adj'] = adj
+    if alfa is not None:
+        d['a'] = int(alfa.get('val')) / 100000
+    if borde:
+        d['l'] = _color(ln, '#000000')
+        d['lw'] = round(int(ln.get('w', 12700)) / 12700 * PT_CQW, 3)
+    if el.xpath('./p:nvSpPr/p:cNvPr/@hidden', namespaces=NS):
+        d['oculto'] = True
+    return d
+
+
+def _texto(d, lineas, color=None, sz=None, negrita=None):
+    """Reemplaza el texto conservando el estilo del primer fragmento (una línea por párrafo)."""
+    base = d['p'][0]['r'][0] if d['p'] and d['p'][0]['r'] else {'sz': round(16 * PT_CQW, 3), 'b': False, 'c': '#000000'}
+    al = d['p'][0]['al'] if d['p'] else 'left'
+    cambios = {}
+    if color:
+        cambios['c'] = color
+    if sz:
+        cambios['sz'] = round(sz * PT_CQW, 3)
+    if negrita is not None:
+        cambios['b'] = negrita
+    d['p'] = [{'al': al, 'sa': 0, 'r': [dict(base, t=t, **cambios)]} for t in lineas]
+
+
+def inicial(d, datos):
+    """Estado inicial de cada forma: los archivos se guardaron con el juego a medias, así que se lleva al estado de
+    'Reiniciar' (macro del módulo Interactividad)."""
+    n = d['n']
+    if n.startswith('Zona_'):
+        d['f'], d['a'] = '#FFFFFF', 0.6
+    elif n == 'Mapa_Marcador':
+        d['p'] = [{'al': 'center', 'sa': 0, 'r': [{'t': 'Zonas de riesgo: 0 de 7', 'sz': round(16 * PT_CQW, 3), 'b': True, 'c': VERDE}]},
+                  {'al': 'center', 'sa': 0, 'r': [{'t': 'Errores: 0', 'sz': round(16 * PT_CQW, 3), 'b': True, 'c': NARANJA}]}]
+    elif n == 'Mapa_Retro':
+        d['f'] = VERDE_CLARO
+        _texto(d, ['Haz clic en un punto blanco del esquema'])
+    elif n.startswith('Puntaje_') and n != 'Puntaje_Final':
+        d['oculto'] = True
+        if n == 'Puntaje_Sopa':
+            d['x'], d['y'] = 19.78, 77.5  # en el archivo tapa las últimas filas de la cuadrícula
+    elif n.startswith('Une_I_'):
+        d['f'] = VERDE
+        d.pop('l', None)
+        d.pop('lw', None)
+    elif n.startswith('Une_D_'):
+        d['f'] = VERDE_CLARO
+    elif re.fullmatch(r'Sopa_\d_\d', n):
+        d['f'] = VERDE_CLARO
+    elif n.startswith('Sopa_W_'):
+        d['f'] = '#FFFFFF'
+        for p in d['p']:
+            for r in p['r']:
+                r['c'] = VERDE
+    elif n == 'Det_Marcador':
+        d['f'] = NARANJA
+        _texto(d, ['Discrepancias: 0 de 4  ·  Errores: 0'], sz=15)
+    elif n.startswith('Det_'):
+        d['f'] = '#F6DDDF'
+        texto = ''.join(r['t'] for p in d['p'] for r in p['r'])
+        base = d['p'][0]['r'][0]
+        k = texto.find(':') + 1
+        d['p'] = [{'al': d['p'][0]['al'], 'sa': 0, 'r': [dict(base, t=texto[:k], c=ROJO_VINO), dict(base, t=texto[k:], c='#203728')]}]
+    elif n.startswith('Mon_'):
+        p1 = datos['monitor']['pacientes'][0]['normal']
+        valores = {'Mon_Temp': p1[0], 'Mon_FC': p1[1], 'Mon_PA': p1[2], 'Mon_FR': p1[3], 'Mon_Obs': p1[4]}
+        if n in valores:
+            _texto(d, [valores[n]], color='#FFFFFF' if n == 'Mon_Obs' else '#7EF09E')
+        elif n == 'Mon_Tiempo':
+            _texto(d, ['00:00'])
+        elif n == 'Mon_Ronda':
+            _texto(d, ['Paciente 1 de 3'])
+        elif n == 'Mon_Retro':
+            d['oculto'] = True
+    elif re.fullmatch(r'Can_P_\d', n):
+        k = n[-1]
+        d['f'] = ROJO_VINO
+        base = {'c': '#FFFFFF', 'b': True}
+        d['p'] = [{'al': 'center', 'sa': 0, 'r': [dict(base, t='🔒  Pista ' + k, sz=round(16 * PT_CQW, 3))]},
+                  {'al': 'center', 'sa': 0, 'r': [dict(base, t='Haz clic para abrir', sz=round(11 * PT_CQW, 3), b=False)]}]
+    elif n == 'Can_Pregunta':
+        _texto(d, ['Elige una pista para ver su pregunta'])
+    elif n in ('Can_O_A', 'Can_O_B'):
+        d['f'] = '#FFFFFF'
+        _texto(d, [n[-1] + '.'])
+    elif n == 'Can_Retro':
+        d['oculto'] = True
+    elif n == 'Can_Codigo':
+        d['f'] = '#142B20'
+        _texto(d, ['_  _  _  _'], color='#7EF09E')
+    elif n == 'Can_Estado':
+        _texto(d, ['🔒 Cerrado'])
+    elif re.fullmatch(r'Op_[A-Z]_\w+', n) and not n.endswith('_c'):
+        d['f'] = VERDE_CLARO
+    elif n in ('RetroSi', 'RetroNo', 'Fin del tiempo') or n.startswith('Ic_'):
+        d['oculto'] = True
+    elif n == 'Puntaje_Final':
+        _texto(d, ['Haz clic en «Ver mi puntaje»'])
+    return d
+
+
+def generar_macros(mod, trabajo):
+    origen = INSUMOS / mod['pptx']
+    destino = SALIDA / mod['id']
+    if destino.exists():
+        shutil.rmtree(destino)
+    destino.mkdir(parents=True)
+    z = zipfile.ZipFile(origen)
+    pres = etree.fromstring(z.read('ppt/presentation.xml'))
+    tam = pres.find('p:sldSz', NS)
+    W, H = int(tam.get('cx')), int(tam.get('cy'))
+    prels = {r.get('Id'): r.get('Target') for r in etree.fromstring(z.read('ppt/_rels/presentation.xml.rels'))}
+    rutas = ['ppt/' + prels[s.get('{%s}id' % NS['r'])] for s in pres.find('p:sldIdLst', NS)]
+    datos_mod = mod.get('datos', {})
+
+    diapositivas, quitar_por_slide = [], {}
+    for n, ruta in enumerate(rutas, 1):
+        arbol = etree.fromstring(z.read(ruta))
+        fs = formas(arbol, W, H)
+        nombres = [f['nombre'] or '' for f in fs.values()]
+        juego, patron = None, None
+        for j, ident, pat in JUEGOS:
+            if any(re.match(ident, nm) for nm in nombres):
+                juego, patron = j, pat
+                break
+        exportar = [s for s, f in fs.items() if patron and f['caja'] and re.match(patron, f['nombre'] or '')]
+        segundos = [s for s, f in fs.items() if re.fullmatch(r'Segundo \d+', f['nombre'] or '')]
+        sobrantes = [s for s, f in fs.items() if (f['nombre'] or '').startswith('Une_Linea_')]  # líneas guardadas de una prueba
+        quitar_por_slide[ruta] = set(exportar) | set(segundos) | set(sobrantes)
+        diapositivas.append({'n': n, 'ruta': ruta, 'fs': fs, 'juego': juego, 'exportar': exportar, 'segundos': segundos})
+
+    sin = trabajo / f"{mod['id']}-fondo.pptx"
+    with zipfile.ZipFile(origen) as zin, zipfile.ZipFile(sin, 'w', zipfile.ZIP_DEFLATED) as zout:
+        for item in zin.infolist():
+            datos = zin.read(item.filename)
+            if quitar_por_slide.get(item.filename):
+                a = etree.fromstring(datos)
+                quitar(a, quitar_por_slide[item.filename])
+                datos = etree.tostring(a, xml_declaration=True, encoding='UTF-8', standalone=True)
+            zout.writestr(item, datos)
+    pdf = trabajo / f"{mod['id']}-fondo.pdf"
+    print(f"  LibreOffice: {mod['pptx']} …")
+    convertir(sin, pdf)
+    doc = fitz.open(pdf)
+    assert len(doc) == len(rutas), f'páginas {len(doc)} y diapositivas {len(rutas)} no coinciden'
+
+    salida, actividades = [], 0
+    for d in diapositivas:
+        nombre = f"d{d['n']:02d}.webp"
+        pagina(doc, d['n'] - 1).save(destino / nombre, 'WEBP', quality=82, method=6)
+        texto = ' '.join(f['texto'] for s, f in d['fs'].items() if f['texto'] and s not in quitar_por_slide[d['ruta']])
+        dia = {'img': nombre, 'texto': texto}
+        if d['juego']:
+            dia['juego'] = d['juego']
+            dia['formas'] = [inicial(estilo_forma(d['fs'][s], W, H), datos_mod) for s in d['exportar']]
+            if d['juego'] != 'cierre':
+                actividades += 1
+        if d['segundos']:
+            cajas = [d['fs'][s]['caja'] for s in d['segundos']]
+            x0, y0 = min(c[0] for c in cajas), min(c[1] for c in cajas)
+            x1, y1 = max(c[0] + c[2] for c in cajas), max(c[1] + c[3] for c in cajas)
+            dia['cronometro'] = {'segundos': max(int(d['fs'][s]['texto']) for s in d['segundos']), 'x': round(x0 * 100, 2),
+                                 'y': round(y0 * 100, 2), 'w': round((x1 - x0) * 100, 2), 'h': round((y1 - y0) * 100, 2)}
+        salida.append(dia)
+
+    datos = {'id': mod['id'], 'titulo': mod['titulo'], 'proporcion': round(W / H, 4), 'puntaje': mod['puntaje'],
+             'datos': datos_mod, 'diapositivas': salida}
+    (destino / 'presentacion.json').write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding='utf-8')
+    total = sum(f.stat().st_size for f in destino.iterdir())
+    print(f"  {mod['id']}: {len(salida)} diapositivas, {actividades} con actividad, {total / 1e6:.1f} MB")
+    return {'id': mod['id'], 'curso': mod['curso'], 'titulo': mod['titulo'], 'descripcion': mod['descripcion'],
+            'portada': f"{mod['id']}/d{mod['portada']:02d}.webp", 'diapositivas': len(salida), 'actividades': actividades}
+
+
 def main():
     if not shutil.which('docker'):
         sys.exit('Falta Docker (se usa LibreOffice de la imagen segpaciente-documentos).')
     trabajo = Path(tempfile.mkdtemp(prefix='presentaciones-'))
     try:
         SALIDA.mkdir(parents=True, exist_ok=True)
-        catalogo = [generar(m, trabajo) for m in MODULOS]
+        pedidos = set(sys.argv[1:])
+        previo = {}
+        if (SALIDA / 'catalogo.json').exists():
+            previo = {c['id']: c for c in json.loads((SALIDA / 'catalogo.json').read_text(encoding='utf-8'))}
+        catalogo = []
+        for m in MODULOS:
+            if pedidos and m['id'] not in pedidos:
+                if m['id'] in previo:
+                    catalogo.append(previo[m['id']])
+                continue
+            catalogo.append((generar_macros if m.get('macros') else generar)(m, trabajo))
         (SALIDA / 'catalogo.json').write_text(json.dumps(catalogo, ensure_ascii=False, indent=1), encoding='utf-8')
         print('Listo:', SALIDA)
     finally:

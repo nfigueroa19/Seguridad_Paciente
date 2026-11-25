@@ -1,0 +1,6223 @@
+{
+ "id": "modulo-7",
+ "titulo": "Programa de Piel Sana: prevención de lesiones por presión",
+ "proporcion": 1.7778,
+ "puntaje": [
+  {
+   "id": "mapa",
+   "nombre": "Mapa",
+   "max": 7
+  },
+  {
+   "id": "une",
+   "nombre": "Une",
+   "max": 6
+  },
+  {
+   "id": "sopa",
+   "nombre": "Sopa",
+   "max": 6
+  },
+  {
+   "id": "retos",
+   "nombre": "Retos",
+   "max": 5
+  }
+ ],
+ "datos": {
+  "sopa": {
+   "palabras": [
+    "BRADEN",
+    "SACRO",
+    "TALONES",
+    "HUMEDAD",
+    "ESCARA",
+    "MARSI"
+   ]
+  }
+ },
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "Programa de Piel Sana Prevención de lesiones por presión"
+  },
+  {
+   "img": "d02.webp",
+   "texto": "¿Qué es el Programa de Piel Sana? Propósito: El Programa de Piel Sana tiene como propósito garantizar y preservar la integridad de la piel de los pacientes, mediante acciones de promoción, prevención, evaluación, tratamiento y seguimiento de las lesiones cutáneas, con especial énfasis en lesiones asociadas a la dependencia, dispositivos médicos y presión prolongada. Previene lesiones: Por presión Por Adhesivos médicos (Marsi) Por húmedad (LESCAH)"
+  },
+  {
+   "img": "d03.webp",
+   "texto": "¿Qué son las lesiones por presión? CONCEPTO CLAVE Daño localizado en la piel y los tejidos subyacentes, generalmente sobre prominencias óseas o por dispositivos médicos. Causa: presión intensa o prolongada, sola o combinada con cizallamiento. Más frecuentes en pacientes con: Edad Alteración de la sensibilidad Compromiso nutricional (Desnutrición - Obesidad) Desacondicionamiento físico Déficit neurológico Alteración de la movilidad"
+  },
+  {
+   "img": "d04.webp",
+   "texto": "Valoración del riesgo: escala de Braden SEIS COMPONENTES 1 Percepción sensorial 2 Humedad 3 Actividad 4 Movilidad 5 Nutrición 6 Fricción y cizallamiento Puntuación de 6 a 23: a MENOR puntuación, MAYOR riesgo 6 · mayor riesgo menor riesgo · 23 Valore al ingreso y reevalúe según la condición clínica ALTO diariamente MODERADO Cada 3 días BAJO cada 7 días"
+  },
+  {
+   "img": "d05.webp",
+   "texto": "Clasificación de las lesiones por presión SEGÚN EL COMPROMISO DE LOS TEJIDOS Categoría 1 Piel íntegra con eritema que no palidece a la presión. Categoría 2 Pérdida parcial del grosor de la piel, con dermis expuesta. Categoría 3 Pérdida total del grosor; tejido adiposo visible, sin estructuras profundas. Categoría 4 Exposición de fascia, músculo, tendón o hueso. Lesión no clasificable: Profundidad oculta por esfacelos o escara. Lesión de tejido profundo: Zona rojo oscuro, marrón o púrpura que no palidece, o lecho oscuro."
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Cambios de posición y movilización segura BARRERA FUNDAMENTAL CONTRA LA PRESIÓN PROLONGADA Prográmelos de forma individualizada según: Riesgo Tolerancia Movilidad Estado de la piel Superficie de apoyo Al movilizar Favorezca la movilización temprana cuando sea posible Use técnicas que disminuyan fricción y cizallamiento No apoye al paciente sobre áreas lesionadas"
+  },
+  {
+   "img": "d07.webp",
+   "texto": "Inspección y cuidado de la piel VALORE PERIÓDICAMENTE Zonas de especial atención: Sacro Talones Codos Caderas Contacto con dispositivos Haga Mantenga la piel limpia Controle la humedad Use protectores cutáneos si están indicados Registre y comunique los hallazgos Aplicación de Acidos Grasos Hiperoxigenados ( linovera ) Evite Masajes sobre zonas enrojecidas Masajes con sospecha de lesión por presión"
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Dispositivos, humedad y adhesivos OTRAS LESIONES DE LA PIEL QUE PODEMOS PREVENIR Dispositivos médicos Mascarillas, sondas, cánulas, férulas, inmovilizadores y fijaciones Verifique su colocación Inspeccione las zonas de contacto Evite tensión excesiva Proteja sin afectar su funcionamiento Humedad (LESCAH) Orina, heces, sudor o secreciones causan dermatitis Higiene adecuada Control de la humedad Productos protectores según la valoración Adhesivos (MARSI) Lesiones cutáneas por adhesivos médicos Selección apropiada del adhesivo Protección de la piel Colocación y retiro seguros"
+  },
+  {
+   "img": "d09.webp",
+   "texto": "Nutrición, hidratación y superficies de apoyo COMPLEMENTAN LA PREVENCIÓN Nutrición e hidratación Influyen en la integridad de la piel y en la recuperación de los tejidos. Los pacientes en riesgo requieren valoración nutricional e intervenciones. Superficies de apoyo Colchones y dispositivos especiales redistribuyen la presión y complementan los cambios de posición . Las superficies de apoyo NO reemplazan la valoración ni los cuidados preventivos."
+  },
+  {
+   "img": "d10.webp",
+   "texto": "Riesgos frecuentes y barreras de seguridad LO QUE DEBEMOS PREVENIR · CÓMO LO PREVENIMOS Riesgos Inmovilidad Humedad prolongada Alteraciones nutricionales Fricción y cizallamiento Presión de dispositivos médicos Falta de valoración oportuna Barreras Escala de Braden Inspección periódica de la piel Cambios de posición individualizados Protección de prominencias óseas Control de humedad y superficies de apoyo Registro de las intervenciones"
+  },
+  {
+   "img": "d11.webp",
+   "texto": "Juego 1: Mapa de la piel HAZ CLIC EN LOS PUNTOS DONDE HAY MAYOR RIESGO DE LESIÓN POR PRESIÓN (HAY 7) Esquema: paciente acostado en la cama",
+   "juego": "mapa",
+   "formas": [
+    {
+     "n": "Zona_R1_Codo",
+     "x": 33.15,
+     "y": 30.76,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_R2_Codo",
+     "x": 33.73,
+     "y": 51.86,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_R3_Sacro",
+     "x": 39.08,
+     "y": 41.56,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_R4_Cadera",
+     "x": 41.04,
+     "y": 35.82,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_R5_Cadera",
+     "x": 40.43,
+     "y": 48.53,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_R6_Talón",
+     "x": 59.86,
+     "y": 38.73,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_R7_Talón",
+     "x": 59.49,
+     "y": 46.19,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_N1_Pecho",
+     "x": 28.16,
+     "y": 41.39,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_N2_Abdomen",
+     "x": 33.39,
+     "y": 40.97,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_N3_Muslo",
+     "x": 53.53,
+     "y": 38.73,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Zona_N4_Muslo",
+     "x": 45.81,
+     "y": 47.14,
+     "w": 2.7,
+     "h": 4.8,
+     "g": "ellipse",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "l": "#196C33",
+     "lw": 0.208,
+     "a": 0.6
+    },
+    {
+     "n": "Mapa_Marcador",
+     "x": 68.25,
+     "y": 26.4,
+     "w": 26.25,
+     "h": 19.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Zonas de riesgo: 0 de 7",
+         "sz": 1.667,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Errores: 0",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.08,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Mapa_Retro",
+     "x": 68.25,
+     "y": 47.33,
+     "w": 26.25,
+     "h": 16.0,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Haz clic en un punto blanco del esquema",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Puntaje_Mapa",
+     "x": 17.25,
+     "y": 72.0,
+     "w": 49.5,
+     "h": 5.6,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Encontraste las 7 zonas!  Errores: 4  ·  Puntaje: 3 de 7",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Boton_Reiniciar",
+     "x": 68.25,
+     "y": 65.33,
+     "w": 14.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "↺ ",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        },
+        {
+         "t": "Reiniciar",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    }
+   ]
+  },
+  {
+   "img": "d12.webp",
+   "texto": "Juego 2: Une cada lesión con su descripción HAZ CLIC EN UNA CATEGORÍA (IZQUIERDA) Y LUEGO EN SU DESCRIPCIÓN (DERECHA)",
+   "juego": "une",
+   "formas": [
+    {
+     "n": "Une_I_1",
+     "x": 18.12,
+     "y": 34.64,
+     "w": 19.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Categoría 1",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_I_2",
+     "x": 18.12,
+     "y": 41.97,
+     "w": 19.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Categoría 2",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_I_3",
+     "x": 18.12,
+     "y": 49.3,
+     "w": 19.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Categoría 3",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_I_4",
+     "x": 18.12,
+     "y": 56.64,
+     "w": 19.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Categoría 4",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_I_5",
+     "x": 18.12,
+     "y": 63.97,
+     "w": 19.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "No clasificable",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_I_6",
+     "x": 18.12,
+     "y": 71.3,
+     "w": 19.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Tejido profundo",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_D_3",
+     "x": 46.5,
+     "y": 34.64,
+     "w": 39.75,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Pérdida total del grosor; tejido adiposo visible",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_D_6",
+     "x": 46.5,
+     "y": 41.97,
+     "w": 39.75,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Zona rojo oscuro, marrón o púrpura que no palidece",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_D_1",
+     "x": 46.5,
+     "y": 49.3,
+     "w": 39.75,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Piel íntegra con eritema que no palidece",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_D_5",
+     "x": 46.5,
+     "y": 56.64,
+     "w": 39.75,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Profundidad oculta por esfacelos o escara",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_D_2",
+     "x": 46.5,
+     "y": 63.97,
+     "w": 39.75,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Pérdida parcial del grosor; dermis expuesta",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Une_D_4",
+     "x": 46.5,
+     "y": 71.3,
+     "w": 39.75,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Exposición de fascia, músculo, tendón o hueso",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Puntaje_Une",
+     "x": 17.31,
+     "y": 79.97,
+     "w": 49.5,
+     "h": 5.6,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Terminaste! Acertaste 6 de 6 al primer intento",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Juego 3: Sopa de letras de Piel Sana HAZ CLIC EN LA PRIMERA Y EN LA ÚLTIMA LETRA DE CADA PALABRA Encuentra estas 6 palabras: Las palabras van en horizontal, vertical o diagonal.",
+   "juego": "sopa",
+   "formas": [
+    {
+     "n": "Sopa_0_0",
+     "x": 19.78,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_1",
+     "x": 22.44,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_2",
+     "x": 25.11,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_3",
+     "x": 27.77,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_4",
+     "x": 30.43,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "O",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_5",
+     "x": 33.09,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "G",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_6",
+     "x": 35.76,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "G",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_7",
+     "x": 38.42,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_8",
+     "x": 41.08,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_0_9",
+     "x": 43.74,
+     "y": 28.47,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "I",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_0",
+     "x": 19.78,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "M",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_1",
+     "x": 22.44,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "G",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_2",
+     "x": 25.11,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "J",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_3",
+     "x": 27.77,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_4",
+     "x": 30.43,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_5",
+     "x": 33.09,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "H",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_6",
+     "x": 35.76,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "U",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_7",
+     "x": 38.42,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_8",
+     "x": 41.08,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_1_9",
+     "x": 43.74,
+     "y": 33.2,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "L",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_0",
+     "x": 19.78,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "H",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_1",
+     "x": 22.44,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_2",
+     "x": 25.11,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "I",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_3",
+     "x": 27.77,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_4",
+     "x": 30.43,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_5",
+     "x": 33.09,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "O",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_6",
+     "x": 35.76,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_7",
+     "x": 38.42,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "L",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_8",
+     "x": 41.08,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_2_9",
+     "x": 43.74,
+     "y": 37.93,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_0",
+     "x": 19.78,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "M",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_1",
+     "x": 22.44,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "U",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_2",
+     "x": 25.11,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_3",
+     "x": 27.77,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "P",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_4",
+     "x": 30.43,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "U",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_5",
+     "x": 33.09,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_6",
+     "x": 35.76,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_7",
+     "x": 38.42,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "O",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_8",
+     "x": 41.08,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_3_9",
+     "x": 43.74,
+     "y": 42.67,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "O",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_0",
+     "x": 19.78,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_1",
+     "x": 22.44,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_2",
+     "x": 25.11,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "M",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_3",
+     "x": 27.77,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_4",
+     "x": 30.43,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_5",
+     "x": 33.09,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_6",
+     "x": 35.76,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_7",
+     "x": 38.42,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "N",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_8",
+     "x": 41.08,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_4_9",
+     "x": 43.74,
+     "y": 47.4,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_0",
+     "x": 19.78,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_1",
+     "x": 22.44,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_2",
+     "x": 25.11,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "P",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_3",
+     "x": 27.77,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_4",
+     "x": 30.43,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "I",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_5",
+     "x": 33.09,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "F",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_6",
+     "x": 35.76,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "V",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_7",
+     "x": 38.42,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_8",
+     "x": 41.08,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "O",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_5_9",
+     "x": 43.74,
+     "y": 52.13,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_0",
+     "x": 19.78,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_1",
+     "x": 22.44,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "F",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_2",
+     "x": 25.11,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_3",
+     "x": 27.77,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_4",
+     "x": 30.43,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_5",
+     "x": 33.09,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "V",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_6",
+     "x": 35.76,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_7",
+     "x": 38.42,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_8",
+     "x": 41.08,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "N",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_6_9",
+     "x": 43.74,
+     "y": 56.87,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_0",
+     "x": 19.78,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_1",
+     "x": 22.44,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "L",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_2",
+     "x": 25.11,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_3",
+     "x": 27.77,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_4",
+     "x": 30.43,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_5",
+     "x": 33.09,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_6",
+     "x": 35.76,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_7",
+     "x": 38.42,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_8",
+     "x": 41.08,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_7_9",
+     "x": 43.74,
+     "y": 61.6,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_0",
+     "x": 19.78,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "H",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_1",
+     "x": 22.44,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "G",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_2",
+     "x": 25.11,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "I",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_3",
+     "x": 27.77,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_4",
+     "x": 30.43,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_5",
+     "x": 33.09,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_6",
+     "x": 35.76,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_7",
+     "x": 38.42,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "P",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_8",
+     "x": 41.08,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_8_9",
+     "x": 43.74,
+     "y": 66.33,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_0",
+     "x": 19.78,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_1",
+     "x": 22.44,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "P",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_2",
+     "x": 25.11,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "L",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_3",
+     "x": 27.77,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_4",
+     "x": 30.43,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_5",
+     "x": 33.09,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_6",
+     "x": 35.76,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_7",
+     "x": 38.42,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_8",
+     "x": 41.08,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_9_9",
+     "x": 43.74,
+     "y": 71.07,
+     "w": 2.44,
+     "h": 4.33,
+     "g": "rect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "V",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Sopa_W_1",
+     "x": 50.62,
+     "y": 36.4,
+     "w": 22.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "BRADEN",
+         "sz": 1.771,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Sopa_W_2",
+     "x": 74.62,
+     "y": 36.4,
+     "w": 22.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "SACRO",
+         "sz": 1.771,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Sopa_W_3",
+     "x": 50.62,
+     "y": 45.47,
+     "w": 22.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "TALONES",
+         "sz": 1.771,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Sopa_W_4",
+     "x": 74.62,
+     "y": 45.47,
+     "w": 22.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "HUMEDAD",
+         "sz": 1.771,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Sopa_W_5",
+     "x": 50.62,
+     "y": 54.53,
+     "w": 22.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "ESCARA",
+         "sz": 1.771,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Sopa_W_6",
+     "x": 74.62,
+     "y": 54.53,
+     "w": 22.5,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "MARSI",
+         "sz": 1.771,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Puntaje_Sopa",
+     "x": 19.78,
+     "y": 77.5,
+     "w": 46.5,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Puntaje",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d14.webp",
+   "texto": "Reto 1: Escala de Braden HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué indica una puntuación baja en la escala de Braden?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "En la escala de Braden, a menor puntuación, mayor riesgo.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 19.38,
+     "y": 40.12,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Menor riesgo de lesión",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 20.12,
+     "y": 41.18,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 19.38,
+     "y": 50.52,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Mayor riesgo de lesión por presión",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 20.12,
+     "y": 51.58,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 19.38,
+     "y": 60.92,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Que no se requiere reevaluar",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 20.12,
+     "y": 61.98,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.25,
+     "y": 24.78,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.12,
+    "y": 13.72,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d15.webp",
+   "texto": "Reto 2: Clasificación HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Piel íntegra con eritema que no palidece a la presión corresponde a:",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "La categoría 1 es piel íntegra con eritema que no palidece.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 20.38,
+     "y": 39.07,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Categoría 1",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 40.14,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 20.38,
+     "y": 49.47,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Categoría 3",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 50.54,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 20.38,
+     "y": 59.87,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Lesión de tejido profundo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 60.94,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 23.74,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 12.67,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d16.webp",
+   "texto": "Reto 3: Cuidado de la piel HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO El paciente tiene una zona enrojecida en el sacro. ¿Qué NO se debe hacer?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Se deben evitar los masajes sobre zonas enrojecidas o con sospecha de lesión.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 20.38,
+     "y": 41.29,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Registrar y comunicar el hallazgo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 42.36,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 20.38,
+     "y": 51.69,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Masajear la zona enrojecida",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 52.76,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 20.38,
+     "y": 62.09,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Aliviar la presión con cambios de posición",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 63.16,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 25.96,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 14.89,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d17.webp",
+   "texto": "Reto 4: MARSI HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué son las lesiones MARSI?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "MARSI son lesiones de la piel asociadas a adhesivos médicos.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 20.38,
+     "y": 41.29,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Una escala de valoración del riesgo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 21.12,
+     "y": 42.36,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 20.38,
+     "y": 51.69,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Lesiones por humedad prolongada",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 21.12,
+     "y": 52.76,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_ok",
+     "x": 20.38,
+     "y": 62.09,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Lesiones cutáneas asociadas a adhesivos médicos",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 21.12,
+     "y": 63.16,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 25.96,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 14.89,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d18.webp",
+   "texto": "Reto 5: Superficies de apoyo HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Sobre las superficies especiales de apoyo, es correcto que:",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Complementan los cambios de posición, sin reemplazar la valoración ni los cuidados.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 19.82,
+     "y": 39.99,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Reemplazan los cambios de posición",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 20.57,
+     "y": 41.05,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 19.82,
+     "y": 50.39,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Complementan los cambios de posición, pero no reemplazan la valoración ni los cuidados",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 20.57,
+     "y": 51.45,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 19.82,
+     "y": 60.79,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo se usan cuando ya hay una lesión",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 20.57,
+     "y": 61.85,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.69,
+     "y": 24.65,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.57,
+    "y": 13.59,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d19.webp",
+   "texto": "Cierre: piel sana, responsabilidad de todos RECUERDA VALORA EL RIESGO, INSPECCIONA LA PIEL, MOVILIZA Y PROTEGE. Prevenir las lesiones por presión es responsabilidad de todos. Equipo asistencial Valora, previene, vigila la piel, documenta y comunica cualquier alteración. Paciente y familia Aprenden cambios de posición, movilización segura, cuidado de la piel y signos de alarma.",
+   "juego": "cierre",
+   "formas": [
+    {
+     "n": "Boton_Puntaje",
+     "x": 17.25,
+     "y": 65.33,
+     "w": 19.5,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ver mi puntaje",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Puntaje_Final",
+     "x": 38.25,
+     "y": 65.33,
+     "w": 44.25,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Haz clic en «Ver mi puntaje»",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    }
+   ]
+  }
+ ]
+}
