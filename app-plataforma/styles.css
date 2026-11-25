@@ -279,6 +279,27 @@ button{font:inherit; cursor:pointer;}
 .cv-video-item span{font-size:.88rem; font-weight:600;}
 .cv-estado{min-height:1.2em; margin:8px 0 0; color:var(--texto-suave); font-size:.82rem;}
 
+/* ---------- Pantallas grandes (2K, 4K, ultrawide) ----------
+   El contenido tenía un tope de 1180px y los textos un tamaño fijo, así que en
+   pantallas muy anchas todo se veía diminuto y centrado en un mar de vacío.
+   Se escala toda la interfaz por tramos y se amplía el tope del contenido. */
+@media (min-width:1800px){
+  html{zoom:1.2; --zui:1.2;}
+  .content{max-width:1400px;}
+}
+@media (min-width:2400px){
+  html{zoom:1.5; --zui:1.5;}
+  .content{max-width:1600px;}
+}
+@media (min-width:3200px){
+  html{zoom:2; --zui:2;}
+  .content{max-width:1800px;}
+}
+@media (min-width:4400px){
+  html{zoom:2.6; --zui:2.6;}
+  .content{max-width:2000px;}
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
   .topbar{padding:0 24px;}
