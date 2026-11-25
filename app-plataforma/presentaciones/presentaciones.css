@@ -101,6 +101,10 @@ button.pi-f:disabled{cursor:default; opacity:1;}
 button.pi-clic:hover:not(:disabled){box-shadow:0 0 0 .3cqw var(--naranja);}
 button.pi-clic:focus-visible{outline:.3cqw solid var(--naranja); outline-offset:.2cqw;}
 .pi-f.pi-sel{box-shadow:0 0 0 .45cqw var(--naranja), 0 .4cqw 1cqw rgba(0,0,0,.2);}
+.pi-f.pi-ok{box-shadow:0 0 0 .3cqw #00B050;}
+.pi-f.pi-mal{box-shadow:0 0 0 .4cqw #E02020; animation:pi-balanceo .5s ease-in-out;}
+.pi-aviso.pi-aviso-ok{background:rgba(25,108,51,.96);}
+.pi-aviso.pi-aviso-mal{background:rgba(198,40,40,.96);}
 .pi-lineas{position:absolute; inset:0; width:100%; height:100%; pointer-events:none;}
 
 /* Cronómetro (en la franja verde de la diapositiva) */

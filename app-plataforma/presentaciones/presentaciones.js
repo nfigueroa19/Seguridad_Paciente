@@ -560,6 +560,15 @@
         svg.append(l);
         return l;
       };
+      var avisoEl = null, avisoT = null;
+      var aviso_ = function (t, ok) {   // aviso breve de acierto o error, abajo en la diapositiva
+        if (avisoEl) avisoEl.remove();
+        clearTimeout(avisoT);
+        avisoEl = h('div', { class: 'pi-aviso pi-aviso-' + (ok ? 'ok' : 'mal'), role: 'status', text: t });
+        capa.append(avisoEl);
+        avisoT = setTimeout(function () { if (avisoEl) avisoEl.remove(); avisoEl = null; }, 2200);
+        limpiezas.push(function () { clearTimeout(avisoT); });
+      };
       var marcarSel = function (n, si) { F[n].el.classList.toggle('pi-sel', si); F[n].el.setAttribute('aria-pressed', String(si)); };
       nombres(/^Une_[ID]_/).forEach(function (n) {
         clic(n, function () {
@@ -578,8 +587,10 @@
             unidos[izq] = unidos[der] = true;
             fondo_(izq, COLOR.lima); fondo_(der, COLOR.palido);
             F[izq].el.disabled = F[der].el.disabled = true;
+            F[izq].el.classList.add('pi-ok'); F[der].el.classList.add('pi-ok'); marca(F[izq].el, true); marca(F[der].el, true);
             if (!fallos[izq.slice(6)]) aciertos1++;
             hechos++;
+            if (hechos < 6) aviso_('¡Correcto! Pareja ' + hechos + ' de 6.', true);
             anunciar('¡Correcto! Pareja ' + hechos + ' de 6.');
             if (hechos >= 6) {
               guardar('une', aciertos1);
@@ -589,8 +600,19 @@
           } else {
             fallos[izq.slice(6)] = true;
             var l = dibujar(izq, der, COLOR.rojo, true);
+            // Error bien visible: ambos recuadros en rojo con ✕ y aviso; luego vuelven a su estado y se pueden unir de nuevo
+            fondo_(izq, COLOR.rojo); fondo_(der, COLOR.rosaOpc);
+            F[izq].el.classList.add('pi-mal'); F[der].el.classList.add('pi-mal'); marca(F[izq].el, false); marca(F[der].el, false);
+            aviso_('Incorrecto: esa descripción no corresponde a «' + textoPlano(F[izq].f) + '». Intenta de nuevo.', false);
             anunciar('Incorrecto. Esa descripción no corresponde. Intenta de nuevo.');
-            var t = setTimeout(function () { l.remove(); }, 900);
+            var t = setTimeout(function () {
+              l.remove();
+              [izq, der].forEach(function (x) {
+                F[x].el.classList.remove('pi-mal');
+                var m = F[x].el.querySelector('.pi-marca'); if (m) m.remove();
+              });
+              fondo_(izq, COLOR.verde); fondo_(der, COLOR.claro);
+            }, 1400);
             limpiezas.push(function () { clearTimeout(t); });
           }
         });
