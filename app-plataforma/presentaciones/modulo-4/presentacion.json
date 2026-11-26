@@ -1,0 +1,3217 @@
+{
+ "id": "modulo-4",
+ "titulo": "Garantizar una cirugía segura",
+ "proporcion": 1.7778,
+ "puntaje": [
+  {
+   "id": "clasifica",
+   "nombre": "Juego 1",
+   "max": 6
+  },
+  {
+   "id": "vf",
+   "nombre": "V o F",
+   "max": 4
+  },
+  {
+   "id": "retos",
+   "nombre": "Retos",
+   "max": 5
+  }
+ ],
+ "datos": {},
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "Garantizar una cirugía segura"
+  },
+  {
+   "img": "d02.webp",
+   "texto": "¿Qué es la cirugía segura? CONCEPTO CLAVE Conjunto de prácticas, procedimientos y barreras de seguridad para prevenir incidentes y eventos adversos en una intervención quirúrgica. Propósito: paciente correcto, lugar correcto e intervención indicada. Antes Durante Después Fortalece la comunicación del equipo quirúrgico, la identificación de riesgos y el cumplimiento de los protocolos."
+  },
+  {
+   "img": "d03.webp",
+   "texto": "Los tres correctos de la cirugía segura SE VERIFICAN ANTES DEL PROCEDIMIENTO 1 Paciente correcto Confirme los identificadores institucionales. 2 Procedimiento correcto Verifique la intervención programada, la historia clínica y el consentimiento informado. 3 Lugar correcto Confirme el sitio anatómico y la lateralidad cuando corresponda. Son barreras para prevenir cirugías en el paciente, el procedimiento o el sitio equivocado."
+  },
+  {
+   "img": "d04.webp",
+   "texto": "¿Qué es el triage quirúrgico? CONCEPTO CLAVE Clasifica la prioridad de atención de los pacientes quirúrgicos según su condición clínica, el riesgo de deterioro y la urgencia del procedimiento. Finalidad: respuesta oportuna y recursos organizados según la necesidad. HAZ CLIC EN CADA PRIORIDAD PARA VER EL TIEMPO DE ATENCIÓN TRIAGE 1 TRIAGE 2 TRIAGE 3 TRIAGE 4 TRIAGE 5 TRIAGE 2 Priorizado SOLO para Ginecología 30 minutos a 2 horas",
+   "juego": "revelar",
+   "formas": [
+    {
+     "n": "Tiempo Prioridad 1",
+     "x": 17.25,
+     "y": 61.6,
+     "w": 14.55,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Atención inmediata hasta 30 minutos",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.45,
+      0.45,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "l": "#C62828",
+     "lw": 0.13,
+     "oculto": true
+    },
+    {
+     "n": "Tiempo Prioridad 2",
+     "x": 32.92,
+     "y": 61.47,
+     "w": 14.55,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "30 minutos a  ",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        },
+        {
+         "t": "6 ",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        },
+        {
+         "t": "horas",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.45,
+      0.45,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "l": "#AF5A19",
+     "lw": 0.13,
+     "oculto": true
+    },
+    {
+     "n": "Tiempo Prioridad 3",
+     "x": 48.6,
+     "y": 61.6,
+     "w": 14.55,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Entre 6 a 12 horas",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.45,
+      0.45,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "l": "#E0A11B",
+     "lw": 0.13,
+     "oculto": true
+    },
+    {
+     "n": "Tiempo Prioridad 4",
+     "x": 64.28,
+     "y": 61.6,
+     "w": 14.55,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Atención en 12 horas y más",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.45,
+      0.45,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "l": "#8DC63F",
+     "lw": 0.13,
+     "oculto": true
+    },
+    {
+     "n": "Tiempo Prioridad 5",
+     "x": 79.95,
+     "y": 61.6,
+     "w": 14.55,
+     "h": 9.6,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Hospitalizado que puede ser programado",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.45,
+      0.45,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "l": "#000000",
+     "lw": 0.13,
+     "oculto": true
+    }
+   ],
+   "revelar": [
+    {
+     "x": 17.25,
+     "y": 52.27,
+     "w": 14.55,
+     "h": 8.27,
+     "etiqueta": "TRIAGE 1",
+     "destino": "Tiempo Prioridad 1"
+    },
+    {
+     "x": 32.92,
+     "y": 52.27,
+     "w": 14.55,
+     "h": 8.27,
+     "etiqueta": "TRIAGE 2",
+     "destino": "Tiempo Prioridad 2"
+    },
+    {
+     "x": 48.6,
+     "y": 52.27,
+     "w": 14.55,
+     "h": 8.27,
+     "etiqueta": "TRIAGE 3",
+     "destino": "Tiempo Prioridad 3"
+    },
+    {
+     "x": 64.28,
+     "y": 52.27,
+     "w": 14.55,
+     "h": 8.27,
+     "etiqueta": "TRIAGE 4",
+     "destino": "Tiempo Prioridad 4"
+    },
+    {
+     "x": 79.95,
+     "y": 52.27,
+     "w": 14.55,
+     "h": 8.27,
+     "etiqueta": "TRIAGE 5",
+     "destino": "Tiempo Prioridad 5"
+    }
+   ]
+  },
+  {
+   "img": "d05.webp",
+   "texto": "LISTA DE CHEQUEO QUIRÚRGICA INTEGRAL Cinco momentos de verificación y registro durante la atención quirúrgica 01 ADMISIÓN DE CIRUGÍA Auxiliar de enfermería de admisión: verifica. 02 ANTES DE LA INDUCCIÓN ANESTÉSICA Instrumentador quirúrgico/ Anestesiologo (Según aplique): verifica y registra. Identidad · procedimiento · consentimiento · alergias · riesgos anestésicos. 03 ANTES DE LA INCISIÓN CUTÁNEA Instrumentador quirúrgico/ Anestesiologo (Según aplique) : verifica y registra con todo el equipo. Paciente y procedimiento · sitio quirúrgico · profilaxis antibiótica · aspectos críticos. 04 ANTES DE SALIR DEL QUIRÓFANO Instrumentador quirúrgico/ Anestesiologo (Según aplique) : verifica y registra con el qeuipo quirúrgico Procedimiento · recuento de material · muestras · indicaciones posoperatorias. 05 EGRESO SEGURO Auxiliar de recuperación: verifica y registra."
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Marcación del sitio quirúrgico BARRERA CONTRA EL LUGAR O LADO EQUIVOCADO ¿Cuándo? Cuando corresponda según el protocolo institucional, antes del procedimiento. ¿Quién? El profesional autorizado. ¿Cómo? Con una marca clara y verificable. Contrástela con: identificación, programación quirúrgica, consentimiento informado y documentos asistenciales. SI"
+  },
+  {
+   "img": "d07.webp",
+   "texto": "Consentimiento informado DECISIÓN LIBRE E INFORMADA El paciente, o su representante legal cuando corresponda, recibe información clara y comprensible sobre: Procedimiento Beneficios Riesgos Alternativas Consecuencias Antes de intervenir: verifique que esté diligenciado y corresponda al paciente y al procedimiento. No reemplaza la comunicación efectiva ni las demás verificaciones."
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Barreras y defensas institucionales LO QUE APLICAMOS EN EL HOSPITAL 1 Use la señalética de alerta visual: paciente previo a procedimiento. 2 Aplique los 4 YO del consentimiento: informo, diligencio, hago firmar, me responsabilizo. 3 Confirme la adecuada preparación prequirúrgica del paciente. 4 Verifique que el equipo esté completo antes de iniciar la lista de chequeo. 5 Diligencie la lista de chequeo de cirugía segura en sus cinco momentos. 6 Marque la zona operatoria; si el paciente no lo desea, regístrelo en la historia clínica. 7 Antibiótico profiláctico de 30 a 60 minutos antes de la incisión. 8 Baño con clorhexidina del cuello hacia abajo, enfocado en la zona a operar. 9 Garantice la adecuada recuperación anestésica. 10 Informe a los familiares al terminar el procedimiento."
+  },
+  {
+   "img": "d09.webp",
+   "texto": "Juego 1: ¿En qué momento se verifica? 1. HAZ CLIC EN UN ÍTEM 2. HAZ CLIC EN EL MOMENTO DE LA LISTA AL QUE PERTENECE",
+   "juego": "clasifica",
+   "formas": [
+    {
+     "n": "Col_1",
+     "x": 17.25,
+     "y": 40.67,
+     "w": 24.75,
+     "h": 27.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Col_1_t",
+     "x": 18.0,
+     "y": 41.33,
+     "w": 23.25,
+     "h": 7.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.0,
+       "r": [
+        {
+         "t": "Antes de la inducción anestésica",
+         "sz": 1.562,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Col_1_s1",
+     "x": 18.0,
+     "y": 49.6,
+     "w": 23.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Col_1_s2",
+     "x": 18.0,
+     "y": 57.87,
+     "w": 23.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Col_2",
+     "x": 43.5,
+     "y": 40.67,
+     "w": 24.75,
+     "h": 27.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Col_2_t",
+     "x": 44.25,
+     "y": 41.33,
+     "w": 23.25,
+     "h": 7.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.0,
+       "r": [
+        {
+         "t": "Antes de la incisión quirúrgica",
+         "sz": 1.562,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Col_2_s1",
+     "x": 44.25,
+     "y": 49.6,
+     "w": 23.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Col_2_s2",
+     "x": 44.25,
+     "y": 57.87,
+     "w": 23.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Col_3",
+     "x": 69.75,
+     "y": 40.67,
+     "w": 24.75,
+     "h": 27.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Col_3_t",
+     "x": 70.5,
+     "y": 41.33,
+     "w": 23.25,
+     "h": 7.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.0,
+       "r": [
+        {
+         "t": "Antes de salir del quirófano",
+         "sz": 1.562,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Col_3_s1",
+     "x": 70.5,
+     "y": 49.6,
+     "w": 23.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Col_3_s2",
+     "x": 70.5,
+     "y": 57.87,
+     "w": 23.25,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": []
+      }
+     ],
+     "i": [
+      0.75,
+      0.375,
+      0.75,
+      0.375
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Con_1a",
+     "x": 18.0,
+     "y": 26.4,
+     "w": 23.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Riesgos anestésicos",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Con_3a",
+     "x": 44.25,
+     "y": 26.4,
+     "w": 23.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Recuento de instrumental",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Con_2a",
+     "x": 70.5,
+     "y": 26.4,
+     "w": 23.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Profilaxis antibiótica",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Con_1b",
+     "x": 18.0,
+     "y": 33.73,
+     "w": 23.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Confirmar alergias",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Con_3b",
+     "x": 44.25,
+     "y": 33.73,
+     "w": 23.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Identificación de muestras",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Con_2b",
+     "x": 70.5,
+     "y": 33.73,
+     "w": 23.25,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Sitio quirúrgico con el equipo",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Puntaje_Juego",
+     "x": 17.25,
+     "y": 70.4,
+     "w": 49.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Terminaste! Acertaste 5 de 6 al primer intento",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Boton_Reiniciar",
+     "x": 68.25,
+     "y": 70.4,
+     "w": 14.25,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "↺ Reiniciar",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    }
+   ]
+  },
+  {
+   "img": "d10.webp",
+   "texto": "Juego 2: ¿Verdadero o falso? HAZ CLIC EN VERDADERO O FALSO · SOLO EL PRIMER INTENTO SUMA PUNTO La marcación del sitio quirúrgico reemplaza la verificación de la identidad del paciente. Los tres correctos de la cirugía segura se verifican antes del procedimiento. Si el consentimiento está firmado, ya no se necesitan las demás verificaciones. La clasificación del triaje quirúrgico la realiza el profesional responsable.",
+   "juego": "vf",
+   "formas": [
+    {
+     "n": "VF_1_V_no",
+     "x": 77.62,
+     "y": 27.2,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Verdadero",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_1_F_ok",
+     "x": 85.88,
+     "y": 27.2,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Falso",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_2_V_ok",
+     "x": 77.62,
+     "y": 37.87,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Verdadero",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_2_F_no",
+     "x": 85.88,
+     "y": 37.87,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Falso",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_3_V_no",
+     "x": 77.62,
+     "y": 48.53,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Verdadero",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_3_F_ok",
+     "x": 85.88,
+     "y": 48.53,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Falso",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_4_V_ok",
+     "x": 77.62,
+     "y": 59.2,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Verdadero",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "VF_4_F_no",
+     "x": 85.88,
+     "y": 59.2,
+     "w": 7.5,
+     "h": 7.47,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Falso",
+         "sz": 1.25,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.15,
+      0.45,
+      0.15,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Puntaje_VF",
+     "x": 17.25,
+     "y": 70.4,
+     "w": 49.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Acertaste 4 de 4 al primer intento",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d11.webp",
+   "texto": "Reto 1: Los tres correctos HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Cuáles son los tres correctos de la cirugía segura?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Paciente, procedimiento y lugar correctos se verifican antes del procedimiento.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Paciente, procedimiento y lugar correctos",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Paciente, anestesia y quirófano correctos",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Cirujano, hora y sala correctos",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 82.75,
+     "y": 22.4,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 87.62,
+    "y": 11.33,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d12.webp",
+   "texto": "Reto 2: Triaje quirúrgico HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Un paciente clasificado como Prioridad 3 debe ser atendido:",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Prioridad 3 corresponde a atención dentro de las primeras 6 a 12 horas.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "De forma inmediata",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Dentro de las primeras 6 a 12 horas",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Dentro de las primeras 12 a 24 horas",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.18,
+     "y": 23.87,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.05,
+    "y": 12.8,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Reto 3: Lista de verificación HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿En qué momento se verifica el recuento de instrumental y material?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Antes de salir se verifican el procedimiento realizado, el recuento, las muestras y las indicaciones.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Antes de la inducción anestésica",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Antes de la incisión quirúrgica",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_ok",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Antes de que el paciente salga del quirófano",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.4,
+     "y": 22.8,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.27,
+    "y": 11.73,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d14.webp",
+   "texto": "Reto 4: Marcación del sitio HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Cuál es el propósito de la marcación del sitio quirúrgico?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "La marcación es una barrera contra intervenciones en el lugar o lado equivocado.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Prevenir intervenciones en el lugar o lado equivocado",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Reemplazar el consentimiento informado",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Identificar al cirujano responsable",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.38,
+     "y": 23.94,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.38,
+    "y": 12.13,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d15.webp",
+   "texto": "Reto 5: Consentimiento HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO El paciente ya firmó el consentimiento informado. ¿Qué es correcto?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "El consentimiento no reemplaza la comunicación efectiva ni las demás verificaciones.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ya no es necesario verificar identidad ni sitio",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Verificar que corresponda al paciente y al procedimiento, y continuar las demás verificaciones",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Revisarlo solo después de la cirugía",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 74.25,
+     "y": 24.0,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 79.12,
+    "y": 12.93,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d16.webp",
+   "texto": "Cierre: cirugía segura, responsabilidad de todos RECUERDA ANTES DE OPERAR, VERIFICA. Paciente, procedimiento y lugar correctos en cada intervención. Aplica la lista de verificación, comunica y confirma antes de actuar. Aplica la lista de verificación, comunica y confirma antes de actuar. Paciente y familia Reciben información clara y comprensible para tomar una decisión libre e informada. Paciente y familia Reciben información clara y comprensible para tomar una decisión libre e informada. Equipo quirúrgico",
+   "juego": "cierre",
+   "formas": [
+    {
+     "n": "Boton_Puntaje",
+     "x": 17.25,
+     "y": 65.33,
+     "w": 19.5,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ver mi puntaje",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Puntaje_Final",
+     "x": 38.25,
+     "y": 65.33,
+     "w": 44.25,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Haz clic en «Ver mi puntaje»",
+         "sz": 1.562,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    }
+   ]
+  }
+ ]
+}

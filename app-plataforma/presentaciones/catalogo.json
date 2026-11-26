@@ -27,6 +27,33 @@
   "actividades": 5
  },
  {
+  "id": "modulo-4",
+  "curso": "curso-5",
+  "titulo": "Garantizar una cirugía segura",
+  "descripcion": "Los tres correctos, el triaje quirúrgico, la lista de chequeo y el consentimiento, con un juego de clasificar, verdadero o falso y cinco retos con puntaje.",
+  "portada": "modulo-4/d01.webp",
+  "diapositivas": 16,
+  "actividades": 7
+ },
+ {
+  "id": "modulo-6",
+  "curso": "modulo-7-prevencion-de-caidas-en-pacientes",
+  "titulo": "Prevención de caídas en pacientes",
+  "descripcion": "Factores de riesgo, escala de Downton, señalización y barreras, con la caza de riesgos, el ahorcado, un caso interactivo y cinco retos con puntaje.",
+  "portada": "modulo-6/d01.webp",
+  "diapositivas": 19,
+  "actividades": 8
+ },
+ {
+  "id": "modulo-11",
+  "curso": "reporte-de-incidentes-y-eventos-adversos",
+  "titulo": "Reporte de incidentes y eventos adversos",
+  "descripcion": "Clasificación y severidad de los eventos, cómo redactar un reporte y los canales del hospital, con los buzones, el armado del reporte, el chat con Susanita y cinco retos con puntaje.",
+  "portada": "modulo-11/d01.webp",
+  "diapositivas": 21,
+  "actividades": 8
+ },
+ {
   "id": "modulo-7",
   "curso": "8-programa-de-piel-sana-prevencion-de-lesiones-por-presion",
   "titulo": "Programa de Piel Sana: prevención de lesiones por presión",

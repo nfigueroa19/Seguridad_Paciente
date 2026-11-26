@@ -224,7 +224,7 @@
   }
 
   function esActividad(d) {
-    if (d.juego) return d.juego !== 'cierre';
+    if (d.juego) return d.juego !== 'cierre' && d.juego !== 'revelar';
     return (d.elementos || []).some(function (e) { return e.tipo === 'opcion' || e.tipo === 'mover'; });
   }
   function pendiente(n) { return esActividad(pres.diapositivas[n]) && !resueltas[n]; }
@@ -423,9 +423,18 @@
     detective: /^(Det_[BE]|Boton_Reiniciar$)/,
     monitor: /^Mon_(Iniciar|Suspender|Siguiente)$/,
     candado: /^Can_(P_\d|O_[AB]|K_\d|Borrar)$/,
+    clasifica: /^(Col_|Con_|Boton_Reiniciar$)/,
+    vf: /^(VF_|Boton_Reiniciar$)/,
+    caza: /^(Caz_[RS]_\d|Boton_Reiniciar$)/,
+    ahorcado: /^(Tecla_\d+|Ahc_Siguiente)$/,
+    caso: /^Caso_[AB]$/,
+    buzones: /^(Buz_\d|Boton_Reiniciar$)/,
+    reporte: /^(Rep_\d_[AB]|Rep_Enviar|Boton_Reiniciar$)/,
+    chat: /^Chat_[AB]$/,
     reto: /^Op_/,
     cierre: /^Boton_Puntaje$/
   };
+  var PT = 12700 / 12192000 * 100;   // un punto tipográfico en cqw (igual que PT_CQW del generador)
   var limpiezas = [];   // funciones que apagan temporizadores al salir de la diapositiva
   var puntos = { retos: {} };   // puntaje de la presentación abierta (se reinicia al abrirla)
 
@@ -812,6 +821,356 @@
       });
       clic('Can_Borrar', function () { if (abierto || ocupado) return; cod = ''; pintarCodigo(); });
       terminadoJuego = false;
+    }
+
+    /* --- Ayudas de los juegos con pasos y esperas (módulos 4, 6 y 11) --- */
+    function espera(fn, ms) { var t = setTimeout(fn, ms); limpiezas.push(function () { clearTimeout(t); }); }
+    function borde(n, color, pt) {
+      if (!F[n]) return;
+      F[n].el.style.border = color ? (pt * PT) + 'cqw solid ' + color : '0';
+    }
+    function tinta(n, color) {   // color de todo el texto de la forma
+      if (F[n]) F[n].el.querySelectorAll('span').forEach(function (s) { s.style.color = color; });
+    }
+
+    /* --- Pulsar para ver (la animación de entrada del PowerPoint con desencadenador) --- */
+    if (juego === 'revelar') {
+      (d.revelar || []).forEach(function (r) {
+        var b = h('button', { type: 'button', class: 'pi-disparo', 'aria-label': r.etiqueta + ': ver el tiempo de atención' });
+        posicionar(b, r);
+        b.addEventListener('click', function () {
+          var o = F[r.destino];
+          if (!o) return;
+          if (o.el.hidden) {
+            o.el.hidden = false; o.el.classList.remove('pi-nuevo'); void o.el.offsetWidth; o.el.classList.add('pi-nuevo');
+            anunciar(r.etiqueta + ': ' + textoPlano(o.f));
+          }
+        });
+        capa.append(b);
+      });
+    }
+
+    /* --- Módulo 4, juego 1: elige un ítem y luego el momento de la lista al que pertenece --- */
+    else if (juego === 'clasifica') {
+      var concep = nombres(/^Con_/), elegido = null, ubicados = 0, primeros = 0, ubic = {}, fallos = {}, ocupados = {}, ocupadoCl = false;
+      var origen = {};
+      concep.forEach(function (n) { origen[n] = { x: F[n].f.x, y: F[n].f.y }; F[n].el.classList.add('pi-mueve'); });
+      [1, 2, 3].forEach(function (i) {   // el fondo y los espacios de cada columna se anuncian con el nombre del momento
+        var t = F['Col_' + i + '_t'];
+        ['', '_s1', '_s2'].forEach(function (s) {
+          if (t && F['Col_' + i + s]) F['Col_' + i + s].el.setAttribute('aria-label', 'Momento: ' + textoPlano(t.f));
+        });
+      });
+      var quitarBorde = function () { concep.forEach(function (n) { if (!ubic[n]) borde(n, null); }); };
+      concep.forEach(function (n) {
+        clic(n, function () {
+          if (ubic[n] || ocupadoCl) return;
+          quitarBorde();
+          borde(n, COLOR.naranja, 4);
+          elegido = n;
+          anunciar('Elegiste: ' + textoPlano(F[n].f) + '. Ahora elige el momento de la lista al que pertenece.');
+        });
+      });
+      nombres(/^Col_/).forEach(function (n) {
+        clic(n, function () {
+          if (!elegido || ocupadoCl) return;
+          var c = F[elegido], idx = n.charAt(4), slot = null;
+          if (ubic[elegido]) return;
+          [1, 2].some(function (j) { var s = F['Col_' + idx + '_s' + j]; if (s && !ocupados[s.f.n]) { slot = s; return true; } return false; });
+          var nom = elegido;
+          borde(nom, null); elegido = null;
+          var centrar = function (s) {
+            c.el.style.left = (s.f.x + (s.f.w - c.f.w) / 2) + '%';
+            c.el.style.top = (s.f.y + (s.f.h - c.f.h) / 2) + '%';
+          };
+          if (nom.charAt(4) === idx && slot) {
+            centrar(slot); ubic[nom] = true; ocupados[slot.f.n] = true;
+            fondo_(nom, COLOR.lima);
+            if (!fallos[nom]) primeros++;
+            ubicados++;
+            anunciar('¡Correcto! ' + textoPlano(c.f) + ' va en «' + textoPlano(F['Col_' + idx + '_t'].f) + '».');
+            if (ubicados >= concep.length) {
+              guardar('clasifica', primeros);
+              texto('Puntaje_Juego', '¡Terminaste! Acertaste ' + primeros + ' de ' + concep.length + ' al primer intento'); ver('Puntaje_Juego', true);
+              terminadoJuego = true; terminar();
+            }
+          } else {
+            fallos[nom] = true; ocupadoCl = true;
+            centrar(slot || F['Col_' + idx + '_s1']);
+            fondo_(nom, COLOR.rojo);
+            anunciar('Incorrecto. ' + textoPlano(c.f) + ' no va en «' + textoPlano(F['Col_' + idx + '_t'].f) + '». Vuelve a intentarlo.');
+            espera(function () {
+              c.el.style.left = origen[nom].x + '%'; c.el.style.top = origen[nom].y + '%';
+              fondo_(nom, COLOR.verde); ocupadoCl = false;
+            }, 900);
+          }
+        });
+      });
+    }
+
+    /* --- Módulo 4, juego 2: verdadero o falso (solo el primer intento de cada afirmación suma) --- */
+    else if (juego === 'vf') {
+      var filas = {}, respVF = {};
+      nombres(/^VF_\d_[VF]_(ok|no)$/).forEach(function (n) {
+        var m = /^VF_(\d)_([VF])_(ok|no)$/.exec(n);
+        filas[m[1]] = true;
+        clic(n, function (el) {
+          var correcta = m[3] === 'ok';
+          if (respVF[m[1]] === undefined) respVF[m[1]] = correcta ? 1 : 0;
+          fondo_(n, correcta ? COLOR.verde : COLOR.rojo); tinta(n, '#fff');
+          anunciar(correcta ? '¡Correcto!' : 'Incorrecto.');
+          var total = Object.keys(filas).length;
+          if (Object.keys(respVF).length >= total) {
+            var ac = Object.keys(respVF).filter(function (k) { return respVF[k] === 1; }).length;
+            guardar('vf', ac);
+            texto('Puntaje_VF', 'Acertaste ' + ac + ' de ' + total + ' al primer intento'); ver('Puntaje_VF', true);
+            anunciar('Acertaste ' + ac + ' de ' + total + ' al primer intento.');
+            terminadoJuego = true; terminar();
+          }
+        });
+      });
+    }
+
+    /* --- Módulo 6, juego 1: caza de riesgos (hay 5; clic solo en las situaciones de riesgo) --- */
+    else if (juego === 'caza') {
+      var encC = 0, errC = 0, marcadasC = {}, totalC = nombres(/^Caz_R_\d$/).length;
+      var marcadorC = function () {
+        texto('Caz_Marcador', [{ t: 'Riesgos', sz: 14 * PT, c: COLOR.verde }, { t: encC + ' de ' + totalC, sz: 26 * PT, c: COLOR.verde },
+          { t: 'Errores', sz: 14 * PT, c: COLOR.naranja }, { t: String(errC), sz: 26 * PT, c: COLOR.naranja }]);
+      };
+      nombres(/^Caz_[RS]_\d$/).forEach(function (n) {
+        clic(n, function (el) {
+          if (marcadasC[n]) return;
+          marcadasC[n] = true; el.disabled = true;
+          var riesgo = n.charAt(4) === 'R';
+          fondo_(n, riesgo ? COLOR.rojo : COLOR.verde); tinta(n, '#fff');
+          el.classList.add(riesgo ? 'pi-ok' : 'pi-mal');
+          if (riesgo) encC++; else errC++;
+          anunciar(riesgo ? '¡Correcto! ' + textoPlano(F[n].f) + ' es una situación de riesgo.' : 'Incorrecto. ' + textoPlano(F[n].f) + ' no es un riesgo de caída.');
+          marcadorC();
+          if (encC >= totalC) {
+            var pts = Math.max(0, totalC - errC);
+            guardar('caza', pts);
+            texto('Puntaje_Caza', '¡Encontraste los ' + totalC + ' riesgos!  Errores: ' + errC + '  ·  Puntaje: ' + pts + ' de ' + totalC); ver('Puntaje_Caza', true);
+            terminadoJuego = true; terminar();
+          }
+        });
+      });
+    }
+
+    /* --- Módulo 6, juego 2: ahorcado de la prevención (3 palabras, máximo 6 errores cada una) --- */
+    else if (juego === 'ahorcado') {
+      var ah = pres.datos.ahorcado, iw = 1, usadas = '', errA = 0, finA = false, okA = 0;
+      var mascara = function (w, usa) { return w.split('').map(function (ch) { return usa.indexOf(ch) >= 0 ? ch : '_'; }).join('  '); };
+      var prepararPalabra = function (i) {
+        iw = i; usadas = ''; errA = 0; finA = false;
+        nombres(/^Tecla_\d+$/).forEach(function (n) { fondo_(n, COLOR.blanco); tinta(n, COLOR.verde); F[n].el.disabled = false; });
+        texto('Ahc_Pista', ah.palabras[i - 1].pista);
+        texto('Ahc_Contador', 'Palabra ' + i + ' de ' + ah.palabras.length);
+        texto('Ahc_Palabra', mascara(ah.palabras[i - 1].p, ''));
+        texto('Ahc_Errores', 'Errores: 0 de ' + ah.maxErrores);
+        ver('Ahc_Retro', false);
+        anunciar('Palabra ' + i + ' de ' + ah.palabras.length + '. ' + ah.palabras[i - 1].pista);
+      };
+      nombres(/^Tecla_\d+$/).forEach(function (n) {
+        clic(n, function (el) {
+          if (finA) return;
+          var w = ah.palabras[iw - 1].p, letra = textoPlano(F[n].f);
+          if (usadas.indexOf(letra) >= 0) return;
+          usadas += letra; el.disabled = true;
+          var esta = w.indexOf(letra) >= 0;
+          fondo_(n, esta ? COLOR.verde : COLOR.rojo); tinta(n, '#fff');
+          if (!esta) errA++;
+          var mask = mascara(w, usadas), msg = '';
+          texto('Ahc_Palabra', mask);
+          texto('Ahc_Errores', 'Errores: ' + errA + ' de ' + ah.maxErrores);
+          if (mask.indexOf('_') < 0) {
+            okA++; finA = true; msg = '¡Muy bien! La palabra es ' + w;
+            fondo_('Ahc_Retro', COLOR.verde);
+          } else if (errA >= ah.maxErrores) {
+            finA = true; msg = 'Se acabaron los intentos. La palabra era ' + w;
+            texto('Ahc_Palabra', mascara(w, w));
+            fondo_('Ahc_Retro', COLOR.rojo);
+          }
+          if (finA) {
+            var ultima = iw >= ah.palabras.length;
+            msg += ultima ? '   ·   Adivinaste ' + okA + ' de ' + ah.palabras.length + ' palabras' : '   ·   Pasa a la siguiente palabra';
+            texto('Ahc_Retro', msg); ver('Ahc_Retro', true);
+            anunciar(msg);
+            if (ultima) { guardar('ahorcado', okA); terminadoJuego = true; terminar(); }
+          } else {
+            anunciar(esta ? 'La letra ' + letra + ' está en la palabra.' : 'La letra ' + letra + ' no está en la palabra.');
+          }
+        });
+      });
+      clic('Ahc_Siguiente', function () {
+        if (!finA || iw >= ah.palabras.length) return;
+        prepararPalabra(iw + 1);
+      });
+    }
+
+    /* --- Módulo 6, juego 3: la noche de Don Jorge (5 decisiones) --- */
+    else if (juego === 'caso') {
+      var pasos = pres.datos.caso.pasos, ic = 1, ptsK = 0, ocupadoK = false;
+      var mostrarPaso = function (i) {
+        var p = pasos[i - 1];
+        texto('Caso_Paso', 'Decisión ' + i + ' de ' + pasos.length); texto('Caso_Texto', p.q);
+        ['A', 'B'].forEach(function (L) { texto('Caso_' + L, p[L]); fondo_('Caso_' + L, COLOR.blanco); ver('Caso_' + L, true); activo('Caso_' + L, true); });
+        ver('Caso_Retro', false);
+        anunciar('Decisión ' + i + ' de ' + pasos.length + '. ' + p.q);
+      };
+      ['A', 'B'].forEach(function (L) {
+        clic('Caso_' + L, function () {
+          if (ocupadoK || ic > pasos.length) return;
+          var p = pasos[ic - 1], ok = L === p.ok;
+          if (ok) ptsK++;
+          ocupadoK = true; activo('Caso_A', false); activo('Caso_B', false);
+          fondo_('Caso_' + L, ok ? COLOR.palido : COLOR.rosa);
+          if (!ok) fondo_('Caso_' + p.ok, COLOR.palido);
+          var msg = (ok ? '¡Decisión segura! ' : 'Riesgo de caída. ') + p.exp;
+          fondo_('Caso_Retro', ok ? COLOR.verde : COLOR.rojo); texto('Caso_Retro', msg); ver('Caso_Retro', true);
+          anunciar(msg);
+          espera(function () {
+            ic++;
+            if (ic <= pasos.length) { mostrarPaso(ic); }
+            else {
+              texto('Caso_Texto', 'Caso terminado: tomaste ' + ptsK + ' de ' + pasos.length + ' decisiones seguras.');
+              texto('Caso_Paso', 'Fin del caso');
+              ver('Caso_A', false); ver('Caso_B', false); ver('Caso_Retro', false);
+              anunciar('Caso terminado: tomaste ' + ptsK + ' de ' + pasos.length + ' decisiones seguras.');
+              guardar('caso', ptsK); terminadoJuego = true; terminar();
+            }
+            ocupadoK = false;
+          }, 2800);
+        });
+      });
+    }
+
+    /* --- Módulo 11, juego 1: los buzones (6 situaciones) --- */
+    else if (juego === 'buzones') {
+      var bz = pres.datos.buzones, ib = 1, ptsB = 0, ocupadoB = false;
+      if (F.Buz_Tarjeta) F.Buz_Tarjeta.el.classList.add('pi-mueve');
+      var mostrarSituacion = function (i) {
+        var c = F.Buz_Tarjeta;
+        if (c) {
+          c.el.classList.remove('pi-mueve');
+          c.el.style.left = c.f.x + '%'; c.el.style.top = c.f.y + '%';
+          void c.el.offsetWidth; c.el.classList.add('pi-mueve');
+        }
+        texto('Buz_Tarjeta', bz.situaciones[i - 1].t); ver('Buz_Tarjeta', true);
+        [1, 2, 3, 4].forEach(function (k) { borde('Buz_' + k, null); });
+        texto('Buz_Contador', 'Situación ' + i + ' de ' + bz.situaciones.length);
+        ver('Buz_Retro', false);
+        anunciar('Situación ' + i + ' de ' + bz.situaciones.length + '. ' + bz.situaciones[i - 1].t);
+      };
+      [1, 2, 3, 4].forEach(function (k) {
+        clic('Buz_' + k, function () {
+          if (ocupadoB || ib > bz.situaciones.length) return;
+          var s = bz.situaciones[ib - 1], ok = k === s.ok, c = F.Buz_Tarjeta, b = F['Buz_' + k];
+          if (ok) ptsB++;
+          ocupadoB = true;
+          if (c) {   // la tarjeta «entra» al buzón elegido
+            c.el.style.left = (b.f.x + b.f.w / 2 - c.f.w / 2) + '%';
+            c.el.style.top = (b.f.y - c.f.h / 2) + '%';
+            espera(function () { c.el.hidden = true; }, 350);
+          }
+          borde('Buz_' + k, ok ? COLOR.verde : '#203728', 5);
+          var msg;
+          if (ok) msg = '¡Correcto! ' + bz.nombres[k - 1] + ': ' + s.exp;
+          else { borde('Buz_' + s.ok, COLOR.verde, 5); msg = 'Era «' + bz.nombres[s.ok - 1] + '». ' + s.exp; }
+          fondo_('Buz_Retro', ok ? COLOR.verde : COLOR.rojo); texto('Buz_Retro', msg); ver('Buz_Retro', true);
+          anunciar(msg);
+          espera(function () {
+            ib++;
+            if (ib <= bz.situaciones.length) { mostrarSituacion(ib); }
+            else {
+              mostrarSituacion(bz.situaciones.length);
+              texto('Buz_Tarjeta', '¡Terminaste! Clasificaste bien ' + ptsB + ' de ' + bz.situaciones.length + ' situaciones.');
+              texto('Buz_Contador', 'Juego terminado');
+              anunciar('Juego terminado: clasificaste bien ' + ptsB + ' de ' + bz.situaciones.length + ' situaciones.');
+              guardar('buzones', ptsB); terminadoJuego = true; terminar();
+            }
+            ocupadoB = false;
+          }, 3000);
+        });
+      });
+    }
+
+    /* --- Módulo 11, juego 2: arma el reporte (5 campos, se elige la mejor redacción y se envía) --- */
+    else if (juego === 'reporte') {
+      var buenas = pres.datos.reporte.correctas, elegidas = {}, enviado = false;
+      nombres(/^Rep_\d_[AB]$/).forEach(function (n) {
+        clic(n, function () {
+          if (enviado) return;
+          var f = n.charAt(4), L = n.charAt(6), otra = 'Rep_' + f + '_' + (L === 'A' ? 'B' : 'A');
+          elegidas[f] = L;
+          fondo_(n, '#1E6E7A'); tinta(n, '#fff');
+          fondo_(otra, COLOR.blanco); tinta(otra, '#203728');
+        });
+      });
+      clic('Rep_Enviar', function () {
+        if (enviado) return;
+        var campos = buenas.length;
+        for (var f = 1; f <= campos; f++) {
+          if (!elegidas[f]) {
+            fondo_('Rep_Retro', COLOR.naranja); texto('Rep_Retro', 'Elige una opción en los ' + campos + ' campos antes de enviar.'); ver('Rep_Retro', true);
+            anunciar('Elige una opción en los ' + campos + ' campos antes de enviar.');
+            return;
+          }
+        }
+        enviado = true;
+        var pts = 0;
+        for (var g = 1; g <= campos; g++) {
+          var buena = buenas.charAt(g - 1), el_ = elegidas[g];
+          if (el_ === buena) pts++;
+          fondo_('Rep_' + g + '_' + buena, COLOR.palido); tinta('Rep_' + g + '_' + buena, '#203728');
+          if (el_ !== buena) { fondo_('Rep_' + g + '_' + el_, COLOR.rosaOpc); tinta('Rep_' + g + '_' + el_, '#203728'); }
+        }
+        guardar('reporte', pts);
+        var msg = 'Reporte enviado: ' + pts + ' de ' + campos + ' campos bien redactados. En verde, la mejor opción: hechos claros, sin señalamientos.';
+        fondo_('Rep_Retro', pts === campos ? COLOR.verde : COLOR.naranja); texto('Rep_Retro', msg); ver('Rep_Retro', true);
+        anunciar(msg);
+        terminadoJuego = true; terminar();
+      });
+    }
+
+    /* --- Módulo 11, juego 3: chat con Susanita Súper Segura (4 pasos) --- */
+    else if (juego === 'chat') {
+      var pc = pres.datos.chat.pasos, ip = 1, ptsC = 0, ocupadoC = false;
+      var mostrarPasoChat = function (i) {
+        var p = pc[i - 1];
+        texto('Chat_Bot', p.q); texto('Chat_Paso', 'Paso ' + i + ' de ' + pc.length);
+        ['A', 'B'].forEach(function (L) { texto('Chat_' + L, p[L]); fondo_('Chat_' + L, COLOR.blanco); ver('Chat_' + L, true); activo('Chat_' + L, true); });
+        ver('Chat_User', false); ver('Chat_FB', false);
+        anunciar('Paso ' + i + ' de ' + pc.length + '. Susanita dice: ' + p.q);
+      };
+      ['A', 'B'].forEach(function (L) {
+        clic('Chat_' + L, function () {
+          if (ocupadoC || ip > pc.length) return;
+          var p = pc[ip - 1], ok = L === p.ok;
+          if (ok) ptsC++;
+          ocupadoC = true; activo('Chat_A', false); activo('Chat_B', false);
+          fondo_('Chat_' + L, ok ? COLOR.palido : COLOR.rosaOpc);
+          texto('Chat_User', p[L]); ver('Chat_User', true);
+          espera(function () {
+            fondo_('Chat_FB', ok ? COLOR.palido : COLOR.rosa); texto('Chat_FB', ok ? p.S : p.N); ver('Chat_FB', true);
+            texto('Chat_Puntaje', 'Respuestas seguras: ' + ptsC + ' de ' + pc.length);
+            anunciar((ok ? 'Respuesta segura. ' : 'Respuesta no segura. ') + (ok ? p.S : p.N));
+          }, 800);
+          espera(function () {
+            ip++;
+            if (ip <= pc.length) { mostrarPasoChat(ip); }
+            else {
+              texto('Chat_Bot', 'Tu reporte quedó registrado. ¡Gracias por reportar! Respuestas seguras: ' + ptsC + ' de ' + pc.length + '.');
+              texto('Chat_Paso', 'Conversación terminada');
+              ['Chat_User', 'Chat_FB', 'Chat_A', 'Chat_B'].forEach(function (n) { ver(n, false); });
+              anunciar('Conversación terminada. Respuestas seguras: ' + ptsC + ' de ' + pc.length + '.');
+              guardar('chat', ptsC); terminadoJuego = true; terminar();
+            }
+            ocupadoC = false;
+          }, 4000);
+        });
+      });
     }
 
     /* --- Reto de selección --- */

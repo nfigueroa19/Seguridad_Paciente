@@ -78,6 +78,96 @@ MODULOS = [
         'descripcion': 'Practica las 4C, SBAR, la comunicación redundante y el Teach-Back con retos de selección.',
     },
     {
+        'id': 'modulo-4', 'curso': 'curso-5', 'pptx': 'modulo-4-cirugia-segura.pptm',
+        'portada': 1, 'macros': True,
+        'titulo': 'Garantizar una cirugía segura',
+        'descripcion': 'Los tres correctos, el triaje quirúrgico, la lista de chequeo y el consentimiento, con un juego de clasificar, verdadero o falso y cinco retos con puntaje.',
+        'puntaje': [{'id': 'clasifica', 'nombre': 'Juego 1', 'max': 6}, {'id': 'vf', 'nombre': 'V o F', 'max': 4},
+                    {'id': 'retos', 'nombre': 'Retos', 'max': 5}],
+    },
+    {
+        'id': 'modulo-6', 'curso': 'modulo-7-prevencion-de-caidas-en-pacientes', 'pptx': 'modulo-6-caidas.pptm',
+        'portada': 1, 'macros': True,
+        'titulo': 'Prevención de caídas en pacientes',
+        'descripcion': 'Factores de riesgo, escala de Downton, señalización y barreras, con la caza de riesgos, el ahorcado, un caso interactivo y cinco retos con puntaje.',
+        'puntaje': [{'id': 'caza', 'nombre': 'Caza', 'max': 5}, {'id': 'ahorcado', 'nombre': 'Ahorcado', 'max': 3},
+                    {'id': 'caso', 'nombre': 'Caso', 'max': 5}, {'id': 'retos', 'nombre': 'Retos', 'max': 5}],
+        # Transcrito de las macros (Palabra, Pista, CasoTexto, CasoOpcion, CasoCorrecta y CasoExplicacion).
+        'datos': {
+            'ahorcado': {'maxErrores': 6, 'palabras': [
+                {'p': 'DOWNTON', 'pista': 'Pista: escala para valorar el riesgo de caídas'},
+                {'p': 'AZUL', 'pista': 'Pista: color que identifica el riesgo de caída en el hospital'},
+                {'p': 'TIMBRE', 'pista': 'Pista: debe estar siempre al alcance del paciente'}]},
+            'caso': {'pasos': [
+                {'q': 'Ingresa Don Jorge, de 78 años, con antecedente de caídas y episodios de mareo. ¿Qué haces primero?',
+                 'A': 'A.  Valoro el riesgo con la escala de Downton o la herramienta institucional',
+                 'B': 'B.  Espero a ver si presenta una caída durante el turno para valorarlo', 'ok': 'A',
+                 'exp': 'Valorar el riesgo al ingreso permite aplicar medidas a tiempo.'},
+                {'q': 'La valoración indica alto riesgo de caída. ¿Qué haces?',
+                 'A': 'A.  Coloco solo la señalización azul; con eso es suficiente',
+                 'B': 'B.  Coloco la señalización azul y aplico medidas preventivas individualizadas', 'ok': 'B',
+                 'exp': 'La señalización no reemplaza las medidas preventivas individualizadas.'},
+                {'q': 'En la noche, Don Jorge quiere ir al baño y refiere mareo. ¿Qué haces?',
+                 'A': 'A.  Lo acompaño y lo asisto durante la movilización y el uso del baño',
+                 'B': 'B.  Le digo que vaya despacio, solo, si se siente capaz', 'ok': 'A',
+                 'exp': 'Con mareo y riesgo de caída necesita acompañamiento y asistencia.'},
+                {'q': 'Lo dejas de nuevo en su cama. Antes de salir de la habitación, ¿cómo dejas el entorno?',
+                 'A': 'A.  Dejo la cama elevada para que le sea más fácil bajarse',
+                 'B': 'B.  Cama baja con ruedas bloqueadas, timbre al alcance y piso seco', 'ok': 'B',
+                 'exp': 'Cama baja, ruedas bloqueadas, timbre al alcance y piso seco son barreras clave.'},
+                {'q': 'A pesar de las medidas, Don Jorge se cae y se queja de dolor en la cadera. ¿Qué haces?',
+                 'A': 'A.  Lo levanto rápido para acostarlo de nuevo',
+                 'B': 'B.  Acudo, valoro lesiones sin movilizarlo apresuradamente, pido valoración médica y reporto', 'ok': 'B',
+                 'exp': 'Con sospecha de lesión no se moviliza apresuradamente; se valora y se reporta.'}]},
+        },
+    },
+    {
+        'id': 'modulo-11', 'curso': 'reporte-de-incidentes-y-eventos-adversos', 'pptx': 'modulo-11-reporte.pptm',
+        'portada': 1, 'macros': True,
+        'titulo': 'Reporte de incidentes y eventos adversos',
+        'descripcion': 'Clasificación y severidad de los eventos, cómo redactar un reporte y los canales del hospital, con los buzones, el armado del reporte, el chat con Susanita y cinco retos con puntaje.',
+        'puntaje': [{'id': 'buzones', 'nombre': 'Buzones', 'max': 6}, {'id': 'reporte', 'nombre': 'Reporte', 'max': 5},
+                    {'id': 'chat', 'nombre': 'Chat', 'max': 4}, {'id': 'retos', 'nombre': 'Retos', 'max': 5}],
+        # Transcrito de las macros (BuzNombre, BuzSituacion, BuzCorrecto, BuzExplica, RepCorrecta y ChatDato).
+        'datos': {
+            'buzones': {'nombres': ['Falla o riesgo', 'Incidente', 'Evento adverso', 'Complicación'], 'situaciones': [
+                {'t': 'Piso mojado en el pasillo, sin señalización. Nadie se ha caído todavía.', 'ok': 1,
+                 'exp': 'Es un riesgo: aumenta la probabilidad de daño, aunque aún no ocurre nada.'},
+                {'t': 'Se administró una dosis de más de un medicamento, pero el paciente no presentó ningún daño.', 'ok': 2,
+                 'exp': 'Llegó al paciente, pero no le generó daño.'},
+                {'t': 'El paciente se levantó solo, se cayó y sufrió una fractura de cadera.', 'ok': 3,
+                 'exp': 'Llegó al paciente y le generó daño: es un evento adverso.'},
+                {'t': 'La bomba de infusión de la cama 5 tiene la alarma dañada y sigue en uso.', 'ok': 1,
+                 'exp': 'Es una falla: el equipo con la alarma dañada pone en riesgo a los pacientes.'},
+                {'t': 'Un paciente con cirrosis avanzada presenta un sangrado propio de la evolución de su enfermedad, sin fallas en la atención.', 'ok': 4,
+                 'exp': 'El daño se debe a la enfermedad del paciente, no a la atención.'},
+                {'t': 'Se administró un medicamento al que el paciente era alérgico y la reacción requirió traslado a UCI.', 'ok': 3,
+                 'exp': 'La atención causó daño al paciente: es un evento adverso.'}]},
+            'reporte': {'correctas': 'ABBAB'},
+            'chat': {'pasos': [
+                {'q': 'Hola, soy Susanita Súper Segura. ¿Qué situación quieres reportar hoy?',
+                 'A': 'Un paciente se cayó en el baño; ya fue valorado y está estable.',
+                 'B': 'Quiero denunciar a la auxiliar que no hace bien su trabajo.', 'ok': 'A',
+                 'S': '¡Gracias! Describir los hechos, sin señalar personas, ayuda a aprender.',
+                 'N': 'El reporte no busca culpables: describe los hechos de forma objetiva.'},
+                {'q': '¿Qué hiciste primero cuando ocurrió?',
+                 'A': 'Primero llené el reporte y luego avisé.',
+                 'B': 'Protegí al paciente, lo valoré y avisé al profesional responsable.', 'ok': 'B',
+                 'S': '¡Muy bien! La primera prioridad siempre es el paciente.',
+                 'N': 'Primero se protege y atiende al paciente; después se reporta.'},
+                {'q': '¿Ya quedó registrado en la historia clínica?',
+                 'A': 'No, con este reporte es suficiente.',
+                 'B': 'Sí, documenté los hechos en la historia clínica.', 'ok': 'B',
+                 'S': '¡Perfecto! El reporte no reemplaza el registro clínico.',
+                 'N': 'El reporte NO reemplaza el registro en la historia clínica.'},
+                {'q': 'Cuéntame cuándo y dónde ocurrió.',
+                 'A': '20/11/2026, 6:40 a. m., baño de la habitación 304, piso 3.',
+                 'B': 'Hace un rato, en algún baño del piso.', 'ok': 'A',
+                 'S': '¡Reporte recibido! Fecha, hora y lugar exactos facilitan el análisis.',
+                 'N': 'Incluye la fecha, la hora y el servicio exactos.'}]},
+        },
+    },
+    {
         'id': 'modulo-7', 'curso': '8-programa-de-piel-sana-prevencion-de-lesiones-por-presion', 'pptx': 'modulo-7-piel-sana.pptm',
         'portada': 1, 'macros': True,
         'titulo': 'Programa de Piel Sana: prevención de lesiones por presión',
@@ -452,6 +542,14 @@ JUEGOS = [  # (juego, patrón del nombre que lo identifica, patrón de las forma
     ('detective', r'Det_[BE]', r'(Det_|Boton_Reiniciar$)'),
     ('monitor', r'Mon_Iniciar', r'Mon_'),
     ('candado', r'Can_P_', r'Can_'),
+    ('clasifica', r'Con_\d', r'(Col_|Con_|Puntaje_Juego$|Boton_Reiniciar$)'),
+    ('vf', r'VF_', r'(VF_|Puntaje_VF$|Boton_Reiniciar$)'),
+    ('caza', r'Caz_[RS]_', r'(Caz_|Puntaje_Caza$|Boton_Reiniciar$)'),
+    ('ahorcado', r'Ahc_', r'(Ahc_|Tecla_|Boton_Reiniciar$)'),
+    ('caso', r'Caso_', r'(Caso_|Boton_Reiniciar$)'),
+    ('buzones', r'Buz_', r'(Buz_|Boton_Reiniciar$)'),
+    ('reporte', r'Rep_', r'(Rep_|Boton_Reiniciar$)'),
+    ('chat', r'Chat_', r'Chat_'),
     ('reto', r'Op_[A-Z]_', r'(Op_|Ic_|RetroSi$|RetroNo$|Fin del tiempo$)'),
     ('cierre', r'Boton_Puntaje', r'(Boton_Puntaje$|Puntaje_Final$)'),
 ]
@@ -523,6 +621,12 @@ def _texto(d, lineas, color=None, sz=None, negrita=None):
     d['p'] = [{'al': al, 'sa': 0, 'r': [dict(base, t=t, **cambios)]} for t in lineas]
 
 
+def _recolorear(d, color):
+    for p in d['p']:
+        for r in p['r']:
+            r['c'] = color
+
+
 def inicial(d, datos):
     """Estado inicial de cada forma: los archivos se guardaron con el juego a medias, así que se lleva al estado de
     'Reiniciar' (macro del módulo Interactividad)."""
@@ -590,6 +694,80 @@ def inicial(d, datos):
         _texto(d, ['_  _  _  _'], color='#7EF09E')
     elif n == 'Can_Estado':
         _texto(d, ['🔒 Cerrado'])
+    # --- Módulo 4: clasificar y verdadero o falso ---
+    elif n.startswith('Con_'):
+        d['f'] = VERDE
+        d.pop('l', None)
+        d.pop('lw', None)
+    elif n.startswith('VF_'):
+        d['f'] = '#FFFFFF'
+        _recolorear(d, VERDE)
+    # --- Módulo 6: caza de riesgos, ahorcado y caso ---
+    elif re.fullmatch(r'Caz_[RS]_\d', n):
+        d['f'] = VERDE_CLARO
+        _recolorear(d, '#203728')
+    elif n == 'Caz_Marcador':
+        al = d['p'][0]['al'] if d['p'] else 'center'
+        fila = lambda t, sz, c: {'al': al, 'sa': 0, 'r': [{'t': t, 'sz': round(sz * PT_CQW, 3), 'b': True, 'c': c}]}
+        d['p'] = [fila('Riesgos', 14, VERDE), fila('0 de 5', 26, VERDE), fila('Errores', 14, NARANJA), fila('0', 26, NARANJA)]
+    elif n.startswith('Tecla_'):
+        d['f'] = '#FFFFFF'
+        _recolorear(d, VERDE)
+    elif n.startswith('Ahc_'):
+        ah = datos['ahorcado']
+        if n == 'Ahc_Pista':
+            _texto(d, [ah['palabras'][0]['pista']])
+        elif n == 'Ahc_Contador':
+            _texto(d, ['Palabra 1 de %d' % len(ah['palabras'])])
+        elif n == 'Ahc_Palabra':
+            _texto(d, ['  '.join('_' * len(ah['palabras'][0]['p']))])
+        elif n == 'Ahc_Errores':
+            _texto(d, ['Errores: 0 de %d' % ah['maxErrores']])
+        elif n == 'Ahc_Retro':
+            d['oculto'] = True
+    elif n.startswith('Caso_'):
+        c1 = datos['caso']['pasos'][0]
+        if n == 'Caso_Paso':
+            _texto(d, ['Decisión 1 de %d' % len(datos['caso']['pasos'])])
+        elif n == 'Caso_Texto':
+            _texto(d, [c1['q']])
+        elif n in ('Caso_A', 'Caso_B'):
+            d['f'] = '#FFFFFF'
+            d.pop('oculto', None)
+            _texto(d, [c1[n[-1]]])
+        elif n == 'Caso_Retro':
+            d['oculto'] = True
+    # --- Módulo 11: buzones, reporte y chat ---
+    elif n.startswith('Buz_'):
+        if n == 'Buz_Contador':
+            _texto(d, ['Situación 1 de %d' % len(datos['buzones']['situaciones'])])
+        elif n == 'Buz_Tarjeta':
+            d.pop('oculto', None)
+            _texto(d, [datos['buzones']['situaciones'][0]['t']])
+        elif n == 'Buz_Retro':
+            d['oculto'] = True
+        elif re.fullmatch(r'Buz_\d', n):
+            d.pop('l', None)
+            d.pop('lw', None)
+    elif re.fullmatch(r'Rep_\d_[AB]', n):
+        d['f'] = '#FFFFFF'
+        _recolorear(d, '#203728')
+    elif n == 'Rep_Retro':
+        d['oculto'] = True
+    elif n.startswith('Chat_'):
+        c1 = datos['chat']['pasos'][0]
+        if n == 'Chat_Bot':
+            _texto(d, [c1['q']])
+        elif n == 'Chat_Paso':
+            _texto(d, ['Paso 1 de %d' % len(datos['chat']['pasos'])])
+        elif n in ('Chat_A', 'Chat_B'):
+            d['f'] = '#FFFFFF'
+            d.pop('oculto', None)
+            _texto(d, [c1[n[-1]]])
+        elif n in ('Chat_User', 'Chat_FB'):
+            d['oculto'] = True
+        elif n == 'Chat_Puntaje':
+            _texto(d, ['Respuestas seguras: 0 de %d' % len(datos['chat']['pasos'])])
     elif re.fullmatch(r'Op_[A-Z]_\w+', n) and not n.endswith('_c'):
         d['f'] = VERDE_CLARO
     elif n in ('RetroSi', 'RetroNo', 'Fin del tiempo') or n.startswith('Ic_'):
@@ -597,6 +775,28 @@ def inicial(d, datos):
     elif n == 'Puntaje_Final':
         _texto(d, ['Haz clic en «Ver mi puntaje»'])
     return d
+
+
+def revelaciones(arbol, fs):
+    """Animaciones de entrada con desencadenador: al pulsar una forma aparece otra (p. ej. la tarjeta del triaje y su tiempo).
+    Devuelve [(forma que se pulsa, [formas que aparecen])]."""
+    salida = []
+    timing = arbol.find('.//p:timing', NS)
+    if timing is None:
+        return salida
+    for seq in timing.iter('{%s}seq' % NS['p']):
+        ctn = seq.find('p:cTn', NS)
+        if ctn.get('nodeType') != 'interactiveSeq':
+            continue
+        disparador = seq.xpath('./p:cTn/p:stCondLst/p:cond/p:tgtEl/p:spTgt/@spid', namespaces=NS)
+        destinos = []
+        for ef in seq.xpath('.//p:cTn[@presetClass="entr"]', namespaces=NS):
+            for spid in ef.xpath('.//p:spTgt/@spid', namespaces=NS):
+                if spid in fs and fs[spid]['caja'] and spid not in destinos:
+                    destinos.append(spid)
+        if disparador and disparador[0] in fs and fs[disparador[0]]['caja'] and destinos:
+            salida.append((disparador[0], destinos))
+    return salida
 
 
 def generar_macros(mod, trabajo):
@@ -624,10 +824,14 @@ def generar_macros(mod, trabajo):
                 juego, patron = j, pat
                 break
         exportar = [s for s, f in fs.items() if patron and f['caja'] and re.match(patron, f['nombre'] or '')]
+        revela = revelaciones(arbol, fs) if not juego else []
+        if revela:
+            juego = 'revelar'
+            exportar = [t for _, ts in revela for t in ts]
         segundos = [s for s, f in fs.items() if re.fullmatch(r'Segundo \d+', f['nombre'] or '')]
         sobrantes = [s for s, f in fs.items() if (f['nombre'] or '').startswith('Une_Linea_')]  # líneas guardadas de una prueba
         quitar_por_slide[ruta] = set(exportar) | set(segundos) | set(sobrantes)
-        diapositivas.append({'n': n, 'ruta': ruta, 'fs': fs, 'juego': juego, 'exportar': exportar, 'segundos': segundos})
+        diapositivas.append({'n': n, 'ruta': ruta, 'fs': fs, 'juego': juego, 'exportar': exportar, 'segundos': segundos, 'revela': revela})
 
     sin = trabajo / f"{mod['id']}-fondo.pptx"
     with zipfile.ZipFile(origen) as zin, zipfile.ZipFile(sin, 'w', zipfile.ZIP_DEFLATED) as zout:
@@ -653,7 +857,16 @@ def generar_macros(mod, trabajo):
         if d['juego']:
             dia['juego'] = d['juego']
             dia['formas'] = [inicial(estilo_forma(d['fs'][s], W, H), datos_mod) for s in d['exportar']]
-            if d['juego'] != 'cierre':
+            if d['juego'] == 'revelar':
+                for f in dia['formas']:
+                    f['oculto'] = True
+                dia['revelar'] = []
+                for disp, destinos in d['revela']:
+                    x, y, w, h = d['fs'][disp]['caja']
+                    for t in destinos:
+                        dia['revelar'].append({'x': round(x * 100, 2), 'y': round(y * 100, 2), 'w': round(w * 100, 2), 'h': round(h * 100, 2),
+                                               'etiqueta': d['fs'][disp]['texto'], 'destino': d['fs'][t]['nombre']})
+            elif d['juego'] != 'cierre':
                 actividades += 1
         if d['segundos']:
             cajas = [d['fs'][s]['caja'] for s in d['segundos']]

@@ -1,0 +1,3850 @@
+{
+ "id": "modulo-6",
+ "titulo": "Prevención de caídas en pacientes",
+ "proporcion": 1.7778,
+ "puntaje": [
+  {
+   "id": "caza",
+   "nombre": "Caza",
+   "max": 5
+  },
+  {
+   "id": "ahorcado",
+   "nombre": "Ahorcado",
+   "max": 3
+  },
+  {
+   "id": "caso",
+   "nombre": "Caso",
+   "max": 5
+  },
+  {
+   "id": "retos",
+   "nombre": "Retos",
+   "max": 5
+  }
+ ],
+ "datos": {
+  "ahorcado": {
+   "maxErrores": 6,
+   "palabras": [
+    {
+     "p": "DOWNTON",
+     "pista": "Pista: escala para valorar el riesgo de caídas"
+    },
+    {
+     "p": "AZUL",
+     "pista": "Pista: color que identifica el riesgo de caída en el hospital"
+    },
+    {
+     "p": "TIMBRE",
+     "pista": "Pista: debe estar siempre al alcance del paciente"
+    }
+   ]
+  },
+  "caso": {
+   "pasos": [
+    {
+     "q": "Ingresa Don Jorge, de 78 años, con antecedente de caídas y episodios de mareo. ¿Qué haces primero?",
+     "A": "A.  Valoro el riesgo con la escala de Downton o la herramienta institucional",
+     "B": "B.  Espero a ver si presenta una caída durante el turno para valorarlo",
+     "ok": "A",
+     "exp": "Valorar el riesgo al ingreso permite aplicar medidas a tiempo."
+    },
+    {
+     "q": "La valoración indica alto riesgo de caída. ¿Qué haces?",
+     "A": "A.  Coloco solo la señalización azul; con eso es suficiente",
+     "B": "B.  Coloco la señalización azul y aplico medidas preventivas individualizadas",
+     "ok": "B",
+     "exp": "La señalización no reemplaza las medidas preventivas individualizadas."
+    },
+    {
+     "q": "En la noche, Don Jorge quiere ir al baño y refiere mareo. ¿Qué haces?",
+     "A": "A.  Lo acompaño y lo asisto durante la movilización y el uso del baño",
+     "B": "B.  Le digo que vaya despacio, solo, si se siente capaz",
+     "ok": "A",
+     "exp": "Con mareo y riesgo de caída necesita acompañamiento y asistencia."
+    },
+    {
+     "q": "Lo dejas de nuevo en su cama. Antes de salir de la habitación, ¿cómo dejas el entorno?",
+     "A": "A.  Dejo la cama elevada para que le sea más fácil bajarse",
+     "B": "B.  Cama baja con ruedas bloqueadas, timbre al alcance y piso seco",
+     "ok": "B",
+     "exp": "Cama baja, ruedas bloqueadas, timbre al alcance y piso seco son barreras clave."
+    },
+    {
+     "q": "A pesar de las medidas, Don Jorge se cae y se queja de dolor en la cadera. ¿Qué haces?",
+     "A": "A.  Lo levanto rápido para acostarlo de nuevo",
+     "B": "B.  Acudo, valoro lesiones sin movilizarlo apresuradamente, pido valoración médica y reporto",
+     "ok": "B",
+     "exp": "Con sospecha de lesión no se moviliza apresuradamente; se valora y se reporta."
+    }
+   ]
+  }
+ },
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "Prevención de caídas en pacientes"
+  },
+  {
+   "img": "d02.webp",
+   "texto": "¿Qué es una caída intrahospitalaria? CONCEPTO CLAVE Acontecimiento involuntario en el que la persona termina en el suelo o en un nivel inferior al que se encontraba, con o sin lesión. Prevenir es: identificar a tiempo los factores de riesgo y aplicar intervenciones que protejan al paciente. Momentos en los que suele ocurrir: Levantarse de la cama Caminar Usar el baño Trasladarse Movilizarse sin ayuda"
+  },
+  {
+   "img": "d03.webp",
+   "texto": "Factores de riesgo de caídas DEL PACIENTE Y DEL ENTORNO Intrínsecos: el paciente Edad avanzada Antecedentes de caídas Alteraciones de la marcha y debilidad muscular Mareos y confusión Déficit visual Efectos de medicamentos Extrínsecos: el entorno Pisos húmedos y obstáculos Iluminación insuficiente Camas elevadas Ruedas sin bloquear Movilización sin acompañamiento"
+  },
+  {
+   "img": "d04.webp",
+   "texto": "Valora el riesgo de caída y orienta las medidas de prevención. ¿Qué se valora? A. Edad B. Caídas previas C. Medicamentos D. Déficit sensoriales E. Estado mental F. Deambulación G. Estado clínico ¿Cómo se interpreta? Suma los puntos del formato institucional . 0–1 Bajo 2 Medio 3 o más Alto Con 3 puntos o más, coloca el sticker azul en la manilla y en el tablero. ¿Cuándo valorar? Al ingreso Ante cambios en la condición clínica En los momentos del protocolo Valoración del riesgo: escala de Downton"
+  },
+  {
+   "img": "d05.webp",
+   "texto": "Identificación y señalización del riesgo AZUL El color azul identifica a los pacientes con riesgo de caída. Facilita que todo el equipo asistencial reconozca el riesgo. La señalización NO reemplaza la valoración clínica ni las medidas preventivas individualizadas."
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Medidas generales de prevención BARRERAS DE SEGURIDAD 1 Cama en posición baja y ruedas bloqueadas 2 Barandas según la valoración y el protocolo 3 Timbre al alcance del paciente 4 Iluminación adecuada 5 Retirar obstáculos 6 Piso seco 7 Calzado antideslizante 8 Asistencia durante la movilización Asista especialmente si hay debilidad, mareo, alteración mental o dificultad para caminar."
+  },
+  {
+   "img": "d07.webp",
+   "texto": "Movilización y uso del baño ANTES, DURANTE Y DESPUÉS Antes de movilizar Capacidad funcional Estado de conciencia Equilibrio Necesidad de ayuda En el baño Entorno seguro Elementos de apoyo Sin desplazamientos sin la ayuda requerida Refuerce la vigilancia Después de procedimientos Tras medicamentos sedantes Ante episodios de mareo"
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Pediatría y educación al paciente y la familia BARRERAS QUE INVOLUCRAN A LA FAMILIA En pediatría Valoración según edad, desarrollo, movilidad y condición Camas o cunas seguras con barandas elevadas y aseguradas Nunca solo en superficies elevadas Acompañamiento del cuidador cuando esté indicado Eduque y verifique Riesgo identificado y medidas Pedir ayuda antes de levantarse Uso del timbre y de las barandas Informar mareo, debilidad o inestabilidad Verificar que comprendió"
+  },
+  {
+   "img": "d09.webp",
+   "texto": "¿Qué hacer cuando ocurre una caída? ACTÚE, ATIENDA, DOCUMENTE Y APRENDA 1 Acuda de inmediato 2 Valore el estado clínico y las lesiones 3 Solicite valoración médica 4 Documente en la historia clínica 5 Comunique y reporte el evento 6 Analice causas y refuerce la prevención Si hay sospecha de lesión, NO movilice al paciente de forma apresurada."
+  },
+  {
+   "img": "d10.webp",
+   "texto": "Riesgos frecuentes y barreras de seguridad LO QUE DEBEMOS PREVENIR · CÓMO LO PREVENIMOS Riesgos Pacientes que se levantan sin pedir ayuda Camas elevadas y ruedas sin bloquear Barandas mal utilizadas Falta de acompañamiento indicado Traslados inseguros Falta de educación sobre el riesgo Barreras Escala de Downton o herramienta institucional Señalización azul Adecuación del entorno Asistencia en la movilización Educación Reevaluación del riesgo"
+  },
+  {
+   "img": "d11.webp",
+   "texto": "Juego 1: Caza de riesgos HAZ CLIC SOLO EN LAS SITUACIONES DE RIESGO DE CAÍDA (HAY 5)",
+   "juego": "caza",
+   "formas": [
+    {
+     "n": "Caz_R_1",
+     "x": 17.25,
+     "y": 26.67,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Cama elevada",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_S_1",
+     "x": 37.88,
+     "y": 26.67,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Timbre al alcance",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_R_2",
+     "x": 58.5,
+     "y": 26.67,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ruedas sin bloquear",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_S_2",
+     "x": 17.25,
+     "y": 39.73,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Calzado antideslizante",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_R_3",
+     "x": 37.88,
+     "y": 39.73,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Piso húmedo",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_S_3",
+     "x": 58.5,
+     "y": 39.73,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Cama en posición baja",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_R_4",
+     "x": 17.25,
+     "y": 52.8,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Paciente que se levanta sin pedir ayuda",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_S_4",
+     "x": 37.88,
+     "y": 52.8,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Acompañamiento durante la movilización",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_R_5",
+     "x": 58.5,
+     "y": 52.8,
+     "w": 19.5,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Iluminación insuficiente",
+         "sz": 1.562,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caz_Marcador",
+     "x": 79.5,
+     "y": 26.67,
+     "w": 15.0,
+     "h": 37.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Riesgos",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "0 de 5",
+         "sz": 2.708,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Errores",
+         "sz": 1.458,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      },
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "0",
+         "sz": 2.708,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.08,
+     "l": "#8DC63F",
+     "lw": 0.13
+    },
+    {
+     "n": "Puntaje_Caza",
+     "x": 17.25,
+     "y": 66.67,
+     "w": 49.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Puntaje",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Boton_Reiniciar",
+     "x": 68.25,
+     "y": 66.67,
+     "w": 14.25,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "↺ Reiniciar",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    }
+   ]
+  },
+  {
+   "img": "d12.webp",
+   "texto": "Juego 2: Ahorcado de la prevención ADIVINA LA PALABRA LETRA POR LETRA · MÁXIMO 6 ERRORES",
+   "juego": "ahorcado",
+   "formas": [
+    {
+     "n": "Ahc_Pista",
+     "x": 16.57,
+     "y": 26.25,
+     "w": 48.75,
+     "h": 4.4,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Pista: escala para valorar el riesgo de caídas",
+         "sz": 1.667,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Ahc_Contador",
+     "x": 66.82,
+     "y": 26.25,
+     "w": 26.25,
+     "h": 3.95,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "right",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Palabra 1 de 3",
+         "sz": 1.458,
+         "b": true,
+         "c": "#5E6E63"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Ahc_Palabra",
+     "x": 16.57,
+     "y": 32.92,
+     "w": 55.5,
+     "h": 12.0,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "_  _  _  _  _  _  _",
+         "sz": 3.75,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Ahc_Errores",
+     "x": 73.57,
+     "y": 32.92,
+     "w": 19.5,
+     "h": 12.0,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Errores: 0 de 6",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Tecla_1",
+     "x": 16.57,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_2",
+     "x": 23.85,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_3",
+     "x": 31.12,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_4",
+     "x": 38.4,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "D",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_5",
+     "x": 45.67,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "E",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_6",
+     "x": 52.95,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "F",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_7",
+     "x": 60.22,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "G",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_8",
+     "x": 67.5,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "H",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_9",
+     "x": 74.77,
+     "y": 47.32,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "I",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_10",
+     "x": 16.57,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "J",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_11",
+     "x": 23.85,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "K",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_12",
+     "x": 31.12,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "L",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_13",
+     "x": 38.4,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "M",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_14",
+     "x": 45.67,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "N",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_15",
+     "x": 52.95,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ñ",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_16",
+     "x": 60.22,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "O",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_17",
+     "x": 67.5,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "P",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_18",
+     "x": 74.77,
+     "y": 55.85,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Q",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_19",
+     "x": 16.57,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "R",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_20",
+     "x": 23.85,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "S",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_21",
+     "x": 31.12,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "T",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_22",
+     "x": 38.4,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "U",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_23",
+     "x": 45.67,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "V",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_24",
+     "x": 52.95,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "W",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_25",
+     "x": 60.22,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "X",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_26",
+     "x": 67.5,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Y",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Tecla_27",
+     "x": 74.77,
+     "y": 64.39,
+     "w": 6.38,
+     "h": 7.2,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Z",
+         "sz": 1.875,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Ahc_Siguiente",
+     "x": 82.95,
+     "y": 47.32,
+     "w": 10.12,
+     "h": 24.27,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Siguiente palabra ➜",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      0.45,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.15
+    },
+    {
+     "n": "Ahc_Retro",
+     "x": 5.25,
+     "y": 73.33,
+     "w": 64.5,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Muy bien! La palabra es TIMBRE   ·   Adivinaste 3 de 3 palabras",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Juego 3: La noche de Don Jorge CASO INTERACTIVO · ELIGE LA DECISIÓN MÁS SEGURA EN CADA PASO",
+   "juego": "caso",
+   "formas": [
+    {
+     "n": "Caso_Paso",
+     "x": 17.25,
+     "y": 25.6,
+     "w": 37.5,
+     "h": 5.07,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Decisión 1 de 5",
+         "sz": 1.458,
+         "b": true,
+         "c": "#5E6E63"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Caso_Texto",
+     "x": 17.25,
+     "y": 30.93,
+     "w": 54.75,
+     "h": 15.33,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Ingresa Don Jorge, de 78 años, con antecedente de caídas y episodios de mareo. ¿Qué haces primero?",
+         "sz": 1.771,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Caso_A",
+     "x": 17.25,
+     "y": 48.67,
+     "w": 77.25,
+     "h": 9.07,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "A.  Valoro el riesgo con la escala de Downton o la herramienta institucional",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Caso_B",
+     "x": 17.25,
+     "y": 59.33,
+     "w": 77.25,
+     "h": 9.07,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "B.  Espero a ver si presenta una caída durante el turno para valorarlo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#196C33",
+     "lw": 0.13
+    },
+    {
+     "n": "Caso_Retro",
+     "x": 17.25,
+     "y": 70.0,
+     "w": 63.0,
+     "h": 6.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Retroalimentación",
+         "sz": 1.458,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d14.webp",
+   "texto": "Reto 1: ¿Qué es una caída? HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué se considera una caída intrahospitalaria?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "La caída puede ocurrir con o sin lesión.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Un acontecimiento involuntario en el que la persona termina en el suelo o en un nivel inferior, con o sin lesión",
+         "sz": 1.458,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo cuando el paciente sufre una lesión",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Cuando el paciente se sienta voluntariamente en el suelo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.18,
+     "y": 22.8,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.05,
+    "y": 11.73,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d15.webp",
+   "texto": "Reto 2: Factores de riesgo HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Cuál de estos es un factor de riesgo extrínseco (del entorno)?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Los factores extrínsecos se relacionan con el entorno, como los pisos húmedos.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Edad avanzada",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Piso húmedo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Déficit visual",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.47,
+     "y": 22.8,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.35,
+    "y": 11.73,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d16.webp",
+   "texto": "Reto 3: Señalización HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué color identifica el riesgo de caída en el hospital?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "En el Hospital Susana López de Valencia el riesgo de caída se identifica con color azul.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Rojo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Amarillo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_ok",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Azul",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 83.71,
+     "y": 23.33,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.42,
+    "y": 11.73,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d17.webp",
+   "texto": "Reto 4: Escala de Downton HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Cuándo se debe valorar el riesgo de caída?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "La valoración se hace al ingreso, ante cambios clínicos y según el protocolo.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo al egreso",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Al ingreso, ante cambios clínicos y en los momentos del protocolo",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo si el paciente ya se cayó",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 22.8,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 11.73,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d18.webp",
+   "texto": "Reto 5: Si ocurre una caída HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Un paciente se cae y hay sospecha de lesión. ¿Qué NO se debe hacer?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Con sospecha de lesión no se moviliza al paciente de forma apresurada.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Movilizarlo de forma apresurada",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solicitar valoración médica",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Reportar el evento",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.54,
+     "y": 23.74,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.42,
+    "y": 12.67,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d19.webp",
+   "texto": "Cierre: las caídas se pueden prevenir RECUERDA IDENTIFICA EL RIESGO, APLICA LAS BARRERAS Y ACOMPAÑA AL PACIENTE. Las caídas se pueden prevenir. Equipo de salud Valora, señaliza con azul, adecúa el entorno, asiste en la movilización y reevalúa. Paciente y familia Conocen el riesgo, usan el timbre y piden ayuda antes de levantarse.",
+   "juego": "cierre",
+   "formas": [
+    {
+     "n": "Boton_Puntaje",
+     "x": 17.25,
+     "y": 65.33,
+     "w": 19.5,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ver mi puntaje",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Puntaje_Final",
+     "x": 38.25,
+     "y": 65.33,
+     "w": 44.25,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Haz clic en «Ver mi puntaje»",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    }
+   ]
+  }
+ ]
+}

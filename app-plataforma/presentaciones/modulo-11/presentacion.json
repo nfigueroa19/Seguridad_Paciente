@@ -1,0 +1,3100 @@
+{
+ "id": "modulo-11",
+ "titulo": "Reporte de incidentes y eventos adversos",
+ "proporcion": 1.7778,
+ "puntaje": [
+  {
+   "id": "buzones",
+   "nombre": "Buzones",
+   "max": 6
+  },
+  {
+   "id": "reporte",
+   "nombre": "Reporte",
+   "max": 5
+  },
+  {
+   "id": "chat",
+   "nombre": "Chat",
+   "max": 4
+  },
+  {
+   "id": "retos",
+   "nombre": "Retos",
+   "max": 5
+  }
+ ],
+ "datos": {
+  "buzones": {
+   "nombres": [
+    "Falla o riesgo",
+    "Incidente",
+    "Evento adverso",
+    "Complicación"
+   ],
+   "situaciones": [
+    {
+     "t": "Piso mojado en el pasillo, sin señalización. Nadie se ha caído todavía.",
+     "ok": 1,
+     "exp": "Es un riesgo: aumenta la probabilidad de daño, aunque aún no ocurre nada."
+    },
+    {
+     "t": "Se administró una dosis de más de un medicamento, pero el paciente no presentó ningún daño.",
+     "ok": 2,
+     "exp": "Llegó al paciente, pero no le generó daño."
+    },
+    {
+     "t": "El paciente se levantó solo, se cayó y sufrió una fractura de cadera.",
+     "ok": 3,
+     "exp": "Llegó al paciente y le generó daño: es un evento adverso."
+    },
+    {
+     "t": "La bomba de infusión de la cama 5 tiene la alarma dañada y sigue en uso.",
+     "ok": 1,
+     "exp": "Es una falla: el equipo con la alarma dañada pone en riesgo a los pacientes."
+    },
+    {
+     "t": "Un paciente con cirrosis avanzada presenta un sangrado propio de la evolución de su enfermedad, sin fallas en la atención.",
+     "ok": 4,
+     "exp": "El daño se debe a la enfermedad del paciente, no a la atención."
+    },
+    {
+     "t": "Se administró un medicamento al que el paciente era alérgico y la reacción requirió traslado a UCI.",
+     "ok": 3,
+     "exp": "La atención causó daño al paciente: es un evento adverso."
+    }
+   ]
+  },
+  "reporte": {
+   "correctas": "ABBAB"
+  },
+  "chat": {
+   "pasos": [
+    {
+     "q": "Hola, soy Susanita Súper Segura. ¿Qué situación quieres reportar hoy?",
+     "A": "Un paciente se cayó en el baño; ya fue valorado y está estable.",
+     "B": "Quiero denunciar a la auxiliar que no hace bien su trabajo.",
+     "ok": "A",
+     "S": "¡Gracias! Describir los hechos, sin señalar personas, ayuda a aprender.",
+     "N": "El reporte no busca culpables: describe los hechos de forma objetiva."
+    },
+    {
+     "q": "¿Qué hiciste primero cuando ocurrió?",
+     "A": "Primero llené el reporte y luego avisé.",
+     "B": "Protegí al paciente, lo valoré y avisé al profesional responsable.",
+     "ok": "B",
+     "S": "¡Muy bien! La primera prioridad siempre es el paciente.",
+     "N": "Primero se protege y atiende al paciente; después se reporta."
+    },
+    {
+     "q": "¿Ya quedó registrado en la historia clínica?",
+     "A": "No, con este reporte es suficiente.",
+     "B": "Sí, documenté los hechos en la historia clínica.",
+     "ok": "B",
+     "S": "¡Perfecto! El reporte no reemplaza el registro clínico.",
+     "N": "El reporte NO reemplaza el registro en la historia clínica."
+    },
+    {
+     "q": "Cuéntame cuándo y dónde ocurrió.",
+     "A": "20/11/2026, 6:40 a. m., baño de la habitación 304, piso 3.",
+     "B": "Hace un rato, en algún baño del piso.",
+     "ok": "A",
+     "S": "¡Reporte recibido! Fecha, hora y lugar exactos facilitan el análisis.",
+     "N": "Incluye la fecha, la hora y el servicio exactos."
+    }
+   ]
+  }
+ },
+ "diapositivas": [
+  {
+   "img": "d01.webp",
+   "texto": "Reporte de incidentes y eventos adversos"
+  },
+  {
+   "img": "d02.webp",
+   "texto": "¿Qué es el reporte y por qué es importante? REPORTAR ES PREVENIR Proceso para notificar situaciones que pueden comprometer o han comprometido la seguridad del paciente. Identificar Reportar Analizar Mejorar El autorreporte fortalece la cultura de seguridad del paciente: reconocer y comunicar oportunamente los errores y situaciones de riesgo permite aprender de ellos, prevenir su recurrencia y mejorar continuamente la atención."
+  },
+  {
+   "img": "d03.webp",
+   "texto": "Clasificación de los eventos clínicos SEGÚN EL MANUAL DE GESTIÓN DE EVENTOS CLÍNICOS 2025 Falla y riesgo Acciones u omisiones involuntarias, o indicios de atención insegura, que aumentan la probabilidad de un incidente o evento adverso. Incidente Llegó al paciente, pero NO le generó daño (por casualidad o por una intervención a tiempo). Evento adverso Llegó al paciente y SÍ le generó daño no intencionado por la atención. Puede ser prevenible o no prevenible. Complicación Resultado no esperado atribuible a la enfermedad o a las condiciones del paciente, no a la atención. Fallas, incidentes y eventos adversos se reportan. La violación (deliberada) no es un error."
+  },
+  {
+   "img": "d04.webp",
+   "texto": "Severidad del evento adverso CLASIFICACIÓN OMS (ESTUDIO IBEAS) · EJEMPLO: CAÍDA DE UN PACIENTE Leve Daño mínimo que NO amerita tratamiento médico o quirúrgico. Ejemplo: Pequeña laceración sin tratamiento. Moderado Daño que amerita tratamiento médico o quirúrgico; condición pasajera. Ejemplo: Herida que requiere sutura y TAC de cráneo. Grave Daño severo que amerita tratamiento para salvar la vida o compromete la funcionalidad. Ejemplo: Trauma craneoencefálico con cirugía y recuperación posterior. Centinela Daño severo permanente o muerte. Ejemplo: Trauma craneoencefálico con secuelas neurológicas permanentes. Menor daño → Mayor daño"
+  },
+  {
+   "img": "d05.webp",
+   "texto": "¿Qué reportar y cómo redactarlo? HECHOS OBJETIVOS, CENTRADOS EN EL PROCESO Y NO EN LAS PERSONAS ¿Qué reportar? Infraestructura, insumos o equipos con potencial de daño Situaciones que generaron daño al paciente Situaciones que ocurrieron sin generar daño ¿Cómo redactarlo? Hechos objetivos, sin suposiciones ni juicios Claro y detallado, sin ambigüedades En orden cronológico: antes, durante y después Fecha, hora, servicio, condición del paciente y acciones Recuerde Reporte lo más cerca posible al evento Evite volverse punitivo en el reporte Piense siempre en el paciente"
+  },
+  {
+   "img": "d06.webp",
+   "texto": "Tres mecanismos para reportar EN EL HOSPITAL SUSANA LÓPEZ DE VALENCIA 1 Aplicativo Dinámica NET-WEB Eventos clínicos, para quienes tienen acceso al sistema. 2 Hoja Rosada Formato físico en los buzones de sugerencias, para quien no tiene acceso a Dinámica NET. 3 Bot «Susanita Súper Segura» WhatsApp 317 502 5643 : reporte rápido y directo desde el celular. Otros canales: correos de aseguradoras, PQRS y auditorías internas y externas."
+  },
+  {
+   "img": "d07.webp",
+   "texto": "Reporte en Dinámica gerencial APLICATIVO DE EVENTOS CLÍNICOS 1 Ingrese a la historia clínica electrónica 2 Clic en módulos operativos y asistenciales 3 Clic en plataforma web 4 Clic en eventos clínicos Registro del evento clínico Registro del evento clínico Eventos clínicos Eventos clínicos 1 Ingrese a la historia clínica electrónica"
+  },
+  {
+   "img": "d08.webp",
+   "texto": "Reporte en Dinámica Web APLICATIVO DE EVENTOS CLÍNICOS 1 Ingrese a plataforma institucional por Google 2 Diríjase en la parte de Dinamica Web 3 Clic en Plataforma web 4 Mediante la lupa realice búsqueda evento y seleccione registro 5 Posteriormente diligencie el reporte correspondiente"
+  },
+  {
+   "img": "d09.webp",
+   "texto": "Reporte en HARMONIA APP APLICATIVO DE EVENTOS CLÍNICOS 1 Ingrese a plataforma institucional por Google 2 Diríjase en la parte superior derecha “Aplicativos” 3 Clic en HARMONIA APP 4 Ingrese con su usuario y contraseña 5 Posteriormente a asistencial y eventos clínicos"
+  },
+  {
+   "img": "d10.webp",
+   "texto": "Atención inmediata y comunicación del evento PRIMERO EL PACIENTE 1 Proteja al paciente 2 Valore su condición y garantice la atención 3 Informe al profesional responsable y al equipo 4 Documente en la historia clínica 5 Reporte lo antes posible por los canales institucionales El reporte NO reemplaza el registro clínico ni la comunicación inmediata. Ante eventos adversos que ameriten apoyo, comuníquese con la referente de seguridad del paciente."
+  },
+  {
+   "img": "d11.webp",
+   "texto": "Análisis de eventos y aprendizaje DEL REPORTE A LA MEJORA Métodos de análisis: Protocolo de Londres Espina de pescado (6M) Los 5 porqués Factores contributivos que se analizan: Paciente Cliente interno Documentos Tecnología Organización y gerencia Externo El análisis termina en un plan de mejora con acciones, responsables y plazos."
+  },
+  {
+   "img": "d12.webp",
+   "texto": "Cultura no punitiva y confidencialidad APRENDER, NO CASTIGAR Un ambiente donde el personal reporta errores sin temor a represalias o sanciones, para identificar problemas antes de que causen daños mayores. Confidencialidad Protege a la primera víctima (paciente) A la segunda víctima (personal involucrado) A la tercera víctima (institución) Uso de la información Solo para mejorar la calidad y la seguridad Nunca para juzgar o culpar"
+  },
+  {
+   "img": "d13.webp",
+   "texto": "Juego 1: Los buzones LEE LA SITUACIÓN Y HAZ CLIC EN EL BUZÓN AL QUE PERTENECE",
+   "juego": "buzones",
+   "formas": [
+    {
+     "n": "Buz_Contador",
+     "x": 17.25,
+     "y": 25.6,
+     "w": 30.0,
+     "h": 3.95,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Situación 1 de 6",
+         "sz": 1.458,
+         "b": true,
+         "c": "#5E6E63"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Buz_Tarjeta",
+     "x": 27.0,
+     "y": 30.67,
+     "w": 57.75,
+     "h": 16.0,
+     "g": "roundRect",
+     "f": "#FBE7EF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Piso mojado en el pasillo, sin señalización. Nadie se ha caído todavía.",
+         "sz": 1.771,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.1,
+     "l": "#C24D7E",
+     "lw": 0.13
+    },
+    {
+     "n": "Buz_1",
+     "x": 17.25,
+     "y": 51.33,
+     "w": 18.38,
+     "h": 16.67,
+     "g": "roundRect",
+     "f": "#E0A11B",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Falla o riesgo",
+         "sz": 1.667,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      2.625,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Buz_2",
+     "x": 36.75,
+     "y": 51.33,
+     "w": 18.38,
+     "h": 16.67,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incidente",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      2.625,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Buz_3",
+     "x": 56.25,
+     "y": 51.33,
+     "w": 18.38,
+     "h": 16.67,
+     "g": "roundRect",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Evento adverso",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      2.625,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Buz_4",
+     "x": 75.75,
+     "y": 51.33,
+     "w": 18.38,
+     "h": 16.67,
+     "g": "roundRect",
+     "f": "#1E6E7A",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Complicación",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      2.625,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Buz_Retro",
+     "x": 17.25,
+     "y": 69.33,
+     "w": 52.5,
+     "h": 6.4,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto! Evento adverso: La atención causó daño al paciente: es un evento adverso.",
+         "sz": 1.354,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Boton_Reiniciar",
+     "x": 71.25,
+     "y": 69.6,
+     "w": 14.25,
+     "h": 5.6,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "↺ Reiniciar",
+         "sz": 1.354,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5,
+     "l": "#196C33",
+     "lw": 0.13
+    }
+   ]
+  },
+  {
+   "img": "d14.webp",
+   "texto": "Juego 2: Arma el reporte CASO: CAÍDA DE UN PACIENTE · ELIGE LA MEJOR REDACCIÓN DE CADA CAMPO Y ENVÍA Fecha y hora Servicio Descripción Condición del paciente Acciones inmediatas",
+   "juego": "reporte",
+   "formas": [
+    {
+     "n": "Rep_1_A",
+     "x": 21.0,
+     "y": 26.4,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "19/11/2026, 03:15 a. m.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_1_B",
+     "x": 51.75,
+     "y": 26.4,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "En la madrugada, no recuerdo bien la hora",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_2_A",
+     "x": 21.0,
+     "y": 34.8,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Por allá, en el piso",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_2_B",
+     "x": 51.75,
+     "y": 34.8,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Hospitalización, piso 3, cama 12",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_3_A",
+     "x": 21.0,
+     "y": 43.2,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "La auxiliar, por descuidada, dejó caer al paciente.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_3_B",
+     "x": 51.75,
+     "y": 43.2,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Se encontró al paciente en el piso, junto a la cama, con la baranda abajo.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_4_A",
+     "x": 21.0,
+     "y": 51.6,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Consciente, con dolor en la rodilla derecha y sin otras lesiones visibles.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_4_B",
+     "x": 51.75,
+     "y": 51.6,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Seguramente no le pasó nada grave.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_5_A",
+     "x": 21.0,
+     "y": 60.0,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Se esperó al cambio de turno para avisar.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_5_B",
+     "x": 51.75,
+     "y": 60.0,
+     "w": 30.0,
+     "h": 7.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Se valoró, se informó al médico de turno y se registró en la historia clínica.",
+         "sz": 1.25,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.75,
+      0.45,
+      0.75,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.2,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Rep_Enviar",
+     "x": 5.25,
+     "y": 68.67,
+     "w": 18.0,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#C24D7E",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Enviar reporte ➜",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3
+    },
+    {
+     "n": "Rep_Retro",
+     "x": 24.38,
+     "y": 68.67,
+     "w": 57.38,
+     "h": 6.0,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Reporte enviado: 5 de 5 campos bien redactados. En verde, la mejor opción: hechos claros, sin señalamientos.",
+         "sz": 1.354,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    }
+   ]
+  },
+  {
+   "img": "d15.webp",
+   "texto": "Juego 3: Reporta con Susanita Súper Segura SIMULACIÓN DEL BOT · ELIGE TU RESPUESTA EN CADA PASO Susanita Súper Segura · 3175025643",
+   "juego": "chat",
+   "formas": [
+    {
+     "n": "Chat_Bot",
+     "x": 18.9,
+     "y": 34.0,
+     "w": 22.88,
+     "h": 12.0,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Hola, soy Susanita Súper Segura. ¿Qué situación quieres reportar hoy?",
+         "sz": 1.146,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      0.45,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.15
+    },
+    {
+     "n": "Chat_User",
+     "x": 22.5,
+     "y": 46.93,
+     "w": 22.88,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#D4F0C8",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "20/11/2026, 6:40 a. m., baño de la habitación 304, piso 3.",
+         "sz": 1.146,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      0.45,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.15,
+     "oculto": true
+    },
+    {
+     "n": "Chat_FB",
+     "x": 18.9,
+     "y": 59.33,
+     "w": 22.88,
+     "h": 12.67,
+     "g": "roundRect",
+     "f": "#C8E6C9",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Reporte recibido! Fecha, hora y lugar exactos facilitan el análisis.",
+         "sz": 1.146,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.6,
+      0.45,
+      0.6,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.15,
+     "oculto": true
+    },
+    {
+     "n": "Chat_Paso",
+     "x": 49.12,
+     "y": 25.6,
+     "w": 30.0,
+     "h": 3.95,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Paso 1 de 4",
+         "sz": 1.458,
+         "b": true,
+         "c": "#5E6E63"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start"
+    },
+    {
+     "n": "Chat_A",
+     "x": 49.12,
+     "y": 31.33,
+     "w": 45.38,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Un paciente se cayó en el baño; ya fue valorado y está estable.",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Chat_B",
+     "x": 49.12,
+     "y": 44.67,
+     "w": 45.38,
+     "h": 11.33,
+     "g": "roundRect",
+     "f": "#FFFFFF",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Quiero denunciar a la auxiliar que no hace bien su trabajo.",
+         "sz": 1.458,
+         "b": true,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.5,
+      0.45,
+      1.5,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.3,
+     "l": "#1E6E7A",
+     "lw": 0.13
+    },
+    {
+     "n": "Chat_Puntaje",
+     "x": 49.12,
+     "y": 59.33,
+     "w": 45.38,
+     "h": 8.0,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Respuestas seguras: 0 de 4",
+         "sz": 1.562,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    }
+   ]
+  },
+  {
+   "img": "d16.webp",
+   "texto": "Reto 1: Clasificación HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Una situación que llegó al paciente, pero NO le generó daño, es:",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "El incidente llega al paciente sin causarle daño.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Un evento adverso",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Un incidente",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Una complicación",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.32,
+     "y": 22.4,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.2,
+    "y": 11.33,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d17.webp",
+   "texto": "Reto 2: Severidad HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO Una caída con trauma craneoencefálico y secuelas neurológicas permanentes es un evento adverso:",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "El evento centinela produce daño severo permanente o la muerte.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 9.38,
+     "y": 39.33,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Leve",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 10.12,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 9.38,
+     "y": 49.73,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Moderado",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 10.12,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_ok",
+     "x": 9.38,
+     "y": 60.13,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Centinela",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 10.12,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 85.25,
+     "y": 23.2,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 90.12,
+    "y": 12.13,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d18.webp",
+   "texto": "Reto 3: Hoja Rosada HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Dónde se encuentra la Hoja Rosada de reporte?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 23.28,
+     "y": 69.24,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Está en los buzones de sugerencias, para quien no tiene acceso a Dinámica NET.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 19.15,
+     "y": 37.24,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "En la historia clínica electrónica",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 19.9,
+     "y": 38.31,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 19.15,
+     "y": 47.64,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "En los buzones de sugerencias del hospital",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 19.9,
+     "y": 48.71,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 89.43,
+     "y": 48.71,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 19.15,
+     "y": 58.04,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo en la oficina de calidad",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 19.9,
+     "y": 59.11,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 74.25,
+     "y": 24.0,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 88.9,
+    "y": 10.84,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d19.webp",
+   "texto": "Reto 4: Cultura no punitiva HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué busca la cultura de seguridad no punitiva?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 23.43,
+     "y": 69.5,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "La información se usa para mejorar, nunca para juzgar o culpar.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_ok",
+     "x": 19.3,
+     "y": 37.5,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Que el personal reporte sin temor a represalias, para aprender y mejorar",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 20.05,
+     "y": 38.57,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 89.58,
+     "y": 38.57,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_no",
+     "x": 19.3,
+     "y": 47.9,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Sancionar a quien reporta",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 20.05,
+     "y": 48.97,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 79.65,
+     "y": 50.8,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 19.3,
+     "y": 58.3,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Que solo se reporten los errores de otros",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 20.05,
+     "y": 59.37,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.18,
+     "y": 22.17,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.05,
+    "y": 11.1,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d20.webp",
+   "texto": "Reto 5: Análisis HAZ CLIC EN LA RESPUESTA CORRECTA · SOLO EL PRIMER INTENTO SUMA PUNTO ¿Qué métodos se usan para analizar los eventos clínicos?",
+   "juego": "reto",
+   "formas": [
+    {
+     "n": "RetroSi",
+     "x": 17.91,
+     "y": 71.03,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "¡Correcto!  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#FFFFFF"
+        },
+        {
+         "t": "Permiten identificar factores contributivos y causas raíz.",
+         "sz": 1.562,
+         "b": false,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "RetroNo",
+     "x": 13.5,
+     "y": 71.33,
+     "w": 70.88,
+     "h": 10.67,
+     "g": "roundRect",
+     "f": "#FBEEE3",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Incorrecto.  ",
+         "sz": 1.771,
+         "b": true,
+         "c": "#AF5A19"
+        },
+        {
+         "t": "Intenta de nuevo para encontrar la respuesta (ya no suma punto).",
+         "sz": 1.562,
+         "b": false,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.875,
+      0.45,
+      1.875,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12,
+     "oculto": true
+    },
+    {
+     "n": "Op_A_no",
+     "x": 19.67,
+     "y": 37.63,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Solo una encuesta de satisfacción",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_A_c",
+     "x": 20.42,
+     "y": 38.7,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "A",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_A",
+     "x": 79.65,
+     "y": 40.4,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_B_ok",
+     "x": 19.67,
+     "y": 48.03,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Protocolo de Londres, espina de pescado (6M) y los 5 porqués",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_B_c",
+     "x": 20.42,
+     "y": 49.1,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "B",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_B",
+     "x": 89.94,
+     "y": 49.1,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✓",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Op_C_no",
+     "x": 19.67,
+     "y": 58.43,
+     "w": 75.0,
+     "h": 8.53,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "left",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ninguno: el reporte solo se archiva",
+         "sz": 1.667,
+         "b": false,
+         "c": "#203728"
+        }
+       ]
+      }
+     ],
+     "i": [
+      6.375,
+      0.45,
+      6.0,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    },
+    {
+     "n": "Op_C_c",
+     "x": 20.42,
+     "y": 59.5,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#196C33",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "C",
+         "sz": 1.562,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center"
+    },
+    {
+     "n": "Ic_C",
+     "x": 79.65,
+     "y": 61.2,
+     "w": 3.6,
+     "h": 6.4,
+     "g": "ellipse",
+     "f": "#C62828",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "✗",
+         "sz": 1.875,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.0,
+      0.45,
+      0.0,
+      0.45
+     ],
+     "an": "center",
+     "oculto": true
+    },
+    {
+     "n": "Fin del tiempo",
+     "x": 84.54,
+     "y": 22.3,
+     "w": 17.25,
+     "h": 5.33,
+     "g": "rect",
+     "f": null,
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.625,
+       "r": [
+        {
+         "t": "¡Tiempo!",
+         "sz": 1.667,
+         "b": true,
+         "c": "#AF5A19"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.45,
+      0.225,
+      0.45,
+      0.225
+     ],
+     "an": "flex-start",
+     "oculto": true
+    }
+   ],
+   "cronometro": {
+    "segundos": 30,
+    "x": 89.42,
+    "y": 11.23,
+    "w": 7.5,
+    "h": 7.47
+   }
+  },
+  {
+   "img": "d21.webp",
+   "texto": "Cierre: reportar es prevenir RECUERDA REPORTAR ES PREVENIR. Cada situación reportada es una oportunidad para aprender y mejorar la seguridad del paciente. Todos los colaboradores Identifican y comunican a tiempo lo que compromete la seguridad. Reportar no es un trámite Es una barrera que reconoce riesgos y activa la mejora.",
+   "juego": "cierre",
+   "formas": [
+    {
+     "n": "Boton_Puntaje",
+     "x": 17.25,
+     "y": 65.33,
+     "w": 19.5,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#AF5A19",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0.417,
+       "r": [
+        {
+         "t": "Ver mi puntaje",
+         "sz": 1.667,
+         "b": true,
+         "c": "#FFFFFF"
+        }
+       ]
+      }
+     ],
+     "i": [
+      0.375,
+      0.45,
+      0.375,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.5
+    },
+    {
+     "n": "Puntaje_Final",
+     "x": 38.25,
+     "y": 65.33,
+     "w": 44.25,
+     "h": 8.27,
+     "g": "roundRect",
+     "f": "#EAF5EC",
+     "p": [
+      {
+       "al": "center",
+       "sa": 0,
+       "r": [
+        {
+         "t": "Haz clic en «Ver mi puntaje»",
+         "sz": 1.458,
+         "b": true,
+         "c": "#196C33"
+        }
+       ]
+      }
+     ],
+     "i": [
+      1.125,
+      0.45,
+      1.125,
+      0.45
+     ],
+     "an": "center",
+     "adj": 0.12
+    }
+   ]
+  }
+ ]
+}

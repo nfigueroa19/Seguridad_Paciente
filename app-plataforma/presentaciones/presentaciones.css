@@ -148,3 +148,15 @@ button.pi-clic:focus-visible{outline:.3cqw solid var(--naranja); outline-offset:
   .pi-pieza{transition:none;}
   .pi-pieza.pi-sacude, .pi-escenario.pi-entra .pi-capa, .pi-escenario.pi-entra .pi-fondo{animation:none;}
 }
+
+/* Módulos 4, 6 y 11: piezas que se desplazan, tarjetas que aparecen al pulsar */
+.pi-f.pi-mueve{transition:left .35s ease-in-out, top .35s ease-in-out, background-color .25s, box-shadow .2s;}
+.pi-disparo{position:absolute; padding:0; border:0; border-radius:1.2cqw; background:transparent; cursor:pointer; transition:box-shadow .2s;}
+.pi-disparo:hover{box-shadow:0 0 0 .3cqw var(--naranja);}
+.pi-disparo:focus-visible{outline:.3cqw solid var(--naranja); outline-offset:.2cqw;}
+.pi-f.pi-nuevo{animation:pi-crece .4s ease-out;}
+@keyframes pi-crece{from{transform:scale(.2); opacity:0;} to{transform:scale(1); opacity:1;}}
+@media (prefers-reduced-motion: reduce){
+  .pi-f.pi-mueve{transition:none;}
+  .pi-f.pi-nuevo{animation:none;}
+}
